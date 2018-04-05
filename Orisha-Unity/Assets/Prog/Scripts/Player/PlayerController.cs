@@ -93,8 +93,10 @@ namespace vd_Player
                 TimeManager.Instance.Slow_OneCharacter_WithCurve(anim.gameObject, 2.0f, "Parabole");
             }
 
-            if (Input.GetButtonDown(InputManager.Jump) && isGrounded)
+            if (Input.GetButtonDown(InputManager.Jump) && isGrounded) {
+                ci.PlayerFight.ClearListInputs();
                 anim.SetTrigger("IsJumping");
+            }
         }
 
         void FixedUpdate()
