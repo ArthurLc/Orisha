@@ -14,6 +14,7 @@
 public class HittenBox_Player : MonoBehaviour, HittenBox
 {
     [SerializeField] private vd_Player.CharacterInitialization player;
+    private CameraShaker camShaker = null;
 
     public void TakeDamage(int _damage)
     {
@@ -39,12 +40,19 @@ public class HittenBox_Player : MonoBehaviour, HittenBox
         //Debug.Log("je suis tapé par un truc");
         if (box != null)
         {
+            if (camShaker == null)
+                camShaker = player.GetComponentInChildren<CameraShaker>();
+
             // je prends mes dégats
             TakeDamage(box.damageValue);
             // Propulsion
             //PropulsePlayer(box, box.damageValue);
             // je dis à l'autre de prendre les dégats
             box.HitSucceed(other.ClosestPointOnBounds(transform.position));
+
+
+            //if(box.PlayerDatas.PlayerFightDatas.expulsionLevel == FightScriptable.ExpulsionLevel.High)
+            camShaker.ShakeActualCam(0.5f, 10.0f, 0.1f);
         }
         else
         {

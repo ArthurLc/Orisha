@@ -162,6 +162,7 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
         yield return new WaitForSeconds(waitTime);
 
         Collider[] col = Physics.OverlapSphere(transform.position, 10.0f, 1 << 16);
+
         if (col.Length == 0)
         {
             pe.Pop_Potential_Ennemy(this);
@@ -183,15 +184,21 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
             if (targetsInReach.Contains(other.transform) == false)
                 targetsInReach.Add(other.transform);
             //StopAllCoroutines();
-
             if (pe && health > 0)
             {
                 pe.Add_Potential_Ennemy(this);
             }
-            else if (!pe && !pe && health > 0)
+            else if (!pe && health > 0)
             {
-                pe = other.GetComponent<Potential_Enemy>();
-                pe.Add_Potential_Ennemy(this);             
+                if (string.Compare(other.name, "HB_Player") == 0)
+                    pe = other.GetComponentInParent<Potential_Enemy>();
+                else
+                    pe = other.GetComponent<Potential_Enemy>();
+
+                if (pe)
+                    pe.Add_Potential_Ennemy(this); 
+                else
+                    Debug.Log("No Potential_Enemy script on : " + other.name + " or :" + other.transform.parent.name);
             }
         }
     }
@@ -209,19 +216,6 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
             {
                 StopCoroutine(PotentialEnemypopRequest(2.0f));
                 StartCoroutine(PotentialEnemypopRequest(2.0f));
-            }
-            else if (!pe)
-            {
-                pe = other.GetComponent<Potential_Enemy>();
-
-                if (pe)
-                {
-                    StopCoroutine(PotentialEnemypopRequest(2.0f));
-                    StartCoroutine(PotentialEnemypopRequest(2.0f));
-                }
-                else
-                    Debug.Log("Triggered by an object without Potential_Enemy script : " + other.name);
-
             }
         }
     }

@@ -145,7 +145,7 @@ public class AI_EnemyState
     /// </summary>
     public virtual void OnEnd()
     {
-        if(myAgent)
+        if(myAgent && myAgent.isOnNavMesh)
             myAgent.isStopped = false;
     }
     

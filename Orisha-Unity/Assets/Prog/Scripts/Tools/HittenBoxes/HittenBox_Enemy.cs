@@ -23,6 +23,8 @@ public class HittenBox_Enemy : MonoBehaviour, HittenBox
 {
     [SerializeField] private AI_Enemy_Basic enemy;
     [SerializeField] private E_HittenBodyPart partOfBody;
+    private CameraShaker camShaker = null;
+
 
     public virtual void TakeDamage(int _damage)
     {
@@ -72,6 +74,9 @@ public class HittenBox_Enemy : MonoBehaviour, HittenBox
         Debug.DrawRay(transform.position, PropulseDir, Color.blue, currentExpulsionLvl);
     }
 
+    private void Start()
+    {
+    }
 
     /// <summary>
     /// Gestion de la collision avec un "ennemi"
@@ -84,6 +89,9 @@ public class HittenBox_Enemy : MonoBehaviour, HittenBox
         //Debug.Log("je suis tapé par un truc");
         if (box != null)
         {
+            if(camShaker == null)
+                camShaker = other.GetComponentInParent<CameraShaker>();
+
             // je prends mes dégats
             //TakeDamage(box.damageValue);
             //Temp pour la millestone Applique les damages de l'anim du joueur si c'est un player qui a frappé
@@ -99,6 +107,8 @@ public class HittenBox_Enemy : MonoBehaviour, HittenBox
                     PropulseAgent(box);
                     float vibrationLevel = (int)box.PlayerDatas.PlayerFightDatas.expulsionLevel / 20.0f;
                     vd_Inputs.InputManager.GamePad_StartVibration(0, vibrationLevel, vibrationLevel, vibrationLevel);
+                    //if(box.PlayerDatas.PlayerFightDatas.expulsionLevel == FightScriptable.ExpulsionLevel.High)
+                    camShaker.ShakeActualCam(vibrationLevel, 2.0f * vibrationLevel, vibrationLevel / 10.0f);
                 }
                 else
                     TakeDamage(box.damageValue);

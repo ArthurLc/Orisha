@@ -62,13 +62,13 @@ public class DamageBox : MonoBehaviour
                 ps.Play();
                 Destroy(ps.gameObject, ps.main.duration);
             }
+            else if (debug)
+                Debug.Log("je n'ai pas de particle System");
+
             if (playerDatas.PlayerFightDatas.soundImpact)
             {
                 SoundManager.source.PlayOneShot(playerDatas.PlayerFightDatas.soundImpact);
             }
-            else if (debug)
-                Debug.Log("je n'ai pas de particle System");
-
             // Edit suppression de FMOD, appeler le son de dégats ici
             //FMODUnity.RuntimeManager.PlayOneShot("Event:/Character/PlayerHeavyHit");
         }

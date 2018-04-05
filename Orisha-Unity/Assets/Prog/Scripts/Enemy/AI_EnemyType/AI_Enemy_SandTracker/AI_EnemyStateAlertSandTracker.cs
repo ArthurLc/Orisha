@@ -64,6 +64,7 @@ public class AI_EnemyStateAlertSandTracker : AI_EnemyStateAlert
             yield return 0;
         }
 
+        //Si y a des bugs a cause du stop all coroutines, ajouter un test de vie ici !!
         ((AI_Enemy_SandTracker)myIndividu).ChangeState(AI_Enemy_SandTracker.State.Chasing);
     }
 

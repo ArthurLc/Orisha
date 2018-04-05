@@ -45,7 +45,7 @@ public class Potential_Enemy : MonoBehaviour
             if (enemy_List.Count == 0 && IsOnFight)
             {
                 IsOnFight = false;
-                Debug.Log("Je suis plus en combat");
+                //Debug.Log("Je suis plus en combat");
             }
         }
     }

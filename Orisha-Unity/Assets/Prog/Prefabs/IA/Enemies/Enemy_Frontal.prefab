@@ -1216,7 +1216,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992494040247580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 130.2, y: 13.975344, z: -153}
+  m_LocalPosition: {x: -13.126732, y: 0.4774189, z: 0.47880554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4484208472428366}
@@ -2244,7 +2244,7 @@ MonoBehaviour:
   Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 10.5
   range: 2
   minDistanceToTarget: 1
