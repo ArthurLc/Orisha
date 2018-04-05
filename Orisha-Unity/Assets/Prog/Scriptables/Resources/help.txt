@@ -1,0 +1,31 @@
+FightAnimator: 
+     =================== 
+ 
+1) Je veux remplacer l'animation d'une attaque: 
+  - Ouvre l'animator du Player. (Dans le Base Layer se trouve les animations de mouvements du Player ainsi que toute ses attaques.) 
+  - Choisis l'attaque à changer.
+  - Remplace simplement l'animation par la nouvelle.
+ 
+2) Je veux ajouter une nouvelle attaque/animation: 
+  - Ouvre la FightList. 
+  - Augmente la Size de la liste de 1. 
+  - Modifies le nouvel (dernier) élément de la liste en rentrant au moins: Son nom, sa liste d'inputs requis.
+  - Copie le "Name" que tu lui as donné.
+  - Ouvre maintenant l'animator du Player. (Dans le Base Layer se trouve les animations de mouvements du Player ainsi que toute ses attaques.) 
+  - Ajoute ta nouvelle animation d'attaque, et relis là à toutes les animations. (Exactement comme les autres le font ensembles.)
+  - Renommes cette nouvelle animation par le "Name" que tu as copiée de la liste.
+ 
+3) Je veux retirer une attaque: 
+  - Ouvre la FightList. 
+  - Il te suffit de sélectionné ton attaque et de mette la Size de ses Inputs Require 0.
+  - CLEAN PROPRE: Il faut supprimer l'élément de la FightList & de l'animator du Player.
+ 
+4) Je veux changer les Inputs d'une attaque: 
+  - Ouvre la FightList. 
+  - Sélectionne l'attaque que tu souhaites modifier et ouvre sa liste "Inputs Require".
+  - Là tu peux modifier la chaîne d'inputs à ta guise.
+  [Attention:
+      - Aucune sécuritée ne gère le cas où 2 attaques aurait la même liste "Inputs Require".
+      - Si tu créées une liste de 'n' Inputs,
+    tu dois avoir au moins 1 animation correspondante à (n-1)Inputs. (Et ce, jusqu'à: (n-1)==1).
+  ]

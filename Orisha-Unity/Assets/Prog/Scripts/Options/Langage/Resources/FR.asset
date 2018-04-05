@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908c8a6177c8f35419cc6c6832b416d9, type: 3}
+  m_Name: FR
+  m_EditorClassIdentifier: 
+  languageName: fr
+  entries:
+  - key: launch_title
+    value: Projet vaudou (prototype 1)\nDEMO
+  - key: launch_info
+    value: "Nous vous recommandons l'usage d'une manette pour profiter au mieux de
+      la d\xE9mo"
+  - key: menu_title
+    value: Choisissez votre personnage
+  - key: menu_info
+    value: "Rejoindre : Appuyez sur A or ESPACE\\nPartir: Appuyez sur B or ECHAP\\nCommencer
+      : Appuyez sur Y ou Entr\xE9e"
+  - key: menu_charA
+    value: PERSONNAGE A
+  - key: menu_charB
+    value: PERSONNAGE B
+  - key: menu_player1
+    value: Joueur 1
+  - key: menu_player2
+    value: Joueur 2

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908c8a6177c8f35419cc6c6832b416d9, type: 3}
+  m_Name: EN
+  m_EditorClassIdentifier: 
+  languageName: en
+  entries:
+  - key: launch_title
+    value: Voodoo project (1st prototype)\nDEMO
+  - key: launch_info
+    value: For an optimal experience, theuse of gamepad is recommended
+  - key: menu_title
+    value: Choose your character
+  - key: menu_info
+    value: 'Join : Press A or SPACE\nLeave: Press B or Escape\nLaunch game: Press
+      Y or Enter'
+  - key: menu_charA
+    value: CHARACTER A
+  - key: menu_charB
+    value: CHARACTER B
+  - key: menu_player1
+    value: Player 1
+  - key: menu_player2
+    value: Player 2

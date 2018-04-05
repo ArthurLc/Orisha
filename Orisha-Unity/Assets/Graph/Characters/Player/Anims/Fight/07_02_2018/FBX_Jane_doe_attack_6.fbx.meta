@@ -1,0 +1,1145 @@
+fileFormatVersion: 2
+guid: f996c544c23623842bec676ab25c8c44
+timeCreated: 1518015010
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: accesoire6
+    100002: cheveux
+    100004: //RootNode
+    100006: Group_deformers_woman
+    100008: Group_RIG_woman
+    100010: joint_Out_arm_L_C1_woman
+    100012: joint_Out_arm_L_C2_twist_woman
+    100014: joint_Out_arm_L_C2_woman
+    100016: joint_Out_arm_L_root_woman
+    100018: joint_Out_arm_R_C1_woman
+    100020: joint_Out_arm_R_C2_twist_woman
+    100022: joint_Out_arm_R_C2_woman
+    100024: joint_Out_arm_R_root_woman
+    100026: joint_Out_braid_C1_woman_parentConstraint1
+    100028: joint_Out_braid_C2_woman_parentConstraint1
+    100030: joint_Out_braid_C3_woman_parentConstraint1
+    100032: joint_Out_braid_C4_woman_parentConstraint1
+    100034: joint_Out_braid_C5_woman_parentConstraint1
+    100036: joint_Out_clavicle_L_C1_woman
+    100038: joint_Out_clavicle_L_root_woman
+    100040: joint_Out_clavicle_R_C1_woman
+    100042: joint_Out_clavicle_R_root_woman
+    100044: joint_Out_eyes_L_woman
+    100046: joint_Out_eyes_R_woman
+    100048: joint_Out_index_L_C1_woman
+    100050: joint_Out_index_L_C2_woman
+    100052: joint_Out_index_L_C3_woman
+    100054: joint_Out_index_R_C1_woman
+    100056: joint_Out_index_R_C2_woman
+    100058: joint_Out_index_R_C3_woman
+    100060: joint_Out_leg_L_C1_woman
+    100062: joint_Out_leg_L_C2_woman
+    100064: joint_Out_leg_L_C3_woman
+    100066: joint_Out_leg_L_C4_woman
+    100068: joint_Out_leg_L_root_woman
+    100070: joint_Out_leg_R_C1_woman
+    100072: joint_Out_leg_R_C2_woman
+    100074: joint_Out_leg_R_C3_woman
+    100076: joint_Out_leg_R_C4_woman
+    100078: joint_Out_leg_R_root_woman
+    100080: joint_Out_little_L_C1_woman
+    100082: joint_Out_little_L_C2_woman
+    100084: joint_Out_little_L_C3_woman
+    100086: joint_Out_little_R_C1_woman
+    100088: joint_Out_little_R_C2_woman
+    100090: joint_Out_little_R_C3_woman
+    100092: joint_Out_major_L_C1_woman
+    100094: joint_Out_major_L_C2_woman
+    100096: joint_Out_major_L_C3_woman
+    100098: joint_Out_major_R_C1_woman
+    100100: joint_Out_major_R_C2_woman
+    100102: joint_Out_major_R_C3_woman
+    100104: joint_Out_neck_C1_woman
+    100106: joint_Out_neck_C2_woman
+    100108: joint_Out_neck_C3_woman
+    100110: joint_Out_neck_C4_woman
+    100112: joint_Out_ring_L_C1_woman
+    100114: joint_Out_ring_L_C2_woman
+    100116: joint_Out_ring_L_C3_woman
+    100118: joint_Out_ring_R_C1_woman
+    100120: joint_Out_ring_R_C2_woman
+    100122: joint_Out_ring_R_C3_woman
+    100124: joint_Out_spine_C1_woman
+    100126: joint_Out_spine_C2_woman
+    100128: joint_Out_spine_C3_woman
+    100130: joint_Out_spine_C4_woman
+    100132: joint_Out_spine_C5_woman
+    100134: joint_Out_thumb_L_C1_woman
+    100136: joint_Out_thumb_L_C2_woman
+    100138: joint_Out_thumb_L_C3_woman
+    100140: joint_Out_thumb_R_C1_woman
+    100142: joint_Out_thumb_R_C2_woman
+    100144: joint_Out_thumb_R_C3_woman
+    100146: pagne
+    100148: Polysurface_mask1
+    100150: Polysurface_tassette
+    100152: Polysurfave_jane_doe
+    400000: accesoire6
+    400002: cheveux
+    400004: //RootNode
+    400006: Group_deformers_woman
+    400008: Group_RIG_woman
+    400010: joint_Out_arm_L_C1_woman
+    400012: joint_Out_arm_L_C2_twist_woman
+    400014: joint_Out_arm_L_C2_woman
+    400016: joint_Out_arm_L_root_woman
+    400018: joint_Out_arm_R_C1_woman
+    400020: joint_Out_arm_R_C2_twist_woman
+    400022: joint_Out_arm_R_C2_woman
+    400024: joint_Out_arm_R_root_woman
+    400026: joint_Out_braid_C1_woman_parentConstraint1
+    400028: joint_Out_braid_C2_woman_parentConstraint1
+    400030: joint_Out_braid_C3_woman_parentConstraint1
+    400032: joint_Out_braid_C4_woman_parentConstraint1
+    400034: joint_Out_braid_C5_woman_parentConstraint1
+    400036: joint_Out_clavicle_L_C1_woman
+    400038: joint_Out_clavicle_L_root_woman
+    400040: joint_Out_clavicle_R_C1_woman
+    400042: joint_Out_clavicle_R_root_woman
+    400044: joint_Out_eyes_L_woman
+    400046: joint_Out_eyes_R_woman
+    400048: joint_Out_index_L_C1_woman
+    400050: joint_Out_index_L_C2_woman
+    400052: joint_Out_index_L_C3_woman
+    400054: joint_Out_index_R_C1_woman
+    400056: joint_Out_index_R_C2_woman
+    400058: joint_Out_index_R_C3_woman
+    400060: joint_Out_leg_L_C1_woman
+    400062: joint_Out_leg_L_C2_woman
+    400064: joint_Out_leg_L_C3_woman
+    400066: joint_Out_leg_L_C4_woman
+    400068: joint_Out_leg_L_root_woman
+    400070: joint_Out_leg_R_C1_woman
+    400072: joint_Out_leg_R_C2_woman
+    400074: joint_Out_leg_R_C3_woman
+    400076: joint_Out_leg_R_C4_woman
+    400078: joint_Out_leg_R_root_woman
+    400080: joint_Out_little_L_C1_woman
+    400082: joint_Out_little_L_C2_woman
+    400084: joint_Out_little_L_C3_woman
+    400086: joint_Out_little_R_C1_woman
+    400088: joint_Out_little_R_C2_woman
+    400090: joint_Out_little_R_C3_woman
+    400092: joint_Out_major_L_C1_woman
+    400094: joint_Out_major_L_C2_woman
+    400096: joint_Out_major_L_C3_woman
+    400098: joint_Out_major_R_C1_woman
+    400100: joint_Out_major_R_C2_woman
+    400102: joint_Out_major_R_C3_woman
+    400104: joint_Out_neck_C1_woman
+    400106: joint_Out_neck_C2_woman
+    400108: joint_Out_neck_C3_woman
+    400110: joint_Out_neck_C4_woman
+    400112: joint_Out_ring_L_C1_woman
+    400114: joint_Out_ring_L_C2_woman
+    400116: joint_Out_ring_L_C3_woman
+    400118: joint_Out_ring_R_C1_woman
+    400120: joint_Out_ring_R_C2_woman
+    400122: joint_Out_ring_R_C3_woman
+    400124: joint_Out_spine_C1_woman
+    400126: joint_Out_spine_C2_woman
+    400128: joint_Out_spine_C3_woman
+    400130: joint_Out_spine_C4_woman
+    400132: joint_Out_spine_C5_woman
+    400134: joint_Out_thumb_L_C1_woman
+    400136: joint_Out_thumb_L_C2_woman
+    400138: joint_Out_thumb_L_C3_woman
+    400140: joint_Out_thumb_R_C1_woman
+    400142: joint_Out_thumb_R_C2_woman
+    400144: joint_Out_thumb_R_C3_woman
+    400146: pagne
+    400148: Polysurface_mask1
+    400150: Polysurface_tassette
+    400152: Polysurfave_jane_doe
+    4300000: Polysurface_mask1
+    4300002: Polysurface_tassette
+    4300004: pagne
+    4300006: Polysurfave_jane_doe
+    4300008: accesoire6
+    4300010: cheveux
+    7400000: JD_Genou
+    9500000: //RootNode
+    13700000: accesoire6
+    13700002: cheveux
+    13700004: pagne
+    13700006: Polysurface_mask1
+    13700008: Polysurface_tassette
+    13700010: Polysurfave_jane_doe
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'joint_Out_leg_L_C3_woman'
+      : rotation error = 0.068954 deg\n\t'joint_Out_leg_R_C3_woman' : rotation error
+      = 47.984829 deg\n"
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'joint_Out_spine_C2_woman' has translation animation
+      that will be discarded.\n\t'joint_Out_spine_C3_woman' has translation animation
+      that will be discarded.\n\t'joint_Out_spine_C4_woman' has translation animation
+      that will be discarded.\n\t'joint_Out_spine_C5_woman' has translation animation
+      that will be discarded.\n\t'joint_Out_spine_C5_woman' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'joint_Out_neck_C2_woman'
+      has translation animation that will be discarded.\n\t'joint_Out_neck_C3_woman'
+      has translation animation that will be discarded.\n\t'joint_Out_arm_L_root_woman'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'joint_Out_arm_R_root_woman'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'joint_Out_leg_L_C3_woman'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'joint_Out_leg_R_C3_woman'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: JD_Genou
+      takeName: Take 001
+      firstFrame: 507
+      lastFrame: 519
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.19434357
+        functionName: EnableBox_RightFoot
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.41948724
+        functionName: DisableBox_RightFoot
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4302855
+        functionName: ChainAttack
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.1748085
+        functionName: DisableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4138832
+        functionName: EnableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: joint_Out_spine_C1_woman
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_leg_L_root_woman
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_leg_R_root_woman
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_leg_L_C1_woman
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_leg_R_C1_woman
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_leg_L_C2_woman
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_leg_R_C2_woman
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_spine_C2_woman
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_spine_C3_woman
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_neck_C1_woman
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_neck_C2_woman
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_clavicle_L_root_woman
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_clavicle_R_root_woman
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_clavicle_L_C1_woman
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_clavicle_R_C1_woman
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_arm_L_C1_woman
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_arm_R_C1_woman
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_arm_L_C2_woman
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_arm_R_C2_woman
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_leg_L_C4_woman
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_leg_R_C4_woman
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_neck_C3_woman
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_thumb_L_C1_woman
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_thumb_L_C2_woman
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_thumb_L_C3_woman
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_index_L_C1_woman
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_index_L_C2_woman
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_index_L_C3_woman
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_major_L_C1_woman
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_major_L_C2_woman
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_major_L_C3_woman
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_ring_L_C1_woman
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_ring_L_C2_woman
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_ring_L_C3_woman
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_little_L_C1_woman
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_little_L_C2_woman
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_little_L_C3_woman
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_thumb_R_C1_woman
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_thumb_R_C2_woman
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_thumb_R_C3_woman
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_index_R_C1_woman
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_index_R_C2_woman
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_index_R_C3_woman
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_major_R_C1_woman
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_major_R_C2_woman
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_major_R_C3_woman
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_ring_R_C1_woman
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_ring_R_C2_woman
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_ring_R_C3_woman
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_little_R_C1_woman
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_little_R_C2_woman
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_little_R_C3_woman
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint_Out_spine_C4_woman
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: FBX_Jane_doe_attack_6(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: accesoire6
+      parentName: FBX_Jane_doe_attack_6(Clone)
+      position: {x: 2.610197, y: -74.16769, z: 0.6407861}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: cheveux
+      parentName: FBX_Jane_doe_attack_6(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Group_RIG_woman
+      parentName: FBX_Jane_doe_attack_6(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Group_deformers_woman
+      parentName: Group_RIG_woman
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint_Out_spine_C1_woman
+      parentName: Group_deformers_woman
+      position: {x: 0.0000014901161, y: 104.60639, z: 2.450934}
+      rotation: {x: 0.5186706, y: -0.4806046, z: -0.5186706, w: 0.4806046}
+      scale: {x: 0.99999887, y: 0.99999887, z: 0.9999997}
+    - name: joint_Out_spine_C2_woman
+      parentName: joint_Out_spine_C1_woman
+      position: {x: -8.728778, y: -0.75249183, z: -2.5032194}
+      rotation: {x: -0, y: -0, z: 0.059749458, w: 0.9982134}
+      scale: {x: 0.99999917, y: 0.99999917, z: 1.0000001}
+    - name: joint_Out_spine_C3_woman
+      parentName: joint_Out_spine_C2_woman
+      position: {x: -9.111747, y: 7.1054274e-15, z: 0}
+      rotation: {x: 0.000000027968404, y: -0.00000003152975, z: 0.05343986, w: 0.9985711}
+      scale: {x: 1.0000017, y: 1.0000013, z: 1.0000012}
+    - name: joint_Out_spine_C4_woman
+      parentName: joint_Out_spine_C3_woman
+      position: {x: -9.111747, y: -2.1316282e-14, z: -1.7763568e-15}
+      rotation: {x: -0.000000024554053, y: 0.000000034255734, z: 0.05022309, w: 0.99873805}
+      scale: {x: 1.000001, y: 1.0000015, z: 0.9999999}
+    - name: joint_Out_spine_C5_woman
+      parentName: joint_Out_spine_C4_woman
+      position: {x: -9.103518, y: -0.0017992851, z: -0.0007919758}
+      rotation: {x: -0, y: -0, z: 8.41117e-16, w: 1}
+      scale: {x: 1.0000011, y: 1.0000005, z: 1.0000013}
+    - name: joint_Out_clavicle_L_root_woman
+      parentName: joint_Out_spine_C5_woman
+      position: {x: 0.15861857, y: 4.866345, z: 2.210447}
+      rotation: {x: 0.14898102, y: 0.63698876, z: 0.044116884, w: 0.75505215}
+      scale: {x: 1.0000004, y: 1.0000011, z: 1.0000011}
+    - name: joint_Out_clavicle_L_C1_woman
+      parentName: joint_Out_clavicle_L_root_woman
+      position: {x: -10.275779, y: 3.5527137e-15, z: -5.684342e-14}
+      rotation: {x: -0.11745797, y: -0.41432628, z: 0.03511215, w: 0.901834}
+      scale: {x: 1.0000004, y: 1.0000012, z: 1.0000014}
+    - name: joint_Out_arm_L_root_woman
+      parentName: joint_Out_clavicle_L_C1_woman
+      position: {x: 0.25485945, y: -1.1908264, z: 2.90426}
+      rotation: {x: 0.11767414, y: 0.45362625, z: -0.22240631, w: 0.8549336}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.000001}
+    - name: joint_Out_arm_L_C1_woman
+      parentName: joint_Out_arm_L_root_woman
+      position: {x: -21.130692, y: 3.330669e-16, z: -1.4210855e-14}
+      rotation: {x: 0.00031112126, y: 0.010376778, z: -0.010961459, w: 0.99988604}
+      scale: {x: 1.000001, y: 1.0000008, z: 0.99999976}
+    - name: joint_Out_arm_L_C2_twist_woman
+      parentName: joint_Out_arm_L_C1_woman
+      position: {x: -12.775806, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -2.6645344e-15, w: 1}
+      scale: {x: 1.0000002, y: 1.0000011, z: 1.0000007}
+    - name: joint_Out_arm_L_C2_woman
+      parentName: joint_Out_arm_L_C2_twist_woman
+      position: {x: -12.775806, y: 2.6645353e-15, z: 0}
+      rotation: {x: 0.6854292, y: 0.0019278426, z: -0.057317242, w: 0.7258773}
+      scale: {x: 0.9999996, y: 1.0000014, z: 1.0000006}
+    - name: joint_Out_thumb_L_C1_woman
+      parentName: joint_Out_arm_L_C2_woman
+      position: {x: -4.1361723, y: 1.2368301, z: -2.8462672}
+      rotation: {x: 0.57214695, y: -0.37449, z: 0.17002487, w: 0.70957506}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000006}
+    - name: joint_Out_thumb_L_C2_woman
+      parentName: joint_Out_thumb_L_C1_woman
+      position: {x: -2.2624533, y: 0, z: 2.842171e-14}
+      rotation: {x: 0.00000023841852, y: -0.0000019669528, z: -0.03524127, w: 0.9993789}
+      scale: {x: 0.9999999, y: 1.0000015, z: 1.0000008}
+    - name: joint_Out_thumb_L_C3_woman
+      parentName: joint_Out_thumb_L_C2_woman
+      position: {x: -2.487949, y: -2.1316282e-14, z: -2.842171e-14}
+      rotation: {x: -0, y: -0, z: -3.552712e-15, w: 1}
+      scale: {x: 1.000001, y: 0.99999905, z: 1}
+    - name: joint_Out_index_L_C1_woman
+      parentName: joint_Out_arm_L_C2_woman
+      position: {x: -10.488167, y: 1.2106837, z: -2.4864876}
+      rotation: {x: 0.04321282, y: 0.049348406, z: -0.083976306, w: 0.9943065}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999998}
+    - name: joint_Out_index_L_C2_woman
+      parentName: joint_Out_index_L_C1_woman
+      position: {x: -2.7994978, y: 7.1054274e-15, z: -3.5527137e-15}
+      rotation: {x: 0.0000002905726, y: -0.00000041350714, z: -0.03922763, w: 0.9992304}
+      scale: {x: 1.0000008, y: 1.0000018, z: 1.0000021}
+    - name: joint_Out_index_L_C3_woman
+      parentName: joint_Out_index_L_C2_woman
+      position: {x: -3.041747, y: -1.4210855e-14, z: 0}
+      rotation: {x: -0, y: -0, z: 2.2204444e-15, w: 1}
+      scale: {x: 1.0000004, y: 0.9999994, z: 0.99999994}
+    - name: joint_Out_major_L_C1_woman
+      parentName: joint_Out_arm_L_C2_woman
+      position: {x: -10.751274, y: 0.7686738, z: -0.30299926}
+      rotation: {x: -0.0031025403, y: 0.06983253, z: -0.039558288, w: 0.99676925}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000008}
+    - name: joint_Out_major_L_C2_woman
+      parentName: joint_Out_major_L_C1_woman
+      position: {x: -2.670648, y: 0.049038745, z: -0.053916316}
+      rotation: {x: -0.0027023337, y: -0.0011209243, z: -0.03767685, w: 0.99928564}
+      scale: {x: 1.000001, y: 1.0000006, z: 1.000001}
+    - name: joint_Out_major_L_C3_woman
+      parentName: joint_Out_major_L_C2_woman
+      position: {x: -3.116909, y: 0.03913773, z: -0.053916316}
+      rotation: {x: -0, y: -0, z: 1.5959447e-16, w: 1}
+      scale: {x: 0.9999991, y: 1.0000005, z: 0.99999976}
+    - name: joint_Out_ring_L_C1_woman
+      parentName: joint_Out_arm_L_C2_woman
+      position: {x: -10.271557, y: 0.808851, z: 1.6497457}
+      rotation: {x: 0.032959122, y: 0.064860165, z: -0.053092834, w: 0.99593574}
+      scale: {x: 1.0000008, y: 0.99999976, z: 1.0000005}
+    - name: joint_Out_ring_L_C2_woman
+      parentName: joint_Out_ring_L_C1_woman
+      position: {x: -2.4351532, y: -2.1316282e-14, z: 2.1316282e-14}
+      rotation: {x: -0.000000111758695, y: -0.00000085681665, z: -0.03714273, w: 0.99931}
+      scale: {x: 0.9999991, y: 1.0000011, z: 1.0000002}
+    - name: joint_Out_ring_L_C3_woman
+      parentName: joint_Out_ring_L_C2_woman
+      position: {x: -3.1042264, y: 5.684342e-14, z: -1.7763568e-14}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000012, y: 0.99999964, z: 1.0000007}
+    - name: joint_Out_little_L_C1_woman
+      parentName: joint_Out_arm_L_C2_woman
+      position: {x: -9.458928, y: 0.9909622, z: 3.4585495}
+      rotation: {x: 0.020660393, y: 0.06574152, z: -0.051036507, w: 0.9963165}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1.0000011}
+    - name: joint_Out_little_L_C2_woman
+      parentName: joint_Out_little_L_C1_woman
+      position: {x: -2.9058588, y: -3.5527137e-15, z: 1.0658141e-14}
+      rotation: {x: -0.0000003296881, y: -0.0000010132787, z: -0.036806613, w: 0.9993225}
+      scale: {x: 1.0000005, y: 1.0000033, z: 1.0000018}
+    - name: joint_Out_little_L_C3_woman
+      parentName: joint_Out_little_L_C2_woman
+      position: {x: -2.4778059, y: 5.684342e-14, z: -1.4210855e-14}
+      rotation: {x: -0, y: -0, z: 5.9952022e-15, w: 1}
+      scale: {x: 1.0000029, y: 0.9999984, z: 1.0000012}
+    - name: joint_Out_clavicle_R_root_woman
+      parentName: joint_Out_spine_C5_woman
+      position: {x: 0.15861857, y: 4.866345, z: -2.210447}
+      rotation: {x: 0.14898121, y: 0.63698876, z: -0.04411708, w: -0.75505203}
+      scale: {x: 1.0000035, y: 1.000001, z: 1.000002}
+    - name: joint_Out_clavicle_R_C1_woman
+      parentName: joint_Out_clavicle_R_root_woman
+      position: {x: -10.275779, y: 7.1054274e-15, z: 2.842171e-14}
+      rotation: {x: 0.11745772, y: 0.41432562, z: 0.03511185, w: 0.90183437}
+      scale: {x: 1.0000011, y: 1.0000006, z: 1.0000005}
+    - name: joint_Out_arm_R_root_woman
+      parentName: joint_Out_clavicle_R_C1_woman
+      position: {x: 0.25485945, y: -1.1908264, z: -2.90426}
+      rotation: {x: -0.117674164, y: -0.45362622, z: -0.22240631, w: 0.85493356}
+      scale: {x: 1.0000015, y: 0.9999995, z: 1.0000008}
+    - name: joint_Out_arm_R_C1_woman
+      parentName: joint_Out_arm_R_root_woman
+      position: {x: -21.130692, y: -3.330669e-16, z: -1.4210855e-14}
+      rotation: {x: -0.0003110394, y: -0.010376602, z: -0.010961693, w: 0.9998861}
+      scale: {x: 0.9999996, y: 1.0000019, z: 1.000001}
+    - name: joint_Out_arm_R_C2_twist_woman
+      parentName: joint_Out_arm_R_C1_woman
+      position: {x: -12.775806, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000013, y: 1.0000002, z: 1.0000012}
+    - name: joint_Out_arm_R_C2_woman
+      parentName: joint_Out_arm_R_C2_twist_woman
+      position: {x: -12.775806, y: -8.881784e-16, z: 5.684342e-14}
+      rotation: {x: -0.6854294, y: -0.0019276177, z: -0.057317138, w: 0.7258773}
+      scale: {x: 1.000001, y: 1.0000014, z: 1.0000006}
+    - name: joint_Out_thumb_R_C1_woman
+      parentName: joint_Out_arm_R_C2_woman
+      position: {x: -4.1361723, y: 1.2368301, z: 2.8462672}
+      rotation: {x: -0.57214695, y: 0.37449008, z: 0.17002504, w: 0.7095749}
+      scale: {x: 1.0000007, y: 1.0000012, z: 1.0000008}
+    - name: joint_Out_thumb_R_C2_woman
+      parentName: joint_Out_thumb_R_C1_woman
+      position: {x: -2.2624533, y: 7.1054274e-15, z: 0}
+      rotation: {x: -0.000000029802312, y: 0.00000020861619, z: -0.035243083, w: 0.9993788}
+      scale: {x: 1.0000008, y: 1.000003, z: 1.0000021}
+    - name: joint_Out_thumb_R_C3_woman
+      parentName: joint_Out_thumb_R_C2_woman
+      position: {x: -2.487949, y: -1.4210855e-14, z: -2.1316282e-14}
+      rotation: {x: -3.5527128e-15, y: -0, z: -1.0658137e-14, w: 1}
+      scale: {x: 1.0000008, y: 0.9999991, z: 1.0000001}
+    - name: joint_Out_index_R_C1_woman
+      parentName: joint_Out_arm_R_C2_woman
+      position: {x: -10.488167, y: 1.2106837, z: 2.4864876}
+      rotation: {x: -0.04321273, y: -0.04934836, z: -0.083976276, w: 0.9943065}
+      scale: {x: 1.000001, y: 0.9999984, z: 0.9999996}
+    - name: joint_Out_index_R_C2_woman
+      parentName: joint_Out_index_R_C1_woman
+      position: {x: -2.7994978, y: 1.5099033e-14, z: 0}
+      rotation: {x: -0.00000003725289, y: -0.00000010803338, z: -0.039230093, w: 0.9992302}
+      scale: {x: 1.0000019, y: 1.0000029, z: 1.0000012}
+    - name: joint_Out_index_R_C3_woman
+      parentName: joint_Out_index_R_C2_woman
+      position: {x: -3.041747, y: -7.1054274e-15, z: 0}
+      rotation: {x: -0, y: -0, z: -0.000000007450578, w: 1}
+      scale: {x: 0.9999996, y: 1.0000006, z: 1}
+    - name: joint_Out_major_R_C1_woman
+      parentName: joint_Out_arm_R_C2_woman
+      position: {x: -10.751274, y: 0.7686738, z: 0.30299926}
+      rotation: {x: 0.0031027491, y: -0.0698324, z: -0.039558444, w: 0.9967693}
+      scale: {x: 1.0000015, y: 0.9999984, z: 1}
+    - name: joint_Out_major_R_C2_woman
+      parentName: joint_Out_major_R_C1_woman
+      position: {x: -2.6513033, y: -3.5527137e-15, z: -1.4210855e-14}
+      rotation: {x: -0.00000011781225, y: 0.00000032037482, z: -0.03457374, w: 0.9994022}
+      scale: {x: 0.999999, y: 1.0000012, z: 1}
+    - name: joint_Out_major_R_C3_woman
+      parentName: joint_Out_major_R_C2_woman
+      position: {x: -3.0815923, y: -4.973799e-14, z: 0}
+      rotation: {x: 3.5527133e-15, y: 7.1054265e-15, z: 0.000000014901157, w: 1}
+      scale: {x: 1.0000017, y: 0.9999998, z: 1}
+    - name: joint_Out_ring_R_C1_woman
+      parentName: joint_Out_arm_R_C2_woman
+      position: {x: -10.271557, y: 0.808851, z: -1.6497457}
+      rotation: {x: -0.032959145, y: -0.064863734, z: -0.05309349, w: 0.9959355}
+      scale: {x: 1.0000017, y: 0.9999987, z: 0.99999994}
+    - name: joint_Out_ring_R_C2_woman
+      parentName: joint_Out_ring_R_C1_woman
+      position: {x: -2.4351532, y: 8.881784e-15, z: -1.4210855e-14}
+      rotation: {x: -0.00000005587933, y: -0.00000083446463, z: -0.037145987, w: 0.99930984}
+      scale: {x: 0.99999833, y: 1.0000012, z: 1.0000001}
+    - name: joint_Out_ring_R_C3_woman
+      parentName: joint_Out_ring_R_C2_woman
+      position: {x: -3.1042264, y: 3.5527137e-14, z: -1.4210855e-14}
+      rotation: {x: -0, y: 1.421085e-14, z: -1.9984004e-15, w: 1}
+      scale: {x: 1.0000017, y: 0.99999875, z: 1}
+    - name: joint_Out_little_R_C1_woman
+      parentName: joint_Out_arm_R_C2_woman
+      position: {x: -9.458928, y: 0.9909622, z: -3.4585495}
+      rotation: {x: -0.02066045, y: -0.06574331, z: -0.05103697, w: 0.9963164}
+      scale: {x: 1.000001, y: 0.9999988, z: 0.99999994}
+    - name: joint_Out_little_R_C2_woman
+      parentName: joint_Out_little_R_C1_woman
+      position: {x: -2.9058588, y: 3.0198066e-14, z: -2.842171e-14}
+      rotation: {x: 0.00000018440174, y: -0.0000010430805, z: -0.03680452, w: 0.9993225}
+      scale: {x: 0.9999996, y: 0.99999964, z: 1.0000004}
+    - name: joint_Out_little_R_C3_woman
+      parentName: joint_Out_little_R_C2_woman
+      position: {x: -2.4778059, y: 0, z: 2.842171e-14}
+      rotation: {x: -0, y: -0, z: 2.7755571e-15, w: 1}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000001}
+    - name: joint_Out_neck_C1_woman
+      parentName: joint_Out_spine_C5_woman
+      position: {x: -8.005728, y: 1.036256, z: 1.4210855e-14}
+      rotation: {x: 0.000000034255738, y: 0.000000024554048, z: -0.1346165, w: 0.9908978}
+      scale: {x: 1.0000027, y: 1.0000024, z: 1.0000029}
+    - name: joint_Out_neck_C2_woman
+      parentName: joint_Out_neck_C1_woman
+      position: {x: -4.692872, y: -0.025491552, z: 0.008221346}
+      rotation: {x: -0.00000003009549, y: -0.000000029506246, z: -0.018581256, w: 0.9998274}
+      scale: {x: 1.0000013, y: 1.0000013, z: 1.000002}
+    - name: joint_Out_neck_C3_woman
+      parentName: joint_Out_neck_C2_woman
+      position: {x: -4.6929483, y: -7.1054274e-15, z: 4.8849813e-15}
+      rotation: {x: 0.000000030095492, y: 0.000000029506252, z: -0.010173446, w: 0.9999483}
+      scale: {x: 1.000002, y: 1.0000018, z: 1.0000011}
+    - name: joint_Out_neck_C4_woman
+      parentName: joint_Out_neck_C3_woman
+      position: {x: -4.67012, y: 0.002143509, z: 0.000059019472}
+      rotation: {x: -0, y: -0, z: -8.8800504e-16, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000007}
+    - name: joint_Out_eyes_L_woman
+      parentName: joint_Out_neck_C4_woman
+      position: {x: 1.6934285, y: 6.6473455, z: 3.1}
+      rotation: {x: -0.5188089, y: 0.4804553, z: 0.51880884, w: 0.4804553}
+      scale: {x: 0.99999887, y: 0.99999857, z: 0.9999985}
+    - name: joint_Out_eyes_R_woman
+      parentName: joint_Out_neck_C4_woman
+      position: {x: 1.7412132, y: 6.6059203, z: -3.0738034}
+      rotation: {x: -0.52562845, y: 0.48677048, z: 0.5118987, w: 0.47405592}
+      scale: {x: 0.9999991, y: 0.9999991, z: 0.99999815}
+    - name: joint_Out_braid_C1_woman_parentConstraint1
+      parentName: joint_Out_neck_C4_woman
+      position: {x: -8.028258, y: -12.787166, z: 2.8126242}
+      rotation: {x: -0.00000007191696, y: 0.000000031647772, z: 0.737722, w: 0.6751048}
+      scale: {x: 1.0000025, y: 0.9999999, z: 1.0000014}
+    - name: joint_Out_braid_C2_woman_parentConstraint1
+      parentName: joint_Out_braid_C1_woman_parentConstraint1
+      position: {x: -14.209942, y: -2.220446e-15, z: 3.155241e-15}
+      rotation: {x: 1.5731055e-10, y: -6.6329143e-12, z: -0.00373569, w: 0.9999931}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000007}
+    - name: joint_Out_braid_C3_woman_parentConstraint1
+      parentName: joint_Out_braid_C2_woman_parentConstraint1
+      position: {x: -12.80502, y: -3.3403835e-14, z: 2.8508404e-15}
+      rotation: {x: 2.1407222e-10, y: -8.084215e-12, z: -0.0050828387, w: 0.99998707}
+      scale: {x: 0.9999999, y: 1.0000002, z: 0.9999996}
+    - name: joint_Out_braid_C4_woman_parentConstraint1
+      parentName: joint_Out_braid_C3_woman_parentConstraint1
+      position: {x: -9.716159, y: -7.410739e-14, z: 2.170759e-15}
+      rotation: {x: -0.0000000020967372, y: -0.000000042094655, z: 0.014583182, w: 0.99989367}
+      scale: {x: 1.0000002, y: 1, z: 1.0000005}
+    - name: joint_Out_braid_C5_woman_parentConstraint1
+      parentName: joint_Out_braid_C4_woman_parentConstraint1
+      position: {x: -9.606299, y: 2.314815e-14, z: 2.1240467e-15}
+      rotation: {x: 0.008268464, y: 0.7070584, z: -0.008268513, w: 0.7070585}
+      scale: {x: 1.0000002, y: 0.99999976, z: 0.99999994}
+    - name: joint_Out_leg_L_root_woman
+      parentName: joint_Out_spine_C1_woman
+      position: {x: 1.6670455, y: 1.1296935, z: 8.212373}
+      rotation: {x: -0.05967994, y: 0.9980254, z: 0.0018081367, w: 0.019503653}
+      scale: {x: 1.0000025, y: 1.0000025, z: 1.0000029}
+    - name: joint_Out_leg_L_C1_woman
+      parentName: joint_Out_leg_L_root_woman
+      position: {x: -48.908154, y: -4.440892e-15, z: -7.1054274e-15}
+      rotation: {x: 0.000000015250407, y: -0.000000018626451, z: 0.06354667, w: 0.9979789}
+      scale: {x: 1.0000013, y: 1.0000015, z: 1.0000014}
+    - name: joint_Out_leg_L_C2_woman
+      parentName: joint_Out_leg_L_C1_woman
+      position: {x: -46.167404, y: -1.2878587e-14, z: -3.5527137e-15}
+      rotation: {x: -0.000000006950696, y: -0.00000006675256, z: -0.6056982, w: 0.79569453}
+      scale: {x: 1.0000019, y: 1, z: 1.0000021}
+    - name: joint_Out_leg_L_C3_woman
+      parentName: joint_Out_leg_L_C2_woman
+      position: {x: -12.216679, y: -1.7763568e-15, z: -1.7763568e-15}
+      rotation: {x: -0.000000027791726, y: 0.00000010335886, z: -0.11482467, w: 0.99338585}
+      scale: {x: 1.0000024, y: 1.0000002, z: 1.0000024}
+    - name: joint_Out_leg_L_C4_woman
+      parentName: joint_Out_leg_L_C3_woman
+      position: {x: -6.866356, y: -1.3322676e-15, z: 0}
+      rotation: {x: -0, y: -0, z: 2.8725208e-15, w: 1}
+      scale: {x: 1.0000011, y: 0.9999995, z: 1.0000013}
+    - name: joint_Out_leg_R_root_woman
+      parentName: joint_Out_spine_C1_woman
+      position: {x: 1.6670455, y: 1.1296935, z: -8.212373}
+      rotation: {x: -0.05967994, y: 0.9980254, z: -0.0018081069, w: -0.019503683}
+      scale: {x: 1.0000029, y: 1.0000029, z: 1.0000031}
+    - name: joint_Out_leg_R_C1_woman
+      parentName: joint_Out_leg_R_root_woman
+      position: {x: -48.908154, y: -1.0658141e-14, z: -1.7763568e-14}
+      rotation: {x: 0.000000013737008, y: 0.0000000037252903, z: 0.06354667, w: 0.9979789}
+      scale: {x: 1.0000027, y: 1.0000033, z: 1.000003}
+    - name: joint_Out_leg_R_C2_woman
+      parentName: joint_Out_leg_R_C1_woman
+      position: {x: -46.167404, y: -2.8865799e-15, z: -1.7763568e-14}
+      rotation: {x: -0.000000013319382, y: -0.0000000067265766, z: -0.6056982, w: 0.7956945}
+      scale: {x: 1.0000014, y: 0.9999998, z: 1.000002}
+    - name: joint_Out_leg_R_C3_woman
+      parentName: joint_Out_leg_R_C2_woman
+      position: {x: -12.216679, y: -8.881784e-16, z: 1.7763568e-15}
+      rotation: {x: 0.0000000111162946, y: 0.000000005766018, z: -0.11482468, w: 0.99338585}
+      scale: {x: 0.9999995, y: 1.000001, z: 1.0000001}
+    - name: joint_Out_leg_R_C4_woman
+      parentName: joint_Out_leg_R_C3_woman
+      position: {x: -6.866356, y: -2.220446e-15, z: 1.7763568e-15}
+      rotation: {x: -0, y: -0, z: -6.4096743e-17, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1.0000002}
+    - name: pagne
+      parentName: FBX_Jane_doe_attack_6(Clone)
+      position: {x: 1.7410073e-15, y: -77.21565, z: -8.560376}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Polysurface_mask1
+      parentName: FBX_Jane_doe_attack_6(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Polysurface_tassette
+      parentName: FBX_Jane_doe_attack_6(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Polysurfave_jane_doe
+      parentName: FBX_Jane_doe_attack_6(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
