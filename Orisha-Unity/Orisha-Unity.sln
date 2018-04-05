@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLOD", "AutoLOD.csproj", "{7F294AA7-975B-CBCF-1A40-35A9A9839EE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLOD-Editor", "AutoLOD-Editor.csproj", "{AB562ECB-9E35-710D-DDA8-8964CFAFC5EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F294AA7-975B-CBCF-1A40-35A9A9839EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F294AA7-975B-CBCF-1A40-35A9A9839EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F294AA7-975B-CBCF-1A40-35A9A9839EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F294AA7-975B-CBCF-1A40-35A9A9839EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB562ECB-9E35-710D-DDA8-8964CFAFC5EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB562ECB-9E35-710D-DDA8-8964CFAFC5EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB562ECB-9E35-710D-DDA8-8964CFAFC5EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB562ECB-9E35-710D-DDA8-8964CFAFC5EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
