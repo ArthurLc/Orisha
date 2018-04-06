@@ -358,8 +358,8 @@ public class TimeManager : MonoBehaviour
             float animationSpeedAtBegin = currentAnimator.speed;
             Slow_OneCharacter_Unactive(currentAnimator.gameObject);
 
+			slowMotionSpeedAtBegin.Add(currentAnimator, animationSpeedAtBegin);
             Coroutine currentCoroutine = StartCoroutine(Slow_OneCharacterTimer(currentAnimator, _timer, _value));
-            slowMotionSpeedAtBegin.Add(currentAnimator, animationSpeedAtBegin);
             slowMotionList.Add(currentAnimator, currentCoroutine);
         }
 
@@ -375,6 +375,7 @@ public class TimeManager : MonoBehaviour
             yield return 0;
         }
 
+		//if(slowMotionSpeedAtBegin.ContainsKey(_characterAnimator))
         _characterAnimator.speed = slowMotionSpeedAtBegin[_characterAnimator];
         slowMotionSpeedAtBegin.Remove(_characterAnimator);
 
@@ -501,6 +502,7 @@ public class TimeManager : MonoBehaviour
         {
             if (slowMotionList.ContainsKey(currentAnimator))
             {
+				StopCoroutine (slowMotionList[currentAnimator]);
                 slowMotionList.Remove(currentAnimator);
             }
             if (slowMotionSpeedAtBegin.ContainsKey(currentAnimator))

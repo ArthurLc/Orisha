@@ -177,6 +177,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 for (int i = 0; i < results.Length; i++)
                 {
                     TimeManager.Instance.Slow_OneCharacter_WithCurve(results[i].gameObject, duration, _fightDatas.slowMoCurve);
+					Debug.Log (results [i].name);
                 }
             }
         }
@@ -320,6 +321,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 for (int i = 0; i < results.Length; i++)
                 {
                     TimeManager.Instance.Slow_OneCharacter_WithTimer(results[i].gameObject, duration, _fightDatas.slowMoValue);
+					Debug.Log (results [i].name);
                 }
             }
         }
