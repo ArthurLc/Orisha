@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 135476041896121994}
   - component: {fileID: 54879373074677434}
   - component: {fileID: 114197982066908848}
-  - component: {fileID: 114176126073620900}
+  - component: {fileID: 114505834496354960}
   m_Layer: 18
   m_Name: Enemy_Frontal (8)
   m_TagString: Enemy
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 135645065588216244}
   - component: {fileID: 54779960740163762}
   - component: {fileID: 114728023053184326}
-  - component: {fileID: 114710815892680700}
+  - component: {fileID: 114232282428762024}
   m_Layer: 18
   m_Name: Enemy_Frontal (9)
   m_TagString: Enemy
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 135325933497501504}
   - component: {fileID: 54123479794350474}
   - component: {fileID: 114504219143891322}
-  - component: {fileID: 114123462212592208}
+  - component: {fileID: 114268585527480260}
   m_Layer: 18
   m_Name: Enemy_Frontal (4)
   m_TagString: Enemy
@@ -1046,7 +1046,7 @@ GameObject:
   - component: {fileID: 135005426711530954}
   - component: {fileID: 54097629972848446}
   - component: {fileID: 114706725351522862}
-  - component: {fileID: 114514194966418852}
+  - component: {fileID: 114699893281625128}
   m_Layer: 18
   m_Name: Enemy_Frontal (2)
   m_TagString: Enemy
@@ -1754,7 +1754,7 @@ GameObject:
   - component: {fileID: 135995940629730200}
   - component: {fileID: 54840304350317648}
   - component: {fileID: 114671662597970414}
-  - component: {fileID: 114195183550797088}
+  - component: {fileID: 114617253958216428}
   m_Layer: 18
   m_Name: Enemy_Frontal (1)
   m_TagString: Enemy
@@ -2862,7 +2862,7 @@ GameObject:
   - component: {fileID: 135712310975654024}
   - component: {fileID: 54720212701635266}
   - component: {fileID: 114118618648636662}
-  - component: {fileID: 114217879857401258}
+  - component: {fileID: 114981996249385120}
   m_Layer: 18
   m_Name: Enemy_Frontal (6)
   m_TagString: Enemy
@@ -3662,7 +3662,7 @@ GameObject:
   - component: {fileID: 135445374425973684}
   - component: {fileID: 54388732915292958}
   - component: {fileID: 114825756028679578}
-  - component: {fileID: 114180179075923086}
+  - component: {fileID: 114721151886143048}
   m_Layer: 18
   m_Name: Enemy_Frontal (5)
   m_TagString: Enemy
@@ -6843,7 +6843,7 @@ GameObject:
   - component: {fileID: 135465177110201626}
   - component: {fileID: 54544577792904248}
   - component: {fileID: 114314851662137086}
-  - component: {fileID: 114295541263512294}
+  - component: {fileID: 114465821779751044}
   m_Layer: 18
   m_Name: Enemy_Frontal (7)
   m_TagString: Enemy
@@ -7372,7 +7372,7 @@ GameObject:
   - component: {fileID: 135363037938830818}
   - component: {fileID: 54278779570233394}
   - component: {fileID: 114792386741702724}
-  - component: {fileID: 114892081302554822}
+  - component: {fileID: 114155582624270042}
   m_Layer: 18
   m_Name: Enemy_Frontal (3)
   m_TagString: Enemy
@@ -8244,8 +8244,6 @@ GameObject:
   - component: {fileID: 4083214604470394}
   - component: {fileID: 114916457038034406}
   - component: {fileID: 65906598310782156}
-  - component: {fileID: 23918802785322652}
-  - component: {fileID: 33632047231182256}
   - component: {fileID: 320040873370820586}
   m_Layer: 0
   m_Name: Scenario_Begin
@@ -10380,7 +10378,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877473707490076}
-  m_LocalRotation: {x: 0.08076509, y: 0.6774307, z: -0.07523151, w: 0.7272585}
+  m_LocalRotation: {x: 0.07608891, y: 0.6857805, z: -0.072454035, w: 0.72018474}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10993,8 +10991,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1034651953005160}
-  m_LocalRotation: {x: 0.084358454, y: 0.67922324, z: -0.07905727, w: 0.7247685}
-  m_LocalPosition: {x: -84.08999, y: -0.32000732, z: -14.26001}
+  m_LocalRotation: {x: 0.084358566, y: 0.6792235, z: -0.07905739, w: 0.72476834}
+  m_LocalPosition: {x: -84.09003, y: -0.32001495, z: -14.260016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4546195679694844}
@@ -14182,15 +14180,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044539847885922}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 147.1, y: 195.7, z: -676.7}
+  m_LocalRotation: {x: 0, y: 0.5745054, z: 0, w: 0.8185008}
+  m_LocalPosition: {x: -16.5, y: 93.4, z: 906.3968}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 4219026213353210}
   - {fileID: 4083214604470394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 70.13, z: 0}
 --- !u!4 &4768784025037120
 Transform:
   m_ObjectHideFlags: 1
@@ -15887,6 +15885,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -15902,6 +15901,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -15919,6 +15919,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -15934,6 +15935,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -15951,6 +15953,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -15966,6 +15969,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -15983,6 +15987,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -15998,6 +16003,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16015,6 +16021,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16030,6 +16037,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16047,6 +16055,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16062,6 +16071,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16079,6 +16089,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16094,6 +16105,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16111,6 +16123,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16126,6 +16139,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16143,6 +16157,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16158,6 +16173,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16175,6 +16191,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16190,6 +16207,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16207,6 +16225,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16222,6 +16241,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16239,6 +16259,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16254,6 +16275,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16271,6 +16293,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16286,6 +16309,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16303,6 +16327,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16318,6 +16343,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16335,6 +16361,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16350,6 +16377,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16367,6 +16395,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16382,6 +16411,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16399,6 +16429,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16414,6 +16445,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16431,6 +16463,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16446,6 +16479,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16463,6 +16497,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16478,6 +16513,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16495,6 +16531,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16510,6 +16547,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16527,6 +16565,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16542,6 +16581,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16559,6 +16599,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16574,6 +16615,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16591,6 +16633,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16606,6 +16649,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16623,6 +16667,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16638,6 +16683,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16655,6 +16701,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16670,6 +16717,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16687,6 +16735,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16702,6 +16751,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16719,6 +16769,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16734,6 +16785,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16751,6 +16803,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16766,6 +16819,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16783,6 +16837,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16798,6 +16853,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16815,6 +16871,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16830,6 +16887,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16847,6 +16905,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16862,38 +16921,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &23918802785322652
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1978717418610084}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 3c40c8fdc50a841579d7cb15882ac9d9, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16911,6 +16939,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16926,6 +16955,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16943,6 +16973,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16958,6 +16989,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -16975,6 +17007,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16990,6 +17023,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -17007,6 +17041,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -17022,6 +17057,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -17039,6 +17075,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -17054,6 +17091,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -17258,13 +17296,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1472624035002244}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33632047231182256
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1978717418610084}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33677757440574736
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -19412,7 +19443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 0}
+  box_RightArm: {fileID: 114693445606519696}
 --- !u!114 &114108079733407570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19440,10 +19471,10 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 50
+  Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 1000
   range: 2
   minDistanceToTarget: 1
@@ -19476,21 +19507,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114314851662137086}
   partOfBody: 4
---- !u!114 &114123462212592208
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1063857618768262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relatedScenarioName:
-  - Debug8
-  requireTimeline: 0
-  spawnMidScenario: 1
 --- !u!114 &114144233041784562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19506,6 +19522,21 @@ MonoBehaviour:
   playerDatas: {fileID: 0}
   damageValue: 10
   debug: 1
+--- !u!114 &114155582624270042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889094991347166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedScenarioName:
+  - Surrounded
+  requireTimeline: 0
+  spawnMidScenario: 1
 --- !u!114 &114158053061007126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19519,36 +19550,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114706725351522862}
   partOfBody: 3
---- !u!114 &114176126073620900
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1047962430642182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relatedScenarioName:
-  - Debug8
-  requireTimeline: 0
-  spawnMidScenario: 1
---- !u!114 &114180179075923086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438587164014080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relatedScenarioName:
-  - Debug8
-  requireTimeline: 0
-  spawnMidScenario: 1
 --- !u!114 &114182130272148046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19601,21 +19602,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114197982066908848}
   partOfBody: 4
---- !u!114 &114195183550797088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1193017443032022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relatedScenarioName:
-  - Debug8
-  requireTimeline: 0
-  spawnMidScenario: 1
 --- !u!114 &114197982066908848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19630,10 +19616,10 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 50
+  Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 1000
   range: 2
   minDistanceToTarget: 1
@@ -19730,21 +19716,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114792386741702724}
   partOfBody: 0
---- !u!114 &114217879857401258
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1346512534389494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relatedScenarioName:
-  - Debug8
-  requireTimeline: 0
-  spawnMidScenario: 1
 --- !u!114 &114221792337343622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19786,6 +19757,21 @@ MonoBehaviour:
   playerDatas: {fileID: 0}
   damageValue: 10
   debug: 1
+--- !u!114 &114232282428762024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058856451168532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedScenarioName:
+  - Surrounded
+  requireTimeline: 0
+  spawnMidScenario: 1
 --- !u!114 &114245541369229868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19838,6 +19824,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114706725351522862}
   partOfBody: 3
+--- !u!114 &114268585527480260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063857618768262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedScenarioName:
+  - Surrounded
+  requireTimeline: 0
+  spawnMidScenario: 1
 --- !u!114 &114270946819269566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19864,21 +19865,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114197982066908848}
   partOfBody: 3
---- !u!114 &114295541263512294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1828288459834972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relatedScenarioName:
-  - Debug8
-  requireTimeline: 0
-  spawnMidScenario: 1
 --- !u!114 &114299292300279926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19955,10 +19941,10 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 50
+  Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 1000
   range: 2
   minDistanceToTarget: 1
@@ -20055,7 +20041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 0}
+  box_RightArm: {fileID: 114749258929574988}
 --- !u!114 &114351319492417072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20173,7 +20159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 0}
+  box_RightArm: {fileID: 114009297557372870}
 --- !u!114 &114397796851803476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20348,7 +20334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 0}
+  box_RightArm: {fileID: 114371581287891738}
 --- !u!114 &114444512956639620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20399,7 +20385,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 0}
+  box_RightArm: {fileID: 114410810377805082}
+--- !u!114 &114465821779751044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828288459834972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedScenarioName:
+  - Surrounded
+  requireTimeline: 0
+  spawnMidScenario: 1
 --- !u!114 &114467299343812128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20425,7 +20426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 0}
+  box_RightArm: {fileID: 114229852477753252}
 --- !u!114 &114471854870272854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20507,16 +20508,31 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 50
+  Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 1000
   range: 2
   minDistanceToTarget: 1
   dieWhenTouchingTarget: 0
   debugLog: 0
   state: 0
+--- !u!114 &114505834496354960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047962430642182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedScenarioName:
+  - Surrounded
+  requireTimeline: 0
+  spawnMidScenario: 1
 --- !u!114 &114508329986917780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20555,21 +20571,6 @@ MonoBehaviour:
     FarClipPlane: 5000
     Dutch: 0
   m_ComponentOwner: {fileID: 4374889517913502}
---- !u!114 &114514194966418852
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1123036357769136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relatedScenarioName:
-  - Debug8
-  requireTimeline: 0
-  spawnMidScenario: 1
 --- !u!114 &114519347858593254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20636,21 +20637,21 @@ MonoBehaviour:
     pathColor: {r: 0, g: 0.97794116, b: 0, a: 1}
     inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     width: 4
-  m_Looped: 1
+  m_Looped: 0
   m_Waypoints:
-  - position: {x: 5.777881, y: 0, z: -26.175535}
+  - position: {x: 4.4270225, y: 0, z: -26.994713}
     roll: 0
-  - position: {x: -4.0833306, y: 1.8951569, z: -11.030603}
+  - position: {x: -4.0833306, y: 0, z: -11.030603}
     roll: 0
-  - position: {x: -1.2895976, y: 0, z: 6.0509872}
+  - position: {x: -2.8031363, y: 0, z: 8.546847}
     roll: 0
-  - position: {x: 11.566562, y: 0, z: 21.623228}
+  - position: {x: 10.627623, y: 0, z: 23.171646}
     roll: 0
   - position: {x: 30.957602, y: 0, z: 23.586422}
     roll: 0
   - position: {x: 43.807053, y: 0, z: 2.793359}
     roll: 0
-  - position: {x: 31.79491, y: 0, z: -24.31946}
+  - position: {x: 41.598938, y: 0, z: -23.494167}
     roll: 0
 --- !u!114 &114551009722521946
 MonoBehaviour:
@@ -20887,7 +20888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 0}
+  box_RightArm: {fileID: 114471854870272854}
 --- !u!114 &114615639838265288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20917,6 +20918,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMat: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
+--- !u!114 &114617253958216428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1193017443032022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedScenarioName:
+  - Surrounded
+  requireTimeline: 0
+  spawnMidScenario: 1
 --- !u!114 &114618671188743144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21108,10 +21124,10 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 50
+  Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 1000
   range: 2
   minDistanceToTarget: 1
@@ -21159,6 +21175,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114825756028679578}
   partOfBody: 5
+--- !u!114 &114699893281625128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1123036357769136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedScenarioName:
+  - Surrounded
+  requireTimeline: 0
+  spawnMidScenario: 1
 --- !u!114 &114701347741521962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21200,29 +21231,29 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 50
+  Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 1000
   range: 2
   minDistanceToTarget: 1
   dieWhenTouchingTarget: 0
   debugLog: 0
   state: 0
---- !u!114 &114710815892680700
+--- !u!114 &114721151886143048
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058856451168532}
+  m_GameObject: {fileID: 1438587164014080}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   relatedScenarioName:
-  - Debug8
+  - Surrounded
   requireTimeline: 0
   spawnMidScenario: 1
 --- !u!114 &114723432064261702
@@ -21265,10 +21296,10 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 50
+  Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 1000
   range: 2
   minDistanceToTarget: 1
@@ -21364,10 +21395,10 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 50
+  Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 1000
   range: 2
   minDistanceToTarget: 1
@@ -21386,7 +21417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 0}
+  box_RightArm: {fileID: 114144233041784562}
 --- !u!114 &114797056087958322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21451,7 +21482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 0}
+  box_RightArm: {fileID: 114615123096220682}
 --- !u!114 &114820607903148910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21479,10 +21510,10 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 50
+  Basehealth: 250
   speed: 2
   attackDamages: 10
-  health: 0
+  health: 250
   abandonDistance: 1000
   range: 2
   minDistanceToTarget: 1
@@ -21558,21 +21589,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114728023053184326}
   partOfBody: 0
---- !u!114 &114892081302554822
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1889094991347166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  relatedScenarioName:
-  - Debug8
-  requireTimeline: 0
-  spawnMidScenario: 1
 --- !u!114 &114907248167435714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21614,11 +21630,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2fd71c30394374690bba6773c6a64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenarName: Debug4
+  scenarName: Surrounded
+  playerBeginDest: {fileID: 4852448106407994}
   isPlaying: 0
   playOneTimeOnly: 1
   endWithTheTimeline: 1
-  playerBeginDest: {fileID: 4852448106407994}
   redirectPlayerOnPlay: 1
 --- !u!114 &114933756114590464
 MonoBehaviour:
@@ -21747,6 +21763,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMat: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
+--- !u!114 &114981996249385120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346512534389494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ecef982ebdb5479fe355c3f46797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedScenarioName:
+  - Surrounded
+  requireTimeline: 0
+  spawnMidScenario: 1
 --- !u!114 &114983549291068392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -22020,6 +22051,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -22039,6 +22071,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -22108,6 +22141,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -22127,6 +22161,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -22196,6 +22231,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -22215,6 +22251,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -22284,6 +22321,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -22303,6 +22341,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -22372,6 +22411,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -22391,6 +22431,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -22460,6 +22501,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -22479,6 +22521,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -22548,6 +22591,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -22567,6 +22611,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -22636,6 +22681,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -22655,6 +22701,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -22724,6 +22771,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -22743,6 +22791,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

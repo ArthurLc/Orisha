@@ -16,7 +16,7 @@ public class Custom_Character_Scenario : Scenar_Object
         //Possibilité de faire des actions différentes selon le scenario via son nom
         switch (scenarName)
         {
-            case("Debug4"):
+            case("Surrounded"):
                 defaultBeginBehaviour();
                 Potential_Enemy.IsOnFight = true;
                 break;
@@ -107,5 +107,7 @@ public class Custom_Character_Scenario : Scenar_Object
             entry.Value.OnScenario_End += On_Scenar_End;
             Debug.Log("Player Binded to scenario : " + entry.Key);
         }
+
+		//Debug.Log ("PUTAIN DE TA RACE");
     }
 }

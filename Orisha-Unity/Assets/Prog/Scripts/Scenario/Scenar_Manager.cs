@@ -28,7 +28,7 @@ public class Scenar_Manager : MonoBehaviour
         }
 
         OnScenario_Initialize();
-        initialized = true;        
+        initialized = true;
     }
 	
 	// Update is called once per frame
