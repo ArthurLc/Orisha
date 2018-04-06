@@ -56,6 +56,8 @@ namespace vd_Player
         Vector3 rotationDir = Vector3.zero;
         float currentSpeed = 0.0f;
 
+        public bool isPlayingCinematic;
+
 
         // Grounded
         [SerializeField] private bool isGrounded;            //If the player is on the ground
@@ -68,6 +70,7 @@ namespace vd_Player
             Debug.Assert(ci != null, "PlayerController n'a pas accès au script CharacterInitialization");
 
             isGrounded = false;
+            isPlayingCinematic = false;
             canRotate = true;
         }
 
@@ -78,7 +81,8 @@ namespace vd_Player
 
             anim.SetFloat("InputHorizontal", inputHorizontal);
             anim.SetFloat("InputVertical", inputVertical);
-            anim.SetFloat("Speed", currentSpeed);
+            if (!isPlayingCinematic)
+                anim.SetFloat("Speed", currentSpeed);
             anim.SetBool("IsGrounded", isGrounded);
 
             if (Input.GetButtonDown(InputManager.LockRun))

@@ -27,70 +27,97 @@ public class SandTransporter : MonoBehaviour
 	}
 
 	private void Update(){
+        if (!isAtStart && !isMoving)
+        {
+            if (Vector3.Distance(Ci.PlayerTr.position, transform.position) <= 0.25f)
+            {
+                parentListPoint.parent = null;
+                Ci.transform.parent = transform;
+                isMoving = true;
+                Ci.PlayerController.isPlayingCinematic = false;
+                playerRB.isKinematic = true;
+                Ci.Anim.SetFloat("Speed", 0.0f);
+                Ci.PlayerTr.position = transform.position;
+                Ci.PlayerTr.localRotation = Quaternion.Euler(0, Ci.PlayerTr.localRotation.eulerAngles.y, 0);
+                isAtStart = true;
+            }
+            else
+            {
+                playerRB.isKinematic = (Ci.PlayerTr.position.y <= transform.position.y);
+                Ci.PlayerController.isPlayingCinematic = true;
+                Ci.PlayerTr.LookAt(transform);
+                Ci.Anim.SetFloat("Speed", 0.5f);
+            }
+        }
+
 		MoveTransporter (GlobalDuration);
 	}
 
-	private void OnTriggerStay(Collider other)
+	private void OnTriggerEnter(Collider other)
 	{
 		if (Ci == null)
 			Ci = other.GetComponentInParent<vd_Player.CharacterInitialization>();
-		if (playerRB == null)
-			playerRB = other.GetComponentInChildren<Rigidbody>();
-
+        if (playerRB == null)
+            playerRB = Ci.Rb;
 
 		if (isAtStart)
 		{
-			parentListPoint.parent = null;
-			Ci.transform.parent = transform;
-			Ci.FreezeInputs();
-			playerRB.isKinematic = true;
-			isMoving = true;
 			isAtStart = false;
-		}
-	}
-
-	private void OnCollisionExit(Collision collisionInfo)
-	{
-		isAtStart = true;
+            Ci.FreezeInputs();
+            playerRB.isKinematic = true;
+            Ci.PlayerTr.LookAt(transform);
+            Ci.PlayerController.isPlayingCinematic = true;
+            Ci.Anim.SetFloat("Speed", 0.5f);
+        }
 	}
 
 	private void MoveTransporter(float duration)
 	{
-		
-		if (isMoving) {
-			travelDuration = duration / (float)listTransform.Count;
+        if (isMoving)
+        {
+            travelDuration = duration / (float)listTransform.Count;
 
-			interpo += Time.deltaTime;
+            interpo += Time.deltaTime;
 
-			if (interpo < travelDuration) {
-				transform.position = Vector3.Lerp (listTransform [nbrPoint - 1].position, listTransform [nbrPoint].position, interpo / travelDuration);
-				transform.rotation = Quaternion.Lerp (listTransform [nbrPoint - 1].rotation, listTransform [nbrPoint].rotation, interpo / travelDuration);
+            Ci.PlayerTr.position = transform.position;
+            Ci.PlayerTr.localRotation = Quaternion.Euler(0, Ci.PlayerTr.localRotation.eulerAngles.y, 0);
+            Ci.Anim.SetFloat("Speed", 0.0f);
 
-			} else {
+            if (interpo < travelDuration)
+            {
+                transform.position = Vector3.Lerp(listTransform[nbrPoint - 1].position, listTransform[nbrPoint].position, interpo / travelDuration);
+                transform.rotation = Quaternion.Lerp(listTransform[nbrPoint - 1].rotation, listTransform[nbrPoint].rotation, interpo / travelDuration);
+            }
+            else
+            {
 
-				transform.position = listTransform[nbrPoint].position;
-				transform.rotation = listTransform[nbrPoint].rotation;
+                transform.position = listTransform[nbrPoint].position;
+                transform.rotation = listTransform[nbrPoint].rotation;
 
-				++nbrPoint;
+                ++nbrPoint;
 
-				Debug.Log (nbrPoint + " | " + interpo);
-				interpo = 0.0f;
-			}
+                //Debug.Log(nbrPoint + " | " + interpo);
+                interpo = 0.0f;
+            }
 
-			if (nbrPoint >= listTransform.Count) {
-				interpo = 0.0f;
-				nbrPoint = 1;
-				isMoving = false;
-	
-				listTransform.Reverse ();
-			}
-		} else {
-			if (Ci != null && playerRB != null) {
-				Ci.transform.parent = null;
-				parentListPoint.parent = transform;
-				Ci.UnfreezeInputs ();
-				playerRB.isKinematic = false;
-			}
-		}
+            if (nbrPoint >= listTransform.Count)
+            {
+                interpo = 0.0f;
+                nbrPoint = 1;
+                isMoving = false;
+
+                listTransform.Reverse();
+            }
+        }
+        else if (Ci != null && playerRB != null)
+        {
+            if (Vector3.Distance(Ci.PlayerTr.position, transform.position) <= 0.1f)
+            {
+                Ci.transform.parent = null;
+                parentListPoint.parent = transform;
+                Ci.UnfreezeInputs();
+                playerRB.isKinematic = false;
+            }
+        }
 	}
 }

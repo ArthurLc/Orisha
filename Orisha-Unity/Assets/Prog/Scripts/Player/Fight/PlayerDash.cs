@@ -102,6 +102,10 @@ namespace vd_Player
                     }
                 }
             }
+            else
+            {
+                isDashing = false;
+            }
 
             ci.Anim.SetBool("IsDashing", isDashing);
 
