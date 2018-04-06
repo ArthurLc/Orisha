@@ -59,6 +59,9 @@ namespace vd_Player
 
         void Update()
         {
+            if (ci.AreInputsFrozen)
+                return;
+
             if (ci.PlayerController.IsGrounded)
             {
                 if (ui_Masks != null && ui_Pause != null && !ui_Masks.activeSelf && !ui_Pause.activeSelf)
