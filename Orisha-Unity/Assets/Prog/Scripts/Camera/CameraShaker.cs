@@ -31,7 +31,6 @@ public class CameraShaker : MonoBehaviour {
         if(launchDebug)
         {
             ShakeActualCam( 0.5f, 1.0f, 0.01f);
-            Debug.Log("Shake it!");
             launchDebug = false;
         }
     }
@@ -54,7 +53,6 @@ public class CameraShaker : MonoBehaviour {
             actualFreeLookCam = brain.ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineFreeLook>();
         }
         StartCoroutine(Shake(actualFreeLookCam, duration, magnitudeX, magnitudeY));
-        Debug.Log("Shake it bro !!");
 
     }
 
