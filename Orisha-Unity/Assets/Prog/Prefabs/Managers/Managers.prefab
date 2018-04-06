@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114539901333192520}
   - component: {fileID: 82056308828422170}
   - component: {fileID: 114959323881286780}
+  - component: {fileID: 114751355163964688}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -158,6 +159,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4314fb37accf740baac90f4002ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114751355163964688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636363474095568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8986924b3eba95b4db1c5412077c2522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curvesDataBase: {fileID: 11400000, guid: d4d080be8b505fe42bf07f51e0c2b547, type: 2}
 --- !u!114 &114798304481885302
 MonoBehaviour:
   m_ObjectHideFlags: 1
