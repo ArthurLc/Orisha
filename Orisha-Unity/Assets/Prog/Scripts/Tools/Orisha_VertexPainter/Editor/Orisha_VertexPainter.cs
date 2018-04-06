@@ -17,6 +17,9 @@ public class Orisha_VertexPainter : EditorWindow
     private Vector3[] vertices;
     private Color[] originalColors, newColors;
     private Material originalMaterial;
+    private string[] allMaterialNamesOnGo;
+    private int indexMaterialToReplace;
+    private int oldIndexMaterialToReplace;
 
     private static Material newMaterial;
 
@@ -34,11 +37,15 @@ public class Orisha_VertexPainter : EditorWindow
         Bumb_G,
         Bumb_B,
         Bumb_A,
+        MetallSmooth_R,
+        MetallSmooth_G,
+        MetallSmooth_B,
+        MetallSmooth_A,
         numMax
     }
     private string matName;
     private Texture[] matTexture = new Texture[(int)textureName.numMax];
-
+    private float[] sliderMetallicSmooth = new float[8];
     private Material LayerMatToPaint;
 
     //GUI Variables//
@@ -120,10 +127,44 @@ public class Orisha_VertexPainter : EditorWindow
         EditorGUILayout.Space();
 
         EditorGUI.indentLevel = 3;
-        for (int i = 0; i < (int)textureName.numMax; ++i)
+
+        int nbTextureType = 4;
+        int currentNbTextType = 0;
+
+        EditorGUILayout.BeginVertical("box");
+        for (int numBloc = 0; numBloc < (int)(textureName.numMax) / nbTextureType; numBloc++)
         {
-            matTexture[i] = EditorGUILayout.ObjectField("Layer " + ((textureName)i).ToString(), matTexture[i], typeof(Texture), false) as Texture;
+            EditorGUILayout.BeginHorizontal();
+            for (int i = numBloc * nbTextureType; i < ((numBloc + 1) * nbTextureType); ++i)
+            {
+                matTexture[i] = EditorGUILayout.ObjectField("Layer " + ((textureName)i).ToString(), matTexture[i], typeof(Texture), false) as Texture;
+            }
+            EditorGUILayout.EndHorizontal();
+
         }
+        EditorGUILayout.EndVertical();
+
+        string[] nameSliderTex = { "_Metallic0", "_Metallic1", "_Metallic2", "_Metallic3", "_Glossiness0", "_Glossiness1", "_Glossiness2", "_Glossiness3" };
+        string[] nameSliderForUser = { "MetallicSmooth R", "MetallicSmooth G", "MetallicSmooth B", "MetallicSmooth A", "MetallicSmooth R", "Smoothness G", "Smoothness B", "Smoothness A" };
+
+        EditorGUILayout.BeginVertical("box");
+
+        for (int numBloc = 0; numBloc < (nameSliderForUser.Length) / nbTextureType; numBloc++)
+        {
+            EditorGUILayout.BeginHorizontal();
+            for (int i = numBloc * nbTextureType; i < ((numBloc + 1) * nbTextureType); ++i)
+            {
+                sliderMetallicSmooth[i] = EditorGUILayout.FloatField(nameSliderForUser[i], sliderMetallicSmooth[i]);
+
+                sliderMetallicSmooth[i] = (sliderMetallicSmooth[i] < 0.0f) ? 0.0f : sliderMetallicSmooth[i];
+                sliderMetallicSmooth[i] = (sliderMetallicSmooth[i] > 1.0f) ? 1.0f : sliderMetallicSmooth[i];
+            }
+            EditorGUILayout.EndHorizontal();
+        }
+
+        EditorGUILayout.EndVertical();
+
+
         EditorGUI.indentLevel = 0;
 
         bool valid = (matName != null && matName != string.Empty) ? true : false;
@@ -149,12 +190,18 @@ public class Orisha_VertexPainter : EditorWindow
             EditorUtility.SetDirty(mat);
             AssetDatabase.SaveAssets();
 
-            string[] layerNames = { "_Splat0", "_Splat1", "_Splat2", "_Splat3", "_Normal0", "_Normal1", "_Normal2", "_Normal3" };
+            string[] layerNames = { "_Splat0", "_Splat1", "_Splat2", "_Splat3", "_Normal0", "_Normal1", "_Normal2", "_Normal3", "_MetallSmooth0", "_MetallSmooth1", "_MetallSmooth2", "_MetallSmooth3" };
+
 
             for (int i = 0; i < (int)textureName.numMax; ++i)
             {
                 if (matTexture[i] != null)
                     mat.SetTexture(layerNames[i], matTexture[i]);
+            }
+
+            for (int i = 0; i < nameSliderForUser.Length; ++i)
+            {
+                mat.SetFloat(nameSliderTex[i], sliderMetallicSmooth[i]);
             }
 
             EditorUtility.SetDirty(mat);
@@ -177,9 +224,28 @@ public class Orisha_VertexPainter : EditorWindow
     
         LayerMatToPaint = EditorGUILayout.ObjectField("Painting layer material", LayerMatToPaint, typeof(Material), false) as Material;
 
+
         if (LayerMatToPaint != null)
         {
+
+            Debug.Log(allMaterialNamesOnGo[indexMaterialToReplace]);
+
             //We can paint now
+            if (tgl_Paint)
+                GUI.enabled = false;
+
+            indexMaterialToReplace = EditorGUILayout.Popup("Material to Replace", indexMaterialToReplace, allMaterialNamesOnGo);
+
+            GUI.enabled = true;
+
+            if (oldIndexMaterialToReplace != indexMaterialToReplace)
+            {
+                renderer.sharedMaterials[oldIndexMaterialToReplace] = originalMaterial;
+
+                originalMaterial = renderer.sharedMaterials[indexMaterialToReplace];
+                renderer.sharedMaterials[indexMaterialToReplace] = LayerMatToPaint;
+            }
+
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button(str_Paint))
             {
@@ -188,7 +254,7 @@ public class Orisha_VertexPainter : EditorWindow
                 {
                     str_Paint = "STOP PAINTING";
                     //Debug Material
-                    renderer.sharedMaterial = LayerMatToPaint;
+                    renderer.sharedMaterials[indexMaterialToReplace] = LayerMatToPaint;
                     //Other button
                     tgl_ShowVertexColors = true;
                     str_ShowVertexColors = "HIDE VERTEX COLORS";
@@ -207,12 +273,12 @@ public class Orisha_VertexPainter : EditorWindow
                 {
                     str_ShowVertexColors = "HIDE VERTEX COLORS";
                     //Debug Material
-                    renderer.sharedMaterial = newMaterial;
+                    renderer.sharedMaterials[indexMaterialToReplace] = newMaterial;
                 }
                 else
                 {
                     str_ShowVertexColors = "SHOW VERTEX COLORS";
-                    renderer.sharedMaterial = LayerMatToPaint;
+                    renderer.sharedMaterials[indexMaterialToReplace] = LayerMatToPaint;
                 }
             }
             EditorGUILayout.EndHorizontal();
@@ -473,6 +539,23 @@ public class Orisha_VertexPainter : EditorWindow
     {
         ResetMe();
 
+        indexMaterialToReplace = 0;
+        oldIndexMaterialToReplace = 0;
+
+        if (renderer != null)
+        {
+            allMaterialNamesOnGo = new string[renderer.materials.Length];
+
+            for(int i = 0; i< allMaterialNamesOnGo.Length; ++i)
+            {
+                allMaterialNamesOnGo[i] = renderer.materials[i].name;
+            }
+        }
+        else
+        {
+            allMaterialNamesOnGo = null;
+        }
+        
         if (newMaterial != null)
             DestroyImmediate(newMaterial);
 
@@ -484,7 +567,7 @@ public class Orisha_VertexPainter : EditorWindow
         //Reset previously worked on object if any
         if (go && originalMaterial)
         {
-            go.GetComponent<Renderer>().sharedMaterial = originalMaterial;
+            go.GetComponent<Renderer>().sharedMaterials[indexMaterialToReplace] = originalMaterial;
             mesh.colors = originalColors;
         }
 
@@ -526,7 +609,7 @@ public class Orisha_VertexPainter : EditorWindow
                     {
                         //Save originals
                         renderer = go.GetComponent<Renderer>();
-                        originalMaterial = renderer.sharedMaterial;
+                        originalMaterial = renderer.sharedMaterials[indexMaterialToReplace];
                         originalColors = mesh.colors;
                         //Set Arrays
                         vertices = mesh.vertices;
