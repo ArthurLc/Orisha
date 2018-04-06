@@ -153,13 +153,13 @@ namespace Milestone
             {
                 posOrigin = sprite.transform.position;
                 rotOrigin = sprite.transform.rotation.eulerAngles;
-                distance = target.transform.position.x - sprite.transform.position.x;
+                distance = Vector3.Distance(target.transform.position, sprite.transform.position);
             }
             else
             {
                 posOrigin = Modelisation.transform.position;
                 rotOrigin = Modelisation.transform.rotation.eulerAngles;
-                distance = target.transform.position.x - Modelisation.transform.position.x;
+                distance = Vector3.Distance(target.transform.position, Modelisation.transform.position);
             }
 
             if (isASlide)
@@ -185,25 +185,24 @@ namespace Milestone
 
                 if(timerToMove < maxTimerToMove)
                 {
-                    Vector3 newPos = posOrigin + (Vector3.right * timerToMove * (distance / maxTimerToMove));
                     if (isASlide)
-                        sprite.transform.position = newPos;
+                        sprite.transform.position = Vector3.Lerp(posOrigin, target.transform.position, timerToMove / maxTimerToMove);
                     else
-                        Modelisation.transform.position = newPos; 
+                        Modelisation.transform.position = Vector3.Lerp(posOrigin, target.transform.position, timerToMove / maxTimerToMove);
 
                     if (isRightOrientation)
                     {
                         if (isASlide)
                             sprite.transform.Rotate(Vector3.up, Time.deltaTime * (90.0f / maxTimerToMove));
-                        else
-                            Modelisation.transform.Rotate(Vector3.up, Time.deltaTime * (90.0f / maxTimerToMove));
+                        /*else
+                            Modelisation.transform.Rotate(Vector3.up, Time.deltaTime * (90.0f / maxTimerToMove));*/
                     }
                     else
                     {
                         if (isASlide)
                             sprite.transform.Rotate(Vector3.up, Time.deltaTime * (-90.0f / maxTimerToMove));
-                        else
-                            Modelisation.transform.Rotate(Vector3.up, Time.deltaTime * (-90.0f / maxTimerToMove));
+                        /*else
+                            Modelisation.transform.Rotate(Vector3.up, Time.deltaTime * (-90.0f / maxTimerToMove));*/
                     }
                 }
                 else

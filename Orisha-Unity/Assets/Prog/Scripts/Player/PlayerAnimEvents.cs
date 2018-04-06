@@ -64,7 +64,8 @@ public class PlayerAnimEvents : MonoBehaviour
     /// </summary>
     public void ChainAttack()
     {
-        playerFight.PlayChainAttack();
+        if(playerFight != null)
+            playerFight.PlayChainAttack();
     }
 
 
