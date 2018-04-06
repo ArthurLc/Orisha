@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using vd_Inputs;
 
 public class FirstScreen : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class FirstScreen : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if (Input.GetKeyDown(launchKey))
+		if ((Input.GetKeyDown(launchKey) || Input.GetAxis(InputManager.Focus) > 0.5f))
         {
             isFading = true;
         }

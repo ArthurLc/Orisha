@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using vd_Inputs;
 
 namespace Milestone
 {
@@ -131,7 +132,7 @@ namespace Milestone
                         StartCoroutine(MoveSprite());
                 }
             }
-            if (Input.GetKeyDown(returnKey) && isAlwaysVisible == false && isTriggered == true)
+			if ((Input.GetKeyDown(returnKey) || Input.GetAxis(InputManager.Focus) > 0.5f) && isAlwaysVisible == false && isTriggered == true)
             {
                 isTriggered = false;
                 if(nextPlateform != null)
