@@ -240,10 +240,17 @@ public class Orisha_VertexPainter : EditorWindow
 
             if (oldIndexMaterialToReplace != indexMaterialToReplace)
             {
-                renderer.sharedMaterials[oldIndexMaterialToReplace] = originalMaterial;
+				var mats = renderer.sharedMaterials;
+				if(oldIndexMaterialToReplace >= 0)
+					mats[oldIndexMaterialToReplace] = originalMaterial;
 
                 originalMaterial = renderer.sharedMaterials[indexMaterialToReplace];
-                renderer.sharedMaterials[indexMaterialToReplace] = LayerMatToPaint;
+
+				mats[indexMaterialToReplace] = LayerMatToPaint;
+
+				renderer.sharedMaterials = mats;
+
+				oldIndexMaterialToReplace = indexMaterialToReplace;
             }
 
             EditorGUILayout.BeginHorizontal();
@@ -253,8 +260,6 @@ public class Orisha_VertexPainter : EditorWindow
                 if (tgl_Paint)
                 {
                     str_Paint = "STOP PAINTING";
-                    //Debug Material
-                    renderer.sharedMaterials[indexMaterialToReplace] = LayerMatToPaint;
                     //Other button
                     tgl_ShowVertexColors = true;
                     str_ShowVertexColors = "HIDE VERTEX COLORS";
@@ -262,7 +267,7 @@ public class Orisha_VertexPainter : EditorWindow
                 else
                 {
                     str_Paint = "START PAINTING";
-                    ResetMe();
+					ResetPlus();
                 }
             }
 
@@ -273,12 +278,17 @@ public class Orisha_VertexPainter : EditorWindow
                 {
                     str_ShowVertexColors = "HIDE VERTEX COLORS";
                     //Debug Material
-                    renderer.sharedMaterials[indexMaterialToReplace] = newMaterial;
+					var mats = renderer.sharedMaterials;
+					mats[indexMaterialToReplace] = newMaterial;
+					renderer.sharedMaterials = mats;
+                    
                 }
                 else
                 {
                     str_ShowVertexColors = "SHOW VERTEX COLORS";
-                    renderer.sharedMaterials[indexMaterialToReplace] = LayerMatToPaint;
+					var mats = renderer.sharedMaterials;
+					mats[indexMaterialToReplace] = LayerMatToPaint;
+					renderer.sharedMaterials = mats;
                 }
             }
             EditorGUILayout.EndHorizontal();
@@ -384,7 +394,11 @@ public class Orisha_VertexPainter : EditorWindow
                     mf.sharedMesh.colors = originalColors;
                     
                     mf.mesh = currentMesh;
-                    renderer.material = LayerMatToPaint;
+
+					var mats = renderer.sharedMaterials;
+					mats[indexMaterialToReplace] = LayerMatToPaint;
+					renderer.materials = mats;
+
                     originalMaterial = LayerMatToPaint;
                     EditorUtility.SetDirty(renderer);
                     EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
@@ -540,15 +554,15 @@ public class Orisha_VertexPainter : EditorWindow
         ResetMe();
 
         indexMaterialToReplace = 0;
-        oldIndexMaterialToReplace = 0;
+        oldIndexMaterialToReplace = -1;
 
         if (renderer != null)
         {
-            allMaterialNamesOnGo = new string[renderer.materials.Length];
+			allMaterialNamesOnGo = new string[renderer.sharedMaterials.Length];
 
             for(int i = 0; i< allMaterialNamesOnGo.Length; ++i)
             {
-                allMaterialNamesOnGo[i] = renderer.materials[i].name;
+				allMaterialNamesOnGo[i] = renderer.sharedMaterials[i].name;
             }
         }
         else
@@ -567,7 +581,10 @@ public class Orisha_VertexPainter : EditorWindow
         //Reset previously worked on object if any
         if (go && originalMaterial)
         {
-            go.GetComponent<Renderer>().sharedMaterials[indexMaterialToReplace] = originalMaterial;
+			var mats = go.GetComponent<Renderer>().sharedMaterials;
+			mats[indexMaterialToReplace] = originalMaterial;
+			go.GetComponent<Renderer>().sharedMaterials = mats;
+            
             mesh.colors = originalColors;
         }
 
