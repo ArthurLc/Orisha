@@ -18,6 +18,9 @@ public class SoundManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+		if (source != null) {
+			Destroy (this);
+		}
         source = GetComponent<AudioSource>();
 	}
 	

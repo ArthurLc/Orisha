@@ -36,14 +36,17 @@ namespace vd_Inputs
 
     public class InputManager : MonoBehaviour
     {
-
+		private static InputManager instance;
         private static InputMode inputMode;
         /// <summary>
         /// Get the player's current controller (none, keyboard or joystick)
         /// </summary>
         public static InputMode GetInputMode
         {
-            get { return inputMode; }
+            get 
+			{ 				
+				return inputMode; 
+			}
         }
 
         /// <summary>
@@ -165,14 +168,19 @@ namespace vd_Inputs
 
         void Start()
         {
+			if (instance != null) 
+			{
+				Debug.Log("destroy inputManager");
+				Destroy (this);
+			}
+			instance = this;
             ChangeInputMode(InputMode.keyboard);
             
 
             InitGamePadFactors();
 
-            if (FindObjectsOfType<InputManager>().Length > 1)
-                Destroy(gameObject);
-
+            //if (FindObjectsOfType<InputManager>().Length > 1)
+                //Destroy(gameObject);
             DontDestroyOnLoad(gameObject);
         }
 

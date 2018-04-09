@@ -35,6 +35,7 @@ namespace vd_Debug
 
     public class DebugManager : MonoBehaviour
     {
+		private static DebugManager instance;
         public CharacterInitialization player1;
 
         [Header("Changement d'Inputs")]
@@ -58,8 +59,13 @@ namespace vd_Debug
 
         void Start()
         {
-            if (FindObjectsOfType<DebugManager>().Length > 1)
-                Destroy(gameObject);
+			if (instance != null) 
+			{
+				Destroy (this);
+			}
+			instance = this;
+           // if (FindObjectsOfType<DebugManager>().Length > 1)
+             //   Destroy(gameObject);
             DontDestroyOnLoad(gameObject);
         }
 
