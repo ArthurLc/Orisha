@@ -83,6 +83,8 @@ public class Orisha_VertexPainter : EditorWindow
         if (SceneView.onSceneGUIDelegate != OnSceneGUI)
             SceneView.onSceneGUIDelegate -= OnSceneGUI;
 
+		ResetPlus ();
+
         if (newMaterial != null)
             DestroyImmediate(newMaterial);
     }
@@ -129,7 +131,6 @@ public class Orisha_VertexPainter : EditorWindow
         EditorGUI.indentLevel = 3;
 
         int nbTextureType = 4;
-        int currentNbTextType = 0;
 
         EditorGUILayout.BeginVertical("box");
         for (int numBloc = 0; numBloc < (int)(textureName.numMax) / nbTextureType; numBloc++)
@@ -228,7 +229,6 @@ public class Orisha_VertexPainter : EditorWindow
         if (LayerMatToPaint != null)
         {
 
-            Debug.Log(allMaterialNamesOnGo[indexMaterialToReplace]);
 
             //We can paint now
             if (tgl_Paint)
@@ -240,13 +240,12 @@ public class Orisha_VertexPainter : EditorWindow
 
             if (oldIndexMaterialToReplace != indexMaterialToReplace)
             {
+				Debug.Log (originalMaterial.name);
 				var mats = renderer.sharedMaterials;
 				if(oldIndexMaterialToReplace >= 0)
 					mats[oldIndexMaterialToReplace] = originalMaterial;
 
                 originalMaterial = renderer.sharedMaterials[indexMaterialToReplace];
-
-				mats[indexMaterialToReplace] = LayerMatToPaint;
 
 				renderer.sharedMaterials = mats;
 
@@ -261,8 +260,12 @@ public class Orisha_VertexPainter : EditorWindow
                 {
                     str_Paint = "STOP PAINTING";
                     //Other button
-                    tgl_ShowVertexColors = true;
-                    str_ShowVertexColors = "HIDE VERTEX COLORS";
+                    tgl_ShowVertexColors = false;
+					str_ShowVertexColors = "SHOW VERTEX COLORS";
+
+					var mats = renderer.sharedMaterials;
+					mats [indexMaterialToReplace] = LayerMatToPaint;
+					renderer.sharedMaterials = mats;
                 }
                 else
                 {
@@ -464,6 +467,7 @@ public class Orisha_VertexPainter : EditorWindow
                 case EventType.MouseDown:
                 case EventType.MouseDrag:
                     {
+					
                         if (current.GetTypeForControl(controlID) == EventType.MouseDrag && GUIUtility.hotControl != controlID)
                         {
                             return;
@@ -501,8 +505,11 @@ public class Orisha_VertexPainter : EditorWindow
                                     if (mag > gui_BrushSize)
                                         continue;
                                     newColors[i] = Color.Lerp(newColors[i], gui_BrushColor, gui_BrushOpacity);
+									Debug.Log (newColors [i]);
                                 }
                                 mesh.colors = newColors;
+								EditorUtility.SetDirty(go);
+							EditorUtility.SetDirty(mesh);
                             }
                         }
                         current.Use();
@@ -510,6 +517,7 @@ public class Orisha_VertexPainter : EditorWindow
                     break;
                 case EventType.MouseUp:
                     {
+					
                         if (!tgl_Paint)
                         {
                             return;
@@ -532,8 +540,11 @@ public class Orisha_VertexPainter : EditorWindow
                                 Handles.color = new Color(gui_BrushColor.r, gui_BrushColor.g, gui_BrushColor.b, 1.0f);
                                 Handles.DrawWireDisc(hit.point, hit.normal, gui_BrushSize);
                             }
+						Debug.Log ("enter repaint");
                         }
+
                         HandleUtility.Repaint();
+						EditorUtility.SetDirty(go);
                     }
                     break;
             }
@@ -581,8 +592,10 @@ public class Orisha_VertexPainter : EditorWindow
         //Reset previously worked on object if any
         if (go && originalMaterial)
         {
+			Debug.Log ("original = " + originalMaterial.name);
 			var mats = go.GetComponent<Renderer>().sharedMaterials;
 			mats[indexMaterialToReplace] = originalMaterial;
+
 			go.GetComponent<Renderer>().sharedMaterials = mats;
             
             mesh.colors = originalColors;
