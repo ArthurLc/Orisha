@@ -107,8 +107,9 @@ public class HittenBox_Enemy : MonoBehaviour, HittenBox
                     PropulseAgent(box);
                     float vibrationLevel = (int)box.PlayerDatas.PlayerFightDatas.expulsionLevel / 20.0f;
                     vd_Inputs.InputManager.GamePad_StartVibration(0, vibrationLevel, vibrationLevel, vibrationLevel);
-                    //if(box.PlayerDatas.PlayerFightDatas.expulsionLevel == FightScriptable.ExpulsionLevel.High)
-                    camShaker.ShakeActualCam(vibrationLevel, 2.0f * vibrationLevel, vibrationLevel / 10.0f);
+                    
+					if(box.PlayerDatas.PlayerFightDatas.expulsionLevel == FightScriptable.ExpulsionLevel.High)
+                    	camShaker.ShakeActualCam(vibrationLevel, vibrationLevel, vibrationLevel / 20.0f);
                 }
                 else
                     TakeDamage(box.damageValue);
