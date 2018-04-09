@@ -18,16 +18,21 @@ public class SandTransporter : MonoBehaviour
 	private float interpo = 0.0f;
 	private float travelDuration;
 
+	private bool needToLeave = false;
+	private BoxCollider bc;
+
 	private void Start()
 	{
 		parentListPoint = transform.GetChild(1);
 		for (int i = 0; i < parentListPoint.childCount; i++) {
 			listTransform.Add (parentListPoint.GetChild (i));
 		}
+
+		bc = GetComponent<BoxCollider>();
 	}
 
 	private void Update(){
-        if (!isAtStart && !isMoving)
+		if (!isAtStart && !isMoving && !needToLeave)
         {
             if (Vector3.Distance(Ci.PlayerTr.position, transform.position) <= 0.25f)
             {
@@ -50,6 +55,16 @@ public class SandTransporter : MonoBehaviour
             }
         }
 
+		if (playerRB && needToLeave) 
+		{
+			if (Vector3.Distance (Ci.PlayerTr.position, transform.position) >= bc.size.x + 0.1f) 
+			{
+				needToLeave = false;
+				Debug.Log("tu peut reprendre la plateforme !");	
+			}
+		}
+			
+
 		MoveTransporter (GlobalDuration);
 	}
 
@@ -60,7 +75,7 @@ public class SandTransporter : MonoBehaviour
         if (playerRB == null)
             playerRB = Ci.Rb;
 
-		if (isAtStart)
+		if (isAtStart && !needToLeave)
 		{
 			isAtStart = false;
             Ci.FreezeInputs();
@@ -102,11 +117,15 @@ public class SandTransporter : MonoBehaviour
 
             if (nbrPoint >= listTransform.Count)
             {
+				//Arrivé
                 interpo = 0.0f;
                 nbrPoint = 1;
                 isMoving = false;
-
                 listTransform.Reverse();
+
+				Debug.Log ("Tu ne peut pas prendre la platerforme");
+
+				needToLeave = true;
             }
         }
         else if (Ci != null && playerRB != null)
