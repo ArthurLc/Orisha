@@ -21,14 +21,12 @@ public abstract class Scenar_Object : MonoBehaviour
     bool initSuccess;
 
 
-    // Use this for initialization
-    public virtual void Start()
-    {
-        Scenar_Manager.OnScenario_Initialize += Init;
-        initialized = false;
-        initSuccess = false;
-    }
-
+	public virtual void Awake()
+	{
+		Scenar_Manager.OnScenario_Initialize += Init;
+		initialized = false;
+		initSuccess = false;
+	}
     // Update is called once per frame
     public virtual void Update()
     {
@@ -37,29 +35,7 @@ public abstract class Scenar_Object : MonoBehaviour
 
     public void OnEnable()
     {
-        if(spawnMidScenario && !initSuccess && Scenar_Manager.initialized)
-        {
-            for(int i = 0; i < relatedScenarioName.Length; i++)
-                if (Scenar_Manager.scenarios.ContainsKey(relatedScenarioName[i]))
-                {
-                    Scenar_Manager.scenarios[relatedScenarioName[i]].OnScenario_End += On_Scenar_End;
-
-                    if (requireTimeline)
-                    {
-                        timeline = GetComponent<PlayableDirector>();
-                        if (!timeline)
-                            Debug.LogError("No timeline found on " + gameObject.name + ", please add a timeline or uncheck requireTimeline option.");
-                        else if (timeline.duration > Scenar_Manager.scenarios[relatedScenarioName[i]].MainTimeline.duration)
-                            Debug.LogError("Object timeline is longer than it related scenario");
-                        else
-                            initSuccess = true;
-                    }
-                }
-                else
-                {
-                    Debug.LogError("There is no Scnerio called : " + relatedScenarioName[i]);
-                }
-        }
+       
     }
 
     public abstract void On_Scenar_Begin(string scenarName);
@@ -72,6 +48,8 @@ public abstract class Scenar_Object : MonoBehaviour
 
     public virtual void Init()
     {
+		Debug.Log ("Init Called");
+
         for (int i = 0; i < relatedScenarioName.Length; i++)
             if (Scenar_Manager.scenarios.ContainsKey(relatedScenarioName[i]))
             {
@@ -81,17 +59,22 @@ public abstract class Scenar_Object : MonoBehaviour
                 if (requireTimeline)
                 {
                     timeline = GetComponent<PlayableDirector>();
-                    if (!timeline)
-                        Debug.LogError("No timeline found on "+ gameObject.name +", please add a timeline or uncheck requireTimeline option.");
-                    else if (timeline.duration > Scenar_Manager.scenarios[relatedScenarioName[i]].MainTimeline.duration)
-                        Debug.LogError("Object timeline is longer than it related scenario");
-                    else
-                        initSuccess = true;
+					if (!timeline)
+						Debug.LogError ("No timeline found on " + gameObject.name + ", please add a timeline or uncheck requireTimeline option.");
+					else if (timeline.duration > Scenar_Manager.scenarios [relatedScenarioName [i]].MainTimeline.duration)
+						Debug.LogError ("Object timeline is longer than it related scenario");
+					else 
+					{
+						initSuccess = true;
+						//Debug.Log ("Init Succesfull");
+					}
                 }
             }
             else
             {
                 Debug.LogError("There is no Scnerio called : " + relatedScenarioName[i] + " as asked on " + gameObject.name);
             }
+
+		
     }
 }

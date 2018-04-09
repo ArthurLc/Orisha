@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Scenar_Manager : MonoBehaviour
 {
@@ -11,25 +12,41 @@ public class Scenar_Manager : MonoBehaviour
     public static event ScenarManagerVoidEvent OnScenario_Initialize;
     public static bool initialized;
 
-    // Use this for initialization
-    void Start ()
-    {
-        initialized = false;
-        Scenar[] scenars = GameObject.FindObjectsOfType<Scenar>();
-        scenarios = new Dictionary<string, Scenar>();
+	// Use this for initialization
+	void Start ()
+	{
+		SceneManager.sceneLoaded += InitMangerForCurrentScene;  
+	}
 
-        //sauvegarde les scenarios dans un dictionaire afin de les retrouver facilement par leurs noms
-        for(int i = 0; i < scenars.Length; ++i)
-        {
-            if (!scenarios.ContainsKey(scenars[i].ScenarName))
-                scenarios.Add(scenars[i].ScenarName, scenars[i]);
-            else
-                Debug.LogError("Another scenario with the same name Already Exist : " + scenars[i].ScenarName);
-        }
+	void InitMangerForCurrentScene(Scene scene, LoadSceneMode mode)
+	{
+		initialized = false;
+		Scenar[] scenars = GameObject.FindObjectsOfType<Scenar>();
+		scenarios = new Dictionary<string, Scenar>();
 
-        OnScenario_Initialize();
-        initialized = true;
-    }
+		//sauvegarde les scenarios dans un dictionaire afin de les retrouver facilement par leurs noms
+		for(int i = 0; i < scenars.Length; ++i)
+		{
+			if (!scenarios.ContainsKey(scenars[i].ScenarName))
+				scenarios.Add(scenars[i].ScenarName, scenars[i]);
+			else
+				Debug.LogError("Another scenario with the same name Already Exist : " + scenars[i].ScenarName);
+		}
+			
+
+		foreach (KeyValuePair<string, Scenar> entry in scenarios)
+		{
+			if (entry.Value.isPlaying)
+			{
+				Debug.Log(entry.Value.ScenarName);
+			}
+		}
+
+		//Debug.Log ("OUIIIIIIIIIIIIIIIIIIIIIIIIIII");
+		OnScenario_Initialize();
+		initialized = true;
+
+	}
 	
 	// Update is called once per frame
 	void Update ()

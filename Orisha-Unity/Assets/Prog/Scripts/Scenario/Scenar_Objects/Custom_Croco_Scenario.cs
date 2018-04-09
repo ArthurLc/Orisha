@@ -32,9 +32,9 @@ public class Custom_Croco_Scenario : Scenar_Object
     }
 
     // Use this for initialization
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+		base.Awake();
 
         ai = GetComponent<AI_Enemy_Basic>();
         trigger = GetComponent<SphereCollider>();

@@ -58,7 +58,7 @@ public class Custom_Character_Scenario : Scenar_Object
 
         //Donne une direction de départ au joueur si cela est demandé dans le scénario
         Scenar currentScenar = Scenar_Manager.GetCurrentPlayingScenario();
-        if (currentScenar && currentScenar.RedirectPlayerOnPlay)
+        if (this != null && currentScenar && currentScenar.RedirectPlayerOnPlay)
         {
             transform.LookAt(currentScenar.PlayerBeginDest);
         }
@@ -84,9 +84,9 @@ public class Custom_Character_Scenario : Scenar_Object
     }
 
     // Use this for initialization
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         controller = GetComponentInParent<PlayerController>();
         dash = GetComponentInParent<PlayerDash>();
@@ -105,7 +105,7 @@ public class Custom_Character_Scenario : Scenar_Object
         {
             entry.Value.OnScenario_Begin += On_Scenar_Begin;
             entry.Value.OnScenario_End += On_Scenar_End;
-            //Debug.Log("Player Binded to scenario : " + entry.Key);
+            Debug.Log("Player Binded to scenario : " + entry.Key);
         }
 
 		//Debug.Log ("PUTAIN DE TA RACE");

@@ -27,9 +27,9 @@ public class Custom_Object_Behaviour : Scenar_Object
     }
 
     // Use this for initialization
-    public override void Start ()
+    public override void Awake ()
     {
-        base.Start();
+        base.Awake();
     }
 
     // Update is called once per frame
