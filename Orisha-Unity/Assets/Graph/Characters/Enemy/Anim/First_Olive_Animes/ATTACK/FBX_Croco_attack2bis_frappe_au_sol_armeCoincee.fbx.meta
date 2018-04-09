@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: b7da8e76b204f7f4a8c9e294281b14f8
+timeCreated: 1523281414
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CrocoBindTrue
+    100002: //RootNode
+    100004: Group_deformers_pleaseInsertCharacterName
+    100006: Group_RIG_pleaseInsertCharacterName
+    100008: joint_head01
+    100010: joint_head02
+    100012: joint_Out_arm_L_C1_pleaseInsertCharacterName
+    100014: joint_Out_arm_L_C2_pleaseInsertCharacterName
+    100016: joint_Out_arm_L_C2_twist_pleaseInsertCharacterName
+    100018: joint_Out_arm_L_root_pleaseInsertCharacterName
+    100020: joint_Out_arm_R_C1_pleaseInsertCharacterName
+    100022: joint_Out_arm_R_C2_pleaseInsertCharacterName
+    100024: joint_Out_arm_R_C2_twist_pleaseInsertCharacterName
+    100026: joint_Out_arm_R_root_pleaseInsertCharacterName
+    100028: joint_Out_clavicle_L_C1_pleaseInsertCharacterName
+    100030: joint_Out_clavicle_L_root_pleaseInsertCharacterName
+    100032: joint_Out_clavicle_R_C1_pleaseInsertCharacterName
+    100034: joint_Out_clavicle_R_root_pleaseInsertCharacterName
+    100036: joint_Out_index_L_C1_pleaseInsertCharacterName
+    100038: joint_Out_index_L_C2_pleaseInsertCharacterName
+    100040: joint_Out_index_L_C3_pleaseInsertCharacterName
+    100042: joint_Out_index_R_C1_pleaseInsertCharacterName
+    100044: joint_Out_index_R_C2_pleaseInsertCharacterName
+    100046: joint_Out_index_R_C3_pleaseInsertCharacterName
+    100048: joint_Out_leg_L_C1_pleaseInsertCharacterName
+    100050: joint_Out_leg_L_C2_pleaseInsertCharacterName
+    100052: joint_Out_leg_L_C3_pleaseInsertCharacterName
+    100054: joint_Out_leg_L_C4_pleaseInsertCharacterName
+    100056: joint_Out_leg_L_root_pleaseInsertCharacterName
+    100058: joint_Out_leg_R_C1_pleaseInsertCharacterName
+    100060: joint_Out_leg_R_C2_pleaseInsertCharacterName
+    100062: joint_Out_leg_R_C3_pleaseInsertCharacterName
+    100064: joint_Out_leg_R_C4_pleaseInsertCharacterName
+    100066: joint_Out_leg_R_root_pleaseInsertCharacterName
+    100068: joint_Out_major_L_C1_pleaseInsertCharacterName
+    100070: joint_Out_major_L_C2_pleaseInsertCharacterName
+    100072: joint_Out_major_L_C3_pleaseInsertCharacterName
+    100074: joint_Out_major_R_C1_pleaseInsertCharacterName
+    100076: joint_Out_major_R_C2_pleaseInsertCharacterName
+    100078: joint_Out_major_R_C3_pleaseInsertCharacterName
+    100080: joint_Out_neck_C1_pleaseInsertCharacterName
+    100082: joint_Out_neck_C2_pleaseInsertCharacterName
+    100084: joint_Out_neck_C3_pleaseInsertCharacterName
+    100086: joint_Out_spine_C1_pleaseInsertCharacterName
+    100088: joint_Out_spine_C2_pleaseInsertCharacterName
+    100090: joint_Out_spine_C3_pleaseInsertCharacterName
+    100092: joint_Out_spine_C4_pleaseInsertCharacterName
+    100094: joint_Out_spine_C5_pleaseInsertCharacterName
+    100096: joint_Out_thumb_L_C1_pleaseInsertCharacterName
+    100098: joint_Out_thumb_L_C2_pleaseInsertCharacterName
+    100100: joint_Out_thumb_L_C3_pleaseInsertCharacterName
+    100102: joint_Out_thumb_R_C1_pleaseInsertCharacterName
+    100104: joint_Out_thumb_R_C2_pleaseInsertCharacterName
+    100106: joint_Out_thumb_R_C3_pleaseInsertCharacterName
+    100108: joint_queue01
+    100110: joint_queue02
+    100112: joint_queue03
+    100114: joint_queue04
+    100116: joint_queue05
+    100118: joint_queueBase
+    400000: CrocoBindTrue
+    400002: //RootNode
+    400004: Group_deformers_pleaseInsertCharacterName
+    400006: Group_RIG_pleaseInsertCharacterName
+    400008: joint_head01
+    400010: joint_head02
+    400012: joint_Out_arm_L_C1_pleaseInsertCharacterName
+    400014: joint_Out_arm_L_C2_pleaseInsertCharacterName
+    400016: joint_Out_arm_L_C2_twist_pleaseInsertCharacterName
+    400018: joint_Out_arm_L_root_pleaseInsertCharacterName
+    400020: joint_Out_arm_R_C1_pleaseInsertCharacterName
+    400022: joint_Out_arm_R_C2_pleaseInsertCharacterName
+    400024: joint_Out_arm_R_C2_twist_pleaseInsertCharacterName
+    400026: joint_Out_arm_R_root_pleaseInsertCharacterName
+    400028: joint_Out_clavicle_L_C1_pleaseInsertCharacterName
+    400030: joint_Out_clavicle_L_root_pleaseInsertCharacterName
+    400032: joint_Out_clavicle_R_C1_pleaseInsertCharacterName
+    400034: joint_Out_clavicle_R_root_pleaseInsertCharacterName
+    400036: joint_Out_index_L_C1_pleaseInsertCharacterName
+    400038: joint_Out_index_L_C2_pleaseInsertCharacterName
+    400040: joint_Out_index_L_C3_pleaseInsertCharacterName
+    400042: joint_Out_index_R_C1_pleaseInsertCharacterName
+    400044: joint_Out_index_R_C2_pleaseInsertCharacterName
+    400046: joint_Out_index_R_C3_pleaseInsertCharacterName
+    400048: joint_Out_leg_L_C1_pleaseInsertCharacterName
+    400050: joint_Out_leg_L_C2_pleaseInsertCharacterName
+    400052: joint_Out_leg_L_C3_pleaseInsertCharacterName
+    400054: joint_Out_leg_L_C4_pleaseInsertCharacterName
+    400056: joint_Out_leg_L_root_pleaseInsertCharacterName
+    400058: joint_Out_leg_R_C1_pleaseInsertCharacterName
+    400060: joint_Out_leg_R_C2_pleaseInsertCharacterName
+    400062: joint_Out_leg_R_C3_pleaseInsertCharacterName
+    400064: joint_Out_leg_R_C4_pleaseInsertCharacterName
+    400066: joint_Out_leg_R_root_pleaseInsertCharacterName
+    400068: joint_Out_major_L_C1_pleaseInsertCharacterName
+    400070: joint_Out_major_L_C2_pleaseInsertCharacterName
+    400072: joint_Out_major_L_C3_pleaseInsertCharacterName
+    400074: joint_Out_major_R_C1_pleaseInsertCharacterName
+    400076: joint_Out_major_R_C2_pleaseInsertCharacterName
+    400078: joint_Out_major_R_C3_pleaseInsertCharacterName
+    400080: joint_Out_neck_C1_pleaseInsertCharacterName
+    400082: joint_Out_neck_C2_pleaseInsertCharacterName
+    400084: joint_Out_neck_C3_pleaseInsertCharacterName
+    400086: joint_Out_spine_C1_pleaseInsertCharacterName
+    400088: joint_Out_spine_C2_pleaseInsertCharacterName
+    400090: joint_Out_spine_C3_pleaseInsertCharacterName
+    400092: joint_Out_spine_C4_pleaseInsertCharacterName
+    400094: joint_Out_spine_C5_pleaseInsertCharacterName
+    400096: joint_Out_thumb_L_C1_pleaseInsertCharacterName
+    400098: joint_Out_thumb_L_C2_pleaseInsertCharacterName
+    400100: joint_Out_thumb_L_C3_pleaseInsertCharacterName
+    400102: joint_Out_thumb_R_C1_pleaseInsertCharacterName
+    400104: joint_Out_thumb_R_C2_pleaseInsertCharacterName
+    400106: joint_Out_thumb_R_C3_pleaseInsertCharacterName
+    400108: joint_queue01
+    400110: joint_queue02
+    400112: joint_queue03
+    400114: joint_queue04
+    400116: joint_queue05
+    400118: joint_queueBase
+    2100000: Croco
+    2300000: CrocoBindTrue
+    3300000: CrocoBindTrue
+    4300000: CrocoBindTrue
+    7400000: Croco_AttackSol02
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Croco_AttackSol02
+      takeName: Take 001
+      firstFrame: 280
+      lastFrame: 338
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0025
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 0
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
