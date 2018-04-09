@@ -64,7 +64,7 @@ public class SandTransporter : MonoBehaviour
 			if (Vector3.Distance (playerPos2D, pos2D) >= bc.size.x + 0.5f) 
 			{
 				needToLeave = false;
-				Debug.Log("tu peut reprendre la plateforme !");	
+				//Debug.Log("tu peut reprendre la plateforme !");	
 			}
 		}
 			
@@ -127,7 +127,7 @@ public class SandTransporter : MonoBehaviour
                 isMoving = false;
                 listTransform.Reverse();
 
-				Debug.Log ("Tu ne peut pas prendre la platerforme");
+				//Debug.Log ("Tu ne peut pas prendre la platerforme");
 
 				needToLeave = true;
             }
