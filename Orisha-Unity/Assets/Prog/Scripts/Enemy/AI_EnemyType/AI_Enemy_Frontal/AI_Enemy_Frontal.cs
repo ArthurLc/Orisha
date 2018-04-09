@@ -13,37 +13,6 @@ using UnityEngine.AI;
 
 public class AI_Enemy_Frontal : AI_Enemy_Basic
 {
-
-    public enum State
-    {
-        Idle,
-        Patroling,
-        Chasing,
-        Alert,
-        Fighting,
-        Esquive,
-        ReplacingToFight,
-        IsHit,
-        Die
-    }
-
-    [Header("AI")]
-    [SerializeField]
-    private State state;
-    public State myState
-    {
-        get
-        {
-            return state;
-        }
-
-        set
-        {
-            state = value;
-        }
-    }
-
-
     Potential_Enemy pe;
 
     // Lieu d'idle

@@ -13,34 +13,6 @@ using UnityEngine.AI;
 
 public class AI_Enemy_Harasser : AI_Enemy_Basic
 {
-
-    public enum State
-    {
-        Patroling,
-        Alert,
-        ChasingOnFlank,
-        Fighting,
-        Fleeing,
-        IsHit,
-        Die
-    }
-
-    [Header("AI")]
-    [SerializeField]
-    private State state;
-    public State myState
-    {
-        get
-        {
-            return state;
-        }
-
-        set
-        {
-            state = value;
-        }
-    }
-
     Potential_Enemy pe;
 
     // Lieu d'idle

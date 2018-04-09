@@ -13,34 +13,6 @@ using UnityEngine.AI;
 
 public class AI_Enemy_SandTracker : AI_Enemy_Basic
 {
-    public enum State
-    {
-        Idle,
-        Patroling,
-        Alert,
-        Chasing,
-        Fighting,
-        Esquive,
-        IsHit,
-        Die
-    }
-
-    [Header("AI")]
-    [SerializeField]
-    private State state;
-    public State myState
-    {
-        get
-        {
-            return state;
-        }
-
-        set
-        {
-            state = value;
-        }
-    }
-
     // Lieu d'idle
     protected Vector3 startTransform;
 

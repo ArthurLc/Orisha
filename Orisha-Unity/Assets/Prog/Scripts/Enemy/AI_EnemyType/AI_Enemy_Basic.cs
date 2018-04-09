@@ -5,6 +5,21 @@ using UnityEngine.AI;
 
 public class AI_Enemy_Basic : MonoBehaviour
 {
+	public enum State
+	{
+		Idle,
+		Patroling,
+		Chasing,
+		Alert,
+		Fighting,
+		Esquive,
+		ReplacingToFight,
+		ChasingOnFlank,
+		Fleeing,
+		IsHit,
+		Die,
+	}
+
     protected AI_EnemyState myCurrentState;
     public AI_EnemyState MyCurrentState
     {
@@ -62,6 +77,22 @@ public class AI_Enemy_Basic : MonoBehaviour
     [Header("Debug")]
     [SerializeField]
     protected bool debugLog = false;
+
+	[Header("AI")]
+	[SerializeField]
+	protected State state;
+	public State myState
+	{
+		get
+		{
+			return state;
+		}
+
+		set
+		{
+			state = value;
+		}
+	}
 
     private void Awake()
     {
