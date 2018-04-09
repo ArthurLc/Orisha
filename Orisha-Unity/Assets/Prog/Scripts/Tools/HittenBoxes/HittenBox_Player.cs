@@ -51,8 +51,10 @@ public class HittenBox_Player : MonoBehaviour, HittenBox
             box.HitSucceed(other.ClosestPointOnBounds(transform.position));
 
 
-            if(box.PlayerDatas.PlayerFightDatas.expulsionLevel == FightScriptable.ExpulsionLevel.High)
-            	camShaker.ShakeActualCam(0.5f, 1.0f, 0.01f);
+			if(box.PlayerDatas && box.PlayerDatas.PlayerFightDatas.expulsionLevel == FightScriptable.ExpulsionLevel.High)
+				camShaker.ShakeActualCam(0.5f, 1.0f, 0.01f);
+			else
+            	camShaker.ShakeActualCam(0.2f, 0.33f, 0.003f);
         }
         else
         {
