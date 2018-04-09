@@ -3680,7 +3680,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1664401834386858}
-  m_LocalRotation: {x: 0.026042461, y: -0.059772074, z: -0.0011936659, w: 0.99787164}
+  m_LocalRotation: {x: 0.026042445, y: -0.059772257, z: -0.0011936679, w: 0.9978716}
   m_LocalPosition: {x: 0.000012389422, y: -0.0000005399962, z: 0.0000117153295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3981,7 +3981,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 5000
+  far clip plane: 10000
   field of view: 40
   orthographic: 0
   orthographic size: 10
@@ -4923,7 +4923,7 @@ MonoBehaviour:
     FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 5000
+    FarClipPlane: 10000
     Dutch: 0
   m_ComponentOwner: {fileID: 4268291119472978}
 --- !u!114 &114123685294383384
@@ -5134,7 +5134,7 @@ MonoBehaviour:
     FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 5000
+    FarClipPlane: 10000
     Dutch: 0
   m_YAxis:
     Value: 0.43
@@ -5646,7 +5646,7 @@ MonoBehaviour:
     FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 5000
+    FarClipPlane: 10000
     Dutch: 0
   m_ComponentOwner: {fileID: 4174285383657300}
 --- !u!114 &114589086245459478
@@ -5725,7 +5725,7 @@ MonoBehaviour:
     FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 5000
+    FarClipPlane: 10000
     Dutch: 0
   m_ComponentOwner: {fileID: 4395308851541426}
 --- !u!114 &114630517207117808
@@ -6477,8 +6477,6 @@ MonoBehaviour:
     m_ParentHash: 756556552
   - m_Hash: 1204706012
     m_ParentHash: 756556552
-  - m_Hash: -323561804
-    m_ParentHash: 756556552
   - m_Hash: -2070332808
     m_ParentHash: 756556552
   - m_Hash: 513330868
@@ -6487,6 +6485,14 @@ MonoBehaviour:
     m_ParentHash: -2070332808
   - m_Hash: -108535456
     m_ParentHash: -2070332808
+  - m_Hash: -323561804
+    m_ParentHash: 756556552
+  - m_Hash: 1886448371
+    m_ParentHash: -323561804
+  - m_Hash: 64625191
+    m_ParentHash: -323561804
+  - m_Hash: 36566992
+    m_ParentHash: -323561804
 --- !u!114 &114999191084485440
 MonoBehaviour:
   m_ObjectHideFlags: 1
