@@ -28,7 +28,7 @@ namespace Milestone
                     Destroy(go);
                 }
 
-                SceneManager.LoadScene(sceneToLoad);
+                GameLoopManager.LaunchLevel(sceneToLoad, true);
             }
 
         }
