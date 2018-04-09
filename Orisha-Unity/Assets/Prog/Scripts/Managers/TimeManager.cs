@@ -340,7 +340,7 @@ public class TimeManager : MonoBehaviour
     /// <param name="_value">value of the slow motion => between 0.0f & 1.0f (normal = 1.0f)</param>
     public void Slow_OneCharacter_WithTimer(GameObject _goCharacter, float _timer, float _value)
     {
-		Debug.Log ("SM_OneCharacter_Timer");
+		//Debug.Log ("SM_OneCharacter_Timer");
         Animator currentAnimator;
         currentAnimator = _goCharacter.GetComponent<Animator>();
 
@@ -360,7 +360,7 @@ public class TimeManager : MonoBehaviour
 			if (!Slow_OneCharacter_Unactive (currentAnimator.gameObject, true)) 
 			{
 				float animationSpeedAtBegin = currentAnimator.speed;
-				Debug.Log (_goCharacter.name + " " + animationSpeedAtBegin);
+				//Debug.Log (_goCharacter.name + " " + animationSpeedAtBegin);
 				slowMotionSpeedAtBegin.Add (currentAnimator, animationSpeedAtBegin);
 			}
             Coroutine currentCoroutine = StartCoroutine(Slow_OneCharacterTimer(currentAnimator, _timer, _value));
@@ -370,24 +370,25 @@ public class TimeManager : MonoBehaviour
     }
     private IEnumerator Slow_OneCharacterTimer(Animator _characterAnimator, float _timer, float _value)
     {
-        float currentTimer = 0.0f;
-        _characterAnimator.speed = _value;
-		Debug.Log (_characterAnimator.gameObject.name + " " + _value);
+		if (_characterAnimator) 
+		{			
+	        float currentTimer = 0.0f;
+	        _characterAnimator.speed = _value;
+			//Debug.Log (_characterAnimator.gameObject.name + " " + _value);
 
-        while (currentTimer < _timer)
-        {
-            currentTimer += Time.deltaTime;
-            yield return 0;
-        }
+	        while (currentTimer < _timer)
+	        {
+	            currentTimer += Time.deltaTime;
+	            yield return 0;
+	        }
 
-		//if(slowMotionSpeedAtBegin.ContainsKey(_characterAnimator))
+			//if(slowMotionSpeedAtBegin.ContainsKey(_characterAnimator))
 
-        _characterAnimator.speed = slowMotionSpeedAtBegin[_characterAnimator];
-
-		Debug.Log (_characterAnimator.gameObject.name + " " + _characterAnimator.speed);
-        slowMotionSpeedAtBegin.Remove(_characterAnimator);
-
-        slowMotionList.Remove(_characterAnimator);
+			_characterAnimator.speed = slowMotionSpeedAtBegin [_characterAnimator];
+			//Debug.Log (_characterAnimator.gameObject.name + " " + _characterAnimator.speed);
+			slowMotionSpeedAtBegin.Remove (_characterAnimator);
+			slowMotionList.Remove (_characterAnimator);
+		}
     }
     /// <summary>
     /// Active the slow motion for one character without timer => you must unactive it manually later
@@ -468,21 +469,23 @@ public class TimeManager : MonoBehaviour
     }
     private IEnumerator Slow_OneCharacterCurve(Animator _characterAnimator, float _timer, AnimationCurve _value)
     {
-        float currentTimer = 0.0f;
+		if (_characterAnimator) 
+		{
+	        float currentTimer = 0.0f;
 
-        while (currentTimer < _timer)
-        {
-            currentTimer += Time.deltaTime;
+	        while (currentTimer < _timer)
+	        {
+	            currentTimer += Time.deltaTime;
 
-            _characterAnimator.speed = _value.Evaluate((currentTimer / _timer));
+	            _characterAnimator.speed = _value.Evaluate((currentTimer / _timer));
 
-            yield return 0;
-        }
+	            yield return 0;
+	        }
 
-        _characterAnimator.speed = slowMotionSpeedAtBegin[_characterAnimator];
-        slowMotionSpeedAtBegin.Remove(_characterAnimator);
-
-        slowMotionList.Remove(_characterAnimator);
+			_characterAnimator.speed = slowMotionSpeedAtBegin [_characterAnimator];
+			slowMotionSpeedAtBegin.Remove (_characterAnimator);
+			slowMotionList.Remove (_characterAnimator);
+		}
     }
 
     /// <summary>

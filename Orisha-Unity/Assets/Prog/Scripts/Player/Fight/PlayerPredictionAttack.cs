@@ -53,7 +53,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in X_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -67,7 +67,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XX_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+					willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -81,7 +81,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXX_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -95,7 +95,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXXX_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -109,7 +109,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in Y_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -123,7 +123,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXY_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -137,7 +137,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXYY_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -151,7 +151,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXXXY_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -166,7 +166,7 @@ public class PlayerPredictionAttack : MonoBehaviour
 
         if (_playSlowMo && willTuch && duration > 0.0f)
         {
-            Debug.Log("SlowMo");
+            //Debug.Log("SlowMo");
             TimeManager.Instance.Slow_OneCharacter_WithCurve(this.gameObject, duration, _fightDatas.slowMoCurve);
 
             LayerMask l_mask = 1 << LayerMask.NameToLayer("Enemy");
@@ -177,7 +177,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 for (int i = 0; i < results.Length; i++)
                 {
                     TimeManager.Instance.Slow_OneCharacter_WithCurve(results[i].gameObject, duration, _fightDatas.slowMoCurve);
-					Debug.Log (results [i].name);
+					//Debug.Log (results [i].name);
                 }
             }
         }
@@ -197,7 +197,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in X_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -211,7 +211,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XX_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -225,7 +225,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXX_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -239,7 +239,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXXX_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -253,7 +253,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in Y_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -267,7 +267,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXY_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -281,7 +281,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXYY_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -295,7 +295,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 {
                     foreach (AttackPrediction ap in XXXXY_predictPoints)
                     {
-                        willTuch = ap.WillTouchEnemy();
+						willTuch = ap.WillTouchEnemy(_fightDatas.damages);
                         if (willTuch)
                         {
                             break;
@@ -310,7 +310,7 @@ public class PlayerPredictionAttack : MonoBehaviour
 
         if (_playSlowMo && willTuch && duration > 0.0f)
         {
-            Debug.Log("SlowMo");
+            //Debug.Log("SlowMo");
             TimeManager.Instance.Slow_OneCharacter_WithTimer(this.gameObject, duration, _fightDatas.slowMoValue);
 
             LayerMask l_mask = 1 << LayerMask.NameToLayer("Enemy");
@@ -321,7 +321,7 @@ public class PlayerPredictionAttack : MonoBehaviour
                 for (int i = 0; i < results.Length; i++)
                 {
                     TimeManager.Instance.Slow_OneCharacter_WithTimer(results[i].gameObject, duration, _fightDatas.slowMoValue);
-					Debug.Log (results [i].name);
+					//Debug.Log (results [i].name);
                 }
             }
         }

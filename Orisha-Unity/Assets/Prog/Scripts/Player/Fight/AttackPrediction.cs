@@ -6,7 +6,7 @@ public class AttackPrediction : MonoBehaviour
 {
     public bool isDebugOn = false;
 
-    public bool WillTouchEnemy()
+	public bool WillTouchEnemy(float damages)
     {
         LayerMask mask = 1 << LayerMask.NameToLayer("HittenBox_Enemy");
         Collider[] collid = Physics.OverlapSphere(transform.position, 0.5f, mask, QueryTriggerInteraction.Collide);
@@ -15,47 +15,20 @@ public class AttackPrediction : MonoBehaviour
         {
             foreach (Collider col in collid)
             {
-                AI_Enemy_Frontal enFront = col.GetComponent<AI_Enemy_Frontal>();
-                if(enFront == null)
+				AI_Enemy_Basic enBase = col.GetComponent<AI_Enemy_Basic>();
+				if(enBase == null)
                 {
-                    enFront = col.GetComponentInParent<AI_Enemy_Frontal>();
+					enBase = col.GetComponentInParent<AI_Enemy_Basic>();
                 }
-                if (enFront == null)
+				if (enBase == null)
                 {
-                    enFront = col.GetComponentInChildren<AI_Enemy_Frontal>();
+					enBase = col.GetComponentInChildren<AI_Enemy_Basic>();
                 }
-                AI_Enemy_Harasser enHarass = col.GetComponent<AI_Enemy_Harasser>();
-                if (enHarass == null)
-                {
-                    enHarass = col.GetComponentInParent<AI_Enemy_Harasser>();
-                }
-                if (enHarass == null)
-                {
-                    enHarass = col.GetComponentInChildren<AI_Enemy_Harasser>();
-                }
-                AI_Enemy_SandTracker enSand = col.GetComponent<AI_Enemy_SandTracker>();
-                if (enSand == null)
-                {
-                    enSand = col.GetComponentInParent<AI_Enemy_SandTracker>();
-                }
-                if (enFront == null)
-                {
-                    enSand = col.GetComponentInChildren<AI_Enemy_SandTracker>();
-                }
-
-                if (enFront != null && enFront.myState != AI_Enemy_Frontal.State.Die)
-                {
-                    return true;
-                }
-                else if (enHarass != null && enHarass.myState != AI_Enemy_Harasser.State.Die)
-                {
-                    return true;
-                }
-                else if (enSand != null && enSand.myState != AI_Enemy_SandTracker.State.Die)
-                {
-                    return true;
-                }
-            }           
+				if (enBase != null && enBase.myState != AI_Enemy_Basic.State.Die && enBase.Health <= damages) 
+				{
+					return true;
+				} 
+            }
         }
         return false;
     }
