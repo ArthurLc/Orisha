@@ -94,8 +94,8 @@ namespace Milestone
                     slide.color = colorSlide;
 
                     colorSprite.a = transparency;
-                    sprite.GetComponent<SpriteRenderer>().color = colorSprite;
-
+                    if (isMoving)
+                        sprite.GetComponent<SpriteRenderer>().color = colorSprite;
                 }
 
                 else if (isTriggered == false && transparency > 0.0f)
