@@ -45425,7 +45425,7 @@ MonoBehaviour:
   toDestroy:
   - {fileID: 0}
   - {fileID: 0}
-  sceneToLoad: FirstLD
+  sceneToLoad: April_SceneQuiMarche
 --- !u!23 &1667088934
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46941,7 +46941,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4898171142336676, guid: 06be77993e7bad34f912b4e422dc06eb, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.026042279
+      value: 0.026042223
       objectReference: {fileID: 0}
     - target: {fileID: 4898171142336676, guid: 06be77993e7bad34f912b4e422dc06eb, type: 2}
       propertyPath: m_LocalRotation.y
@@ -46949,7 +46949,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4898171142336676, guid: 06be77993e7bad34f912b4e422dc06eb, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.0011934525
+      value: -0.0011934534
       objectReference: {fileID: 0}
     - target: {fileID: 4898171142336676, guid: 06be77993e7bad34f912b4e422dc06eb, type: 2}
       propertyPath: m_LocalRotation.w
@@ -47258,7 +47258,7 @@ Prefab:
     - target: {fileID: 20041576086147562, guid: 06be77993e7bad34f912b4e422dc06eb,
         type: 2}
       propertyPath: far clip plane
-      value: 5000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 4856462750521660, guid: 06be77993e7bad34f912b4e422dc06eb, type: 2}
       propertyPath: m_LocalPosition.x
