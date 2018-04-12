@@ -92,6 +92,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         GameLoopManager.DisableMouse();
 
+
         Time.timeScale = timeScaleWhenPaused;
         //Debug.Log(Time.timeScale);
     }
@@ -157,10 +158,13 @@ public class PauseMenu : MonoBehaviour
 		if (_newMode == InputMode.keyboard && pauseMenu.activeInHierarchy == true)
 		{
 			EventSystem.current.GetComponent<EventSystem> ().SetSelectedGameObject (null);
+			GameLoopManager.EnableMouse();
 		}
 		
 		else if(pauseMenu.activeInHierarchy == true)
 		{
+			GameLoopManager.DisableMouse();
+				
 			if (mainMenu.activeSelf == true)
 				firstButtonActive.Select ();
 			else
