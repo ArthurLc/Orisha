@@ -71,6 +71,7 @@ public class DisplayZoneName : MonoBehaviour
         displayDuration = duration;
 
         timer = 0.0f;
+        index = 0;
         state = DisplayState.fadingIn;
 
         source.Play();
@@ -131,6 +132,7 @@ public class DisplayZoneName : MonoBehaviour
         }
         else // end of fading out
         {
+            index = 0;
             state = DisplayState.inactive;
         }
     }
