@@ -74,6 +74,12 @@ namespace vd_Player
             get { return animEvents; }
         }
 
+        private Transform startingTr; //Stockage du transform du player au spawn au cas où il meurt sans checkpoint.
+        public Transform StartingTr
+        {
+            get { return startingTr; }
+        }
+
 
         private bool areInputsFrozen = false;
         public bool AreInputsFrozen {  get { return areInputsFrozen; } }
@@ -91,7 +97,6 @@ namespace vd_Player
             get { return health;}
         }
 
-        //PlayerInformations playerInfos;       Non utilisée ?
 
         void Start()
         {
@@ -104,9 +109,12 @@ namespace vd_Player
             //playerInfos = GetComponentInChildren<PlayerInformations>();
             anim = GetComponentInChildren<Animator>();
             animEvents = GetComponentInChildren<PlayerAnimEvents>();
+            startingTr = transform;
 
             originMaxHealth = health;
             maxHealth = health;
+
+            CheckpointsManager.PlayerRef = this;
 
             GameLoopManager.DisableMouse();
         }
@@ -217,6 +225,14 @@ namespace vd_Player
         public void PropulsePlayer(Vector3 _dir)
         {
             rb.AddForce(_dir, ForceMode.Impulse);
+        }
+
+        public void RepopPlayerAtTransform(Transform _tr)
+        {
+            Rb.velocity = Vector3.zero;
+            Rb.angularVelocity = Vector3.zero;
+            PlayerTr.position = _tr.position;
+            PlayerTr.rotation = _tr.rotation;
         }
     }
 

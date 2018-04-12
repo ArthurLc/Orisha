@@ -21,13 +21,13 @@ public class ZoneDiscovery : MonoBehaviour
 {
     [Header("Text")]
     [SerializeField] private string zoneName = "Fading Island";
-    [SerializeField] float fadeInDuration = 10;
-    [SerializeField] float displayDuration = 20;
+    [SerializeField] float fadeInDuration = 0.5f;
+    [SerializeField] float displayDuration = 5.0f;
     [SerializeField] private bool isBeginDisplay = false; //Booléan nécessaire pour la cinématique
     [Header("Cinematic")]
     [SerializeField] UnityEngine.Playables.PlayableDirector playableDirector;
     [Header("Debug")]
-    [SerializeField] private bool test;
+    [SerializeField] private bool test = false;
 
     private Collider col;
     private DisplayZoneName zoneScript;

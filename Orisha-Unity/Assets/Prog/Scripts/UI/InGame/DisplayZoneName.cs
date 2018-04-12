@@ -12,7 +12,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text), typeof(AudioSource))]
 public class DisplayZoneName : MonoBehaviour
 {
-
     string zoneName;
     float fadeInDuration;
     float displayDuration;

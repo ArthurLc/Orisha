@@ -18,10 +18,11 @@ using UnityEngine;
 public class DisplayCheckpointName : MonoBehaviour
 {
     private Checkpoint checkpoint;
+    [Header("UI")]
     [SerializeField] float fadeInDuration = 10;
     [SerializeField] float displayDuration = 20;
     [Header("Debug")]
-    [SerializeField] private bool test;
+    [SerializeField] private bool test = false;
 
     private Collider col;
     private DisplayZoneName zoneScript;
