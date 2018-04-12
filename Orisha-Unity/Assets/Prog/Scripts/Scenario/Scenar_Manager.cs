@@ -15,14 +15,21 @@ public class Scenar_Manager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		SceneManager.sceneLoaded += InitMangerForCurrentScene;  
+		scenarios = new Dictionary<string, Scenar>();
+		SceneManager.sceneLoaded += InitMangerForCurrentScene;
+		InitManager ();
 	}
 
 	void InitMangerForCurrentScene(Scene scene, LoadSceneMode mode)
 	{
+		InitManager ();
+	}
+
+	void InitManager()
+	{
 		initialized = false;
 		Scenar[] scenars = GameObject.FindObjectsOfType<Scenar>();
-		scenarios = new Dictionary<string, Scenar>();
+		scenarios.Clear ();
 
 		//sauvegarde les scenarios dans un dictionaire afin de les retrouver facilement par leurs noms
 		for(int i = 0; i < scenars.Length; ++i)
@@ -32,7 +39,7 @@ public class Scenar_Manager : MonoBehaviour
 			else
 				Debug.LogError("Another scenario with the same name Already Exist : " + scenars[i].ScenarName);
 		}
-			
+
 
 		foreach (KeyValuePair<string, Scenar> entry in scenarios)
 		{
@@ -45,19 +52,15 @@ public class Scenar_Manager : MonoBehaviour
 		//Debug.Log ("OUIIIIIIIIIIIIIIIIIIIIIIIIIII");
 		OnScenario_Initialize();
 		initialized = true;
-
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-
         #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.L))
             EndRunnigEvent();
         #endif
-
-
     }
 
     public static Scenar GetCurrentPlayingScenario()
