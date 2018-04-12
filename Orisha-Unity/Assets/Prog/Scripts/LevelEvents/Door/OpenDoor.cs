@@ -37,7 +37,9 @@ public class OpenDoor : MonoBehaviour {
 
     private MaskInventory maskInventory;
     private Transform playerPos;
-    private Transform StockMask;
+	private Transform StockMask;
+	private Transform partDoor;
+	private Transform[] doorPart = new Transform[3];
     private List<Transform> listDoorMask = new List<Transform>();
 
 	// Use this for initialization
@@ -48,6 +50,13 @@ public class OpenDoor : MonoBehaviour {
             {
                 StockMask = transform.GetChild(i);
             }
+			if(transform.GetChild(i).name == "partDoor")
+			{
+				partDoor = transform.GetChild (i);
+				doorPart[0] = partDoor.GetChild(0);
+				doorPart[1] = partDoor.GetChild(1);
+				doorPart[2] = partDoor.GetChild(2);
+			}
         }
 	}
 	
@@ -60,38 +69,52 @@ public class OpenDoor : MonoBehaviour {
 
         Debug.Log("up : " + maskInventory.ListMasks.Count);
 
-        if (isTryOpenning && maskInventory.ListMasks.Count >= nbrMaskToOpen)
-        {
-            lerpValueMask += Time.deltaTime * 0.5f;
-            durationFreeze -= Time.deltaTime;
+		if (isTryOpenning && maskInventory.ListMasks.Count >= nbrMaskToOpen) {
+			lerpValueMask += Time.deltaTime * 0.5f;
+			durationFreeze -= Time.deltaTime;
 
-            if (listDoorMask.Count == 0)
-                return;
+			if (listDoorMask.Count == 0)
+				return;
 
-            //Boucle sur les spot de mask (lerp pos/scale/rot)
-            for (int i = 0; i < transform.childCount - 1; i++)
-            {
-                listDoorMask[i].position = Vector3.Lerp(playerPos.position, transform.GetChild(i).position, lerpValueMask);
-                listDoorMask[i].localScale = Vector3.Lerp(new Vector3(0.01f, 0.01f, 0.01f), new Vector3(1.0f, 0.4f, 0.4f), lerpValueMask);
-                listDoorMask[i].Rotate(Vector3.up, 20.0f);
-            }
+			//Boucle sur les spot de mask (lerp pos/scale/rot)
+			for (int i = 0; i < 3; i++) {
+				listDoorMask [i].position = Vector3.Lerp (playerPos.position, transform.GetChild (i).position, lerpValueMask);
+				listDoorMask [i].localScale = Vector3.Lerp (new Vector3 (0.01f, 0.01f, 0.01f), new Vector3 (1.0f, 1.0f, 1.0f), lerpValueMask);
+				listDoorMask [i].Rotate (Vector3.up, 20.0f);
+			}
 
-            //Fin du lerp reset rotation , list player, et déclanche la porte
-            if (lerpValueMask >= 1.0f)
-            {
-                for (int i = 0; i < transform.childCount - 1; i++)
-                {
-                    listDoorMask[i].rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-                }
-                maskInventory.ResetListMask();
-                doorActivaded = true;
-            }
-        }
+			//Fin du lerp reset rotation , list player, et déclanche la porte
+			if (lerpValueMask >= 1.0f) {
+				for (int i = 0; i < 3; i++) {
+					listDoorMask [i].rotation = Quaternion.Euler (0.0f, 90.0f, 0.0f);
+					listDoorMask [i].parent = doorPart [i];
+				}
+				maskInventory.ResetListMask ();
+				doorActivaded = true;
+			}
+		} else {
+			isTryOpenning = false;
+		}
 
         //move the door
         if(doorActivaded)
         {
-            transform.position += (Vector3.up * Time.deltaTime);
+			Debug.Log ("OPENING !!");
+            //transform.position += (Vector3.up * Time.deltaTime);
+			doorPart[0].localPosition += (partDoor.up * Time.deltaTime);
+			doorPart[1].localPosition += (partDoor.right * Time.deltaTime);
+			doorPart[2].localPosition += (-partDoor.right * Time.deltaTime);
+
+			if (doorPart [0].localPosition.y >= 9.0f) {
+				isTryOpenning = false;
+				Debug.Log("out : " + maskInventory.ListMasks.Count);
+				if (doorActivaded)
+				{
+					maskInventory = null;
+					GetComponents<BoxCollider>()[0].enabled = false;
+					doorActivaded = false;
+				}
+			}
         }
 	}
 
@@ -112,19 +135,9 @@ public class OpenDoor : MonoBehaviour {
                 }
 
                 TimeManager.Instance.Block_Player_WithTimer(durationFreeze);
+				MaskInventory.Instance.EquipDefaultMask();
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        isTryOpenning = false;
-        Debug.Log("out : " + maskInventory.ListMasks.Count);
-        if (doorActivaded)
-        {
-            maskInventory = null;
-            GetComponents<BoxCollider>()[1].enabled = false;
-            doorActivaded = false;
-        }
-    }
 }
