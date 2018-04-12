@@ -38,6 +38,7 @@ public class Scenar : MonoBehaviour
     public bool RedirectPlayerOnPlay { get { return redirectPlayerOnPlay; } }
     public Transform PlayerBeginDest { get { return playerBeginDest; } }
 
+	[SerializeField] private FightWall wall;
 
     // Use this for initialization
     void Start()
@@ -73,6 +74,8 @@ public class Scenar : MonoBehaviour
         {
             if ((playOneTimeOnly && !hasBeenPlayed && !isPlaying) || !playOneTimeOnly && !isPlaying)
             {
+				wall.SetTrWall (playerBeginDest.position);
+				wall.SetSizeWall (25.0f);
                 mainTimeline.Play();
                 isPlaying = true;
                 OnScenario_Begin(scenarName);

@@ -12,11 +12,10 @@ using UnityEngine;
 public class FightWall : MonoBehaviour {
 
 	private BoxCollider boxCol;
-	//private SphereCollider sphereTrigger;
 	private Transform Player;
 	private ParticleSystem particleSys;
 
-	[SerializeField, Range(10.0f,100.0f)] private float sizeWall = 20.0f;
+	[SerializeField, Range(2.0f,100.0f)] private float sizeWall = 20.0f;
 
 	public bool wallIsActivaded = false;
 	private bool AnyoneAlive = true;
@@ -25,21 +24,17 @@ public class FightWall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		boxCol = GetComponent<BoxCollider> ();
-		//sphereTrigger = GetComponent<SphereCollider> ();
 		Player = FindObjectOfType<vd_Player.CharacterInitialization>().PlayerTr;
 		particleSys = GetComponent<ParticleSystem>();
 
-		//Set the size of the donuts
-		ParticleSystem.ShapeModule shape = particleSys.shape;
-		shape.donutRadius = sizeWall;
-
-		//sphereTrigger.radius = sizeWall - (sizeWall / sizeWall);
+		SetSizeWall (sizeWall);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Potential_Enemy.IsOnFight)//Detection d'un enemy et activation de la zone
+		if (Potential_Enemy.IsOnFight && !wallIsActivaded) {//Detection d'un enemy et activation de la zone
 			wallIsActivaded = true;
+		}
 
 		//Gestion de la zone
 		if (wallIsActivaded) {
@@ -82,4 +77,16 @@ public class FightWall : MonoBehaviour {
 			wallIsActivaded = false;
 	}
 
+	public void SetSizeWall(float newSize)
+	{
+		sizeWall = newSize;
+		//Set the size of the donuts
+		ParticleSystem.ShapeModule shape = particleSys.shape;
+		shape.donutRadius = sizeWall;
+	}
+
+	public void SetTrWall(Vector3 newPos)
+	{
+		transform.position = newPos;
+	}
 }
