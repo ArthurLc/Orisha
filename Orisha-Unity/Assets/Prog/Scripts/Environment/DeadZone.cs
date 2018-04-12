@@ -14,7 +14,7 @@ using System.Collections;
 using UnityEngine;
 
 public class DeadZone : MonoBehaviour {
-
+    
     private DisplayZoneName zoneScript;
     [Header("UI")]
     [SerializeField] float fadeInDuration = 1.5f;
@@ -22,9 +22,12 @@ public class DeadZone : MonoBehaviour {
     [Header("Debug")]
     [SerializeField] private bool test = false;
 
+    private static vd_Player.CharacterInitialization player;
+
     void Start()
     {
         zoneScript = FindObjectOfType<DisplayZoneName>();
+        player = FindObjectOfType<vd_Player.CharacterInitialization>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,22 +38,13 @@ public class DeadZone : MonoBehaviour {
         }
         else if (other.tag == "Player")
         {
-            zoneScript.BeginDisplay("GameOver", fadeInDuration, displayDuration);
-            // Le player fait "HAAAAAAAAA" parce qu'il tombe.
-            StartCoroutine(WaitToRepop(fadeInDuration + displayDuration));
+            if (player.IsPlayerDying == false)
+            {
+                zoneScript.BeginDisplay("GameOver", fadeInDuration, displayDuration);
+                // Le player fait "HAAAAAAAAA" parce qu'il tombe.
+                StartCoroutine(player.WaitToRepop(fadeInDuration + displayDuration));
+                player.IsPlayerDying = true;
+            }
         }
-    }
-
-    private IEnumerator WaitToRepop(float _timer)
-    {
-        float localTimer = _timer;
-
-        while (localTimer > 0) {
-            localTimer -= Time.deltaTime;
-            yield return null;
-        }
-
-        CheckpointsManager.RepopPlayerToCloserCheckpoint();
-        yield return null;
     }
 }

@@ -780,6 +780,47 @@ public class TimeManager : MonoBehaviour
 
     #endregion
 
+    #region Blockage_Ennemies
+    /// <summary>
+    /// Active the blockage of all Ennemies (around the Player) position and rotation => the blockage will be remove automaticly at the end of the timer
+    /// </summary>
+    /// <param name="_timer">duration of the blockage</param>
+    /// <param name="freezeAnimation">if true => the character will be freeze in the current animation (like if the time was stopped)</param>
+    public void Block_Ennemies_WithTimer(float _timer, bool freezeAnimation = false)
+    {
+        LayerMask l_mask = 1 << LayerMask.NameToLayer("Enemy");
+        Collider[] results = Physics.OverlapSphere(transform.position, 750.0f, l_mask, QueryTriggerInteraction.Collide);
+
+        if (results.Length > 0)
+        {
+            bool enemyIsAlive = false;
+            for (int i = 0; i < results.Length; i++)
+            {
+                enemyIsAlive = false;
+
+                AI_Enemy_Frontal enFront = results[i].gameObject.GetComponent<AI_Enemy_Frontal>();
+                AI_Enemy_Harasser enHarass = results[i].gameObject.GetComponent<AI_Enemy_Harasser>();
+                AI_Enemy_SandTracker enSand = results[i].gameObject.GetComponent<AI_Enemy_SandTracker>();
+
+                if (enFront != null && enFront.myState != AI_Enemy_Frontal.State.Die)
+                {
+                    enemyIsAlive = true;
+                }
+                else if (enHarass != null && enHarass.myState != AI_Enemy_Harasser.State.Die)
+                {
+                    enemyIsAlive = true;
+                }
+                else if (enSand != null && enSand.myState != AI_Enemy_SandTracker.State.Die)
+                {
+                    enemyIsAlive = true;
+                }
+
+                if (enemyIsAlive)
+                    TimeManager.Instance.Block_Character_WithTimer(results[i].gameObject, _timer, freezeAnimation);
+            }
+        }
+    }
+    #endregion
 
 
     #region Debug Tools

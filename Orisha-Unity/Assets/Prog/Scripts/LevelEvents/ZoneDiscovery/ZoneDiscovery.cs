@@ -63,38 +63,7 @@ public class ZoneDiscovery : MonoBehaviour
             playableDirector.Play();
 
             TimeManager.Instance.Block_Player_WithTimer((float)playableDirector.duration);
-
-            LayerMask l_mask = 1 << LayerMask.NameToLayer("Enemy");
-            Collider[] results = Physics.OverlapSphere(transform.position, 75.0f, l_mask, QueryTriggerInteraction.Collide);
-
-            if(results.Length > 0)
-            {
-                for (int i = 0; i < results.Length; i++)
-                {
-                    bool enemyIsAlive = false;
-
-                    AI_Enemy_Frontal enFront = results[i].gameObject.GetComponent<AI_Enemy_Frontal>();
-                    AI_Enemy_Harasser enHarass = results[i].gameObject.GetComponent<AI_Enemy_Harasser>();
-                    AI_Enemy_SandTracker enSand = results[i].gameObject.GetComponent<AI_Enemy_SandTracker>();
-
-                    if (enFront != null && enFront.myState != AI_Enemy_Frontal.State.Die)
-                    {
-                        enemyIsAlive = true;
-                    }
-                    else if (enHarass != null && enHarass.myState != AI_Enemy_Harasser.State.Die)
-                    {
-                        enemyIsAlive = true;
-                    }
-                    else if (enSand != null && enSand.myState != AI_Enemy_SandTracker.State.Die)
-                    {
-                        enemyIsAlive = true;
-                    }
-
-
-                    if (enemyIsAlive)
-                        TimeManager.Instance.Block_Character_WithTimer(results[i].gameObject, (float)playableDirector.duration, true);                    
-                }
-            }
+            TimeManager.Instance.Block_Ennemies_WithTimer((float)playableDirector.duration, true);
 
             col.enabled = false;
         }

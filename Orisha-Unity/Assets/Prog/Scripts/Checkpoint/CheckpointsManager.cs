@@ -35,9 +35,14 @@ public static class CheckpointsManager {
     {
         Transform closerCheckpoint = null;
         for(int i = 0; i < checkpointList.Count; i++) {
-            closerCheckpoint = Vector3.Distance(player.PlayerTr.position, closerCheckpoint.position) >
-                Vector3.Distance(player.PlayerTr.position, checkpointList[i].transform.position) ?
-                    closerCheckpoint : checkpointList[i].transform;
+            if (closerCheckpoint == null)
+                closerCheckpoint = checkpointList[i].transform;
+            else
+            {
+                closerCheckpoint = Vector3.Distance(player.PlayerTr.position, closerCheckpoint.position) >
+                    Vector3.Distance(player.PlayerTr.position, checkpointList[i].transform.position) ?
+                        closerCheckpoint : checkpointList[i].transform;
+            }
         }
 
         player.RepopPlayerAtTransform(closerCheckpoint != null ? closerCheckpoint : player.StartingTr);

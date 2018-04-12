@@ -13,6 +13,7 @@
 
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 using System.Collections.Generic;
 
 
@@ -97,6 +98,18 @@ namespace vd_Player
             get { return health;}
         }
 
+        //Mort du player
+        private bool isPlayerDying;
+        public bool IsPlayerDying
+        {
+            get { return isPlayerDying; }
+            set { isPlayerDying = value; }
+        }
+        private DisplayZoneName zoneScript;
+        [Header("UI")]
+        [SerializeField] float fadeInDuration = 3.0f;
+        [SerializeField] float displayDuration = 3.0f;
+
 
         void Start()
         {
@@ -106,13 +119,14 @@ namespace vd_Player
             playerCam = GetComponentInChildren<PlayerCamera>();
             cam = GetComponentInChildren<Camera>();
             rb = GetComponentInChildren<Rigidbody>();
-            //playerInfos = GetComponentInChildren<PlayerInformations>();
             anim = GetComponentInChildren<Animator>();
             animEvents = GetComponentInChildren<PlayerAnimEvents>();
+            zoneScript = FindObjectOfType<DisplayZoneName>();
             startingTr = transform;
 
             originMaxHealth = health;
             maxHealth = health;
+            isPlayerDying = false;
 
             CheckpointsManager.PlayerRef = this;
 
@@ -220,6 +234,20 @@ namespace vd_Player
         public void TakeDamage(int _damages)
         {
             health -= _damages;
+            if(health <= 0.0f)
+            {
+                if (isPlayerDying == false)
+                {
+                    zoneScript.BeginDisplay("GameOver", fadeInDuration, displayDuration);
+                    // Le player fait "HAAAAAAAAA" parce qu'il meurt.
+                    // Le player joue l'animation de mort.
+                    TimeManager.Instance.Block_Player_WithTimer(fadeInDuration + displayDuration);
+                    TimeManager.Instance.Block_Ennemies_WithTimer(fadeInDuration + displayDuration, true);
+                    StartCoroutine(WaitToRepop(fadeInDuration + displayDuration));
+
+                    isPlayerDying = true;
+                }
+            }
         }
 
         public void PropulsePlayer(Vector3 _dir)
@@ -233,6 +261,26 @@ namespace vd_Player
             Rb.angularVelocity = Vector3.zero;
             PlayerTr.position = _tr.position;
             PlayerTr.rotation = _tr.rotation;
+
+            health = maxHealth;
+
+            isPlayerDying = false;
+        }
+
+
+
+        public IEnumerator WaitToRepop(float _timer)
+        {
+            float localTimer = _timer;
+
+            while (localTimer > 0)
+            {
+                localTimer -= Time.deltaTime;
+                yield return null;
+            }
+
+            CheckpointsManager.RepopPlayerToCloserCheckpoint();
+            yield return null;
         }
     }
 
