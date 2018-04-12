@@ -43,10 +43,7 @@ namespace vd_Inputs
         /// </summary>
         public static InputMode GetInputMode
         {
-            get 
-			{ 				
-				return inputMode; 
-			}
+            get { return inputMode; }
         }
 
         /// <summary>
@@ -168,19 +165,13 @@ namespace vd_Inputs
 
         void Start()
         {
-			if (instance != null) 
-			{
-				Debug.Log("destroy inputManager");
-				Destroy (this);
+			if (instance != null) {
+				Destroy (this.gameObject);
 			}
 			instance = this;
             ChangeInputMode(InputMode.keyboard);
             
-
             InitGamePadFactors();
-
-            //if (FindObjectsOfType<InputManager>().Length > 1)
-                //Destroy(gameObject);
             DontDestroyOnLoad(gameObject);
         }
 

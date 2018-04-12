@@ -221,11 +221,10 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    void Awake()
+    void Start()
     {
-        if (instance != null)
-        {
-            Destroy(instance.gameObject);
+        if (instance != null) {
+            Destroy(this);
         }
 
         instance = this;

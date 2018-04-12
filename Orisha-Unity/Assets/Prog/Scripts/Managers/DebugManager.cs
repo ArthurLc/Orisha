@@ -59,13 +59,11 @@ namespace vd_Debug
 
         void Start()
         {
-			if (instance != null) 
-			{
+			if (instance != null) {
 				Destroy (this);
 			}
 			instance = this;
-           // if (FindObjectsOfType<DebugManager>().Length > 1)
-             //   Destroy(gameObject);
+
             DontDestroyOnLoad(gameObject);
         }
 
