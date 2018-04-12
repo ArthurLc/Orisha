@@ -34,9 +34,10 @@ public class ZoneDiscovery : MonoBehaviour
 
     void Start()
     {
-        zoneScript = FindObjectOfType<DisplayZoneName>();
         col = GetComponent<Collider>();
         isBeginDisplay = false;
+
+        zoneScript = FindObjectOfType<DisplayZoneName>();
     }
 
     void Update()
