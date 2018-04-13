@@ -17,8 +17,7 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
     protected Vector3 startTransform;
 
     Potential_Enemy pe;
-
-    NavMeshAgent myagent;
+    
     Rigidbody rb;
     [Header("Links")]
     [SerializeField] Animator crocoAnim;

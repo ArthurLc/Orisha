@@ -16,8 +16,10 @@ public class AnimInfo_Enemy : MonoBehaviour
 {
     public bool isActive = true;
 
+    [SerializeField] private AI_Enemy_Basic enemyBasic;
+
     [Header("Damage boxes")]
-    [SerializeField] private DamageBox box_RightArm;
+    [SerializeField] private DamageBox box_Weapon;
     
     private Animator animator;
 
@@ -26,7 +28,7 @@ public class AnimInfo_Enemy : MonoBehaviour
     {
         if (isActive)
         {
-            if (box_RightArm == null)
+            if (box_Weapon == null)
             {
                 Debug.LogError("DamageBox manquante dans le PlayerAnimEvents, il va  avoir des erreurs !");
             }
@@ -36,27 +38,27 @@ public class AnimInfo_Enemy : MonoBehaviour
     }
 
     /// <summary> 
-    /// Fonction qui active l'attaque box du bras droit de l'ennemi
+    /// Fonction qui active l'attaque box de l'arme de l'ennemi
     /// </summary>
-    public void EnableBox_RightArm(int _damageValue)
+    public void EnableBox_Weapon(int _damageValue)
     {
         if (isActive)
         {
-            box_RightArm.enabled = true;
-            box_RightArm.damageValue = _damageValue;
+            box_Weapon.enabled = true;
+            box_Weapon.damageValue = _damageValue;
             /*SoundManager.source.clip = swoosh;
             SoundManager.source.Play();*/
         }
     }
 
     /// <summary> 
-    /// Fonction qui désactive l'attaque box du bras droit de l'ennemi
+    /// Fonction qui désactive l'attaque box de l'arme de l'ennemi
     /// </summary>
-    public void DisableBox_RightArm()
+    public void DisableBox_Weapon()
     {
         if (isActive)
         {
-            box_RightArm.enabled = false;
+            box_Weapon.enabled = false;
         }
     }
 
@@ -77,7 +79,7 @@ public class AnimInfo_Enemy : MonoBehaviour
     {
         if (isActive)
         {
-            box_RightArm.enabled = true;
+            box_Weapon.enabled = true;
 
             /*if (!SoundManager.source.isPlaying)
             {
@@ -94,7 +96,7 @@ public class AnimInfo_Enemy : MonoBehaviour
     {
         if (isActive)
         {
-            box_RightArm.enabled = false;
+            box_Weapon.enabled = false;
         }
     }
 
@@ -106,7 +108,7 @@ public class AnimInfo_Enemy : MonoBehaviour
     {
         if (isActive)
         {
-            //playerController.CanRotate = false;
+            enemyBasic.FreezePosRot();
         }
     }
 
@@ -117,7 +119,7 @@ public class AnimInfo_Enemy : MonoBehaviour
     {
         if (isActive)
         {
-            //playerController.CanRotate = true;
+            enemyBasic.UnfreezePosRot();
         }
     }
 

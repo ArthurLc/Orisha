@@ -774,6 +774,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1581205055434306
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4940623652783668}
+  - component: {fileID: 33685720425633890}
+  - component: {fileID: 65813585269275288}
+  - component: {fileID: 23219250172217906}
+  - component: {fileID: 114454595616049954}
+  m_Layer: 11
+  m_Name: DB_Weapon
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1588573105073698
 GameObject:
   m_ObjectHideFlags: 1
@@ -896,25 +915,6 @@ GameObject:
   m_Layer: 14
   m_Name: joint_Out_major_R_C3_pleaseInsertCharacterName
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1755200040270672
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4519917675835258}
-  - component: {fileID: 33238299558042788}
-  - component: {fileID: 65781788546116486}
-  - component: {fileID: 23546580147287820}
-  - component: {fileID: 114100621511719420}
-  m_Layer: 11
-  m_Name: DB_RightArm
-  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1268,7 +1268,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.25, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
-  m_Children: []
+  m_Children:
+  - {fileID: 4940623652783668}
   m_Father: {fileID: 4695496536246204}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1482,7 +1483,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4059812957670902}
-  - {fileID: 4519917675835258}
   m_Father: {fileID: 4998024611793734}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1627,19 +1627,6 @@ Transform:
   - {fileID: 4954092052458204}
   m_Father: {fileID: 4560094372944880}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4519917675835258
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1755200040270672}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4369809442969292}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4533191606783814
 Transform:
@@ -2100,6 +2087,19 @@ Transform:
   m_Father: {fileID: 4813229154845766}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4940623652783668
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581205055434306}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -25, z: 0}
+  m_LocalScale: {x: 65, y: 300, z: 20}
+  m_Children: []
+  m_Father: {fileID: 4161497012333520}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4954092052458204
 Transform:
   m_ObjectHideFlags: 1
@@ -2142,12 +2142,12 @@ Transform:
   m_Father: {fileID: 4066550266293830}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23546580147287820
+--- !u!23 &23219250172217906
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1755200040270672}
+  m_GameObject: {fileID: 1581205055434306}
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -2176,12 +2176,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33238299558042788
+--- !u!33 &33685720425633890
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1755200040270672}
+  m_GameObject: {fileID: 1581205055434306}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54635508203605334
 Rigidbody:
@@ -2342,17 +2342,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.65, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65781788546116486
+--- !u!65 &65813585269275288
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1755200040270672}
+  m_GameObject: {fileID: 1581205055434306}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.5, z: 0.29}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65959175085263164
 BoxCollider:
@@ -2437,21 +2437,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114945917185975088}
   partOfBody: 3
---- !u!114 &114100621511719420
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1755200040270672}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560d99e50ef8e3f469f1a10cb29f1c16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityTransform: {fileID: 0}
-  playerDatas: {fileID: 0}
-  damageValue: 10
-  debug: 1
 --- !u!114 &114144409020575072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2534,6 +2519,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114945917185975088}
   partOfBody: 4
+--- !u!114 &114454595616049954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581205055434306}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560d99e50ef8e3f469f1a10cb29f1c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityTransform: {fileID: 0}
+  playerDatas: {fileID: 0}
+  damageValue: 10
+  debug: 1
 --- !u!114 &114550378985867588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2559,7 +2559,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  box_RightArm: {fileID: 114100621511719420}
+  enemyBasic: {fileID: 114945917185975088}
+  box_Weapon: {fileID: 114454595616049954}
 --- !u!114 &114645559349912058
 MonoBehaviour:
   m_ObjectHideFlags: 1

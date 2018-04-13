@@ -75,12 +75,10 @@ public class AI_Enemy_Basic : MonoBehaviour
     [SerializeField] protected bool dieWhenTouchingTarget = false;
 
     [Header("Debug")]
-    [SerializeField]
-    protected bool debugLog = false;
+    [SerializeField] protected bool debugLog = false;
 
 	[Header("AI")]
-	[SerializeField]
-	protected State state;
+	[SerializeField] protected State state;
 	public State myState
 	{
 		get
@@ -93,6 +91,8 @@ public class AI_Enemy_Basic : MonoBehaviour
 			state = value;
 		}
 	}
+
+    protected NavMeshAgent myagent;
 
     private void Awake()
     {
@@ -113,6 +113,7 @@ public class AI_Enemy_Basic : MonoBehaviour
         tempRend.materials = RememberMat;
 
         GetComponentInChildren<SandShaderPositionner>().myMat = mat;
+        myagent = GetComponent<NavMeshAgent>();
     }
 
     protected void OnBegin()
@@ -134,21 +135,21 @@ public class AI_Enemy_Basic : MonoBehaviour
     {
         isFreeze = true;
 
-        if (GetComponent<NavMeshAgent>() != null)
+        if (myagent != null)
         {
-            GetComponent<NavMeshAgent>().destination = transform.position;
-            GetComponent<NavMeshAgent>().updatePosition = false;
-            GetComponent<NavMeshAgent>().updateRotation = false;
+            myagent.destination = transform.position;
+            myagent.updatePosition = false;
+            myagent.updateRotation = false;
         }
     }
     public void UnfreezePosRot()
     {
         isFreeze = false;
 
-        if (GetComponent<NavMeshAgent>() != null)
+        if (myagent != null)
         {
-            GetComponent<NavMeshAgent>().updatePosition = true;
-            GetComponent<NavMeshAgent>().updateRotation = true;
+            myagent.updatePosition = true;
+            myagent.updateRotation = true;
         }
     }
 }
