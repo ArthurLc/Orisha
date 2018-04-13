@@ -48,7 +48,7 @@ public abstract class Scenar_Object : MonoBehaviour
 
     public virtual void Init()
     {
-		Debug.Log ("Init Called");
+		//Debug.Log ("Init Called");
 
         for (int i = 0; i < relatedScenarioName.Length; i++)
             if (Scenar_Manager.scenarios.ContainsKey(relatedScenarioName[i]))
