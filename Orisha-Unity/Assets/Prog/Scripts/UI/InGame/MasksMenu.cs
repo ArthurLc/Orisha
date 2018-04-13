@@ -28,8 +28,11 @@ public class MasksMenu : MonoBehaviour {
     [SerializeField] GameObject masksParent;
 	[SerializeField] ButtonMask[] masks;
 
+	[SerializeField] GameObject menu;
+
 	private int idSelected = 0;
 
+	//parce que sinon le get plante
 	private int IdSelected
 	{
 		get{ return idSelected; }
@@ -52,26 +55,37 @@ public class MasksMenu : MonoBehaviour {
 
     private void Update()
     {
-		if(Input.GetButtonDown("OpenMaskMenu"))
+		if (menu.activeSelf == false) 
 		{
-				TimeManager.Instance.Slow_AllScene(0.01f);
-		}
+			if (Input.GetButtonDown ("OpenMaskMenu")) 
+			{
+				TimeManager.Instance.Slow_AllScene (0.01f);
+				transform.localScale = Vector3.zero;
+			}
+			if (Input.GetButton ("OpenMaskMenu")) 
+			{			
+				UpdateVisualMasks ();
+				masksParent.SetActive (true);
+				GameLoopManager.EnableMouse ();
+			} else if (Input.GetButtonUp ("OpenMaskMenu")) 
+			{
+				TimeManager.Instance.Slow_UnactiveAll ();
+				if (InputManager.GetInputMode == InputMode.joy && masks [idSelected].button.interactable)
+					masks [idSelected].button.onClick.Invoke ();
+				masksParent.SetActive (false);
+				GameLoopManager.DisableMouse ();
+			}
 
-        if (Input.GetButton("OpenMaskMenu"))
-        {
-			
-            UpdateVisualMasks();
-            masksParent.SetActive(true);
-            GameLoopManager.EnableMouse();
-        }
-        else if(Input.GetButtonUp("OpenMaskMenu"))
-        {
-			TimeManager.Instance.Slow_UnactiveAll();
-			if(InputManager.GetInputMode == InputMode.joy && masks[idSelected].button.interactable)
-				masks [idSelected].button.onClick.Invoke ();
-            masksParent.SetActive(false);
-            GameLoopManager.DisableMouse();
-        }
+			if (transform.localScale.x < Vector3.one.x)
+			{
+				transform.localScale += Vector3.one * 10 * Time.unscaledDeltaTime;
+			}
+		} 
+		else if (masksParent.activeSelf == true) 
+		{
+			//TimeManager.Instance.Slow_UnactiveAll ();
+			masksParent.SetActive (false);
+		}
     }
 
 
