@@ -51,9 +51,9 @@ public class AI_EnemyStateIsHitFrontal : AI_EnemyStateIsHit
             RaycastHit hit;
             ray.origin = myIndividu.transform.position + Vector3.up;
             ray.direction = Vector3.down;
-            //Debug.DrawRay(ray.origin, ray.direction * 1.0f, Color.magenta);
+            //Debug.DrawRay(ray.origin, ray.direction * 1.5f, Color.magenta);
             //Debug.Log("Velocity: " + myRb.velocity.magnitude);
-            if (secureCount > 5 && myRb.velocity.magnitude < 2.0f && Physics.Raycast(ray.origin, ray.direction, out hit, 1.0f)) //Il est sur le sol
+            if (secureCount > 5 && myRb.velocity.magnitude < 2.0f && Physics.Raycast(ray.origin, ray.direction, out hit, 1.5f)) //Il est sur le sol
             {
                 (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.Idle);
             }

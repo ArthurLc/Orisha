@@ -27,6 +27,7 @@ public class Ai_EnemyStateDie : AI_EnemyState
     protected void DeathAction()
     {
         myAnimCroco.SetTrigger("Die");
+        myAnimWeapon.SetTrigger("Die");
 
         //myAnim.GetComponent<CapsuleCollider>().direction = 0;
 

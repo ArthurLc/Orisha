@@ -77,6 +77,13 @@ public class AI_Enemy_Basic : MonoBehaviour
     protected float abandonDistance = 10.0f;
     [SerializeField] protected float range = 2.0f;
     [SerializeField] protected bool dieWhenTouchingTarget = false;
+    //Alert
+    protected bool asCallReinforcement = false;
+    public bool AsCallReinforcement
+    {
+        get { return asCallReinforcement; }
+        set { asCallReinforcement = value; }
+    }
 
     [Header("Debug")]
     [SerializeField] protected bool debugLog = false;
@@ -101,6 +108,7 @@ public class AI_Enemy_Basic : MonoBehaviour
     private void Awake()
     {
         isFreeze = false;
+        asCallReinforcement = false;
         Material mat = new Material(SandMaterial);
         Renderer tempRend = GetComponentInChildren<SandShaderPositionner>().gameObject.GetComponent<Renderer>();
         Material[] RememberMat = tempRend.materials;

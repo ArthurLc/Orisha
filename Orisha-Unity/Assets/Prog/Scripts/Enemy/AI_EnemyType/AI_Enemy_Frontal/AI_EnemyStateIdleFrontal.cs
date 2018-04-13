@@ -49,7 +49,12 @@ public class AI_EnemyStateIdleFrontal : AI_EnemyStateIdle
 
         // if enemy found, chase it
         if (currentTarget != null)
-            (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.Alert);
+        {
+            if(myIndividu.AsCallReinforcement == false)
+                (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.Alert);
+            else
+                (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.Chasing);
+        }
 
 
         // Final instruction of the global state update

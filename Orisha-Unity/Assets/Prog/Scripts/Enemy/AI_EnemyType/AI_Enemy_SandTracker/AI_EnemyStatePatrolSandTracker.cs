@@ -48,7 +48,10 @@ public class AI_EnemyStatePatrolSandTracker : AI_EnemyStatePatrol
         // if enemy found, chase it
         if (currentTarget != null)
         {
-            (myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Alert);
+            if (myIndividu.AsCallReinforcement == false)
+                (myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Alert);
+            else
+                (myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Chasing);
         }
         else
         {
