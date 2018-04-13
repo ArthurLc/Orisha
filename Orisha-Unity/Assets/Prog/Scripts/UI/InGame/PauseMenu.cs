@@ -82,6 +82,7 @@ public class PauseMenu : MonoBehaviour
 		OnInputModeChange (InputManager.GetInputMode);
         timeScaleWhenPaused = Time.timeScale;
         Time.timeScale = 0.0f;
+		TimeManager.Instance.Slow_AllScene (0.0f);
     }
 		
     public void Continue()
@@ -94,6 +95,7 @@ public class PauseMenu : MonoBehaviour
 
 
         Time.timeScale = timeScaleWhenPaused;
+		TimeManager.Instance.Slow_UnactiveAll();
         //Debug.Log(Time.timeScale);
     }
 
