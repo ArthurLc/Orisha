@@ -13,20 +13,34 @@ using UnityEngine.AI;
 
 public class AI_Enemy_Frontal : AI_Enemy_Basic
 {
-    Potential_Enemy pe;
-
     // Lieu d'idle
     protected Vector3 startTransform;
+
+    Potential_Enemy pe;
+
+    NavMeshAgent myagent;
+    Rigidbody rb;
+    [Header("Links")]
+    [SerializeField] Animator crocoAnim;
+    [SerializeField] Animator weaponAnim;
 
     void Start ()
     {
         startTransform = transform.position;
 
         OnBegin();
-        ChangeState(State.Idle, true);
-        GetComponent<NavMeshAgent>().speed = speed;
+        myagent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
+        myagent.speed = speed;
         health = Basehealth;
         agentIsControlledByOther = false;
+
+        ChangeState(State.Idle, true);
+
+        if (crocoAnim == null) {
+            Debug.LogError("Il manque le link de l'Animator du Croco !");
+            Destroy(this);
+        }
     }
 
     void Update ()
@@ -65,35 +79,35 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
             {
                 case State.Idle:
                     myCurrentState = new AI_EnemyStateIdleFrontal();
-                    (myCurrentState as AI_EnemyStateIdleFrontal).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform);
+                    (myCurrentState as AI_EnemyStateIdleFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform);
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertFrontal();
-                    (myCurrentState as AI_EnemyStateAlertFrontal).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateAlertFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateAlertFrontal).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.Chasing:
                     myCurrentState = new AI_EnemyStateChaseFrontal();
-                    (myCurrentState as AI_EnemyStateChaseFrontal).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateChaseFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateChaseFrontal).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightFrontal();
-                    (myCurrentState as AI_EnemyStateFightFrontal).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateFightFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateFightFrontal).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.ReplacingToFight:
                     myCurrentState = new AI_EnemyStateReplaceToFightFrontal();
-                    (myCurrentState as AI_EnemyStateReplaceToFightFrontal).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateReplaceToFightFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateReplaceToFightFrontal).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.IsHit:
                     myCurrentState = new AI_EnemyStateIsHitFrontal();
-                    (myCurrentState as AI_EnemyStateIsHitFrontal).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateIsHitFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     break;
                 case State.Die:
                     myCurrentState = new Ai_EnemyStateDieFrontal();
-                    (myCurrentState as Ai_EnemyStateDieFrontal).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform);
+                    (myCurrentState as Ai_EnemyStateDieFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform);
                     StopAllCoroutines();
                     break;
             }

@@ -26,7 +26,7 @@ public class Ai_EnemyStateDie : AI_EnemyState
 
     protected void DeathAction()
     {
-        myAnim.SetTrigger("Die");
+        myAnimCroco.SetTrigger("Die");
 
         //myAnim.GetComponent<CapsuleCollider>().direction = 0;
 
@@ -34,7 +34,7 @@ public class Ai_EnemyStateDie : AI_EnemyState
         myAgent.updateRotation = false;
         myAgent.updateUpAxis = false;
 
-        myAnim.GetComponent<CapsuleCollider>().height = 0.0f;
+        myAnimCroco.GetComponent<CapsuleCollider>().height = 0.0f;
 
         GameObject.Destroy(myAgent);
     }
@@ -62,7 +62,7 @@ public class Ai_EnemyStateDie : AI_EnemyState
             GameObject.Destroy(myIndividu.gameObject);           
         }
 
-        myAnim.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, distanceToTheGroundDisappear, 0.0f);
+        myAnimCroco.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, distanceToTheGroundDisappear, 0.0f);
     }
 
 

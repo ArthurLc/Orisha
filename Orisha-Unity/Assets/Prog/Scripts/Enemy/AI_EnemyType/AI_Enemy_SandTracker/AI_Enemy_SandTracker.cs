@@ -18,14 +18,29 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
 
     Potential_Enemy pe;
 
+    NavMeshAgent myagent;
+    Rigidbody rb;
+    [Header("Links")]
+    [SerializeField] Animator crocoAnim;
+    [SerializeField] Animator weaponAnim;
+
     void Start ()
     {
-        OnBegin();
-        ChangeState(State.Idle, true);
-        GetComponent<NavMeshAgent>().speed = speed;
         startTransform = transform.position;
+
+        OnBegin();
+        myagent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
+        myagent.speed = speed;
         health = Basehealth;
         agentIsControlledByOther = false;
+
+        ChangeState(State.Idle, true);
+
+        if (crocoAnim == null) {
+            Debug.LogError("Il manque le link de l'Animator du Croco !");
+            Destroy(this);
+        }
     }
 	
 	void Update ()
@@ -64,42 +79,42 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
             {
                 case State.Idle:
                     myCurrentState = new AI_EnemyStateIdleSandTracker();
-                    (myCurrentState as AI_EnemyStateIdleSandTracker).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform);
+                    (myCurrentState as AI_EnemyStateIdleSandTracker).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform);
                     break;
                 case State.Patroling:
                     myCurrentState = new AI_EnemyStatePatrolSandTracker();
-                    (myCurrentState as AI_EnemyStatePatrolSandTracker).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStatePatrolSandTracker).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStatePatrolSandTracker).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertSandTracker();
-                    (myCurrentState as AI_EnemyStateAlertSandTracker).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateAlertSandTracker).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateAlertSandTracker).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.Chasing:
                     myCurrentState = new AI_EnemyStateChaseSandTracker();
-                    (myCurrentState as AI_EnemyStateChaseSandTracker).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateChaseSandTracker).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateChaseSandTracker).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightSandTracker();
-                    (myCurrentState as AI_EnemyStateFightSandTracker).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateFightSandTracker).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateFightSandTracker).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
 
                     break;
                 case State.Esquive:
                       myCurrentState = new AI_EnemyStateEsquiveSandTracker();
-                    (myCurrentState as AI_EnemyStateEsquiveSandTracker).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateEsquiveSandTracker).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateEsquiveSandTracker).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.Die:
                     myCurrentState = new Ai_EnemyStateDieSandTracker();
-                    (myCurrentState as Ai_EnemyStateDieSandTracker).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform);
+                    (myCurrentState as Ai_EnemyStateDieSandTracker).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform);
                     StopAllCoroutines();
                     break;
                 case State.IsHit:
                     myCurrentState = new AI_EnemyStateIsHitSandTracker();
-                    (myCurrentState as AI_EnemyStateIsHitSandTracker).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateIsHitSandTracker).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
                     break;
 
             }

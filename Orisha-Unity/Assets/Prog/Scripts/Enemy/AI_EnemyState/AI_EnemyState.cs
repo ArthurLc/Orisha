@@ -48,7 +48,8 @@ public class AI_EnemyState
     }
 
     protected AI_Enemy_Basic myIndividu;
-    protected Animator myAnim;
+    protected Animator myAnimCroco;
+    protected Animator myAnimWeapon;
     protected NavMeshAgent myAgent;
     protected Rigidbody myRb;
 
@@ -72,35 +73,39 @@ public class AI_EnemyState
     {
         
     }
-    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
     {
         myIndividu = _individu;
-        myAnim = _anim;
+        myAnimCroco = _animCroco;
+        myAnimWeapon = _animWeapon;
         myAgent = _agent;
         myRb = _rb;
         startTransform = _startPosition;
     }
-    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
     {
         myIndividu = _individu;
-        myAnim = _anim;
+        myAnimCroco = _animCroco;
+        myAnimWeapon = _animWeapon;
         myAgent = _agent;
         myRb = _rb;
         patrolPositions = _patrolPositions;
     }
-    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
     {
         myIndividu = _individu;
-        myAnim = _anim;
+        myAnimCroco = _animCroco;
+        myAnimWeapon = _animWeapon;
         myAgent = _agent;
         myRb = _rb;
         startTransform = _startPosition;
         currentTarget = _myTarget;
     }
-    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
     {
         myIndividu = _individu;
-        myAnim = _anim;
+        myAnimCroco = _animCroco;
+        myAnimWeapon = _animWeapon;
         myAgent = _agent;
         myRb = _rb;
         patrolPositions = _patrolPositions;
@@ -127,8 +132,11 @@ public class AI_EnemyState
     {
         // Update des animations
 
-        if(myAgent != null)
-            myAnim.SetFloat("Velocity", myAgent.velocity.magnitude);
+        if (myAgent != null)
+        {
+            myAnimCroco.SetFloat("Velocity", myAgent.velocity.magnitude);
+            myAnimWeapon.SetFloat("Velocity", myAgent.velocity.magnitude);
+        }
     }
 
     protected virtual void CurrentFixedUpdate()
@@ -148,28 +156,7 @@ public class AI_EnemyState
         if(myAgent && myAgent.isOnNavMesh)
             myAgent.isStopped = false;
     }
-    
-    //public virtual void Init(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
-    //{
-    //    myIndividu = _individu;
-    //    myAnim = _anim;
-    //    myAgent = _agent;
-    //    myRb = _rb;
-    //    startTransform = _startPosition;
-    //}
-    //public virtual void Init(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
-    //{
-    //    myIndividu = _individu;
-    //    myAnim = _anim;
-    //    myAgent = _agent;
-    //    myRb = _rb;
-    //    patrolPositions = _patrolPositions;
-    //}
 
-    //public void InitTarget(Transform _myTarget)
-    //{
-    //    currentTarget = _myTarget;
-    //}
     public virtual void PropulseAgent(Vector3 _dir)
     {
         myRb.isKinematic = false;

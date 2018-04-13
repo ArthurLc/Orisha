@@ -74,10 +74,6 @@ public class HittenBox_Enemy : MonoBehaviour, HittenBox
         Debug.DrawRay(transform.position, PropulseDir, Color.blue, currentExpulsionLvl);
     }
 
-    private void Start()
-    {
-    }
-
     /// <summary>
     /// Gestion de la collision avec un "ennemi"
     /// Le comportement dépend du tag du collider et du tag de ce qu'il heurte

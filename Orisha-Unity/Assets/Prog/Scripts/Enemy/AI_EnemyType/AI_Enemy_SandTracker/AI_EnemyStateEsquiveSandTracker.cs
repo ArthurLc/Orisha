@@ -29,30 +29,30 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         FixedUpdateState = CurrentFixedUpdate;
         myEsquiveState = EsquiveState.GoesUnderSand;
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
     {
-        base.OnBegin(_individu, _anim, _agent, _rb, _startPosition);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _startPosition);
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         myEsquiveState = EsquiveState.GoesUnderSand;
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
     {
-        base.OnBegin(_individu, _anim, _agent, _rb, _patrolPositions);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _patrolPositions);
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         myEsquiveState = EsquiveState.GoesUnderSand;
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
     {
-        base.OnBegin(_individu, _anim, _agent, _rb, _startPosition, _myTarget);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _startPosition, _myTarget);
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         myEsquiveState = EsquiveState.GoesUnderSand;
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
     {
-        base.OnBegin(_individu, _anim, _agent, _rb, _patrolPositions, _myTarget);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _patrolPositions, _myTarget);
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         myEsquiveState = EsquiveState.GoesUnderSand;
@@ -75,7 +75,7 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         {
             
             myAgent.isStopped = true;
-            myAnim.transform.position -= Vector3.up * (Time.deltaTime * moveSpeed);
+            myAnimCroco.transform.position -= Vector3.up * (Time.deltaTime * moveSpeed);
             currentYPos += (Time.deltaTime * moveSpeed);
             myIndividu.GetComponentInChildren<SandShaderPositionner>().HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
 
@@ -110,13 +110,13 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         else
         {
             myAgent.isStopped = true;
-            myAnim.transform.position += Vector3.up * (Time.deltaTime * moveSpeed);
+            myAnimCroco.transform.position += Vector3.up * (Time.deltaTime * moveSpeed);
             currentYPos -= (Time.deltaTime * moveSpeed);
             myIndividu.GetComponentInChildren<SandShaderPositionner>().HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
             if (currentYPos <= 0.0f)
             {
                 myIndividu.GetComponentInChildren<SandShaderPositionner>().Activate(false);
-                myAnim.transform.position = new Vector3(myAnim.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnim.transform.position.z);
+                myAnimCroco.transform.position = new Vector3(myAnimCroco.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnimCroco.transform.position.z);
                 myAgent.isStopped = false;
 
                 foreach (HittenBox_Enemy hbe in allHittenBox)
@@ -133,7 +133,7 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
     public override void InitCombat(float _abandonDistance, float _range, float _minDistanceToTarget, bool _dieWhenTouchingTarget)
     {
         base.InitCombat(_abandonDistance, _range, _minDistanceToTarget, _dieWhenTouchingTarget);
-        initialeYdeltaPos = myAnim.transform.position.y - myIndividu.transform.position.y;
+        initialeYdeltaPos = myAnimCroco.transform.position.y - myIndividu.transform.position.y;
 
         allHittenBox = myIndividu.GetComponentsInChildren<HittenBox_Enemy>();        
 
@@ -146,7 +146,7 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
 
     public override void PropulseAgent(Vector3 _dir)
     {
-        myAnim.transform.position = new Vector3(myAnim.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnim.transform.position.z);
+        myAnimCroco.transform.position = new Vector3(myAnimCroco.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnimCroco.transform.position.z);
         myIndividu.GetComponentInChildren<SandShaderPositionner>().Activate(false);
         foreach (HittenBox_Enemy hbe in allHittenBox)
         {

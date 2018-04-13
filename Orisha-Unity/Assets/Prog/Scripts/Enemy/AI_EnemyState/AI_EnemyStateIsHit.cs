@@ -10,31 +10,31 @@ public class AI_EnemyStateIsHit : AI_EnemyState
     {
         base.OnBegin();
         secureCount = 0;
-        myAnim.SetTrigger("GetHit");
+        myAnimCroco.SetTrigger("GetHit");
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
     {
-        base.OnBegin(_individu, _anim, _agent, _rb, _startPosition);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _startPosition);
         secureCount = 0;
-        myAnim.SetTrigger("GetHit");
+        myAnimCroco.SetTrigger("GetHit");
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
     {
-        base.OnBegin(_individu, _anim, _agent, _rb, _patrolPositions);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _patrolPositions);
         secureCount = 0;
-        myAnim.SetTrigger("GetHit");
+        myAnimCroco.SetTrigger("GetHit");
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
     {
-        base.OnBegin(_individu, _anim, _agent, _rb, _startPosition, _myTarget);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _startPosition, _myTarget);
         secureCount = 0;
-        myAnim.SetTrigger("GetHit");
+        myAnimCroco.SetTrigger("GetHit");
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _anim, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
     {
-        base.OnBegin(_individu, _anim, _agent, _rb, _patrolPositions, _myTarget);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _patrolPositions, _myTarget);
         secureCount = 0;
-        myAnim.SetTrigger("GetHit");
+        myAnimCroco.SetTrigger("GetHit");
     }
     
     protected override void CurrentUpdate()

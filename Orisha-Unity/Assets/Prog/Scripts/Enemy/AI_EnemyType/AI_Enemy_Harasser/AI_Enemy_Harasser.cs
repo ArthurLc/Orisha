@@ -13,20 +13,33 @@ using UnityEngine.AI;
 
 public class AI_Enemy_Harasser : AI_Enemy_Basic
 {
+    // Lieu d'idle
+    [SerializeField] private List<Transform> patrolTransform;
+
     Potential_Enemy pe;
 
-    // Lieu d'idle
-    [SerializeField]private List<Transform> patrolTransform;
+    NavMeshAgent myagent;
+    Rigidbody rb;
+    [Header("Links")]
+    [SerializeField] Animator crocoAnim;
+    [SerializeField] Animator weaponAnim;
 
     void Start()
     {
         OnBegin();
-        ChangeState(State.Patroling, true);
-        GetComponent<NavMeshAgent>().speed = speed;
+        myagent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
+        myagent.speed = speed;
         health = Basehealth;
         agentIsControlledByOther = false;
 
+        ChangeState(State.Patroling, true);
+
         Debug.Assert(patrolTransform != null, "Enemy Harasser: missing patrol transforms");
+        if (crocoAnim == null) {
+            Debug.LogError("Il manque le link de l'Animator du Croco !");
+            Destroy(this);
+        }
 
     }
 
@@ -60,26 +73,26 @@ public class AI_Enemy_Harasser : AI_Enemy_Basic
 
                 case State.Patroling:
                     myCurrentState = new AI_EnemyStatePatrolHarasser();
-                    (myCurrentState as AI_EnemyStatePatrolHarasser).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStatePatrolHarasser).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, patrolTransform, currentTarget);
                     (myCurrentState as AI_EnemyStatePatrolHarasser).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertHarasser();
-                    (myCurrentState as AI_EnemyStateAlertHarasser).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateAlertHarasser).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, patrolTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateAlertHarasser).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightHarasser();
-                    (myCurrentState as AI_EnemyStateFightHarasser).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateFightHarasser).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, patrolTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateFightHarasser).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
                     break;
                 case State.IsHit:
                     myCurrentState = new AI_EnemyStateIsHitHarasser();
-                    (myCurrentState as AI_EnemyStateIsHitHarasser).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), patrolTransform);
+                    (myCurrentState as AI_EnemyStateIsHitHarasser).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, patrolTransform);
                     break;
                 case State.Die:
                     myCurrentState = new AI_EnemyStateDieHarasser();
-                    (myCurrentState as AI_EnemyStateDieHarasser).OnBegin(this, GetComponentInChildren<Animator>(), GetComponent<NavMeshAgent>(), GetComponent<Rigidbody>(), patrolTransform);
+                    (myCurrentState as AI_EnemyStateDieHarasser).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, patrolTransform);
                     StopAllCoroutines();
                     break;
 
