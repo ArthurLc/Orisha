@@ -57,6 +57,10 @@ namespace vd_Debug
         [SerializeField] private KeyCode vibrateGamepadJ1 = KeyCode.F1;
         [SerializeField] private KeyCode vibrateGamepadJ2 = KeyCode.F2;
 
+		[Header("Masks")]
+		[SerializeField] private KeyCode giveAllMasks = KeyCode.F3;
+		[SerializeField] private Mask[] masks;
+
         void Start()
         {
 			if (instance != null) {
@@ -78,43 +82,46 @@ namespace vd_Debug
 
        
             // Lancement d'une partie avec contrôle clavier du persoA et une IA
-            if (Input.GetKeyDown(launchGameKeyboard))
-            {
-                vd_Inputs.InputManager.newInputMode(vd_Inputs.InputMode.keyboard);
-                Debug.Log("DebugManager: " + levelToLaunch + " chargé avec J1 clavier et j2 IA");
+			if (Input.GetKeyDown (launchGameKeyboard)) {
+				vd_Inputs.InputManager.newInputMode (vd_Inputs.InputMode.keyboard);
+				Debug.Log ("DebugManager: " + levelToLaunch + " chargé avec J1 clavier et j2 IA");
 
-                GameLoopManager.LaunchLevel(levelToLaunch, false);
-            }
+				GameLoopManager.LaunchLevel (levelToLaunch, false);
+			}
 
             // Retour au menu
-            else if (Input.GetKeyDown(backMenuKeyboard))
-            {
-                Debug.Log("DebugManager: " + menuToLaunch + " chargé");
-                SceneManager.LoadScene(menuToLaunch);
-            }
+            else if (Input.GetKeyDown (backMenuKeyboard)) {
+				Debug.Log ("DebugManager: " + menuToLaunch + " chargé");
+				SceneManager.LoadScene (menuToLaunch);
+			}
 
 
             // Changement de la langue
-            else if(Input.GetKeyDown(switchLangage))
-            {
-                if (GameLoopManager.CurrentLangage == "EN")
-                    GameLoopManager.CurrentLangage = "FR";
-                else
-                    GameLoopManager.CurrentLangage = "EN";
+            else if (Input.GetKeyDown (switchLangage)) {
+				if (GameLoopManager.CurrentLangage == "EN")
+					GameLoopManager.CurrentLangage = "FR";
+				else
+					GameLoopManager.CurrentLangage = "EN";
 
-                Debug.Log("DebugManager: changement de langue");
-            }
+				Debug.Log ("DebugManager: changement de langue");
+			}
 
 
             //_____________________GAMEPAD___________________________//
-            else if (Input.GetKeyDown(vibrateGamepadJ1))
-            {
-                vd_Inputs.InputManager.GamePad_StartVibration(0, 0.5f, 0.5f, 0.5f);
-            }
-            else if (Input.GetKeyDown(vibrateGamepadJ2))
-            {
-                vd_Inputs.InputManager.GamePad_StartVibration(1, 0.5f, 0.5f, 0.5f);
-            }
+            else if (Input.GetKeyDown (vibrateGamepadJ1)) {
+				vd_Inputs.InputManager.GamePad_StartVibration (0, 0.5f, 0.5f, 0.5f);
+			} else if (Input.GetKeyDown (vibrateGamepadJ2)) {
+				vd_Inputs.InputManager.GamePad_StartVibration (1, 0.5f, 0.5f, 0.5f);
+			}
+
+			//_______________________Maks_____________________________//
+			else if (Input.GetKeyDown  (giveAllMasks) && masks != null) 
+			{
+				for (int i = 0; i < masks.Length; ++i)
+				{
+					MaskInventory.Instance.AddAMask (masks[i]);
+				}
+			}
         }
     }
 
