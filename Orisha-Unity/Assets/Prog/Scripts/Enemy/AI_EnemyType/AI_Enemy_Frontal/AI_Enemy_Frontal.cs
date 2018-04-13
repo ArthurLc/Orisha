@@ -28,9 +28,9 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
         startTransform = transform.position;
 
         OnBegin();
-        myagent = GetComponent<NavMeshAgent>();
+        myAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
-        myagent.speed = speed;
+        myAgent.speed = speed;
         health = Basehealth;
         agentIsControlledByOther = false;
 
@@ -78,35 +78,35 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
             {
                 case State.Idle:
                     myCurrentState = new AI_EnemyStateIdleFrontal();
-                    (myCurrentState as AI_EnemyStateIdleFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform);
+                    (myCurrentState as AI_EnemyStateIdleFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform);
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertFrontal();
-                    (myCurrentState as AI_EnemyStateAlertFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
-                    (myCurrentState as AI_EnemyStateAlertFrontal).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
+                    (myCurrentState as AI_EnemyStateAlertFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateAlertFrontal).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.Chasing:
                     myCurrentState = new AI_EnemyStateChaseFrontal();
-                    (myCurrentState as AI_EnemyStateChaseFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
-                    (myCurrentState as AI_EnemyStateChaseFrontal).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
+                    (myCurrentState as AI_EnemyStateChaseFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateChaseFrontal).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightFrontal();
-                    (myCurrentState as AI_EnemyStateFightFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
-                    (myCurrentState as AI_EnemyStateFightFrontal).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
+                    (myCurrentState as AI_EnemyStateFightFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateFightFrontal).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.ReplacingToFight:
                     myCurrentState = new AI_EnemyStateReplaceToFightFrontal();
-                    (myCurrentState as AI_EnemyStateReplaceToFightFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
-                    (myCurrentState as AI_EnemyStateReplaceToFightFrontal).InitCombat(abandonDistance, range, minDistanceToTarget, dieWhenTouchingTarget);
+                    (myCurrentState as AI_EnemyStateReplaceToFightFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateReplaceToFightFrontal).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.IsHit:
                     myCurrentState = new AI_EnemyStateIsHitFrontal();
-                    (myCurrentState as AI_EnemyStateIsHitFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateIsHitFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
                     break;
                 case State.Die:
                     myCurrentState = new Ai_EnemyStateDieFrontal();
-                    (myCurrentState as Ai_EnemyStateDieFrontal).OnBegin(this, crocoAnim, weaponAnim, myagent, rb, startTransform);
+                    (myCurrentState as Ai_EnemyStateDieFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform);
                     StopAllCoroutines();
                     break;
             }

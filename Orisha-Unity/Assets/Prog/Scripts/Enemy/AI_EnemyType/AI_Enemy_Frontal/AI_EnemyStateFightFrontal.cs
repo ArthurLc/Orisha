@@ -53,8 +53,9 @@ public class AI_EnemyStateFightFrontal : AI_EnemyStateFight
                 myAgent.isStopped = false;
                 (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.Chasing);
             }
-            else
+            else if(attackTimer == 0.0f)
             {
+                attackTimer = myIndividu.AttackSpeed;
                 myAnimCroco.SetTrigger("Attack");
                 myAnimWeapon.SetTrigger("Attack");
             }

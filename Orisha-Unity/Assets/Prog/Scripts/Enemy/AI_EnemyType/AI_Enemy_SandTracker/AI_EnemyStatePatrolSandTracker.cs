@@ -52,7 +52,7 @@ public class AI_EnemyStatePatrolSandTracker : AI_EnemyStatePatrol
         }
         else
         {
-            if (Vector3.Distance(myIndividu.transform.position, destination) < minDistanceToTarget)
+            if (myAgent.remainingDistance < minDistanceToTarget)
             {
                 Vector3 direction = new Vector3(Random.Range(-100.0f, 100.0f), myIndividu.transform.position.y, Random.Range(-100.0f, 100.0f));
                 direction = Vector3.Normalize(direction);

@@ -52,7 +52,7 @@ public class AI_EnemyStatePatrolHarasser : AI_EnemyStatePatrol
         }
 
         // Patrol : when reaching a patrol point, go to the next one
-        if (myAgent.remainingDistance < 0.5f)
+        if (myAgent.remainingDistance < minDistanceToTarget)
         {
             myAgent.SetDestination(patrolPositions[patrolIndex].position);
             patrolIndex = (patrolIndex + 1) % patrolPositions.Count;

@@ -60,6 +60,11 @@ public class AI_Enemy_Basic : MonoBehaviour
     protected float Basehealth = 50;
     [SerializeField] protected float speed = 2;
     [SerializeField] protected float attackDamages = 10;
+    [SerializeField] protected float attackSpeed = 1; // Minimal time between every attacks (In seconds)
+    public float AttackSpeed
+    {
+        get { return attackSpeed; }
+    }
     [SerializeField] protected float health;
     public float Health
     {
@@ -71,7 +76,6 @@ public class AI_Enemy_Basic : MonoBehaviour
     [SerializeField]
     protected float abandonDistance = 10.0f;
     [SerializeField] protected float range = 2.0f;
-    [SerializeField] protected float minDistanceToTarget = 1.0f;
     [SerializeField] protected bool dieWhenTouchingTarget = false;
 
     [Header("Debug")]
@@ -92,7 +96,7 @@ public class AI_Enemy_Basic : MonoBehaviour
 		}
 	}
 
-    protected NavMeshAgent myagent;
+    protected NavMeshAgent myAgent;
 
     private void Awake()
     {
@@ -113,7 +117,7 @@ public class AI_Enemy_Basic : MonoBehaviour
         tempRend.materials = RememberMat;
 
         GetComponentInChildren<SandShaderPositionner>().myMat = mat;
-        myagent = GetComponent<NavMeshAgent>();
+        myAgent = GetComponent<NavMeshAgent>();
     }
 
     protected void OnBegin()
@@ -135,21 +139,21 @@ public class AI_Enemy_Basic : MonoBehaviour
     {
         isFreeze = true;
 
-        if (myagent != null)
+        if (myAgent != null)
         {
-            myagent.destination = transform.position;
-            myagent.updatePosition = false;
-            myagent.updateRotation = false;
+            myAgent.destination = transform.position;
+            myAgent.updatePosition = false;
+            myAgent.updateRotation = false;
         }
     }
     public void UnfreezePosRot()
     {
         isFreeze = false;
 
-        if (myagent != null)
+        if (myAgent != null)
         {
-            myagent.updatePosition = true;
-            myagent.updateRotation = true;
+            myAgent.updatePosition = true;
+            myAgent.updateRotation = true;
         }
     }
 }

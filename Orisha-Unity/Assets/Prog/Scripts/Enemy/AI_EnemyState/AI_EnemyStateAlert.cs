@@ -54,6 +54,8 @@ public class AI_EnemyStateAlert : AI_EnemyState
     protected void LaunchAlert()
     {
         myCoroutine = null;
+        myIndividu.transform.LookAt(currentTarget);
+        myIndividu.transform.rotation = Quaternion.Euler(0.0f, myIndividu.transform.rotation.eulerAngles.y, 0.0f);
         myAnimCroco.SetTrigger("Alert");
         myAgent.destination = myIndividu.transform.position;
     }

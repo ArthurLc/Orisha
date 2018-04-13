@@ -9,11 +9,13 @@ public class AI_EnemyStateFight : AI_EnemyState
     protected float range;
     protected float minDistanceToTarget;
     protected bool dieWhenTouchingTarget;
+    protected float attackTimer;
 
 
     public override void OnBegin()
     {
         base.OnBegin();
+        attackTimer = 0.0f;
     }
 
     protected override void CurrentUpdate()
@@ -24,6 +26,9 @@ public class AI_EnemyStateFight : AI_EnemyState
     protected override void CurrentFixedUpdate()
     {
         base.CurrentFixedUpdate();
+
+        // Management du timer pour les attaques
+        attackTimer = attackTimer > 0.0f ? attackTimer - Time.deltaTime : 0.0f;
     }
 
 

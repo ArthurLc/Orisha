@@ -42,7 +42,7 @@ public class AI_EnemyStateReplaceToFightFrontal : AI_EnemyStateReplaceToFight
         base.CurrentUpdate();
 
 
-        if (targetDistance <= minDistanceToTarget) // si la cible est trop proche : on recule
+        if (targetDistance <= (minDistanceToTarget - 1.0f)) // si la cible est trop proche : on recule
         {
             myAgent.isStopped = false;
             Vector3 newPos = myIndividu.transform.position - myIndividu.transform.forward;

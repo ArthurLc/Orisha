@@ -118,11 +118,8 @@ public class AI_EnemyState
     protected virtual void CurrentUpdate()
     {
         // Update de distance à la cible
-        if (currentTarget != null)
-        {
+        if (currentTarget != null) {
             targetDistance = Vector3.Distance(myIndividu.transform.position, currentTarget.position);
-            myIndividu.transform.LookAt(currentTarget);
-            myIndividu.transform.rotation = Quaternion.Euler(0.0f, myIndividu.transform.rotation.eulerAngles.y, 0.0f);
         }
     }
     /// <summary>

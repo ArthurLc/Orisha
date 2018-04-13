@@ -77,7 +77,7 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
             myAgent.isStopped = true;
             myAnimCroco.transform.position -= Vector3.up * (Time.deltaTime * moveSpeed);
             currentYPos += (Time.deltaTime * moveSpeed);
-            myIndividu.GetComponentInChildren<SandShaderPositionner>().HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
+            ((AI_Enemy_SandTracker)myIndividu).SandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
 
             if (currentYPos >= enemySize)
             {
@@ -102,9 +102,11 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         {
             myAgent.isStopped = false;
             
-            if (Vector3.Distance(myIndividu.transform.position, destination) < minDistanceToTarget * 0.75f)
+            if (Vector3.Distance(myIndividu.transform.position, destination) < minDistanceToTarget/* * 0.75f*/)
             {
                 myEsquiveState = EsquiveState.GoesUpperSand;
+                myIndividu.transform.LookAt(currentTarget);
+                myIndividu.transform.rotation = Quaternion.Euler(0.0f, myIndividu.transform.rotation.eulerAngles.y, 0.0f);
             }
         }
         else
@@ -112,10 +114,12 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
             myAgent.isStopped = true;
             myAnimCroco.transform.position += Vector3.up * (Time.deltaTime * moveSpeed);
             currentYPos -= (Time.deltaTime * moveSpeed);
-            myIndividu.GetComponentInChildren<SandShaderPositionner>().HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
+            myIndividu.transform.LookAt(currentTarget);
+            myIndividu.transform.rotation = Quaternion.Euler(0.0f, myIndividu.transform.rotation.eulerAngles.y, 0.0f);
+            ((AI_Enemy_SandTracker)myIndividu).SandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
             if (currentYPos <= 0.0f)
             {
-                myIndividu.GetComponentInChildren<SandShaderPositionner>().Activate(false);
+                ((AI_Enemy_SandTracker)myIndividu).SandShaderPos.Activate(false);
                 myAnimCroco.transform.position = new Vector3(myAnimCroco.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnimCroco.transform.position.z);
                 myAgent.isStopped = false;
 
@@ -147,7 +151,7 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
     public override void PropulseAgent(Vector3 _dir)
     {
         myAnimCroco.transform.position = new Vector3(myAnimCroco.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnimCroco.transform.position.z);
-        myIndividu.GetComponentInChildren<SandShaderPositionner>().Activate(false);
+        ((AI_Enemy_SandTracker)myIndividu).SandShaderPos.Activate(false);
         foreach (HittenBox_Enemy hbe in allHittenBox)
         {
             hbe.gameObject.SetActive(true);
