@@ -25,7 +25,7 @@ public class MaskInventory : MonoBehaviour {
 
     [Header("LinksForEmissive")]
     [SerializeField] private SkinnedMeshRenderer skin;
-    [SerializeField] private SkinnedMeshRenderer mask;
+    [SerializeField] private MeshRenderer mask;
     [SerializeField] private ParticleSystem dashEffect;
     [Header("LinksForFactor")]
     [SerializeField] private Animator animator;
