@@ -2356,7 +2356,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1884325890905956}
-  m_LocalRotation: {x: 0.0016163643, y: 0.9955187, z: 0.08508922, w: -0.041228473}
+  m_LocalRotation: {x: 0.0016163737, y: 0.9955187, z: 0.08508924, w: -0.041228473}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2502,7 +2502,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1918940163517506}
-  m_LocalRotation: {x: 0.0002843458, y: 0.9991245, z: 0.006884885, w: -0.041263636}
+  m_LocalRotation: {x: 0.0002843165, y: 0.9991245, z: 0.006884174, w: -0.04126361}
   m_LocalPosition: {x: -4.664781, y: 1.6931877, z: 5.400753}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2519,7 +2519,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016884568583606}
-  m_LocalRotation: {x: 0.007034691, y: -0.9936327, z: 0.102143824, w: 0.047025114}
+  m_LocalRotation: {x: 0.00703465, y: -0.9936327, z: 0.10214389, w: 0.047025114}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3252,7 +3252,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1128472910403294}
-  m_LocalRotation: {x: 0.001353748, y: -0.99906147, z: -0.013222711, w: 0.041225728}
+  m_LocalRotation: {x: 0.001353764, y: -0.99906147, z: -0.013222406, w: 0.04122573}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3781,7 +3781,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049557568730724}
-  m_LocalRotation: {x: -0.0070348186, y: 0.9936327, z: -0.10214362, w: -0.047024332}
+  m_LocalRotation: {x: -0.007034785, y: 0.9936327, z: -0.102143824, w: -0.047024332}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3863,7 +3863,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1664401834386858}
-  m_LocalRotation: {x: 0.0010817256, y: -0.9989517, z: -0.019818481, w: 0.041252792}
+  m_LocalRotation: {x: 0.0010817004, y: -0.9989517, z: -0.019817924, w: 0.041252792}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4045,7 +4045,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575064860069874}
-  m_LocalRotation: {x: -0.0013542203, y: 0.99906087, z: 0.013222987, w: -0.041240573}
+  m_LocalRotation: {x: -0.0013542399, y: 0.99906087, z: 0.013222499, w: -0.041240573}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5224,7 +5224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41175d35c305d5544a96c20a67b01dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 114140282073092568}
 --- !u!114 &114040482884258186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5779,7 +5779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityTransform: {fileID: 4636567432257522}
-  playerDatas: {fileID: 0}
+  playerDatas: {fileID: 114678284570268932}
   damageValue: 10
   debug: 0
 --- !u!114 &114412435064783058
@@ -6368,7 +6368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityTransform: {fileID: 4636567432257522}
-  playerDatas: {fileID: 0}
+  playerDatas: {fileID: 114678284570268932}
   damageValue: 10
   debug: 0
 --- !u!114 &114666427981991902
@@ -6546,7 +6546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityTransform: {fileID: 4636567432257522}
-  playerDatas: {fileID: 0}
+  playerDatas: {fileID: 114678284570268932}
   damageValue: 10
   debug: 0
 --- !u!114 &114788066206084010
@@ -6817,7 +6817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityTransform: {fileID: 4636567432257522}
-  playerDatas: {fileID: 0}
+  playerDatas: {fileID: 114678284570268932}
   damageValue: 10
   debug: 0
 --- !u!114 &114867048984043036
@@ -6903,7 +6903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityTransform: {fileID: 4636567432257522}
-  playerDatas: {fileID: 0}
+  playerDatas: {fileID: 114678284570268932}
   damageValue: 10
   debug: 0
 --- !u!114 &114923143079210230
