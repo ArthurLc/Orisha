@@ -175,23 +175,6 @@ namespace vd_Inputs
             DontDestroyOnLoad(gameObject);
         }
 
-        private void FixedUpdate()
-        {
-            for (int indexPlayer = 0; indexPlayer < 2; indexPlayer++)
-                if (isPlayerVibrate[indexPlayer] == true)
-                {
-                    if (vibrDuration[indexPlayer] <= 0.0f)
-                    {
-                        GamePad.SetVibration(playerIndex[indexPlayer], 0, 0);
-                        isPlayerVibrate[indexPlayer] = false;
-                    }
-                    else
-                    {
-                        GamePad.SetVibration(playerIndex[indexPlayer], leftMotor[indexPlayer], rightMotor[indexPlayer]);
-                        vibrDuration[indexPlayer] -= Time.deltaTime;
-                    }
-                }
-        }
         private void Update()
         {
             // Update du mode d'inputs
@@ -217,6 +200,21 @@ namespace vd_Inputs
             //prevState = state;
             state[0] = GamePad.GetState(playerIndex[0]);
             state[1] = GamePad.GetState(playerIndex[1]);
+
+			for (int indexPlayer = 0; indexPlayer < 2; indexPlayer++)
+				if (isPlayerVibrate[indexPlayer] == true)
+				{
+					if (vibrDuration[indexPlayer] <= 0.0f)
+					{
+						GamePad.SetVibration(playerIndex[indexPlayer], 0, 0);
+						isPlayerVibrate[indexPlayer] = false;
+					}
+					else
+					{
+						GamePad.SetVibration(playerIndex[indexPlayer], leftMotor[indexPlayer], rightMotor[indexPlayer]);
+						vibrDuration[indexPlayer] -= Time.unscaledDeltaTime;
+					}
+				} 
         }
 
 
