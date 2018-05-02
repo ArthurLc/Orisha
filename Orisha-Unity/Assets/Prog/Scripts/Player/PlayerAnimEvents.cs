@@ -38,7 +38,13 @@ public class PlayerAnimEvents : MonoBehaviour
     [SerializeField] private ParticleSystem ps_DustShockwave;
     [SerializeField] private ParticleSystem ps_SandShockwave;
 
+	[Header("sfx")]
     [SerializeField] private AudioClip swoosh;
+
+	//Temporary
+	[Header("Particle Tests")]
+	[SerializeField] bool enableTest = true;
+	[SerializeField] private GameObject particleTest;
 
 
     private Animator animator;
@@ -67,7 +73,19 @@ public class PlayerAnimEvents : MonoBehaviour
         if(playerFight != null)
             playerFight.PlayChainAttack();
     }
-
+		
+	//Temporary
+	void OnEnableBoxes(Vector3 _position)
+	{
+		if (enableTest) 
+		{
+			GameObject go = Instantiate (particleTest);
+			ParticleSystem ps = go.GetComponent<ParticleSystem> ();
+			go.transform.position = _position;
+			ps.Play ();
+			Debug.Log ("oui");
+		}
+	}
 
     /// <summary> 
     /// Fonction qui active l'attaque box du bras droit du joueur
@@ -76,12 +94,12 @@ public class PlayerAnimEvents : MonoBehaviour
     {
         if (isActive)
         {
-
             box_RightArm.enabled = true;
             box_RightArm.damageValue = _damageValue;
             bone_RightArm.SpawnBone(true);
             SoundManager.source.clip = swoosh;
             SoundManager.source.Play();
+			OnEnableBoxes (box_RightArm.transform.position);
         }
     }
 
@@ -109,6 +127,8 @@ public class PlayerAnimEvents : MonoBehaviour
 
             SoundManager.source.clip = swoosh;
             SoundManager.source.Play();
+
+			OnEnableBoxes (box_LeftArm.transform.position);
         }
     }
 
@@ -132,6 +152,8 @@ public class PlayerAnimEvents : MonoBehaviour
         {
             box_RightFoot.enabled = true;
             box_RightFoot.damageValue = _damageValue;
+
+			OnEnableBoxes (box_RightFoot.transform.position);
         }
     }
 
@@ -155,6 +177,8 @@ public class PlayerAnimEvents : MonoBehaviour
         {
             box_LeftFoot.enabled = true;
             box_LeftFoot.damageValue = _damageValue;
+
+			OnEnableBoxes (box_LeftFoot.transform.position);
         }
     }
 
@@ -179,6 +203,7 @@ public class PlayerAnimEvents : MonoBehaviour
         {
             box_Body.enabled = true;
             box_Body.damageValue = _damageValue;
+
         }
     }
 
