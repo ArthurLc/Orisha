@@ -97,7 +97,7 @@ public class PlayerAnimEvents : MonoBehaviour
             box_RightArm.enabled = true;
             box_RightArm.damageValue = _damageValue;
             bone_RightArm.SpawnBone(true);
-			SoundManager.instance.SFX_Play(swoosh);
+			SoundManager.instance.SFX_Play(swoosh, false);
 			OnEnableBoxes (box_RightArm.transform.position);
         }
     }
@@ -124,7 +124,7 @@ public class PlayerAnimEvents : MonoBehaviour
             box_LeftArm.damageValue = _damageValue;
             bone_LeftArm.SpawnBone(true);
 
-			SoundManager.instance.SFX_Play(swoosh);
+			SoundManager.instance.SFX_Play(swoosh, false);
 
 			OnEnableBoxes (box_LeftArm.transform.position);
         }
@@ -220,7 +220,7 @@ public class PlayerAnimEvents : MonoBehaviour
     {
         if (isActive)
         {
-			SoundManager.instance.SFX_PlayOneShot(swoosh);
+			SoundManager.instance.SFX_PlayOneShot(swoosh, false);
         }
     }
 
@@ -242,7 +242,7 @@ public class PlayerAnimEvents : MonoBehaviour
 
 			if (!SoundManager.instance.sfxSource.isPlaying)
             {
-				SoundManager.instance.SFX_Play(swoosh);
+				SoundManager.instance.SFX_Play(swoosh, false);
             }
         }
     }

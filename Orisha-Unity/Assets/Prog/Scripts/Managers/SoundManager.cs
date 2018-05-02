@@ -43,7 +43,7 @@ public class SoundManager : MonoBehaviour
 	}
 
 		
-	public bool SFX_PlayOneShot(AudioClip _clipToPlay)
+	public bool SFX_PlayOneShot(AudioClip _clipToPlay, bool is3DSound)
 	{
 		if (_clipToPlay) 
 		{
@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
-	public bool SFX_PlayOneShot(AudioClip _clipToPlay, float _volumeScale)
+	public bool SFX_PlayOneShot(AudioClip _clipToPlay, float _volumeScale, bool is3DSound)
 	{
 		if (_clipToPlay) 
 		{
@@ -65,7 +65,7 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
-	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay)
+	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay, bool is3DSound)
 	{
 		if (_clipToPlay.Length > 0) 
 		{			
@@ -77,7 +77,7 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
-	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay, float _volumeScale)
+	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay, float _volumeScale, bool is3DSound)
 	{
 		if (_clipToPlay.Length > 0) 
 		{			
@@ -91,7 +91,7 @@ public class SoundManager : MonoBehaviour
 
 	//
 
-	 public bool SFX_Play(AudioClip _clipToPlay)
+	public bool SFX_Play(AudioClip _clipToPlay, bool is3DSound)
 	{
 		if (_clipToPlay) 
 		{
@@ -103,7 +103,19 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
-	public bool SFX_Play(AudioClip[] _clipToPlay)
+	public bool SFX_Play(AudioClip _clipToPlay, Vector3 _position ,bool is3DSound)
+	{
+		if (_clipToPlay) 
+		{
+			sfxSource.clip = _clipToPlay;
+			AudioSource.PlayClipAtPoint (_clipToPlay,_position);
+			return true;
+		}
+
+		return false;
+	}
+
+	public bool SFX_Play(AudioClip[] _clipToPlay, bool is3DSound)
 	{
 		if (_clipToPlay.Length > 0) 
 		{			
