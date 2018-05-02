@@ -67,7 +67,7 @@ public class DamageBox : MonoBehaviour
 
             if (playerDatas.PlayerFightDatas.soundImpact)
             {
-                SoundManager.source.PlayOneShot(playerDatas.PlayerFightDatas.soundImpact);
+				SoundManager.instance.SFX_PlayOneShot(playerDatas.PlayerFightDatas.soundImpact);
             }
             // Edit suppression de FMOD, appeler le son de dégats ici
             //FMODUnity.RuntimeManager.PlayOneShot("Event:/Character/PlayerHeavyHit");

@@ -57,7 +57,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243354588420837320, guid: ed8fabfc0561f1b498f4b3e81afe5a0b,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -96,7 +96,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -114,7 +114,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -164,6 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4314fb37accf740baac90f4002ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxSource: {fileID: 82056308828422170}
+  musicSource: {fileID: 0}
 --- !u!114 &114751355163964688
 MonoBehaviour:
   m_ObjectHideFlags: 1
