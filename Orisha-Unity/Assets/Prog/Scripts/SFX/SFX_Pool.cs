@@ -10,7 +10,7 @@ public class SFX_Pool : MonoBehaviour
 	public static SFX_Pool Instance
 	{
 		get
-		{ 
+		{
 			if (instance == null) 
 			{
 				GameObject go = new GameObject ();
@@ -65,7 +65,7 @@ public class SFX_Pool : MonoBehaviour
 			}
 		}
 	}
-		
+
 	public SFX_Object GetSFXObject(Vector3 _position, AudioClip _clip)
 	{
 		SFX_Object toReturn = null;
@@ -113,15 +113,20 @@ public class SFX_Pool : MonoBehaviour
 		
 		_sfx.gameObject.SetActive(true);
 	}
-
+		
 	void InitSource(SFX_Object _sfx, AudioClip _clip)
 	{
 		_sfx.source = _sfx.GetComponent<AudioSource> ();
 		_sfx.source.clip = _clip;
 	}
 
-	public void ReturnToPool(GameObject _obj)
+	//Return the object to his pool by desabling it.
+	public void ReturnToPool(SFX_Object _sfx)
 	{
-		_obj.SetActive (false);
+		//teste si l'objet appartient bien à la pool
+		if (objects.Contains (_sfx))
+			_sfx.gameObject.SetActive (false);
+		else
+			Debug.LogWarning ("SFX_Object doesn't match with pool objects");
 	}
 }

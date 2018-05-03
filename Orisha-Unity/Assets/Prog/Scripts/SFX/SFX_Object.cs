@@ -16,6 +16,6 @@ public class SFX_Object : MonoBehaviour
 	void Update () 
 	{
 		if (!source.isPlaying)
-			SFX_Pool.Instance.ReturnToPool (gameObject);
+			SFX_Pool.Instance.ReturnToPool (this);
 	}
 }
