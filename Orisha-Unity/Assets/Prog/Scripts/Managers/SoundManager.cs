@@ -43,7 +43,7 @@ public class SoundManager : MonoBehaviour
 	}
 
 		
-	public bool SFX_PlayOneShot(AudioClip _clipToPlay, bool is3DSound)
+	public bool SFX_PlayOneShot(AudioClip _clipToPlay)
 	{
 		if (_clipToPlay) 
 		{
@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
-	public bool SFX_PlayOneShot(AudioClip _clipToPlay, float _volumeScale, bool is3DSound)
+	public bool SFX_PlayOneShot(AudioClip _clipToPlay, float _volumeScale)
 	{
 		if (_clipToPlay) 
 		{
@@ -65,7 +65,7 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
-	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay, bool is3DSound)
+	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay)
 	{
 		if (_clipToPlay.Length > 0) 
 		{			
@@ -77,7 +77,7 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
-	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay, float _volumeScale, bool is3DSound)
+	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay, float _volumeScale)
 	{
 		if (_clipToPlay.Length > 0) 
 		{			
@@ -91,7 +91,7 @@ public class SoundManager : MonoBehaviour
 
 	//
 
-	public bool SFX_Play(AudioClip _clipToPlay, bool is3DSound)
+	public bool SFX_Play(AudioClip _clipToPlay)
 	{
 		if (_clipToPlay) 
 		{
@@ -103,25 +103,25 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
-	public bool SFX_Play(AudioClip _clipToPlay, Vector3 _position ,bool is3DSound)
-	{
-		if (_clipToPlay) 
-		{
-			sfxSource.clip = _clipToPlay;
-			AudioSource.PlayClipAtPoint (_clipToPlay,_position);
-			return true;
-		}
-
-		return false;
-	}
-
-	public bool SFX_Play(AudioClip[] _clipToPlay, bool is3DSound)
+	public bool SFX_Play(AudioClip[] _clipToPlay)
 	{
 		if (_clipToPlay.Length > 0) 
 		{			
 			int randSfx = Random.Range (0, _clipToPlay.Length);
 			sfxSource.clip = _clipToPlay [randSfx];
 			sfxSource.Play ();
+			return true;
+		}
+
+		return false;
+	}
+
+	public bool SFX_PlayAtPosition(AudioClip _clipToPlay, Vector3 _position)
+	{
+		if (_clipToPlay) 
+		{
+			//sfxSource.clip = _clipToPlay;
+			SFX_Pool.GetSFXObject ( _position,_clipToPlay);
 			return true;
 		}
 
