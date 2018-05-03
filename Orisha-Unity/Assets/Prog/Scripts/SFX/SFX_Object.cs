@@ -10,13 +10,12 @@ public class SFX_Object : MonoBehaviour
 	void Awake()
 	{
 		source = GetComponent<AudioSource> ();
-		//source.Play ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		if (!source.isPlaying)
-			SFX_Pool.ReturnToPool (gameObject);
+			SFX_Pool.Instance.ReturnToPool (gameObject);
 	}
 }

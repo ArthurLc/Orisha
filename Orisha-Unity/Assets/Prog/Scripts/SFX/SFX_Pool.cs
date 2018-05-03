@@ -6,25 +6,69 @@ public class SFX_Pool : MonoBehaviour
 {
 	static List<SFX_Object> objects;
 
-	void Start ()
+	static SFX_Pool instance = null;
+	public static SFX_Pool Instance
 	{
-		objects = new List<SFX_Object>();
-		foreach (SFX_Object obj in GetComponentsInChildren<SFX_Object>(true))
-		{
-			objects.Add(obj);
-			Debug.Log ("one more");
+		get
+		{ 
+			if (instance == null) 
+			{
+				GameObject go = new GameObject ();
+				go.name = "SFX_Pool";
+				instance = go.AddComponent (typeof(SFX_Pool)) as SFX_Pool;
+				instance.InitPool ();
+			}
+			
+			return instance;
 		}
 	}
 
-	/// <summary>
-	/// Get an sfx.
-	/// </summary>
-	/// <param name="_position">Position.</param>
-	/// <param name="_clip">Clip.</param>
-	public static SFX_Object GetSFXObject(Vector3 _position, AudioClip _clip)
+	void Start ()
+	{
+		InitPool ();
+
+		if (instance == null)
+			instance = this;
+		else if (instance != this)
+			Destroy (gameObject);
+	}
+
+	void InitPool()
+	{
+		objects = new List<SFX_Object>();
+
+		bool isDone = InitwithChilds ();
+		if (!isDone) 
+			InitByCreatingChilds (20);
+	}
+
+	bool InitwithChilds()
+	{
+		foreach (SFX_Object obj in GetComponentsInChildren<SFX_Object>(true))
+		{
+			objects.Add(obj);
+		}
+
+		return objects.Count != 0;
+	}
+
+	void InitByCreatingChilds(int childNumber)
+	{
+		for (int i = 0; i < childNumber; i++) 
+		{
+			if (SoundManager.instance.sfx_Object_Model) 
+			{
+				SFX_Object obj = Instantiate (SoundManager.instance.sfx_Object_Model).GetComponent<SFX_Object> ();
+				obj.transform.parent = transform;
+				obj.gameObject.SetActive (false);
+				objects.Add (obj);
+			}
+		}
+	}
+		
+	public SFX_Object GetSFXObject(Vector3 _position, AudioClip _clip)
 	{
 		SFX_Object toReturn = null;
-		bool isOnePickable = false;
 		foreach (SFX_Object sfx in objects) 
 		{
 			toReturn = SelectSFX_Object (sfx, _position, _clip);
@@ -39,8 +83,8 @@ public class SFX_Pool : MonoBehaviour
 		}
 		return null;
 	}
-
-	static SFX_Object CreateSFX_Object(Vector3 _position)
+		
+	SFX_Object CreateSFX_Object(Vector3 _position)
 	{
 		SFX_Object go = Instantiate (objects[0].gameObject).GetComponent<SFX_Object>();
 		go.transform.parent = objects [0].transform.parent;
@@ -49,7 +93,7 @@ public class SFX_Pool : MonoBehaviour
 		return go;
 	}
 
-	static SFX_Object SelectSFX_Object(SFX_Object _sfx, Vector3 _position, AudioClip _clip)
+	SFX_Object SelectSFX_Object(SFX_Object _sfx, Vector3 _position, AudioClip _clip)
 	{
 		if(_sfx.gameObject.activeInHierarchy == false)
 		{
@@ -59,7 +103,7 @@ public class SFX_Pool : MonoBehaviour
 		return null;
 	}
 
-	static void ActivateSFX_object(SFX_Object _sfx, Vector3 _position, AudioClip _clip)
+	void ActivateSFX_object(SFX_Object _sfx, Vector3 _position, AudioClip _clip)
 	{
 		_sfx.transform.position = _position;
 		if (_sfx.source)
@@ -70,13 +114,13 @@ public class SFX_Pool : MonoBehaviour
 		_sfx.gameObject.SetActive(true);
 	}
 
-	static void InitSource(SFX_Object _sfx, AudioClip _clip)
+	void InitSource(SFX_Object _sfx, AudioClip _clip)
 	{
 		_sfx.source = _sfx.GetComponent<AudioSource> ();
 		_sfx.source.clip = _clip;
 	}
 
-	public static void ReturnToPool(GameObject _obj)
+	public void ReturnToPool(GameObject _obj)
 	{
 		_obj.SetActive (false);
 	}

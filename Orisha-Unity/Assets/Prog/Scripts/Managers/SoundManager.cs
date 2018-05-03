@@ -4,17 +4,18 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 /*
- * 	
- * 
- * 
+  @Gauthier Pierre
+  @SoundManager.cs
+  @03/05/2018
+  @Le Script s'atache au gameObject Managers. Il gère la possibilitée de jouer des sons en 
+  @2D simultanés ou non et en 3D en lui donnant une position en faisant appel à SFX_Pool pour placer des Audio sources dans le monde.
  */
-
 
 public class SoundManager : MonoBehaviour
 {
+	//2D sounds will be played by sfxSource
     public AudioSource sfxSource;
-	public AudioSource musicSource;
-
+	public GameObject sfx_Object_Model;
 	public static SoundManager instance = null;
 
 	// Use this for initialization
@@ -24,14 +25,11 @@ public class SoundManager : MonoBehaviour
 		{
 			Debug.Log ("No sfx source");
 		}
-
-		if (!musicSource) 
-		{
-			Debug.Log ("No music source");
-		}
 	}
 
-
+	/// <summary>
+	/// Awake this instance.
+	/// </summary>
 	void Awake()
 	{
 		if (instance == null)
@@ -42,7 +40,10 @@ public class SoundManager : MonoBehaviour
 		DontDestroyOnLoad (gameObject);
 	}
 
-		
+	/// <summary>
+	/// Play a given clip once as a 2d sound.
+	/// allow sound superposition.
+	/// </summary>	
 	public bool SFX_PlayOneShot(AudioClip _clipToPlay)
 	{
 		if (_clipToPlay) 
@@ -54,6 +55,10 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
+	/// <summary>
+	/// Play a given clip at a given volume once as a 2d sound.
+	/// allow sound superposition.
+	/// </summary>	
 	public bool SFX_PlayOneShot(AudioClip _clipToPlay, float _volumeScale)
 	{
 		if (_clipToPlay) 
@@ -65,6 +70,10 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
+	/// <summary>
+	/// Play randomly a clip, contained in a given array, once as a 2d sound.
+	/// allow sound superposition.
+	/// </summary>	
 	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay)
 	{
 		if (_clipToPlay.Length > 0) 
@@ -77,6 +86,10 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
+	/// <summary>
+	/// Play randomly a clip, contained in a given array, at a given volume once as a 2d sound.
+	/// allow sound superposition.
+	/// </summary>
 	public bool SFX_PlayOneShot(AudioClip[] _clipToPlay, float _volumeScale)
 	{
 		if (_clipToPlay.Length > 0) 
@@ -89,8 +102,10 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
-	//
-
+	/// <summary>
+	/// Play a given clip once as a 2d sound.
+	/// will not allow sound superposition.
+	/// </summary>	
 	public bool SFX_Play(AudioClip _clipToPlay)
 	{
 		if (_clipToPlay) 
@@ -103,6 +118,10 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
+	/// <summary>
+	/// Play a clip, contained in a given array, once as a 2d sound.
+	/// will not allow sound superposition.
+	/// </summary>	
 	public bool SFX_Play(AudioClip[] _clipToPlay)
 	{
 		if (_clipToPlay.Length > 0) 
@@ -116,21 +135,23 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
+
+	/// <summary>
+	/// set an audio source that will play your clip at a given position.
+	/// The audio source will be selected by SFX_Pool.
+	/// </summary>
+	/// <returns><c>true</c>, if clip was initialized, <c>false</c> otherwise.</returns>
+	/// <param name="_clipToPlay">Clip to play.</param>
+	/// <param name="_position">Position.</param>
 	public bool SFX_PlayAtPosition(AudioClip _clipToPlay, Vector3 _position)
 	{
 		if (_clipToPlay) 
 		{
-			//sfxSource.clip = _clipToPlay;
-			SFX_Pool.GetSFXObject ( _position,_clipToPlay);
+			SFX_Pool.Instance.GetSFXObject ( _position,_clipToPlay);
+			//SFX_Pool.GetSFXObject ( _position,_clipToPlay);
 			return true;
 		}
 
 		return false;
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-
 	}
 }
