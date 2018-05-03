@@ -1,22 +1,70 @@
 fileFormatVersion: 2
-guid: 36610ef1715baa2478dc10dca206d0e9
-timeCreated: 1521471239
+guid: 5df8cb2930d006c4297d69835d508f97
+timeCreated: 1525336630
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Jar_01
-    6400000: //RootNode
+    100000: non:polySurface1
+    100002: non:polySurface10
+    100004: non:polySurface2
+    100006: non:polySurface3
+    100008: non:polySurface4
+    100010: non:polySurface5
+    100012: non:polySurface6
+    100014: non:polySurface7
+    100016: non:polySurface8
+    100018: non:polySurface9
+    100020: //RootNode
+    400000: non:polySurface1
+    400002: non:polySurface10
+    400004: non:polySurface2
+    400006: non:polySurface3
+    400008: non:polySurface4
+    400010: non:polySurface5
+    400012: non:polySurface6
+    400014: non:polySurface7
+    400016: non:polySurface8
+    400018: non:polySurface9
+    400020: //RootNode
+    2100000: Default_Material
+    2100002: lambert1
+    2300000: non:polySurface1
+    2300002: non:polySurface10
+    2300004: non:polySurface2
+    2300006: non:polySurface3
+    2300008: non:polySurface4
+    2300010: non:polySurface5
+    2300012: non:polySurface6
+    2300014: non:polySurface7
+    2300016: non:polySurface8
+    2300018: non:polySurface9
+    3300000: non:polySurface1
+    3300002: non:polySurface10
+    3300004: non:polySurface2
+    3300006: non:polySurface3
+    3300008: non:polySurface4
+    3300010: non:polySurface5
+    3300012: non:polySurface6
+    3300014: non:polySurface7
+    3300016: non:polySurface8
+    3300018: non:polySurface9
+    4300000: non:polySurface1
+    4300002: non:polySurface2
+    4300004: non:polySurface3
+    4300006: non:polySurface4
+    4300008: non:polySurface5
+    4300010: non:polySurface6
+    4300012: non:polySurface7
+    4300014: non:polySurface8
+    4300016: non:polySurface9
+    4300018: non:polySurface10
   externalObjects: {}
   materials:
     importMaterials: 0
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -43,7 +91,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 0
@@ -55,7 +103,7 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

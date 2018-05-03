@@ -45,7 +45,7 @@ public class DamageBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("je tape un truc");
+        //Debug.Log("je tape : " + other.name);
     }
     public void HitSucceed(Vector3 hitPoint)
     {
