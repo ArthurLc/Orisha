@@ -83,7 +83,6 @@ public class PlayerAnimEvents : MonoBehaviour
 			ParticleSystem ps = go.GetComponent<ParticleSystem> ();
 			go.transform.position = _position;
 			ps.Play ();
-			Debug.Log ("oui");
 		}
 	}
 
@@ -97,7 +96,7 @@ public class PlayerAnimEvents : MonoBehaviour
             box_RightArm.enabled = true;
             box_RightArm.damageValue = _damageValue;
             bone_RightArm.SpawnBone(true);
-			SoundManager.instance.SFX_Play(swoosh, false);
+			SoundManager.instance.SFX_PlayAtPosition(swoosh, box_RightArm.transform.position);
 			OnEnableBoxes (box_RightArm.transform.position);
         }
     }
@@ -123,8 +122,7 @@ public class PlayerAnimEvents : MonoBehaviour
             box_LeftArm.enabled = true;
             box_LeftArm.damageValue = _damageValue;
             bone_LeftArm.SpawnBone(true);
-
-			SoundManager.instance.SFX_Play(swoosh, false);
+			SoundManager.instance.SFX_PlayAtPosition(swoosh, box_LeftArm.transform.position);
 
 			OnEnableBoxes (box_LeftArm.transform.position);
         }
@@ -216,14 +214,6 @@ public class PlayerAnimEvents : MonoBehaviour
         }
     }
 
-    public void PlaySound()
-    {
-        if (isActive)
-        {
-			SoundManager.instance.SFX_PlayOneShot(swoosh, false);
-        }
-    }
-
     /// <summary> 
     ///Active toutes les box de dommage du joueur
     /// </summary>
@@ -240,10 +230,7 @@ public class PlayerAnimEvents : MonoBehaviour
             bone_RightArm.SpawnBone(true);
             bone_LeftArm.SpawnBone(true);
 
-			if (!SoundManager.instance.sfxSource.isPlaying)
-            {
-				SoundManager.instance.SFX_Play(swoosh, false);
-            }
+			SoundManager.instance.SFX_PlayAtPosition(swoosh, box_Body.transform.position);
         }
     }
 
