@@ -1,0 +1,214 @@
+﻿using System.Collections.Generic;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.AI;
+
+/*
+* @ArthurLacour
+* @AI_Enemy_Tutorial.cs
+* @04/05/2018
+* @Le Script s'attache a chaque ennemi
+*/
+
+public class AI_Enemy_Tutorial : AI_Enemy_Basic
+{
+    // Lieu d'idle
+    protected Vector3 startTransform;
+    [SerializeField] private List<Transform> patrolTransform;
+    protected int patrolIndex;
+
+    Potential_Enemy pe;
+    
+    Rigidbody rb;
+    [Header("Links")]
+    [SerializeField] Animator crocoAnim;
+    [SerializeField] Animator weaponAnim;
+
+    private SandShaderPositionner sandShaderPos;
+    public SandShaderPositionner SandShaderPos
+    {
+        get { return sandShaderPos; }
+    }
+
+    void Start ()
+    {
+        startTransform = transform.position;
+
+        OnBegin();
+        myAgent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
+        sandShaderPos = GetComponentInChildren<SandShaderPositionner>();
+        myAgent.speed = speed;
+        health = Basehealth;
+        agentIsControlledByOther = false;
+        patrolIndex = 0;
+
+        ChangeState(State.Idle, true);
+
+        if (crocoAnim == null) {
+            Debug.LogError("Il manque le link de l'Animator du Croco !");
+            Destroy(this);
+        }
+    }
+	
+	void Update ()
+    {
+        if(debugLog)
+            Debug.Log("State: " + state);
+
+        UpdateDmgBoxList();
+        if(!isFreeze && myCurrentState != null && myCurrentState.UpdateState != null)
+            myCurrentState.UpdateState(); 
+    }
+
+
+    private void FixedUpdate()
+    {
+        if (!isFreeze && myCurrentState != null && myCurrentState.FixedUpdateState != null)
+            myCurrentState.FixedUpdateState();
+    }
+
+    private void OnDisable()
+    {
+        if (pe)
+        {
+            pe.Pop_Potential_Ennemy(this);
+        }
+    }
+
+    public void ChangeState(State _newState, bool forceChange = false)
+    {
+        if (_newState != state || forceChange)
+        {
+            if(myCurrentState != null)
+                myCurrentState.OnEnd();
+
+            switch (_newState)
+            {
+                case State.Idle:
+                    myCurrentState = new AI_EnemyStateIdleTutorial();
+                    (myCurrentState as AI_EnemyStateIdleTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform);
+                    break;
+                case State.Patroling:
+                    myCurrentState = new AI_EnemyStatePatrolTutorial();
+                    (myCurrentState as AI_EnemyStatePatrolTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStatePatrolTutorial).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
+                    break;
+                case State.Alert:
+                    myCurrentState = new AI_EnemyStateAlertTutorial();
+                    (myCurrentState as AI_EnemyStateAlertTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateAlertTutorial).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
+                    break;
+                case State.Fighting:
+                    myCurrentState = new AI_EnemyStateFightTutorial();
+                    (myCurrentState as AI_EnemyStateFightTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateFightTutorial).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
+                    break;
+                case State.IsHit:
+                    myCurrentState = new AI_EnemyStateIsHitTutorial();
+                    (myCurrentState as AI_EnemyStateIsHitTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    break;
+                case State.Die:
+                    myCurrentState = new Ai_EnemyStateDieTutorial();
+                    (myCurrentState as Ai_EnemyStateDieTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform);
+                    StopAllCoroutines();
+                    break;
+                case State.Fleeing:
+                    myCurrentState = new AI_EnemyStateFleeTutorial();
+                    (myCurrentState as AI_EnemyStateFleeTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget, ref patrolIndex);
+                    (myCurrentState as AI_EnemyStateFleeTutorial).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
+                    break;
+
+            }
+
+            state = _newState;
+            Debug.Assert(myCurrentState != null, "myCurrentState == null => impossible");     
+        }
+    }
+
+    private void UpdateDmgBoxList()
+    {
+        for(int nbBox = 0; nbBox < DmgBoxList.Count; nbBox++)
+        {
+            if (DmgBoxList[nbBox].enabled == false)
+                DmgBoxList.Remove(DmgBoxList[nbBox]);
+        }
+    }
+
+    public override void TakeDamage(int damages)
+    {
+        base.TakeDamage(damages);
+
+        if (health <= 0)
+        {
+            if(pe)
+                pe.Pop_Potential_Ennemy(this);
+
+            if(myState != State.Die)
+                ChangeState(State.Die, false);
+        }
+    }
+
+    private IEnumerator PotentialEnemypopRequest(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        Collider[] col = Physics.OverlapSphere(transform.position, 10.0f, 1 << 16);
+        if (col.Length == 0)
+        {
+            pe.Pop_Potential_Ennemy(this);
+        }
+        //else
+        //{
+        //    for (int i = 0; i < col.Length; i++)
+        //        Debug.Log(col[i].name);
+        //}
+
+        yield break;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //if (debugEnabled)
+        if (other.tag == "Player")
+        {
+            if (targetsInReach.Contains(other.transform) == false)
+                targetsInReach.Add(other.transform);
+            //StopAllCoroutines();
+            if (pe && health > 0)
+            {
+                pe.Add_Potential_Ennemy(this);
+            }
+            else if (!pe && health > 0)
+            {
+                if(string.Compare(other.name,"HB_Player") == 0)
+                    pe = other.GetComponentInParent<Potential_Enemy>();
+                else
+                    pe = other.GetComponent<Potential_Enemy>();
+
+                if (pe)
+                    pe.Add_Potential_Ennemy(this);
+                else
+                    Debug.Log("No Potential_Enemy script on : " + other.name + " or :" + other.transform.parent.name);
+            }
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        //if (debugEnabled)
+        if (other.tag == "Player")
+        {
+            if (targetsInReach.Contains(other.transform) == true)
+                targetsInReach.Remove(other.transform);
+
+            if (pe)
+            {
+                StopCoroutine(PotentialEnemypopRequest(2.0f));
+                StartCoroutine(PotentialEnemypopRequest(2.0f));
+            }
+        }
+    }
+
+}

@@ -111,6 +111,17 @@ public class AI_EnemyState
         patrolPositions = _patrolPositions;
         currentTarget = _myTarget;
     }
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget, ref int _patrolIndex)
+    {
+        myIndividu = _individu;
+        myAnimCroco = _animCroco;
+        myAnimWeapon = _animWeapon;
+        myAgent = _agent;
+        myRb = _rb;
+        patrolPositions = _patrolPositions;
+        currentTarget = _myTarget;
+    }
+
 
     /// <summary>
     /// Update de la state
