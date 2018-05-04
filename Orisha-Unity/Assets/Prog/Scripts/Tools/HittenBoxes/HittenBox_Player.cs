@@ -52,9 +52,9 @@ public class HittenBox_Player : MonoBehaviour, HittenBox
 
 
 			if(box.PlayerDatas && box.PlayerDatas.PlayerFightDatas.expulsionLevel == FightScriptable.ExpulsionLevel.High)
-				camShaker.ShakeActualCam(0.5f, 1.0f, 0.01f);
+				camShaker.ShakeActualCam(0.25f, 0.5f, 0.005f);
 			else
-            	camShaker.ShakeActualCam(0.2f, 0.33f, 0.003f);
+            	camShaker.ShakeActualCam(0.1f, 0.165f, 0.0015f);
         }
         else
         {
