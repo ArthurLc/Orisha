@@ -60,7 +60,7 @@ public class DamageBox : MonoBehaviour
                 ps.transform.position = hitPoint;
                 ps.transform.forward = (transform.position - hitPoint).normalized;
                 ps.Play();
-                Destroy(ps.gameObject, ps.main.duration);
+                Destroy(ps.gameObject, 1.0f);
             }
             else if (debug)
                 Debug.Log("je n'ai pas de particle System");

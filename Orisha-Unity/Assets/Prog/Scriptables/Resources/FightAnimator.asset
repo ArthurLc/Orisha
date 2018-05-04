@@ -15,7 +15,6 @@ MonoBehaviour:
   attackList:
   - name: X
     damages: 10
-    animation: {fileID: 7400000, guid: 81d03e94d364552459dd143e9e5313f0, type: 3}
     inputsRequire: 00000000
     expulsionLevel: 2
     expulsionDir: 0
@@ -23,11 +22,10 @@ MonoBehaviour:
     slowMoDuration: 0
     slowMoCurve: 
     soundImpact: {fileID: 8300000, guid: b31d043a513b73f438a5b37e6b77778c, type: 3}
-    psImpact: {fileID: 198799691591104434, guid: 2dbabc6e7c60a87428f0f3ff46243a6d,
+    psImpact: {fileID: 198379815666156308, guid: fb5fb5e32b9541a4f86e7ff1ad2bdff8,
       type: 2}
   - name: XX
     damages: 10
-    animation: {fileID: 7400000, guid: 7df63f5b30bb06a41ac50508373a1945, type: 3}
     inputsRequire: 0000000000000000
     expulsionLevel: 2
     expulsionDir: 0
@@ -35,11 +33,10 @@ MonoBehaviour:
     slowMoDuration: 0
     slowMoCurve: 
     soundImpact: {fileID: 8300000, guid: a885ec7e868a1fa4889d3c3072046e2b, type: 3}
-    psImpact: {fileID: 198799691591104434, guid: 2dbabc6e7c60a87428f0f3ff46243a6d,
+    psImpact: {fileID: 198379815666156308, guid: fb5fb5e32b9541a4f86e7ff1ad2bdff8,
       type: 2}
   - name: XXX
     damages: 20
-    animation: {fileID: 7400000, guid: bd5f755728a8ce146a9145629bf56b19, type: 3}
     inputsRequire: 000000000000000000000000
     expulsionLevel: 5
     expulsionDir: 0
@@ -47,11 +44,10 @@ MonoBehaviour:
     slowMoDuration: 0
     slowMoCurve: 
     soundImpact: {fileID: 8300000, guid: b31d043a513b73f438a5b37e6b77778c, type: 3}
-    psImpact: {fileID: 198084050608139098, guid: 2ce9db8295abd90409706e30b0211835,
+    psImpact: {fileID: 198379815666156308, guid: fb5fb5e32b9541a4f86e7ff1ad2bdff8,
       type: 2}
   - name: XXXX
     damages: 50
-    animation: {fileID: 7400000, guid: 54a9d6604587939479cace93c838c4e2, type: 3}
     inputsRequire: 00000000000000000000000000000000
     expulsionLevel: 5
     expulsionDir: 0
@@ -59,11 +55,10 @@ MonoBehaviour:
     slowMoDuration: 0
     slowMoCurve: 
     soundImpact: {fileID: 8300000, guid: a885ec7e868a1fa4889d3c3072046e2b, type: 3}
-    psImpact: {fileID: 198084050608139098, guid: 2ce9db8295abd90409706e30b0211835,
+    psImpact: {fileID: 198379815666156308, guid: fb5fb5e32b9541a4f86e7ff1ad2bdff8,
       type: 2}
   - name: Y
     damages: 40
-    animation: {fileID: 7400000, guid: bd5f755728a8ce146a9145629bf56b19, type: 3}
     inputsRequire: 01000000
     expulsionLevel: 5
     expulsionDir: 0
@@ -71,11 +66,10 @@ MonoBehaviour:
     slowMoDuration: 0
     slowMoCurve: 
     soundImpact: {fileID: 8300000, guid: b31d043a513b73f438a5b37e6b77778c, type: 3}
-    psImpact: {fileID: 198084050608139098, guid: 2ce9db8295abd90409706e30b0211835,
+    psImpact: {fileID: 198379815666156308, guid: fb5fb5e32b9541a4f86e7ff1ad2bdff8,
       type: 2}
   - name: XXY
     damages: 30
-    animation: {fileID: 7400000, guid: f996c544c23623842bec676ab25c8c44, type: 3}
     inputsRequire: 000000000000000001000000
     expulsionLevel: 2
     expulsionDir: 0
@@ -83,11 +77,10 @@ MonoBehaviour:
     slowMoDuration: 0
     slowMoCurve: 
     soundImpact: {fileID: 8300000, guid: b31d043a513b73f438a5b37e6b77778c, type: 3}
-    psImpact: {fileID: 198084050608139098, guid: 2ce9db8295abd90409706e30b0211835,
+    psImpact: {fileID: 198379815666156308, guid: fb5fb5e32b9541a4f86e7ff1ad2bdff8,
       type: 2}
   - name: XXYY
     damages: 50
-    animation: {fileID: 7400000, guid: 375e2b0040ec8964cb3238be22633d40, type: 3}
     inputsRequire: 00000000000000000100000001000000
     expulsionLevel: 10
     expulsionDir: 0
@@ -95,11 +88,10 @@ MonoBehaviour:
     slowMoDuration: 3
     slowMoCurve: 
     soundImpact: {fileID: 8300000, guid: b31d043a513b73f438a5b37e6b77778c, type: 3}
-    psImpact: {fileID: 198084050608139098, guid: 2ce9db8295abd90409706e30b0211835,
+    psImpact: {fileID: 198379815666156308, guid: fb5fb5e32b9541a4f86e7ff1ad2bdff8,
       type: 2}
   - name: XXXXY
     damages: 60
-    animation: {fileID: 7400000, guid: e5aa48710b5ee5c4d9d935c1501fa91b, type: 3}
     inputsRequire: 0000000000000000000000000000000001000000
     expulsionLevel: 10
     expulsionDir: 0
@@ -107,5 +99,5 @@ MonoBehaviour:
     slowMoDuration: 4
     slowMoCurve: XXXXY
     soundImpact: {fileID: 8300000, guid: b31d043a513b73f438a5b37e6b77778c, type: 3}
-    psImpact: {fileID: 198084050608139098, guid: 2ce9db8295abd90409706e30b0211835,
+    psImpact: {fileID: 198379815666156308, guid: fb5fb5e32b9541a4f86e7ff1ad2bdff8,
       type: 2}
