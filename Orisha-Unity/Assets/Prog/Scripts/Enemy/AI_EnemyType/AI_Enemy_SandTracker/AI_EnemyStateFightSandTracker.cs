@@ -14,6 +14,7 @@ public class AI_EnemyStateFightSandTracker : AI_EnemyStateFight
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         hasAlreadyAttack = false;
+		timerBeforeEsquive = 1.5f;
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
     {
@@ -21,6 +22,7 @@ public class AI_EnemyStateFightSandTracker : AI_EnemyStateFight
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         hasAlreadyAttack = false;
+		timerBeforeEsquive = 1.5f;
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
     {
@@ -28,6 +30,7 @@ public class AI_EnemyStateFightSandTracker : AI_EnemyStateFight
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         hasAlreadyAttack = false;
+		timerBeforeEsquive = 1.5f;
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
     {
@@ -35,6 +38,7 @@ public class AI_EnemyStateFightSandTracker : AI_EnemyStateFight
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         hasAlreadyAttack = false;
+		timerBeforeEsquive = 1.5f;
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
     {
@@ -42,6 +46,7 @@ public class AI_EnemyStateFightSandTracker : AI_EnemyStateFight
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         hasAlreadyAttack = false;
+		timerBeforeEsquive = 1.5f;
     }
 
 
@@ -74,8 +79,8 @@ public class AI_EnemyStateFightSandTracker : AI_EnemyStateFight
             }
             else
             {
+				timerBeforeEsquive = 1.5f;
                 (myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Esquive);
-                timerBeforeEsquive = 1.5f;
             }
         }
 

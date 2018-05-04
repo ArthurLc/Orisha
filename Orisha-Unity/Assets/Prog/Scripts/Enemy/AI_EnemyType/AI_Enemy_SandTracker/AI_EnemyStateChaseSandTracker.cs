@@ -56,14 +56,15 @@ public class AI_EnemyStateChaseSandTracker : AI_EnemyStateChase
         else if (targetDistance <= minDistanceToTarget) // Si la cible est trop proche
         {
             float rand = Random.value;
-            if (rand < 0.1f) //10% de chance d'esquivé
-            {
-                (myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Esquive);
-            }
-            else
-            {
+
+			/*if(rand < 0.1f)
+			{
+				(myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Esquive);
+			}
+			else*/
+            //{
                 (myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Fighting);
-            }
+            //}
         }
         else // si la cible est un peu trop loin
         {
