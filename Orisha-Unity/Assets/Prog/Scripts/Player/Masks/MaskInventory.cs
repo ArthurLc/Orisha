@@ -25,7 +25,8 @@ public class MaskInventory : MonoBehaviour {
 
     [Header("LinksForEmissive")]
     [SerializeField] private SkinnedMeshRenderer skin;
-    [SerializeField] private MeshRenderer mask;
+    [SerializeField] private MeshFilter mask_MeshFilter;
+    [SerializeField] private MeshRenderer mask_MeshRenderer;
     [SerializeField] private ParticleSystem dashEffect;
     [Header("LinksForFactor")]
     [SerializeField] private Animator animator;
@@ -56,8 +57,9 @@ public class MaskInventory : MonoBehaviour {
         equipedMask = defaultMask;
 
         //Changement de la couleur emissive
-        skin.sharedMaterial.SetColor("_EmissionColor", Color.white);
-        mask.sharedMaterial.SetColor("_Color", Color.white);
+        skin.sharedMaterial.SetColor("_EmissionColor", defaultMask.GetColor);
+        mask_MeshRenderer.sharedMaterial = defaultMask.GetMaterial;
+        mask_MeshFilter.sharedMesh = defaultMask.GetMesh;
         dashEffect.startColor = Color.white;
 
         // A FAIRE: Modification du jeu en fonction du nouveau masque.
@@ -71,7 +73,8 @@ public class MaskInventory : MonoBehaviour {
 
         //Changement de la couleur emissive
         skin.sharedMaterial.SetColor("_EmissionColor", _newMask.GetColor);
-        mask.sharedMaterial.SetColor("_Color", _newMask.GetColor);
+        mask_MeshRenderer.sharedMaterial = _newMask.GetMaterial;
+        mask_MeshFilter.sharedMesh = _newMask.GetMesh;
         dashEffect.startColor = _newMask.GetColor;
 
         // A FAIRE: Modification du jeu en fonction du nouveau masque.

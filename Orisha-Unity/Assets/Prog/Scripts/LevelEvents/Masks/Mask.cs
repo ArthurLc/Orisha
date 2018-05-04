@@ -21,11 +21,13 @@ public class Mask : MonoBehaviour {
     [SerializeField] [Range(0.5f, 2.0f)] private float healthFactor = 1.0f;
     [SerializeField][Range(0.5f, 2.0f)] private float speedFactor = 1.0f;
     [SerializeField] [Range(0.5f, 2.0f)] private float strengthFactor = 1.0f;
-    [SerializeField] private MeshRenderer mesh;
+    [SerializeField] private MeshFilter meshFilter;
+    [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private Sprite sprite2D;
 
     //
     private Collider colTrigger;
+    private Mesh mesh;
 
     #region Getteurs
     public string Name
@@ -46,11 +48,19 @@ public class Mask : MonoBehaviour {
     }
     public Color GetColor
     {
-        get { return mesh.sharedMaterial.color; }
+        get { return meshRenderer.sharedMaterial.color; }
     }
     public Sprite Sprite2D
     {
         get { return sprite2D; }
+    }
+    public Mesh GetMesh
+    {
+        get { return meshFilter.sharedMesh; }
+    }
+    public Material GetMaterial
+    {
+        get { return meshRenderer.sharedMaterial; }
     }
     #endregion
 
