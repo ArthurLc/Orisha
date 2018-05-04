@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4857805634505298}
   - component: {fileID: 33005587137498910}
   - component: {fileID: 23224580679431922}
+  - component: {fileID: 65021407120827176}
   m_Layer: 0
   m_Name: ruine_12
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725231613539870}
   m_Mesh: {fileID: 4300000, guid: 0edfc2246d282a943b35c0adbbc9325b, type: 3}
+--- !u!65 &65021407120827176
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725231613539870}
+  m_Material: {fileID: 13400000, guid: 0b89ce97181222e4982d6e47d06e8ba9, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 138.55731, y: 136.3841, z: 56.973686}
+  m_Center: {x: -0.000102996826, y: -0.000030517578, z: 0}
