@@ -194,5 +194,7 @@ public class PauseMenu : MonoBehaviour
 			abd = ci.Anim.GetComponent<AerialBugDetection> ();
 			abd.CheckIfInBBug ();
 		}
+
+		Continue ();
 	}
 }
