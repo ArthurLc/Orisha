@@ -67,7 +67,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1679128024311246
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -163,7 +163,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4463000627257328
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679128024311246}
@@ -315,7 +315,7 @@ MonoBehaviour:
     FieldOfView: 40
     OrthographicSize: 10
     NearClipPlane: 0.1
-    FarClipPlane: 5000
+    FarClipPlane: 15000
     Dutch: 0
   m_ComponentOwner: {fileID: 4463000627257328}
 --- !u!114 &114248607843798942
@@ -355,7 +355,7 @@ MonoBehaviour:
   test: 0
 --- !u!114 &114514432071552842
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679128024311246}
@@ -382,7 +382,7 @@ MonoBehaviour:
     m_SearchResolution: 5
 --- !u!114 &114590820997422096
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679128024311246}
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_MaximumOrthoSize: 100
 --- !u!114 &114643803029141990
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679128024311246}
