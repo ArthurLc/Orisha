@@ -24,7 +24,7 @@ public class AI_EnemyStateFleeTutorial : AI_EnemyStateFlee
 
         if (myAgent.remainingDistance < minDistanceToTarget)
         {
-            (myIndividu as AI_Enemy_Tutorial).ChangeState(AI_Enemy_Tutorial.State.Idle);
+            (myIndividu as AI_Enemy_Tutorial).ChangeState(AI_Enemy_Tutorial.State.Taunt);
         }
 
         // Final instruction of the global state update
@@ -44,7 +44,7 @@ public class AI_EnemyStateFleeTutorial : AI_EnemyStateFlee
     public override void OnEnd()
     {
         base.OnEnd();
-        myAgent.transform.LookAt(playerTr);
+        (myIndividu as AI_Enemy_Tutorial).LookAtPlayer = playerTr;
     }
 
     public override void PropulseAgent(Vector3 _dir)

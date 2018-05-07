@@ -8,6 +8,7 @@ public class AI_Enemy_Basic : MonoBehaviour
 	public enum State
 	{
 		Idle,
+        Taunt,
 		Patroling,
 		Chasing,
 		Alert,

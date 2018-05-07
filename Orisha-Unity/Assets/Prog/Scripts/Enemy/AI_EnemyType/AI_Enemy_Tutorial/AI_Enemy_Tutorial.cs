@@ -18,7 +18,9 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
     protected int patrolIndex;
 
     Potential_Enemy pe;
-    
+
+    [HideInInspector] public Transform LookAtPlayer;
+
     Rigidbody rb;
     [Header("Links")]
     [SerializeField] Animator crocoAnim;
@@ -42,6 +44,8 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
         health = Basehealth;
         agentIsControlledByOther = false;
         patrolIndex = 0;
+
+        LookAtPlayer = null;
 
         ChangeState(State.Idle, true);
 
@@ -88,6 +92,10 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
                 case State.Idle:
                     myCurrentState = new AI_EnemyStateIdleTutorial();
                     (myCurrentState as AI_EnemyStateIdleTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform);
+                    break;
+                case State.Taunt:
+                    myCurrentState = new AI_EnemyStateTauntTutorial();
+                    (myCurrentState as AI_EnemyStateTauntTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform);
                     break;
                 case State.Patroling:
                     myCurrentState = new AI_EnemyStatePatrolTutorial();
