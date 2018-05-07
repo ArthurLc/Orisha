@@ -469,6 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4877371281851166}
   - component: {fileID: 137369529289970412}
+  - component: {fileID: 114086050393776566}
   m_Layer: 0
   m_Name: BaseWeaponCroco_True
   m_TagString: Untagged
@@ -1324,8 +1325,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517850221800832}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.000000029802322, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000034601137, y: 0, z: 0.00002997154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4492629296094476}
@@ -2424,6 +2425,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMat: {fileID: 2100000, guid: 126de2ad4eab67a4184a26389c49ad80, type: 2}
+--- !u!114 &114086050393776566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392788058828862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655ce1b8743203d4da02fbda93e10b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMat: {fileID: 2100000, guid: 06afac9da5e58d44ea2ae75f3f3d4a76, type: 2}
 --- !u!114 &114092672692963658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2626,6 +2639,7 @@ MonoBehaviour:
   state: 0
   crocoAnim: {fileID: 95694720023802208}
   weaponAnim: {fileID: 95331913013409864}
+  weaponSandMaterial: {fileID: 2100000, guid: 06afac9da5e58d44ea2ae75f3f3d4a76, type: 2}
 --- !u!114 &114834956320928468
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -71,14 +71,14 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
 	{
 		myAnimWeapon.transform.position -= Vector3.up * (Time.deltaTime * moveSpeed);
 
-		((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
+		//((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
 	}
 
 	void WeaponSandShader_GoesUpperSand()
 	{
 		myAnimWeapon.transform.position += Vector3.up * (Time.deltaTime * moveSpeed);
 
-		((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
+		//((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
 	}
 
     protected override void CurrentFixedUpdate()
