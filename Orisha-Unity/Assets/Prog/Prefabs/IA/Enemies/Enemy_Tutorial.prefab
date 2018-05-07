@@ -1534,7 +1534,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287351476213732}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -149.6724, y: -129.54742, z: -27.28392}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4963543115400754}
@@ -1863,7 +1863,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1632250244763250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -25, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 65, y: 300, z: 20}
   m_Children: []
   m_Father: {fileID: 4826981656941348}
@@ -1961,7 +1961,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727523875300632}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.25, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 4743963201493958}
@@ -1989,7 +1989,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183447140488894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 293.1, y: -13.94131, z: 1486.4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4857457178916096}
@@ -2316,7 +2316,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65524256004799424
 BoxCollider:
@@ -2386,7 +2386,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1740333855889252}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d419800b3f0c8d84c97830b1f8c753bd, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 431ac3edbe351c0499b6be180282e8bd, type: 3}
   m_Controller: {fileID: 9100000, guid: 1612d7bde396f1444844730aed76422e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -2479,6 +2479,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  LookAtPlayer: {fileID: 0}
   crocoAnim: {fileID: 95322965645413500}
   weaponAnim: {fileID: 95153248653532174}
 --- !u!114 &114221843870810682
@@ -2721,7 +2723,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 06afac9da5e58d44ea2ae75f3f3d4a76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2745,7 +2747,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: d419800b3f0c8d84c97830b1f8c753bd, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 431ac3edbe351c0499b6be180282e8bd, type: 3}
   m_Bones:
   - {fileID: 4826981656941348}
   m_BlendShapeWeights: []
