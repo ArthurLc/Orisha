@@ -186,24 +186,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
-      rotation in copied configuration does not match rotation in animation file:\n\t'joint_Out_leg_L_C3_woman'
-      : rotation error = 8.599939 deg\n\t'joint_Out_leg_R_C3_woman' : rotation error
-      = 8.999992 deg\n"
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'joint_Out_spine_C2_woman' has translation animation
-      that will be discarded.\n\t'joint_Out_spine_C3_woman' has translation animation
-      that will be discarded.\n\t'joint_Out_spine_C4_woman' has translation animation
-      that will be discarded.\n\t'joint_Out_spine_C5_woman' has translation animation
-      that will be discarded.\n\t'joint_Out_spine_C5_woman' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'joint_Out_neck_C2_woman'
-      has translation animation that will be discarded.\n\t'joint_Out_arm_L_root_woman'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'joint_Out_arm_R_root_woman'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'joint_Out_leg_L_C3_woman'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'joint_Out_leg_R_C3_woman'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -262,6 +247,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.7621842
         functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.26459262
+        functionName: DisableLittle_ObstacleCollisions
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

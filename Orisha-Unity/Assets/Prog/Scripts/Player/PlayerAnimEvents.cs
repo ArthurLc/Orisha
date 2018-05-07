@@ -312,6 +312,27 @@ public class PlayerAnimEvents : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Désactive la collision Joueur/Little_Obstacle
+    /// </summary>
+    public void DisableLittle_ObstacleCollisions()
+    {
+        if (isActive)
+        {
+            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Little_Obstacle"), true);
+        }
+    }
+
+    /// <summary>
+    /// Réactive la collision Joueur/Little_Obstacle
+    /// </summary>
+    public void EnableLittle_ObstacleCollisions()
+    {
+        if (isActive)
+        {
+            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Little_Obstacle"), false);
+        }
+    }
 
     /// <summary>
     /// Désactive les rotations du personnage

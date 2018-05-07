@@ -99,6 +99,7 @@ namespace vd_Player
                         timer = 0.0f;
                         ci.AnimEvents.DisableAllBoxes();
                         ci.AnimEvents.EnableEnemyCollisions();
+                        ci.AnimEvents.EnableLittle_ObstacleCollisions();
                     }
                 }
             }
