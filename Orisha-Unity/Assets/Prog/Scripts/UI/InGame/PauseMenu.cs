@@ -38,8 +38,8 @@ public class PauseMenu : MonoBehaviour
 
 		if (ci.Anim)
 			abd = ci.Anim.GetComponent<AerialBugDetection> ();
-		else
-			Debug.Log ("No Ci");
+		//else
+			//Debug.Log ("No Ci");
     }
 
 

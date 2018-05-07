@@ -17,17 +17,26 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
     protected Vector3 startTransform;
 
     Potential_Enemy pe;
+
+
     
     Rigidbody rb;
     [Header("Links")]
     [SerializeField] Animator crocoAnim;
     [SerializeField] Animator weaponAnim;
+	[SerializeField] Material weaponSandMaterial;
 
     private SandShaderPositionner sandShaderPos;
     public SandShaderPositionner SandShaderPos
     {
         get { return sandShaderPos; }
     }
+
+	private SandShaderPositionner weaponSandShaderPos;
+	public SandShaderPositionner WeaponSandShaderPos
+	{
+		get { return weaponSandShaderPos; }
+	}
 
     void Start ()
     {
@@ -36,7 +45,8 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
         OnBegin();
         myAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
-        sandShaderPos = GetComponentInChildren<SandShaderPositionner>();
+		sandShaderPos = GetComponentInChildren<SandShaderPositionner>();
+		weaponSandShaderPos = weaponAnim.GetComponentInChildren<SandShaderPositionner>();
         myAgent.speed = speed;
         health = Basehealth;
         agentIsControlledByOther = false;

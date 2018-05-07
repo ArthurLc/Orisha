@@ -67,13 +67,28 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         OnEndCurrentUpdate();
     }
 
+	void WeaponSandShader_GoesUnderSand()
+	{
+		myAnimWeapon.transform.position -= Vector3.up * (Time.deltaTime * moveSpeed);
+
+		((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
+	}
+
+	void WeaponSandShader_GoesUpperSand()
+	{
+		myAnimWeapon.transform.position += Vector3.up * (Time.deltaTime * moveSpeed);
+
+		((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
+	}
+
     protected override void CurrentFixedUpdate()
     {
         base.CurrentFixedUpdate();
 
         if (myEsquiveState == EsquiveState.GoesUnderSand)
         {
-            
+			WeaponSandShader_GoesUnderSand ();
+
             myAgent.isStopped = true;
             myAnimCroco.transform.position -= Vector3.up * (Time.deltaTime * moveSpeed);
             currentYPos += (Time.deltaTime * moveSpeed);
@@ -111,6 +126,7 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         }
         else
         {
+			WeaponSandShader_GoesUpperSand ();
             myAgent.isStopped = true;
             myAnimCroco.transform.position += Vector3.up * (Time.deltaTime * moveSpeed);
             currentYPos -= (Time.deltaTime * moveSpeed);
@@ -140,7 +156,6 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         initialeYdeltaPos = myAnimCroco.transform.position.y - myIndividu.transform.position.y;
 
         allHittenBox = myIndividu.GetComponentsInChildren<HittenBox_Enemy>();        
-
     }
 
     public override void OnEnd()
@@ -151,6 +166,8 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
     public override void PropulseAgent(Vector3 _dir)
     {
         myAnimCroco.transform.position = new Vector3(myAnimCroco.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnimCroco.transform.position.z);
+		myAnimWeapon.transform.position = new Vector3(myAnimWeapon.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnimWeapon.transform.position.z);
+
         ((AI_Enemy_SandTracker)myIndividu).SandShaderPos.Activate(false);
         foreach (HittenBox_Enemy hbe in allHittenBox)
         {

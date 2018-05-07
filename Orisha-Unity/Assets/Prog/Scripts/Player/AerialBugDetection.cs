@@ -24,7 +24,6 @@ public class AerialBugDetection : MonoBehaviour
 	IEnumerator Check()
 	{
 		basePos = transform.position;
-
 		if (!pc.IsGrounded) 
 			yield return new WaitForSeconds (debugTime);
 		else 
@@ -32,7 +31,7 @@ public class AerialBugDetection : MonoBehaviour
 
 		if (!pc.IsGrounded) 
 		{
-			if (transform.position.y <= basePos.y - 0.01f) 
+			if (transform.position.y <= basePos.y - 0.025f) 
 				yield break; 
 			else 
 				CheckpointsManager.RepopPlayerToCloserCheckpoint ();
