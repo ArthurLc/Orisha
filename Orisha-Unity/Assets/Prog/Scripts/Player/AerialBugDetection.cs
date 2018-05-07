@@ -6,44 +6,38 @@ using vd_Player;
 public class AerialBugDetection : MonoBehaviour 
 {
 	Vector3 basePos;
-	float timer = 0.0f;
-	[SerializeField]float debugTime = 2.0f;
+	float debugTime = 5.0f;
 	PlayerController pc;
 
 	// Use this for initialization
 	void Start () 
 	{
-		timer = debugTime;
 		basePos = transform.position;
 		pc = GetComponentInParent<PlayerController> ();
 	}
-	
-	// Update is called once per frame
-	void Update () 
+
+	public void CheckIfInBBug()
 	{
+		StartCoroutine (Check());
+	}
+
+	IEnumerator Check()
+	{
+		basePos = transform.position;
+
+		if (!pc.IsGrounded) 
+			yield return new WaitForSeconds (debugTime);
+		else 
+			yield break;
+
 		if (!pc.IsGrounded) 
 		{
 			if (transform.position.y <= basePos.y - 0.01f) 
-			{
-				timer = debugTime;
-				basePos = transform.position;
-			} 
+				yield break; 
 			else 
-			{
-				timer -= Time.deltaTime;
-				//Debug.Log ("Timer in action");
-				if (timer <= 0) 
-				{
-					CheckpointsManager.RepopPlayerToCloserCheckpoint ();
-					//Debug.Log ("Get In Place");
-					timer = debugTime;
-				}
-			}
+				CheckpointsManager.RepopPlayerToCloserCheckpoint ();
 		}
 		else 
-		{
-			basePos = transform.position;
-			timer = debugTime;
-		}
+			yield break;
 	}
 }

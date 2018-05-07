@@ -13,6 +13,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 using vd_Inputs;
+using vd_Player;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
@@ -26,11 +27,19 @@ public class PauseMenu : MonoBehaviour
 
 	public Button firstButtonActive;
 	public Slider firstOptionActive;
-
+	AerialBugDetection abd;
+	CharacterInitialization ci;
     private void OnEnable()
     {
         inputModule = FindObjectOfType<StandaloneInputModule>();
         InputManager.newInputMode += UpdateInputmode;
+
+		ci =  (CharacterInitialization)FindObjectOfType (typeof(CharacterInitialization));
+
+		if (ci.Anim)
+			abd = ci.Anim.GetComponent<AerialBugDetection> ();
+		else
+			Debug.Log ("No Ci");
     }
 
 
@@ -174,5 +183,16 @@ public class PauseMenu : MonoBehaviour
 		}
 
 		return true;
+	}
+
+	public void CheckIfIsInBug()
+	{
+		if (abd)
+			abd.CheckIfInBBug ();
+		else if (ci) 
+		{
+			abd = ci.Anim.GetComponent<AerialBugDetection> ();
+			abd.CheckIfInBBug ();
+		}
 	}
 }
