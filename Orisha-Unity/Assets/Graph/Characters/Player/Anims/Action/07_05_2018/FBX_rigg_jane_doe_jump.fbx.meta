@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3ef407acea9aec348ab5ea0bb48bb26a
-timeCreated: 1523281658
+guid: b2bc7871870976642ae920b0bc39f1d5
+timeCreated: 1525702554
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -161,21 +161,28 @@ ModelImporter:
     400152: Polysurfave_jane_doe
     2100000: OBJ_accessoir_perso1SG1
     2100002: lowpoly_body1_perso1SG1
+    2300000: accesoire6
+    2300002: cheveux
+    2300004: pagne
+    2300006: Polysurface_tassette
+    2300008: Polysurfave_jane_doe
+    3300000: accesoire6
+    3300002: cheveux
+    3300004: pagne
+    3300006: Polysurface_tassette
+    3300008: Polysurfave_jane_doe
     4300000: Polysurface_tassette
     4300002: pagne
     4300004: Polysurfave_jane_doe
     4300006: accesoire6
     4300008: cheveux
-    7400000: Jane_Doe_Iddle
+    7400000: Player_JumpBegin
+    7400002: Player_JumpLoop
+    7400004: Player_JumpEnd
     9500000: //RootNode
-    13700000: accesoire6
-    13700002: cheveux
-    13700004: pagne
-    13700006: Polysurface_tassette
-    13700008: Polysurfave_jane_doe
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -192,7 +199,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -201,22 +208,78 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jane_Doe_Iddle
+      name: Player_JumpBegin
       takeName: Take 001
-      firstFrame: 583
-      lastFrame: 668
+      firstFrame: 670
+      lastFrame: 690
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Player_JumpLoop
+      takeName: Take 001
+      firstFrame: 691
+      lastFrame: 692
+      wrapMode: 0
+      orientationOffsetY: 90
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Player_JumpEnd
+      takeName: Take 001
+      firstFrame: 693
+      lastFrame: 730
+      wrapMode: 0
+      orientationOffsetY: 90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -236,8 +299,8 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -274,7 +337,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: f3ad8b17d0c57ed4da6cc67a471c0a91,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: fc702449acbdc764fb83a7c867de7f19,
     type: 3}
   animationType: 2
   humanoidOversampling: 1

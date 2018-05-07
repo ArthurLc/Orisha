@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d42c31394bb9c6049a0e72b287e76e63
-timeCreated: 1522412336
+guid: fc702449acbdc764fb83a7c867de7f19
+timeCreated: 1525701860
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -159,6 +159,8 @@ ModelImporter:
     400148: pagne
     400150: Polysurface_tassette
     400152: Polysurfave_jane_doe
+    2100000: OBJ_accessoir_perso1SG1
+    2100002: lowpoly_body1_perso1SG1
     4300000: Polysurface_tassette
     4300002: pagne
     4300004: Polysurfave_jane_doe
@@ -176,7 +178,7 @@ ModelImporter:
     importMaterials: 0
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -190,7 +192,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -215,7 +217,7 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -239,10 +241,10 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: joint_Out_spine_C1_woman
+    rootMotionBoneName: Group_RIG_woman
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2

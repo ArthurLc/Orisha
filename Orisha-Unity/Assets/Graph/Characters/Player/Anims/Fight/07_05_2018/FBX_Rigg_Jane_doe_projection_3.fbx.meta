@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3ef407acea9aec348ab5ea0bb48bb26a
-timeCreated: 1523281658
+guid: 8a836eec24931b04686b37f89595a7f8
+timeCreated: 1525702592
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -161,21 +161,26 @@ ModelImporter:
     400152: Polysurfave_jane_doe
     2100000: OBJ_accessoir_perso1SG1
     2100002: lowpoly_body1_perso1SG1
+    2300000: accesoire6
+    2300002: cheveux
+    2300004: pagne
+    2300006: Polysurface_tassette
+    2300008: Polysurfave_jane_doe
+    3300000: accesoire6
+    3300002: cheveux
+    3300004: pagne
+    3300006: Polysurface_tassette
+    3300008: Polysurfave_jane_doe
     4300000: Polysurface_tassette
     4300002: pagne
     4300004: Polysurfave_jane_doe
     4300006: accesoire6
     4300008: cheveux
-    7400000: Jane_Doe_Iddle
+    7400000: Take 001
     9500000: //RootNode
-    13700000: accesoire6
-    13700002: cheveux
-    13700004: pagne
-    13700006: Polysurface_tassette
-    13700008: Polysurfave_jane_doe
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -199,35 +204,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Jane_Doe_Iddle
-      takeName: Take 001
-      firstFrame: 583
-      lastFrame: 668
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -236,8 +213,8 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -274,7 +251,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: f3ad8b17d0c57ed4da6cc67a471c0a91,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: fc702449acbdc764fb83a7c867de7f19,
     type: 3}
   animationType: 2
   humanoidOversampling: 1
