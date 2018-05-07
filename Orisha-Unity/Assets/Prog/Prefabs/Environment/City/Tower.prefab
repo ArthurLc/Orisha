@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4468032089760574}
   - component: {fileID: 33316923276515118}
   - component: {fileID: 23013078484438502}
+  - component: {fileID: 136538638038686298}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -56,7 +57,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: ed467b5a05c0ea84381f10d6022d1569, type: 2}
-  - {fileID: 2100002, guid: b984f46b9b054f34ab8db3fa4ca1ad83, type: 3}
+  - {fileID: 2100000, guid: fc2342ffb7f9ad54da75444e2ab77a3e, type: 2}
   - {fileID: 2100004, guid: b984f46b9b054f34ab8db3fa4ca1ad83, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -84,3 +85,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078565294978316}
   m_Mesh: {fileID: 4300000, guid: b984f46b9b054f34ab8db3fa4ca1ad83, type: 3}
+--- !u!136 &136538638038686298
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078565294978316}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 388.72794
+  m_Height: 4646.893
+  m_Direction: 1
+  m_Center: {x: 0, y: 2323.0554, z: 0}

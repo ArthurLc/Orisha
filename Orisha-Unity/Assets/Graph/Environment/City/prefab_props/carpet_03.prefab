@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4794462560225680}
   - component: {fileID: 33329472730814152}
   - component: {fileID: 23666678300481280}
+  - component: {fileID: 65889732484240046}
   m_Layer: 0
   m_Name: carpet_03
   m_TagString: Untagged
@@ -82,3 +83,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1394536814383378}
   m_Mesh: {fileID: 4300000, guid: 2a3192cef036d3f4eae8e003fd5c0d97, type: 3}
+--- !u!65 &65889732484240046
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1394536814383378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 49.027786, y: 200.00002, z: 44.453323}
+  m_Center: {x: 0, y: 100.00001, z: 0}
