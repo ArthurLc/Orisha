@@ -193,20 +193,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'joint_Out_spine_C2_woman' has translation animation
-      that will be discarded.\n\t'joint_Out_spine_C3_woman' has translation animation
-      that will be discarded.\n\t'joint_Out_spine_C4_woman' has translation animation
-      that will be discarded.\n\t'joint_Out_spine_C5_woman' has translation animation
-      that will be discarded.\n\t'joint_Out_spine_C5_woman' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'joint_Out_neck_C2_woman'
-      has translation animation that will be discarded.\n\t'joint_Out_neck_C3_woman'
-      has translation animation that will be discarded.\n\t'joint_Out_arm_L_root_woman'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'joint_Out_arm_R_root_woman'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'joint_Out_leg_L_C3_woman'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'joint_Out_leg_R_C3_woman'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -224,7 +211,7 @@ ModelImporter:
       firstFrame: 670
       lastFrame: 690
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 90
       level: 0
       cycleOffset: 0
       loop: 0
@@ -252,7 +239,7 @@ ModelImporter:
       firstFrame: 691
       lastFrame: 692
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 90
       level: 0
       cycleOffset: 0
       loop: 0
@@ -280,7 +267,7 @@ ModelImporter:
       firstFrame: 693
       lastFrame: 730
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 90
       level: 0
       cycleOffset: 0
       loop: 0
