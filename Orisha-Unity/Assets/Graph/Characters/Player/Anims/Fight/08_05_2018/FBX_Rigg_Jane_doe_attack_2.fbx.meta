@@ -179,6 +179,11 @@ ModelImporter:
     7400000: PG_Uppercut
     7400002: Player_Fall
     9500000: //RootNode
+    13700000: accesoire6
+    13700002: cheveux
+    13700004: pagne
+    13700006: Polysurface_tassette
+    13700008: Polysurfave_jane_doe
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -209,7 +214,7 @@ ModelImporter:
     - serializedVersion: 16
       name: PG_Uppercut
       takeName: Take 001
-      firstFrame: 300
+      firstFrame: 308
       lastFrame: 340
       wrapMode: 0
       orientationOffsetY: 0
@@ -229,7 +234,49 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.079411946
+        functionName: EnableBox_LeftArm
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.079411946
+        functionName: DisableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.49705887
+        functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.51149756
+        functionName: EnableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5310159
+        functionName: ChainAttack
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

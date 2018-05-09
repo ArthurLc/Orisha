@@ -178,6 +178,11 @@ ModelImporter:
     4300008: cheveux
     7400000: JD_Tourbilol
     9500000: //RootNode
+    13700000: accesoire6
+    13700002: cheveux
+    13700004: pagne
+    13700006: Polysurface_tassette
+    13700008: Polysurfave_jane_doe
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -208,7 +213,7 @@ ModelImporter:
     - serializedVersion: 16
       name: JD_Tourbilol
       takeName: Take 001
-      firstFrame: 360
+      firstFrame: 368
       lastFrame: 420
       wrapMode: 0
       orientationOffsetY: 0
@@ -229,13 +234,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
-        functionName: DisableAllBoxes
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.24951376
         functionName: EnableBox_RightFoot
         data: 
@@ -271,7 +269,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.53894126
+      - time: 0.82465553
         functionName: EnableRotations
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -280,6 +278,20 @@ ModelImporter:
         messageOptions: 0
       - time: 0.9102275
         functionName: ChainAttack
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: DisableRotations
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
