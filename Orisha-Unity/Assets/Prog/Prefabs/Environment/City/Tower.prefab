@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33316923276515118}
   - component: {fileID: 23013078484438502}
   - component: {fileID: 136538638038686298}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,9 +35,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078565294978316}
-  m_LocalRotation: {x: -0, y: 0.9998355, z: -0, w: -0.018141001}
-  m_LocalPosition: {x: -4101.336, y: -1134.8441, z: -2484.2507}
-  m_LocalScale: {x: 1.836319, y: 1.8363179, z: 1.836319}
+  m_LocalRotation: {x: -0, y: 0.9998355, z: -0, w: -0.01814103}
+  m_LocalPosition: {x: -4101.336, y: -1134.8441, z: -2484.2522}
+  m_LocalScale: {x: 1.8363208, y: 1.836318, z: 1.8363208}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,6 +95,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 388.72794
-  m_Height: 4646.893
+  m_Height: 5052.8804
   m_Direction: 1
-  m_Center: {x: 0, y: 2323.0554, z: 0}
+  m_Center: {x: 0, y: 2120.064, z: 0}

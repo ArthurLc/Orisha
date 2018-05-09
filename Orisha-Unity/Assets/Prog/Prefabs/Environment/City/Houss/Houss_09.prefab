@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 65624510066565808}
   - component: {fileID: 65700615709491048}
   - component: {fileID: 65758524548020162}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Houss_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,13 +39,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1492208638884238}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: 0.007244417, y: -0.49929056, z: -0.007648338, w: 0.8663707}
+  m_LocalPosition: {x: 2521.4036, y: -923.66766, z: -3346.9216}
+  m_LocalScale: {x: 1.8363204, y: 1.836318, z: 1.8363196}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.282, y: -157.33401, z: -1.174}
 --- !u!23 &23851337121531054
 MeshRenderer:
   m_ObjectHideFlags: 1

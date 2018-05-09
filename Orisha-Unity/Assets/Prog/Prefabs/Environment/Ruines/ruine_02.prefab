@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33110036538527198}
   - component: {fileID: 23895310295861088}
   - component: {fileID: 65659451136070686}
-  m_Layer: 20
+  m_Layer: 0
   m_Name: ruine_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520603412675610}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2185488, y: 36.519855, z: -23.290817}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: -0, y: 0.71866316, z: -0, w: 0.6953584}
+  m_LocalPosition: {x: 0, y: -4.21, z: -6.8099365}
+  m_LocalScale: {x: 0.009999996, y: 0.01, z: 0.009999996}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 91.88801, z: 0}
 --- !u!23 &23895310295861088
 MeshRenderer:
   m_ObjectHideFlags: 1
