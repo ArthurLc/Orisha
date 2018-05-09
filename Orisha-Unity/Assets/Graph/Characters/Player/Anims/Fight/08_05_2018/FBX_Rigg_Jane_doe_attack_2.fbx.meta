@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5354a8c992fff894a836f2f887a86097
-timeCreated: 1525702524
+guid: a1398bca674ab474f89bc0b96ad3a2e5
+timeCreated: 1525703527
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -161,21 +161,27 @@ ModelImporter:
     400152: Polysurfave_jane_doe
     2100000: OBJ_accessoir_perso1SG1
     2100002: lowpoly_body1_perso1SG1
+    2300000: accesoire6
+    2300002: cheveux
+    2300004: pagne
+    2300006: Polysurface_tassette
+    2300008: Polysurfave_jane_doe
+    3300000: accesoire6
+    3300002: cheveux
+    3300004: pagne
+    3300006: Polysurface_tassette
+    3300008: Polysurfave_jane_doe
     4300000: Polysurface_tassette
     4300002: pagne
     4300004: Polysurfave_jane_doe
     4300006: accesoire6
     4300008: cheveux
-    7400000: Jane_Doe_Iddle
+    7400000: PG_Uppercut
+    7400002: Player_Fall
     9500000: //RootNode
-    13700000: accesoire6
-    13700002: cheveux
-    13700004: pagne
-    13700006: Polysurface_tassette
-    13700008: Polysurfave_jane_doe
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -192,7 +198,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -201,22 +207,50 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jane_Doe_Iddle
+      name: PG_Uppercut
       takeName: Take 001
-      firstFrame: 583
-      lastFrame: 668
+      firstFrame: 300
+      lastFrame: 340
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Player_Fall
+      takeName: Take 001
+      firstFrame: 300
+      lastFrame: 340
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -245,7 +279,7 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

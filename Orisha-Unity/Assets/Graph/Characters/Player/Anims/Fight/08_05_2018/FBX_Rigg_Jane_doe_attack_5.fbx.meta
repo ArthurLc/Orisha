@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ded65fcd91d6d054ea916ece2802e30c
-timeCreated: 1525702497
+guid: e371543be7bb00a4c9c657b46c472966
+timeCreated: 1525702498
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -176,11 +176,11 @@ ModelImporter:
     4300004: Polysurfave_jane_doe
     4300006: accesoire6
     4300008: cheveux
-    7400000: JD_Tourbilol
+    7400000: PD_Epaule
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -206,10 +206,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: JD_Tourbilol
+      name: PD_Epaule
       takeName: Take 001
-      firstFrame: 360
-      lastFrame: 420
+      firstFrame: 469
+      lastFrame: 489
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -228,7 +228,56 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.47519952
+        functionName: DisableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.49920005
+        functionName: EnableBox_RightFoot
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.49920005
+        functionName: EnableBox_RightArm
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8128
+        functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8288011
+        functionName: EnableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.85279936
+        functionName: ChainAttack
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -241,8 +290,8 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

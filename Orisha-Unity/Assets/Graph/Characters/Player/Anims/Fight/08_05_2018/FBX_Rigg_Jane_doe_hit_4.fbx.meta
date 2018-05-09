@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5df79db52d549fd47b08a338c07c552c
-timeCreated: 1525702553
+guid: 699dcdeefed16094789148325bb95073
+timeCreated: 1525702592
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -161,21 +161,26 @@ ModelImporter:
     400152: Polysurfave_jane_doe
     2100000: OBJ_accessoir_perso1SG1
     2100002: lowpoly_body1_perso1SG1
+    2300000: accesoire6
+    2300002: cheveux
+    2300004: pagne
+    2300006: Polysurface_tassette
+    2300008: Polysurfave_jane_doe
+    3300000: accesoire6
+    3300002: cheveux
+    3300004: pagne
+    3300006: Polysurface_tassette
+    3300008: Polysurfave_jane_doe
     4300000: Polysurface_tassette
     4300002: pagne
     4300004: Polysurfave_jane_doe
     4300006: accesoire6
     4300008: cheveux
-    7400000: Take 001
+    7400000: GetLittleHit_02
     9500000: //RootNode
-    13700000: accesoire6
-    13700002: cheveux
-    13700004: pagne
-    13700006: Polysurface_tassette
-    13700008: Polysurfave_jane_doe
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -192,14 +197,63 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: GetLittleHit_02
+      takeName: Take 001
+      firstFrame: 887
+      lastFrame: 896
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: DisableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5961507
+        functionName: EnableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -208,8 +262,8 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

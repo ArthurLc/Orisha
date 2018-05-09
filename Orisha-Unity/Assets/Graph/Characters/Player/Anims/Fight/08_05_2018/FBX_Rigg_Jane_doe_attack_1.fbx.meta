@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e371543be7bb00a4c9c657b46c472966
-timeCreated: 1525702498
+guid: bfee504aba6478c4e8e46e969a573c31
+timeCreated: 1525702495
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -176,11 +176,11 @@ ModelImporter:
     4300004: Polysurfave_jane_doe
     4300006: accesoire6
     4300008: cheveux
-    7400000: PD_Epaule
+    7400000: PD_Dash
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -206,10 +206,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: PD_Epaule
+      name: PD_Dash
       takeName: Take 001
-      firstFrame: 469
-      lastFrame: 489
+      firstFrame: 270
+      lastFrame: 290
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -228,7 +228,63 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.1893177
+        functionName: DisableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.21422765
+        functionName: EnableBox_RightArm
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.21422765
+        functionName: EnableBox_RightFoot
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.49919948
+        functionName: DisableBox_RightArm
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.49919948
+        functionName: DisableBox_RightFoot
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.52631336
+        functionName: EnableRotations
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6752005
+        functionName: ChainAttack
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -241,8 +297,8 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
