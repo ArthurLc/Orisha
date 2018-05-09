@@ -11,24 +11,21 @@ public class SandTransporter : MonoBehaviour
 	private vd_Player.CharacterInitialization Ci;
 	private Rigidbody playerRB;
 
-	private Transform parentListPoint;
-	private List<Transform> listTransform = new List<Transform>();
+	public AnimationCurve curveMoveY;
+	public Transform StartPoint;
+	public Transform EndPoint;
 
-	private int nbrPoint = 1;
 	private float interpo = 0.0f;
-	private float travelDuration;
 
 	private bool needToLeave = false;
 	private BoxCollider bc;
 
 	private void Start()
 	{
-		parentListPoint = transform.GetChild(1);
-		for (int i = 0; i < parentListPoint.childCount; i++) {
-			listTransform.Add (parentListPoint.GetChild (i));
-		}
-
 		bc = GetComponent<BoxCollider>();
+		for (int i = 0; i < curveMoveY.length; i++) {
+			curveMoveY.SmoothTangents (i, 2f);
+		}
 	}
 
 	private void Update(){
@@ -36,7 +33,8 @@ public class SandTransporter : MonoBehaviour
         {
             if (Vector3.Distance(Ci.PlayerTr.position, transform.position) <= 0.25f)
             {
-                parentListPoint.parent = null;
+				StartPoint.parent = null;
+				EndPoint.parent = null;
                 Ci.transform.parent = transform;
                 isMoving = true;
                 Ci.PlayerController.isPlayingCinematic = false;
@@ -69,7 +67,7 @@ public class SandTransporter : MonoBehaviour
 		}
 			
 
-		MoveTransporter (GlobalDuration);
+		MoveTransporter ();
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -90,54 +88,70 @@ public class SandTransporter : MonoBehaviour
         }
 	}
 
-	private void MoveTransporter(float duration)
+	private void MoveTransporter()
 	{
         if (isMoving)
         {
-            travelDuration = duration / (float)listTransform.Count;
-
-            interpo += Time.deltaTime;
+			interpo += Time.deltaTime;
 
             Ci.PlayerTr.position = transform.position;
             Ci.PlayerTr.localRotation = Quaternion.Euler(0, Ci.PlayerTr.localRotation.eulerAngles.y, 0);
             Ci.Anim.SetFloat("Speed", 0.0f);
 
-            if (interpo < travelDuration)
+			if (interpo < GlobalDuration)
             {
-                transform.position = Vector3.Lerp(listTransform[nbrPoint - 1].position, listTransform[nbrPoint].position, interpo / travelDuration);
-                transform.rotation = Quaternion.Lerp(listTransform[nbrPoint - 1].rotation, listTransform[nbrPoint].rotation, interpo / travelDuration);
-            }
+				transform.position = Vector3.Lerp(StartPoint.position, EndPoint.position, (interpo / GlobalDuration));
+				transform.position = new Vector3 (transform.position.x, transform.position.y * curveMoveY.Evaluate (interpo / GlobalDuration)
+												 , transform.position.z);
+				Debug.Log(transform.position + " | " + interpo);
+
+			}
             else
             {
 
-                transform.position = listTransform[nbrPoint].position;
-                transform.rotation = listTransform[nbrPoint].rotation;
+				transform.position = EndPoint.position;
+                
+				Debug.Log("End : " + transform.position + " | " + interpo);
 
-                ++nbrPoint;
-
-                //Debug.Log(nbrPoint + " | " + interpo);
-                interpo = 0.0f;
-            }
-
-            if (nbrPoint >= listTransform.Count)
-            {
 				//Arrivé
-                interpo = 0.0f;
-                nbrPoint = 1;
-                isMoving = false;
-                listTransform.Reverse();
+				interpo = 0.0f;
+				isMoving = false;
+				Transform tmpTr = StartPoint;
+				StartPoint = EndPoint;
+				EndPoint = tmpTr;
+
+				StartPoint.parent = transform;
+				EndPoint.parent = transform;
+
+				Keyframe[] keys = curveMoveY.keys;
+				int keyCount = keys.Length;
+				WrapMode postWrapmode = curveMoveY.postWrapMode;
+				curveMoveY.postWrapMode = curveMoveY.preWrapMode;
+				curveMoveY.preWrapMode = postWrapmode;
+				for(int i = 0; i < keyCount; i++ )
+				{
+					Keyframe K = keys[i];
+					K.time = 1.0f - K.time;
+					float tmp = -K.inTangent;
+					K.inTangent = -K.outTangent;
+					K.outTangent = tmp;
+					keys[i] = K;
+				}
+
+				curveMoveY.keys = keys;
 
 				//Debug.Log ("Tu ne peut pas prendre la platerforme");
 
 				needToLeave = true;
             }
+
+            
         }
         else if (Ci != null && playerRB != null)
         {
             if (Vector3.Distance(Ci.PlayerTr.position, transform.position) <= 0.1f)
             {
                 Ci.transform.parent = null;
-                parentListPoint.parent = transform;
                 Ci.UnfreezeInputs();
                 playerRB.isKinematic = false;
             }
