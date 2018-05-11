@@ -42,6 +42,18 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
         }
     }
 
+	void OnEnable()
+	{
+		crocoAnim.SetBool ("CanLandCombo", true);
+		weaponAnim.SetBool ("CanLandCombo", true);
+	}
+
+	public override void AttackFail()
+	{
+		weaponAnim.SetTrigger ("Fail");
+		crocoAnim.SetTrigger ("Fail");
+	}
+
     void Update ()
     {
         if (debugLog)
@@ -201,5 +213,4 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
             }
         }
     }
-
 }

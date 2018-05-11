@@ -51,6 +51,13 @@ public class AnimInfo_Enemy : MonoBehaviour
         }
     }
 
+	public void FailAttack()
+	{
+		float chance = Random.Range (0f, 1f);
+		if (chance < 0.5f)
+			enemyBasic.AttackFail ();
+	}
+
     /// <summary> 
     /// Fonction qui désactive l'attaque box de l'arme de l'ennemi
     /// </summary>

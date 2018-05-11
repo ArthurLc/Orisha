@@ -165,4 +165,8 @@ public class AI_Enemy_Basic : MonoBehaviour
             myAgent.updateRotation = true;
         }
     }
+
+	public virtual void AttackFail()
+	{
+	}
 }
