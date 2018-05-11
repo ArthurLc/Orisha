@@ -244,6 +244,7 @@ namespace vd_Player
                     TimeManager.Instance.Block_Player_WithTimer(fadeInDuration + displayDuration);
                     TimeManager.Instance.Block_Ennemies_WithTimer(fadeInDuration + displayDuration, true);
                     StartCoroutine(WaitToRepop(fadeInDuration + displayDuration));
+					anim.SetTrigger ("IsDead");
 
                     isPlayerDying = true;
                 }
@@ -279,6 +280,7 @@ namespace vd_Player
                 yield return null;
             }
 
+			anim.SetTrigger ("Repop");
             CheckpointsManager.RepopPlayerToCloserCheckpoint();
             yield return null;
         }
