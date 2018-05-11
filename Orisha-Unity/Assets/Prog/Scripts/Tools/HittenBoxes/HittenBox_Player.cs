@@ -45,6 +45,7 @@ public class HittenBox_Player : MonoBehaviour, HittenBox
 
             // je prends mes dégats
             TakeDamage(box.damageValue);
+
             // Propulsion
             //PropulsePlayer(box, box.damageValue);
             // je dis à l'autre de prendre les dégats

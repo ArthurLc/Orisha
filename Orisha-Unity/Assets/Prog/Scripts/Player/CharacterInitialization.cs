@@ -234,6 +234,12 @@ namespace vd_Player
         public void TakeDamage(int _damages)
         {
             health -= _damages;
+			Debug.Log (_damages);
+			if (_damages > 10)
+				anim.SetTrigger ("HugeHit");
+			else
+				anim.SetTrigger ("SoftHit");
+			
             if(health <= 0.0f)
             {
                 if (isPlayerDying == false)
@@ -253,7 +259,11 @@ namespace vd_Player
 
         public void PropulsePlayer(Vector3 _dir)
         {
-            rb.AddForce(_dir, ForceMode.Impulse);
+			Vector3 dir = -animEvents.transform.forward;
+			dir.y = dir.x + dir.z * 4;
+
+			rb.AddForce(dir * 100, ForceMode.Impulse);
+			anim.SetTrigger ("Propulsed");
         }
 
         public void RepopPlayerAtTransform(Transform _tr)
