@@ -38,8 +38,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _EmissiveMap:
+        m_Texture: {fileID: 2800000, guid: a63a7ef332583004f98d1682716ff968, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8c4528b8caf5865478a78c4c6c839c03, type: 3}
+        m_Texture: {fileID: 2800000, guid: e3f9b063f381e7f4395c011ce8aa47a2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MeltTex:
@@ -51,11 +55,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicMap:
-        m_Texture: {fileID: 2800000, guid: 6e2085fe013223643b44d556fd51a93d, type: 3}
+        m_Texture: {fileID: 2800000, guid: e442c86f6c1fb574991740277d80f6e8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: beee0d5c2bc06d44d93247847330959d, type: 3}
+        m_Texture: {fileID: 2800000, guid: f9e6c6d1a8989354e9dcb94f213dc18c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -73,6 +77,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _Distance: 0.9
     - _DstBlend: 0
+    - _EmissiveIntensity: 1
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -96,6 +101,7 @@ Material:
     - _ColorFrom: {r: 1, g: 1, b: 1, a: 1}
     - _ColorTo: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissiveColor: {r: 1, g: 1, b: 1, a: 1}
     - _MeltColor: {r: 1, g: 1, b: 1, a: 1}
     - _MeltColorFrom: {r: 1, g: 1, b: 1, a: 1}
     - _MeltColorFromTo: {r: 1, g: 1, b: 1, a: 1}

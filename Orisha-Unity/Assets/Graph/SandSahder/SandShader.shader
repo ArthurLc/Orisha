@@ -2,10 +2,15 @@
 	Properties{
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
-	_MetallicMap("_MetallicMap", 2D) = "white" {}
 	_NormalMap("NormalMap", 2D) = "bump" {}
 	_Glossiness("Smoothness", Range(0,1)) = 0.5
+
+	_MetallicMap("Metallic Map", 2D) = "white" {}
 		_Metallic("Metallic", Range(0,1)) = 0.0
+
+		_EmissiveMap("Emissive ", 2D) = "white" {}
+		_EmissiveColor("Emissive Color", Color) = (1,1,1,1)
+		_EmissiveIntensity("Emissive Intensity", Range(0,1)) = 0.0
 
 		_MeltY("Melt Y", Float) = 0.0
 		_MeltDistance("Melt Distance", Float) = 1.0
@@ -38,11 +43,14 @@
 	sampler2D _MetallicMap;
 	sampler2D _NormalMap;
 	sampler2D _MeltTex;
+	sampler2D _EmissiveMap;
+	float _EmissiveIntensity;
 
 
 	half _Glossiness;
 	half _Metallic;
 	fixed4 _Color;
+	fixed4 _EmissiveColor;
 
 
 	float _MeltY;
@@ -115,6 +123,8 @@
 		o.Normal = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));
 
 		// do the same calcuation to the metallic & smoothness
+
+		o.Emission = tex2D(_EmissiveMap, IN.uv_MainTex) * _EmissiveColor * _EmissiveIntensity.xxxx;
 
 		fixed4 metal = tex2D(_MetallicMap, IN.uv_MainTex);
 		o.Metallic = metal.r * _Metallic;
