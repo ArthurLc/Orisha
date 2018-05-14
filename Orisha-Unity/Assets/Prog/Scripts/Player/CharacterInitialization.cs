@@ -252,7 +252,7 @@ namespace vd_Player
 					isPlayerDying = true;
 				}
 			}
-			else
+			else if(!DashController.IsDashing)
 			{
 				if (_damages > 10)
 					anim.SetTrigger ("HugeHit");

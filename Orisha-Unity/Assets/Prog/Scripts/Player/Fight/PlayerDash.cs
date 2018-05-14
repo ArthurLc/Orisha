@@ -28,6 +28,7 @@ namespace vd_Player
         private PlayerController playerController;
 
         [SerializeField] private bool isDashing = false;
+		public bool IsDashing{get {return isDashing;}}
         private bool canDash = true;
         [SerializeField][Range(0.0f, 50.0f)] private float speed = 20.0f;
         [SerializeField][Range(0.0f, 1.0f)] private float height = 0.5f;
