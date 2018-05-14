@@ -24,7 +24,7 @@ public class SandTransporter : MonoBehaviour
 	{
 		bc = GetComponent<BoxCollider>();
 		for (int i = 0; i < curveMoveY.length; i++) {
-			curveMoveY.SmoothTangents (i, 2f);
+			curveMoveY.SmoothTangents (i, 1.1f);
 		}
 	}
 
@@ -103,7 +103,7 @@ public class SandTransporter : MonoBehaviour
 				transform.position = Vector3.Lerp(StartPoint.position, EndPoint.position, (interpo / GlobalDuration));
 				transform.position = new Vector3 (transform.position.x, transform.position.y * curveMoveY.Evaluate (interpo / GlobalDuration)
 												 , transform.position.z);
-				Debug.Log(transform.position + " | " + interpo);
+				//Debug.Log(transform.position + " | " + interpo);
 
 			}
             else
@@ -111,7 +111,7 @@ public class SandTransporter : MonoBehaviour
 
 				transform.position = EndPoint.position;
                 
-				Debug.Log("End : " + transform.position + " | " + interpo);
+				//Debug.Log("End : " + transform.position + " | " + interpo);
 
 				//Arrivé
 				interpo = 0.0f;
