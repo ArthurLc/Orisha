@@ -168,6 +168,15 @@ public class AI_EnemyState
     public virtual void PropulseAgent(Vector3 _dir)
     {
         myRb.isKinematic = false;
+		if (myIndividu.Health <= 0) 
+		{
+			if(_dir != Vector3.zero)
+				myAnimCroco.SetTrigger ("Propulsed");
+
+			else
+				myAnimCroco.SetTrigger ("Die");
+		}
+		
         myIndividu.agentIsControlledByOther = true;
         myRb.AddForce(_dir, ForceMode.Impulse);
     }
