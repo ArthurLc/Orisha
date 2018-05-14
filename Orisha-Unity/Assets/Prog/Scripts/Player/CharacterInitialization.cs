@@ -235,26 +235,30 @@ namespace vd_Player
         {
             health -= _damages;
 			Debug.Log (_damages);
-			if (_damages > 10)
-				anim.SetTrigger ("HugeHit");
-			else
-				anim.SetTrigger ("SoftHit");
+
 			
-            if(health <= 0.0f)
-            {
-                if (isPlayerDying == false)
-                {
-                    zoneScript.BeginDisplay("GameOver", fadeInDuration, displayDuration);
-                    // Le player fait "HAAAAAAAAA" parce qu'il meurt.
-                    // Le player joue l'animation de mort.
-                    TimeManager.Instance.Block_Player_WithTimer(fadeInDuration + displayDuration);
-                    TimeManager.Instance.Block_Ennemies_WithTimer(fadeInDuration + displayDuration, true);
-                    StartCoroutine(WaitToRepop(fadeInDuration + displayDuration));
+			if (health <= 0.0f)
+			{
+				if (isPlayerDying == false) 
+				{
+					zoneScript.BeginDisplay ("GameOver", fadeInDuration, displayDuration);
+					// Le player fait "HAAAAAAAAA" parce qu'il meurt.
+					// Le player joue l'animation de mort.
+					TimeManager.Instance.Block_Player_WithTimer (fadeInDuration + displayDuration);
+					TimeManager.Instance.Block_Ennemies_WithTimer (fadeInDuration + displayDuration, true);
+					StartCoroutine (WaitToRepop (fadeInDuration + displayDuration));
 					anim.SetTrigger ("IsDead");
 
-                    isPlayerDying = true;
-                }
-            }
+					isPlayerDying = true;
+				}
+			}
+			else
+			{
+				if (_damages > 10)
+					anim.SetTrigger ("HugeHit");
+				else
+					anim.SetTrigger ("SoftHit");
+			}
         }
 
         public void PropulsePlayer(Vector3 _dir)
