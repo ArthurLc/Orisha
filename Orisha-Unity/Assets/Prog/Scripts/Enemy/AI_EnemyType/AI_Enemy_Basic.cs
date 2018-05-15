@@ -59,7 +59,8 @@ public class AI_Enemy_Basic : MonoBehaviour
     [Header("Stats")]
     [SerializeField]
     protected float Basehealth = 50;
-    [SerializeField] protected float speed = 2;
+    [SerializeField] protected float speed = 4;
+    [SerializeField] protected float walkSpeed = 2;
     [SerializeField] protected float attackDamages = 10;
     [SerializeField] protected float attackSpeed = 1; // Minimal time between every attacks (In seconds)
     public float AttackSpeed
@@ -157,7 +158,7 @@ public class AI_Enemy_Basic : MonoBehaviour
 		{
 			myAgent.destination = transform.position;
 			myAgent.updatePosition = false;
-			myAgent.updateRotation = false;	
+			myAgent.updateRotation = false;
 		}
     }
     public void UnfreezePosRot()

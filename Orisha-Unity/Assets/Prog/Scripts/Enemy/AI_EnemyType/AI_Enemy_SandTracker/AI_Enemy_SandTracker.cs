@@ -99,6 +99,7 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
                     myCurrentState = new AI_EnemyStatePatrolSandTracker();
                     (myCurrentState as AI_EnemyStatePatrolSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStatePatrolSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
+                    myAgent.speed = walkSpeed;
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertSandTracker();
@@ -109,6 +110,7 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
                     myCurrentState = new AI_EnemyStateChaseSandTracker();
                     (myCurrentState as AI_EnemyStateChaseSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateChaseSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
+                    myAgent.speed = speed;
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightSandTracker();
@@ -120,6 +122,7 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
                       myCurrentState = new AI_EnemyStateEsquiveSandTracker();
                     (myCurrentState as AI_EnemyStateEsquiveSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateEsquiveSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
+                    myAgent.speed = speed;
                     break;
                 case State.Die:
                     myCurrentState = new Ai_EnemyStateDieSandTracker();

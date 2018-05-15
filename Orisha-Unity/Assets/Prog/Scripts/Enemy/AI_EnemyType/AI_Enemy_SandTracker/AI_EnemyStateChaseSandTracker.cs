@@ -51,6 +51,8 @@ public class AI_EnemyStateChaseSandTracker : AI_EnemyStateChase
             // Abandon de la poursuite de la cible si elle s'éloigne trop
             (myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Idle);
             currentTarget = null;
+            myAnimCroco.SetTrigger("Search");
+            myAnimWeapon.SetTrigger("Search");
             (myIndividu as AI_Enemy_SandTracker).SetCurrentTarget(null);
         }
         else if (targetDistance <= minDistanceToTarget) // Si la cible est trop proche

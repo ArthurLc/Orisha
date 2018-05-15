@@ -65,6 +65,9 @@ ModelImporter:
     100114: joint_queue04
     100116: joint_queue05
     100118: joint_queueBase
+    100120: CrocoBindTrue_LOD0
+    100122: CrocoBindTrue_LOD1
+    100124: CrocoBindTrue_LOD2
     400000: CrocoBindTrue
     400002: //RootNode
     400004: Group_deformers_pleaseInsertCharacterName
@@ -125,12 +128,22 @@ ModelImporter:
     400114: joint_queue04
     400116: joint_queue05
     400118: joint_queueBase
+    400120: CrocoBindTrue_LOD0
+    400122: CrocoBindTrue_LOD1
+    400124: CrocoBindTrue_LOD2
     2100000: Croco
     2300000: CrocoBindTrue
+    2300002: CrocoBindTrue_LOD0
+    2300004: CrocoBindTrue_LOD1
+    2300006: CrocoBindTrue_LOD2
     3300000: CrocoBindTrue
+    3300002: CrocoBindTrue_LOD0
+    3300004: CrocoBindTrue_LOD1
+    3300006: CrocoBindTrue_LOD2
     4300000: CrocoBindTrue
-    7400000: Take 001
+    7400000: Croco_Walk
     9500000: //RootNode
+    20500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -159,7 +172,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Croco_Walk
       takeName: Take 001
       firstFrame: 450
       lastFrame: 485
@@ -169,7 +182,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
