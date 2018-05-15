@@ -59,7 +59,8 @@ public class AI_EnemyStatePatrolSandTracker : AI_EnemyStatePatrol
             {
                 Vector3 direction = new Vector3(Random.Range(-100.0f, 100.0f), myIndividu.transform.position.y, Random.Range(-100.0f, 100.0f));
                 direction = Vector3.Normalize(direction);
-
+				myAnimCroco.SetTrigger ("Search");
+				myAnimWeapon.SetTrigger ("Search");
                 destination = PositionOnNavMesh(startTransform + (direction * Random.Range(5.0f, 20.0f)));
                 myAgent.SetDestination(destination);
             }            
