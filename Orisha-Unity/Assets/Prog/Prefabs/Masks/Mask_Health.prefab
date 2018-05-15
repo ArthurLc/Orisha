@@ -67,7 +67,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1679128024311246
 GameObject:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -125,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1635909659214114}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8.559999, y: -10.844507, z: 1}
+  m_LocalPosition: {x: 34.81894, y: 142.3306, z: -41.12204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4663464393230486}
@@ -163,7 +163,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4463000627257328
 Transform:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679128024311246}
@@ -241,7 +241,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682834930846364}
-  m_Mesh: {fileID: 4300000, guid: 9c392616bb08a55408bc01aebbc3bd12, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e5b80498f2434c444b2b35ff54770a7d, type: 3}
 --- !u!95 &95400855920976678
 Animator:
   serializedVersion: 3
@@ -355,7 +355,7 @@ MonoBehaviour:
   test: 0
 --- !u!114 &114514432071552842
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679128024311246}
@@ -382,7 +382,7 @@ MonoBehaviour:
     m_SearchResolution: 5
 --- !u!114 &114590820997422096
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679128024311246}
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_MaximumOrthoSize: 100
 --- !u!114 &114643803029141990
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679128024311246}

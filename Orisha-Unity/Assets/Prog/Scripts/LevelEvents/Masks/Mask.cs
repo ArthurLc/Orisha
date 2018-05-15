@@ -50,6 +50,10 @@ public class Mask : MonoBehaviour {
     {
         get { return meshRenderer.sharedMaterial.color; }
     }
+    public Color GetEmissiveColor
+    {
+        get { return meshRenderer.sharedMaterial.GetColor("_EmissionColor"); }
+    }
     public Sprite Sprite2D
     {
         get { return sprite2D; }

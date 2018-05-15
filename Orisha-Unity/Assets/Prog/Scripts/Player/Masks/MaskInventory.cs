@@ -60,7 +60,7 @@ public class MaskInventory : MonoBehaviour {
         skin.sharedMaterial.SetColor("_EmissionColor", defaultMask.GetColor);
         mask_MeshRenderer.sharedMaterial = defaultMask.GetMaterial;
         mask_MeshFilter.sharedMesh = defaultMask.GetMesh;
-        dashEffect.startColor = Color.white;
+        dashEffect.startColor = defaultMask.GetColor;
 
         // A FAIRE: Modification du jeu en fonction du nouveau masque.
         animator.speed = defaultMask.SpeedFactor;
@@ -72,10 +72,10 @@ public class MaskInventory : MonoBehaviour {
         equipedMask = _newMask;
 
         //Changement de la couleur emissive
-        skin.sharedMaterial.SetColor("_EmissionColor", _newMask.GetColor);
+        skin.sharedMaterial.SetColor("_EmissionColor", _newMask.GetEmissiveColor);
         mask_MeshRenderer.sharedMaterial = _newMask.GetMaterial;
         mask_MeshFilter.sharedMesh = _newMask.GetMesh;
-        dashEffect.startColor = _newMask.GetColor;
+        dashEffect.startColor = _newMask.GetEmissiveColor;
 
         // A FAIRE: Modification du jeu en fonction du nouveau masque.
         animator.speed = equipedMask.SpeedFactor;
