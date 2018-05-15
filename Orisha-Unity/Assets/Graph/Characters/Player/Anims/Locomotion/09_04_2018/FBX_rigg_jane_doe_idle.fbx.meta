@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3ef407acea9aec348ab5ea0bb48bb26a
-timeCreated: 1523281658
+guid: 8a284cc174040b8449a213f76808a500
+timeCreated: 1526383472
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -166,7 +166,7 @@ ModelImporter:
     4300004: Polysurfave_jane_doe
     4300006: accesoire6
     4300008: cheveux
-    7400000: Jane_Doe_Iddle
+    7400000: Jane_Doe_Idle
     9500000: //RootNode
     13700000: accesoire6
     13700002: cheveux
@@ -192,7 +192,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -201,22 +201,22 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jane_Doe_Iddle
+      name: Jane_Doe_Idle
       takeName: Take 001
       firstFrame: 583
-      lastFrame: 668
+      lastFrame: 661
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 90
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
