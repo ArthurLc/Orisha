@@ -22,9 +22,6 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
     [HideInInspector] public Transform LookAtPlayer;
 
     Rigidbody rb;
-    [Header("Links")]
-    [SerializeField] Animator crocoAnim;
-    [SerializeField] Animator weaponAnim;
 
     private SandShaderPositionner sandShaderPos;
     public SandShaderPositionner SandShaderPos

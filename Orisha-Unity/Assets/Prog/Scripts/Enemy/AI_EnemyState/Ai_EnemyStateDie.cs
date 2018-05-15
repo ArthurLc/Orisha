@@ -17,9 +17,7 @@ public class Ai_EnemyStateDie : AI_EnemyState
     protected override void CurrentUpdate()
     {
         base.CurrentUpdate();
-
         // Enemy is dying here
-
         // Final instruction of the global state update
         OnEndCurrentUpdate();
     }
@@ -34,19 +32,19 @@ public class Ai_EnemyStateDie : AI_EnemyState
         myAgent.updateRotation = false;
         myAgent.updateUpAxis = false;
 
-        myAnimCroco.GetComponent<CapsuleCollider>().height = 0.0f;
+		timerBeforeDisappear = 3.0f;
+        //myAnimCroco.GetComponent<CapsuleCollider>().height = 0.0f;
 
         GameObject.Destroy(myAgent);
     }
 
-
     protected override void CurrentFixedUpdate()
     {
-        base.CurrentFixedUpdate();
-
+		//Debug.Log (timerBeforeDisappear);
         if (timerBeforeDisappear >= 0.0f)
         {
             timerBeforeDisappear -= Time.deltaTime;
+			//Debug.Log (timerBeforeDisappear);
         }
         else if(finalPos == Vector3.zero)
         {

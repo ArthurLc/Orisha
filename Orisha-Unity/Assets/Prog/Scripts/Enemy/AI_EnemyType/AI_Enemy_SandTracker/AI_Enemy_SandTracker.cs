@@ -22,8 +22,6 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
     
     Rigidbody rb;
     [Header("Links")]
-    [SerializeField] Animator crocoAnim;
-    [SerializeField] Animator weaponAnim;
 	[SerializeField] Material weaponSandMaterial;
 
     private SandShaderPositionner sandShaderPos;

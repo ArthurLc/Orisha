@@ -11,6 +11,7 @@ public class Ai_EnemyStateDieFrontal : Ai_EnemyStateDie
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         DeathAction();
+		Debug.Log ("Die Begin");
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
     {
@@ -18,6 +19,7 @@ public class Ai_EnemyStateDieFrontal : Ai_EnemyStateDie
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         DeathAction();
+		Debug.Log ("Die Begin");
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
     {
@@ -25,6 +27,7 @@ public class Ai_EnemyStateDieFrontal : Ai_EnemyStateDie
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         DeathAction();
+		Debug.Log ("Die Begin");
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
     {
@@ -32,6 +35,7 @@ public class Ai_EnemyStateDieFrontal : Ai_EnemyStateDie
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         DeathAction();
+		Debug.Log ("Die Begin");
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
     {
@@ -39,6 +43,7 @@ public class Ai_EnemyStateDieFrontal : Ai_EnemyStateDie
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         DeathAction();
+		Debug.Log ("Die Begin");
     }
 
 

@@ -19,9 +19,6 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
     Potential_Enemy pe;
     
     Rigidbody rb;
-    [Header("Links")]
-    [SerializeField] Animator crocoAnim;
-    [SerializeField] Animator weaponAnim;
 
     void Start ()
     {
@@ -116,9 +113,10 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
                     myCurrentState = new AI_EnemyStateIsHitFrontal();
                     (myCurrentState as AI_EnemyStateIsHitFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
                     break;
-                case State.Die:
-                    myCurrentState = new Ai_EnemyStateDieFrontal();
-                    (myCurrentState as Ai_EnemyStateDieFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform);
+			case State.Die:
+				myCurrentState = new Ai_EnemyStateDieFrontal ();
+				(myCurrentState as Ai_EnemyStateDieFrontal).OnBegin (this, crocoAnim, weaponAnim, myAgent, rb, startTransform);
+				isFreeze = false;
                     StopAllCoroutines();
                     break;
             }
@@ -147,7 +145,7 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
                 pe.Pop_Potential_Ennemy(this);
 
             if(myState != State.Die)
-            ChangeState(State.Die, false);
+            	ChangeState(State.Die, false);
         }
     }
 

@@ -91,6 +91,11 @@ public class AI_Enemy_Basic : MonoBehaviour
 
 	[Header("AI")]
 	[SerializeField] protected State state;
+
+	[Header("Links")]
+	[SerializeField]protected Animator crocoAnim;
+	[SerializeField]protected Animator weaponAnim;
+
 	public State myState
 	{
 		get
@@ -148,12 +153,12 @@ public class AI_Enemy_Basic : MonoBehaviour
     {
         isFreeze = true;
 
-        if (myAgent != null)
-        {
-            myAgent.destination = transform.position;
-            myAgent.updatePosition = false;
-            myAgent.updateRotation = false;
-        }
+		if (myAgent != null) 
+		{
+			myAgent.destination = transform.position;
+			myAgent.updatePosition = false;
+			myAgent.updateRotation = false;	
+		}
     }
     public void UnfreezePosRot()
     {
@@ -165,6 +170,20 @@ public class AI_Enemy_Basic : MonoBehaviour
             myAgent.updateRotation = true;
         }
     }
+
+	public float FreezeAnim()
+	{
+		float toReturn = crocoAnim.speed;
+		crocoAnim.speed = 0f;
+		weaponAnim.speed = 0f;
+		return toReturn;
+	}
+
+	public void UnfreezeAnim(float _speed)
+	{
+		crocoAnim.speed = _speed;
+		weaponAnim.speed = _speed;
+	}
 
 	public virtual void AttackFail()
 	{

@@ -19,9 +19,6 @@ public class AI_Enemy_Harasser : AI_Enemy_Basic
     Potential_Enemy pe;
     
     Rigidbody rb;
-    [Header("Links")]
-    [SerializeField] Animator crocoAnim;
-    [SerializeField] Animator weaponAnim;
 
     void Start()
     {

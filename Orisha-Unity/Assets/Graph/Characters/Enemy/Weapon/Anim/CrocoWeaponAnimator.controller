@@ -1799,7 +1799,7 @@ AnimatorState:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FallingBackDeath
+  m_Name: DeathGround
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -1812,7 +1812,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 01c67dd49542bf3449eafa4b1966c699, type: 3}
+  m_Motion: {fileID: 7400000, guid: 317f05b345946f14b9cfd81dd9b8f598, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

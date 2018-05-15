@@ -43,6 +43,7 @@ public class AI_EnemyState
 
         set
         {
+			Debug.Log ("j'ai changé batard");
             fixedUpdateState = value;
         }
     }
@@ -172,9 +173,6 @@ public class AI_EnemyState
 		{
 			if(_dir != Vector3.zero)
 				myAnimCroco.SetTrigger ("Propulsed");
-
-			else
-				myAnimCroco.SetTrigger ("Die");
 		}
 		
         myIndividu.agentIsControlledByOther = true;

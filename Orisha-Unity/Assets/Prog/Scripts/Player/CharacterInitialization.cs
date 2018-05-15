@@ -234,7 +234,7 @@ namespace vd_Player
         public void TakeDamage(int _damages)
         {
             health -= _damages;
-			Debug.Log (_damages);
+			//Debug.Log (_damages);
 
 			
 			if (health <= 0.0f)
