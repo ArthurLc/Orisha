@@ -10,10 +10,12 @@
 */
 
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Reflection;
 
 public class SkyObjectGenerator : EditorWindow
 {
@@ -35,6 +37,9 @@ public class SkyObjectGenerator : EditorWindow
 
     private float minRotationSpeedToGenerate = -1.0f;
     private float maxRotationSpeedToGenerate = 1.0f;
+
+    private string namePrefabToRemplace = "";
+    private GameObject prefabToRemplace;
 
     [MenuItem("Tools/SkyObjects Generator")]
     static void OpenWindow()
@@ -59,6 +64,10 @@ public class SkyObjectGenerator : EditorWindow
         if (GUILayout.Button("Generate"))
         {
             Generate();
+        }
+        if (GUILayout.Button("Remplace"))
+        {
+            Remplace();
         }
     }
     public void OnInspectorUpdate()
@@ -121,7 +130,12 @@ public class SkyObjectGenerator : EditorWindow
         EditorGUILayout.Space();
 
         numberOfObjects = EditorGUILayout.IntField("Number of object", numberOfObjects);
+        
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
 
+        namePrefabToRemplace = EditorGUILayout.TextField("Name GameObjects to remplace", namePrefabToRemplace);
+        prefabToRemplace = EditorGUILayout.ObjectField("Prefab to remplace", prefabToRemplace, typeof(GameObject), false) as GameObject;
     }
     private void VerifArray()
     {
@@ -157,18 +171,18 @@ public class SkyObjectGenerator : EditorWindow
 
         for( int i = 0; i < numberOfObjects; i++)
         {
-            int m_random = Random.Range(0, numberOfSkyObjects);
+            int m_random = UnityEngine.Random.Range(0, numberOfSkyObjects);
 
             GameObject tempNewObject = Instantiate(prefabsSkyObjects[m_random]);
             tempNewObject.transform.parent = skyObjectsParent.transform;
 
-            float m_randomHeight = Random.Range(minHeigthToGenerate, maxHeigthToGenerate);
-            float m_randomRadius = Random.Range(minRadiusToGenerate, maxRadiusToGenerate);
-            float m_randomSpeed = Random.Range(minRotationSpeedToGenerate, maxRotationSpeedToGenerate);
+            float m_randomHeight = UnityEngine.Random.Range(minHeigthToGenerate, maxHeigthToGenerate);
+            float m_randomRadius = UnityEngine.Random.Range(minRadiusToGenerate, maxRadiusToGenerate);
+            float m_randomSpeed = UnityEngine.Random.Range(minRotationSpeedToGenerate, maxRotationSpeedToGenerate);
 
             tempNewObject.transform.position = new Vector3(0.0f, m_randomHeight, 0.0f);
 
-            Vector3 tempDir = new Vector3(Random.Range(0.0f, 100.0f), Random.Range(0.0f, 100.0f), Random.Range(0.0f, 100.0f));
+            Vector3 tempDir = new Vector3(UnityEngine.Random.Range(0.0f, 100.0f), UnityEngine.Random.Range(0.0f, 100.0f), UnityEngine.Random.Range(0.0f, 100.0f));
             tempDir = Vector3.Normalize(tempDir);
 
             tempNewObject.transform.position += (tempDir * m_randomRadius);
@@ -183,5 +197,27 @@ public class SkyObjectGenerator : EditorWindow
             tempNewObject.GetComponent<SkyObjectRotation>().Origin = new Vector3(XOrigineAxis, 0.0f, ZOrigineAxis);
         }
     }
+    private void Remplace()
+    {
+        GameObject newIsland;
+        string nameToAdd = namePrefabToRemplace;
 
+        foreach (GameObject go in GameObject.FindObjectsOfType(typeof(GameObject)))
+        {
+            if (go.name == nameToAdd)
+            {
+                newIsland = Instantiate(prefabToRemplace, go.transform) as GameObject;
+                newIsland.transform.parent = go.transform.parent;
+
+                SkyObjectRotation oldScript = go.GetComponent<SkyObjectRotation>();
+                SkyObjectRotation newScript = newIsland.AddComponent<SkyObjectRotation>();
+                newScript.radius = oldScript.radius;
+                newScript.speed = oldScript.speed;
+                newScript.speedOnItSelf = oldScript.speedOnItSelf;
+                newScript.Origin = oldScript.Origin;
+
+                Destroy(go);
+            }
+        }
+    }
 }
