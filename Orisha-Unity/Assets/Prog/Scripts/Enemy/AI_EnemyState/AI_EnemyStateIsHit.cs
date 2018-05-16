@@ -12,6 +12,7 @@ public class AI_EnemyStateIsHit : AI_EnemyState
         secureCount = 0;
         myAnimCroco.SetTrigger("GetHit");
         myAnimWeapon.SetTrigger("GetHit");
+        SoundManager.instance.SFX_PlayAtPosition(myIndividu.GetHitAudioClips[Random.Range(0, myIndividu.GetHitAudioClips.Count)], myIndividu.transform.position);
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
     {
@@ -19,6 +20,7 @@ public class AI_EnemyStateIsHit : AI_EnemyState
         secureCount = 0;
         myAnimCroco.SetTrigger("GetHit");
         myAnimWeapon.SetTrigger("GetHit");
+        SoundManager.instance.SFX_PlayAtPosition(myIndividu.GetHitAudioClips[Random.Range(0, myIndividu.GetHitAudioClips.Count)], myIndividu.transform.position);
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
     {
@@ -26,6 +28,7 @@ public class AI_EnemyStateIsHit : AI_EnemyState
         secureCount = 0;
         myAnimCroco.SetTrigger("GetHit");
         myAnimWeapon.SetTrigger("GetHit");
+        SoundManager.instance.SFX_PlayAtPosition(myIndividu.GetHitAudioClips[Random.Range(0, myIndividu.GetHitAudioClips.Count)], myIndividu.transform.position);
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
     {
@@ -33,6 +36,7 @@ public class AI_EnemyStateIsHit : AI_EnemyState
         secureCount = 0;
         myAnimCroco.SetTrigger("GetHit");
         myAnimWeapon.SetTrigger("GetHit");
+        SoundManager.instance.SFX_PlayAtPosition(myIndividu.GetHitAudioClips[Random.Range(0, myIndividu.GetHitAudioClips.Count)], myIndividu.transform.position);
     }
     public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
     {
@@ -40,6 +44,7 @@ public class AI_EnemyStateIsHit : AI_EnemyState
         secureCount = 0;
         myAnimCroco.SetTrigger("GetHit");
         myAnimWeapon.SetTrigger("GetHit");
+        SoundManager.instance.SFX_PlayAtPosition(myIndividu.GetHitAudioClips[Random.Range(0, myIndividu.GetHitAudioClips.Count)], myIndividu.transform.position);
     }
     
     protected override void CurrentUpdate()

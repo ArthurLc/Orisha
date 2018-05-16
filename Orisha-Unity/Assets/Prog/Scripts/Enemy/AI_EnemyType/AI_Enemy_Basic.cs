@@ -93,7 +93,24 @@ public class AI_Enemy_Basic : MonoBehaviour
 	[Header("AI")]
 	[SerializeField] protected State state;
 
-	[Header("Links")]
+    [Header("Sounds")]
+    [SerializeField] protected List<AudioClip> dyingAudioClips;
+    public List<AudioClip> DyingAudioClips
+    {
+        get { return dyingAudioClips; }
+    }
+    [SerializeField] protected List<AudioClip> getHitAudioClips;
+    public List<AudioClip> GetHitAudioClips
+    {
+        get { return getHitAudioClips; }
+    }
+    [SerializeField] protected List<AudioClip> alertAudioClips;
+    public List<AudioClip> AlertAudioClips
+    {
+        get { return alertAudioClips; }
+    }
+
+    [Header("Links")]
 	[SerializeField]protected Animator crocoAnim;
 	[SerializeField]protected Animator weaponAnim;
 

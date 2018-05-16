@@ -26,6 +26,7 @@ public class Ai_EnemyStateDie : AI_EnemyState
     {
         myAnimCroco.SetTrigger("Die");
         myAnimWeapon.SetTrigger("Die");
+        SoundManager.instance.SFX_PlayAtPosition(myIndividu.DyingAudioClips[Random.Range(0, myIndividu.DyingAudioClips.Count)], myIndividu.transform.position);
         //myAnim.GetComponent<CapsuleCollider>().direction = 0;
 
         myAgent.updatePosition = false;

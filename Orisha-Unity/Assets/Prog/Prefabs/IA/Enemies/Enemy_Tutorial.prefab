@@ -2466,7 +2466,8 @@ MonoBehaviour:
   debugEnabled: 1
   agentIsControlledByOther: 0
   Basehealth: 1000
-  speed: 20
+  sprintSpeed: 4
+  walkSpeed: 2
   attackDamages: 10
   attackSpeed: 1
   health: 1000
@@ -2475,14 +2476,28 @@ MonoBehaviour:
   dieWhenTouchingTarget: 0
   debugLog: 0
   state: 0
+  dyingAudioClips:
+  - {fileID: 8300000, guid: 1bd5b8286c3d3564f907582f760ec2ac, type: 3}
+  - {fileID: 8300000, guid: 636896465676d1d449d08d4c7416979d, type: 3}
+  - {fileID: 8300000, guid: 6facadcd8d0ef8a48928fe6c2ddda7b3, type: 3}
+  getHitAudioClips:
+  - {fileID: 8300000, guid: f22506322540e254fa181c3a7902219b, type: 3}
+  - {fileID: 8300000, guid: d343079362077f34796db2bce6fa0408, type: 3}
+  - {fileID: 8300000, guid: 347d250e5991e384096d731b30cefc0e, type: 3}
+  - {fileID: 8300000, guid: cabb29aa47112e54ba4cf75ced891963, type: 3}
+  - {fileID: 8300000, guid: 6e24feeb246d725479f9f160353344b7, type: 3}
+  alertAudioClips:
+  - {fileID: 8300000, guid: 36d7fee7446d1c349ab8778652e800ff, type: 3}
+  - {fileID: 8300000, guid: d433eeaceac3ef44aa874880b4cc6ba0, type: 3}
+  - {fileID: 8300000, guid: 07c800c6f79ad6742805d5d703be8424, type: 3}
+  crocoAnim: {fileID: 95322965645413500}
+  weaponAnim: {fileID: 95153248653532174}
   patrolTransform:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   LookAtPlayer: {fileID: 0}
-  crocoAnim: {fileID: 95322965645413500}
-  weaponAnim: {fileID: 95153248653532174}
 --- !u!114 &114221843870810682
 MonoBehaviour:
   m_ObjectHideFlags: 1

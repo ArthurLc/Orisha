@@ -60,6 +60,7 @@ public class AI_EnemyStateAlert : AI_EnemyState
         myAnimWeapon.SetTrigger("Alert");
         myAgent.destination = myIndividu.transform.position;
         myIndividu.AsCallReinforcement = true;
+        SoundManager.instance.SFX_PlayAtPosition(myIndividu.AlertAudioClips[Random.Range(0, myIndividu.AlertAudioClips.Count)], myIndividu.transform.position);
     }
 
 
