@@ -37,7 +37,7 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
         myAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         sandShaderPos = GetComponentInChildren<SandShaderPositionner>();
-        myAgent.speed = speed;
+        myAgent.speed = sprintSpeed;
         health = Basehealth;
         agentIsControlledByOther = false;
         patrolIndex = 0;

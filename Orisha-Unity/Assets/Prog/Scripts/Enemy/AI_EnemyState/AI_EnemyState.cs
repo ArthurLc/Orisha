@@ -43,7 +43,7 @@ public class AI_EnemyState
 
         set
         {
-			Debug.Log ("j'ai changé batard");
+
             fixedUpdateState = value;
         }
     }

@@ -27,7 +27,7 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
         OnBegin();
         myAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
-        myAgent.speed = speed;
+		myAgent.speed = sprintSpeed;
         health = Basehealth;
         agentIsControlledByOther = false;
 
@@ -116,7 +116,6 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
 			case State.Die:
 				myCurrentState = new Ai_EnemyStateDieFrontal ();
 				(myCurrentState as Ai_EnemyStateDieFrontal).OnBegin (this, crocoAnim, weaponAnim, myAgent, rb, startTransform);
-				isFreeze = false;
                     StopAllCoroutines();
                     break;
             }

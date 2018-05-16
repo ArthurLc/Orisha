@@ -45,7 +45,7 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
         rb = GetComponent<Rigidbody>();
 		sandShaderPos = GetComponentInChildren<SandShaderPositionner>();
 		weaponSandShaderPos = weaponAnim.GetComponentInChildren<SandShaderPositionner>();
-        myAgent.speed = speed;
+		myAgent.speed = sprintSpeed;
         health = Basehealth;
         agentIsControlledByOther = false;
 
@@ -105,12 +105,13 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
                     myCurrentState = new AI_EnemyStateAlertSandTracker();
                     (myCurrentState as AI_EnemyStateAlertSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateAlertSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
+					myAgent.speed = sprintSpeed;
                     break;
                 case State.Chasing:
                     myCurrentState = new AI_EnemyStateChaseSandTracker();
                     (myCurrentState as AI_EnemyStateChaseSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateChaseSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
-                    myAgent.speed = speed;
+                    myAgent.speed = sprintSpeed;
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightSandTracker();
@@ -122,7 +123,7 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
                       myCurrentState = new AI_EnemyStateEsquiveSandTracker();
                     (myCurrentState as AI_EnemyStateEsquiveSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateEsquiveSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
-                    myAgent.speed = speed;
+                    myAgent.speed = sprintSpeed;
                     break;
                 case State.Die:
                     myCurrentState = new Ai_EnemyStateDieSandTracker();
