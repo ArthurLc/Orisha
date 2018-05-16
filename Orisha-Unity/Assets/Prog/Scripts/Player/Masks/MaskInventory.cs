@@ -32,6 +32,8 @@ public class MaskInventory : MonoBehaviour {
     [SerializeField] private Animator animator;
     [SerializeField] private vd_Player.PlayerFight fightDatas;
     private vd_Player.CharacterInitialization characterInit;
+    [Header("BasicEmissiveSkin")]
+    [SerializeField] private string hexEmissive = "#12110F";
 
     public static MaskInventory Instance;
 
@@ -57,7 +59,9 @@ public class MaskInventory : MonoBehaviour {
         equipedMask = defaultMask;
 
         //Changement de la couleur emissive
-        skin.sharedMaterial.SetColor("_EmissionColor", defaultMask.GetColor);
+        Color tatooColor = new Color();
+        ColorUtility.TryParseHtmlString(hexEmissive, out tatooColor);
+        skin.sharedMaterial.SetColor("_EmissionColor", tatooColor);
         mask_MeshRenderer.sharedMaterial = defaultMask.GetMaterial;
         mask_MeshFilter.sharedMesh = defaultMask.GetMesh;
         dashEffect.startColor = defaultMask.GetColor;
