@@ -67,7 +67,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1729524180282746
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -189,7 +189,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4831139234389176
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729524180282746}
@@ -292,7 +292,7 @@ MonoBehaviour:
   strengthFactor: 1
   meshFilter: {fileID: 33738398141831752}
   meshRenderer: {fileID: 23638515373617520}
-  sprite2D: {fileID: 21300000, guid: 0390d9f493b8fc544bc536c93967e8b4, type: 3}
+  sprite2D: {fileID: 21300000, guid: 13d9f55ac505f394f8f7978b3f22aaf9, type: 3}
 --- !u!114 &114295273646673140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,7 +349,7 @@ MonoBehaviour:
   test: 0
 --- !u!114 &114766945087080794
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729524180282746}
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &114767795812997910
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729524180282746}
@@ -423,7 +423,7 @@ MonoBehaviour:
     roll: 0
 --- !u!114 &114823238289067870
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729524180282746}
