@@ -800,7 +800,7 @@ public class LODVolume : MonoBehaviour
             lodGroup.RecalculateBounds();
             lodGroup.ForceLOD(-1);
 
-            var prefab = PrefabUtility.GetPrefabParent(go);
+            var prefab = PrefabUtility.GetCorrespondingObjectFromSource(go);
             if (prefab)
             {
                 var assetPath = AssetDatabase.GetAssetPath(prefab);

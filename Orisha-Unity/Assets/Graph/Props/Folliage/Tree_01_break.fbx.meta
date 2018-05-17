@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: 4186aafe44a58b8459b09ff11098aead
-timeCreated: 1525872321
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: oui26:polySurface1
     100002: oui26:polySurface10
@@ -149,6 +147,7 @@ ModelImporter:
     4300050: oui26:polySurface26
     4300052: oui26:polySurface27
     4300054: oui26:polySurface28
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -168,6 +167,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -199,6 +199,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
