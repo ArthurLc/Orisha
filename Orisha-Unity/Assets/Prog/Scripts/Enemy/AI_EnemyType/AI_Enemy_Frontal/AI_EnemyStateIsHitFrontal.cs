@@ -80,6 +80,7 @@ public class AI_EnemyStateIsHitFrontal : AI_EnemyStateIsHit
     public override void PropulseAgent(Vector3 _dir)
     {
         base.PropulseAgent(_dir);
+
         (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.IsHit, true);
     }
 }

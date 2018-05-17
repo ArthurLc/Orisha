@@ -53,7 +53,7 @@ public class AI_EnemyStateFightFrontal : AI_EnemyStateFight
                 myAgent.isStopped = false;
                 (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.Chasing);
             }
-            else if(attackTimer == 0.0f)
+			else if(attackTimer == 0.0f && myIndividu.Health > 0)
             {
                 attackTimer = myIndividu.AttackSpeed;
                 myAnimCroco.SetTrigger("Attack");
@@ -78,6 +78,7 @@ public class AI_EnemyStateFightFrontal : AI_EnemyStateFight
     public override void PropulseAgent(Vector3 _dir)
     {
         base.PropulseAgent(_dir);
+
         (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.IsHit);
     }
 }

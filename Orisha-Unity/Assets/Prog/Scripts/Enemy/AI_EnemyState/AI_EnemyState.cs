@@ -172,7 +172,13 @@ public class AI_EnemyState
 		if (myIndividu.Health <= 0) 
 		{
 			if(_dir != Vector3.zero)
+            {
 				myAnimCroco.SetTrigger ("Propulsed");
+                myAnimWeapon.enabled = false;
+                myAnimWeapon.gameObject.AddComponent<Rigidbody>();
+                myAnimWeapon.transform.parent = null;
+                myIndividu.DmgBoxList[0].GetComponent<BoxCollider>().isTrigger = false;
+            }
 		}
 		
         myIndividu.agentIsControlledByOther = true;
