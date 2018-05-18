@@ -5,21 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Menu.unity
-    guid: 2c83c24a233c9a648ac52f4b1ee201c3
-  - enabled: 0
-    path: Assets/Scenes/Level_CurrentMap.unity
-    guid: 325bd31c5e8b4fb4a8fc8308a248e19a
   - enabled: 1
-    path: Assets/Milestones/Scenes/April_Scene01.unity
-    guid: 80e0237aeaccd7d4aad957e83e3a7270
+    path: Assets/Scenes/MainMenu.unity
+    guid: e60a4b05bed64d146b0c1440c4c7e39d
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 67bb09502a77cf641bdfd4e4fb1a6617
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FirstLD.unity
     guid: 72dd8ac1694a53c4d8021711d858a910
-  - enabled: 1
-    path: Assets/Milestones/Scenes/April_SceneQuiMarche.unity
-    guid: 3b0ef9345b4942946a84f7f44d66f924
+  m_configObjects: {}

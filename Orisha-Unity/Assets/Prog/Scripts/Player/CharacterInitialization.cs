@@ -22,6 +22,8 @@ namespace vd_Player
     public class CharacterInitialization : MonoBehaviour
     {
         // Scripts du joueur
+        [Header("Infos")]
+        [SerializeField] private bool IsMenuPrefab = false;
         [SerializeField] private Transform playerTr;
         public Transform PlayerTr
         {
@@ -130,7 +132,8 @@ namespace vd_Player
 
             CheckpointsManager.PlayerRef = this;
 
-            GameLoopManager.DisableMouse();
+            if(IsMenuPrefab == false)
+                GameLoopManager.DisableMouse();
         }
 
         public void ChangeControleMode(vd_Inputs.InputMode _newMode, Player _player)
