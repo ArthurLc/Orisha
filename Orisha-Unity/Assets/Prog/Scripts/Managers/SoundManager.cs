@@ -154,4 +154,16 @@ public class SoundManager : MonoBehaviour
 
 		return false;
 	}
+
+    public bool SFX_LoopAtPosition(AudioClip _clipToPlay, Vector3 _position)
+    {
+        if (_clipToPlay)
+        {
+            SFX_Object sfx = SFX_Pool.Instance.GetSFXObject(_position, _clipToPlay);
+            sfx.source.loop = true;
+            return true;
+        }
+
+        return false;
+    }
 }

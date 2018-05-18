@@ -1222,6 +1222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameBreakerLayer: DamageBox_Player
   breakObject: {fileID: 1734514152651174}
+  breakSound: {fileID: 8300000, guid: 4fabd822d1b9b42429d6fee53ca89671, type: 3}
 --- !u!136 &136229920986599514
 CapsuleCollider:
   m_ObjectHideFlags: 1

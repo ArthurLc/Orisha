@@ -11,12 +11,14 @@
 public class Breakable : MonoBehaviour {
     [SerializeField] string nameBreakerLayer;
     [SerializeField] GameObject breakObject;
+    [SerializeField] AudioClip breakSound;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer(nameBreakerLayer))
         {
             breakObject.SetActive(true);
+            SoundManager.instance.SFX_PlayOneShot(breakSound);
             Destroy(this.gameObject);
         }
     }
