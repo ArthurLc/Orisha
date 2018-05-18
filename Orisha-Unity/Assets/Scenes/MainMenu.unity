@@ -3555,6 +3555,18 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114606473094394888, guid: 0dd0d8624d49e91479da33163b6f4ce0,
+        type: 2}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 863a48c8d6ed4ec42b61973a2f46a7b9,
+        type: 2}
+    - target: {fileID: 114606473094394888, guid: 0dd0d8624d49e91479da33163b6f4ce0,
+        type: 2}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21550715185392650, guid: 863a48c8d6ed4ec42b61973a2f46a7b9,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dd0d8624d49e91479da33163b6f4ce0, type: 2}
   m_IsPrefabAsset: 0
