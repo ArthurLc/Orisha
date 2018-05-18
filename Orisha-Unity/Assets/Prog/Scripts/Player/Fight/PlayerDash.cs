@@ -43,19 +43,19 @@ namespace vd_Player
 
         [SerializeField] private bool verbose = false;
 
-        private ParticleSystem particleDash;
+        [SerializeField] private ParticleSystem particleDash;
 
         // Use this for initialization
         void Start()
         {
             playerController = GetComponent<PlayerController>();
-            particleDash = GetComponentInChildren<ParticleSystem>();
+           // particleDash = GetComponentInChildren<ParticleSystem>();
             if (playerController == null)
                 Debug.LogError("PlayerDash n'a pas acces au PlayerController");
             else if (ci == null)
                 Debug.LogError("PlayerController n'a pas de lien vers CharacterInitialization");
-            else if (particleDash == null)
-                Debug.LogError("Pas de particle system pour le dash");
+            //else if (particleDash == null)
+            //    Debug.LogError("Pas de particle system pour le dash");
             timer = 0.0f;
         }
 
