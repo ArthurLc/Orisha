@@ -33,6 +33,15 @@ namespace vd_Menu
         [SerializeField] private Sprite inputIconKeyboard;
         [SerializeField] private Image currentInputMode;
 
+        [Header("Cursor")]
+        [SerializeField] private Texture2D cursorTexture;
+        [SerializeField] private Vector2 hotSpot = Vector2.zero;
+
+
+        private void Start()
+        {
+            Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
+        }
 
         void Update()
         {
