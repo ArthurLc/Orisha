@@ -140,9 +140,13 @@ public class SandTransporter : MonoBehaviour
 
 				curveMoveY.keys = keys;
 
-				//Debug.Log ("Tu ne peut pas prendre la platerforme");
+                //Debug.Log ("Tu ne peut pas prendre la platerforme");
+                Ci.transform.parent = null;
+                Ci.UnfreezeInputs();
+                playerRB.isKinematic = false;
+                isAtStart = true;
 
-				needToLeave = true;
+                needToLeave = true;
             }
 
             
@@ -154,6 +158,7 @@ public class SandTransporter : MonoBehaviour
                 Ci.transform.parent = null;
                 Ci.UnfreezeInputs();
                 playerRB.isKinematic = false;
+                Ci.PlayerController.isPlayingCinematic = false;
             }
         }
 	}
