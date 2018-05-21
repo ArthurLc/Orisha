@@ -39,7 +39,7 @@ public static class CheckpointsManager {
                 closerCheckpoint = checkpointList[i].transform;
             else
             {
-                closerCheckpoint = Vector3.Distance(player.PlayerTr.position, closerCheckpoint.position) >
+                closerCheckpoint = Vector3.Distance(player.PlayerTr.position, closerCheckpoint.position) <
                     Vector3.Distance(player.PlayerTr.position, checkpointList[i].transform.position) ?
                         closerCheckpoint : checkpointList[i].transform;
             }
