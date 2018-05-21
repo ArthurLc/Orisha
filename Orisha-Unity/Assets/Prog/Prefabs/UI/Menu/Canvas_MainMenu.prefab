@@ -2577,8 +2577,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Orisha
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 863a48c8d6ed4ec42b61973a2f46a7b9, type: 2}
+  m_sharedMaterial: {fileID: 21550715185392650, guid: 863a48c8d6ed4ec42b61973a2f46a7b9,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3241,7 +3242,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114373060303591412}
-        m_MethodName: Open_SubMenu
+        m_MethodName: OpenOrClose_SubMenu
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 114889700236203626}

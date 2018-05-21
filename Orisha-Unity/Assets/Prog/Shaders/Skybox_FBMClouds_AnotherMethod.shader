@@ -198,7 +198,6 @@ Shader "Skybox/FBMClouds"
 			colorReturn.y = c_sky.y;
 		colorReturn.xz = c_sky.xz;
 
-		//return colorReturn;
 		return half4(colorReturn + acc, 1);
 	}
 
