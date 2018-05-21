@@ -35,14 +35,36 @@ public class ButtonManagerMenu : MonoBehaviour {
 
     public void Open_SubMenu(Button _button)
     {
-        if (lastButtonID != -1)
+        int newButtonID = -1;
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            if (buttons[i].button == _button)
+                newButtonID = i;
+        }
+
+        if (lastButtonID != newButtonID)
+        {
+            if (lastButtonID != -1)
+                ActiveSubMenu(lastButtonID, false);
+
+            lastButtonID = newButtonID;
+            ActiveSubMenu(lastButtonID, true);
+        }
+    }
+    public void OpenOrClose_SubMenu(Button _button)
+    {
+        int newButtonID = -1;
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            if (buttons[i].button == _button)
+                newButtonID = i;
+        }
+
+        if (lastButtonID != -1 && lastButtonID != newButtonID)
             ActiveSubMenu(lastButtonID, false);
 
-        for (int i = 0; i < buttons.Count; i++) {
-            if (buttons[i].button == _button)
-                lastButtonID = i;
-        }
-        ActiveSubMenu(lastButtonID, true);
+        lastButtonID = newButtonID;
+        ActiveSubMenu(lastButtonID, !buttons[lastButtonID].relativeObjects[0].activeInHierarchy);
     }
     void ActiveSubMenu(int _lastButtonID, bool _active)
     {
