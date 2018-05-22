@@ -66,6 +66,7 @@ public class SandBridgeEditor : Editor
         for (int i = 0; Vector3.Distance(currentStepRef.position, _sb.ArrivalPonton.position) > idx; i++) {
             GameObject newStep = Instantiate(_sb.StepElement, _sb.MeshsList);
             newStep.transform.localRotation = Quaternion.identity;
+            newStep.transform.rotation = Quaternion.Euler(0, newStep.transform.eulerAngles.y, newStep.transform.eulerAngles.z);
             newStep.transform.localPosition = (Vector3.forward * 0.5f) + ((Vector3.forward * idx) * i);
             currentStepRef = newStep.transform;
         }
