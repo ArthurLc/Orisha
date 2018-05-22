@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class SandTransporter : MonoBehaviour
 {
+    [Header("Links")]
+    [SerializeField] private MeshRenderer platform;
+    enum EmissiveMode
+    {
+        Pulse,
+        Shine
+    } EmissiveMode emissiveMode;
+
+    [Header("Parameters")]
 	[SerializeField] float GlobalDuration = 10.0f;
 	private bool isMoving = false;
 	private bool isAtStart = true;
@@ -15,26 +24,51 @@ public class SandTransporter : MonoBehaviour
 	public Transform StartPoint;
 	public Transform EndPoint;
 
-	private float interpo = 0.0f;
+    [SerializeField] private Color PulseColor;
+    [SerializeField] private Color ShineColor;
+    [SerializeField][Range(-10.0f, 10.0f)] private float PulseEmissiveMax = 1.0f;
+    [SerializeField] private float PulseSpeed = 1.0f;
+    [SerializeField] private float LerpSpeed = 1.0f;
+
+    private float interpo = 0.0f;
 
 	private bool needToLeave = false;
 	private BoxCollider bc;
 
-	private void Start()
+    private Material prefabMaterial;
+
+    float emissiveValue;
+    int direction;
+
+    private void Start()
 	{
 		bc = GetComponent<BoxCollider>();
 		for (int i = 0; i < curveMoveY.length; i++) {
 			curveMoveY.SmoothTangents (i, 1.1f);
 		}
-	}
 
-	private void Update(){
-		if (!isAtStart && !isMoving && !needToLeave)
+        SetEmissiveMode(EmissiveMode.Pulse);
+        prefabMaterial = platform.sharedMaterial;
+        platform.sharedMaterial = new Material(prefabMaterial);
+        platform.sharedMaterial.name = transform.name;
+        emissiveValue = 0.0f;
+        direction = 1;
+    }
+
+    private void OnApplicationQuit()
+    {
+        StopAllCoroutines();
+        platform.sharedMaterial = prefabMaterial;
+    }
+
+    private void Update()
+    {
+        if (!isAtStart && !isMoving && !needToLeave)
         {
             if (Vector3.Distance(Ci.PlayerTr.position, transform.position) <= 0.25f)
             {
-				StartPoint.parent = null;
-				EndPoint.parent = null;
+                StartPoint.parent = null;
+                EndPoint.parent = null;
                 Ci.transform.parent = transform;
                 isMoving = true;
                 Ci.PlayerController.isPlayingCinematic = false;
@@ -53,38 +87,43 @@ public class SandTransporter : MonoBehaviour
             }
         }
 
-		if (playerRB && needToLeave) 
-		{
-			Vector3 pos2D, playerPos2D;
-			pos2D = transform.position; 
-			playerPos2D = Ci.PlayerTr.position;
-			pos2D.y = playerPos2D.y = 0.0f;
-			if (Vector3.Distance (playerPos2D, pos2D) >= bc.size.x + 0.5f) 
-			{
-				needToLeave = false;
-				//Debug.Log("tu peut reprendre la plateforme !");	
-			}
-		}
-			
+        if (playerRB && needToLeave)
+        {
+            Vector3 pos2D, playerPos2D;
+            pos2D = transform.position;
+            playerPos2D = Ci.PlayerTr.position;
+            pos2D.y = playerPos2D.y = 0.0f;
+            if (Vector3.Distance(playerPos2D, pos2D) >= bc.size.x + 0.5f)
+            {
+                needToLeave = false;
+                //Debug.Log("tu peut reprendre la plateforme !");	
+            }
+        }
 
-		MoveTransporter ();
-	}
+        MoveTransporter();
+        UpdateEmissive();
+    }
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (Ci == null)
-			Ci = other.GetComponentInParent<vd_Player.CharacterInitialization>();
-        if (playerRB == null)
-            playerRB = Ci.Rb;
+        if (other.tag == "Player")
+        {
+            if (Ci == null)
+                Ci = other.GetComponentInParent<vd_Player.CharacterInitialization>();
+            if (playerRB == null)
+                playerRB = Ci.Rb;
 
-		if (isAtStart && !needToLeave)
-		{
-			isAtStart = false;
-            Ci.FreezeInputs();
-            playerRB.isKinematic = true;
-            Ci.PlayerTr.LookAt(transform);
-            Ci.PlayerController.isPlayingCinematic = true;
-            Ci.Anim.SetFloat("Speed", 0.5f);
+            SetEmissiveMode(EmissiveMode.Shine);
+
+            if (isAtStart && !needToLeave)
+            {
+                isAtStart = false;
+                Ci.FreezeInputs();
+                playerRB.isKinematic = true;
+                Ci.PlayerTr.LookAt(transform);
+                Ci.PlayerController.isPlayingCinematic = true;
+                Ci.Anim.SetFloat("Speed", 0.5f);
+            }
         }
 	}
 
@@ -147,6 +186,7 @@ public class SandTransporter : MonoBehaviour
                 isAtStart = true;
 
                 needToLeave = true;
+                SetEmissiveMode(EmissiveMode.Pulse);
             }
 
             
@@ -162,4 +202,56 @@ public class SandTransporter : MonoBehaviour
             }
         }
 	}
+
+    private void SetEmissiveMode(EmissiveMode _newEmissiveMode)
+    {
+        emissiveMode = _newEmissiveMode;
+        StopAllCoroutines();
+
+        switch (emissiveMode)
+        {
+            case EmissiveMode.Pulse:
+                platform.sharedMaterial.SetColor("_EmissionColor", PulseColor);
+                break;
+            case EmissiveMode.Shine:
+                platform.sharedMaterial.SetColor("_EmissionColor", ShineColor);
+                break;
+            default:
+                break;
+        }
+    }
+    private void UpdateEmissive()
+    {
+        Color finalColor;
+
+        switch (emissiveMode)
+        {
+            case EmissiveMode.Pulse:
+                emissiveValue += Time.fixedDeltaTime * PulseSpeed * direction;
+                if (emissiveValue > PulseEmissiveMax || emissiveValue < 0.0f) {
+                    direction = -direction;
+                }
+
+                finalColor = PulseColor * Mathf.LinearToGammaSpace(emissiveValue);
+                platform.sharedMaterial.SetColor("_EmissionColor", finalColor);
+                break;
+            case EmissiveMode.Shine:
+                if (emissiveValue < PulseEmissiveMax)
+                {
+                    emissiveValue += Time.fixedDeltaTime * PulseSpeed;
+
+                    finalColor = ShineColor * Mathf.LinearToGammaSpace(emissiveValue);
+                    platform.sharedMaterial.SetColor("_EmissionColor", finalColor);
+                }
+                else if(emissiveValue > PulseEmissiveMax)
+                {
+                    finalColor = ShineColor * Mathf.LinearToGammaSpace(PulseEmissiveMax);
+                    platform.sharedMaterial.SetColor("_EmissionColor", finalColor);
+                }
+
+                break;
+            default:
+                break;
+        }
+    }
 }

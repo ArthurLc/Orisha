@@ -97,8 +97,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1193301548910742}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -3.07, z: 0}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children: []
   m_Father: {fileID: 4537960194260920}
   m_RootOrder: 0
@@ -211,69 +211,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33f5aa2abfe8e74389e8ee9d26ed0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platform: {fileID: 23998617171193192}
   GlobalDuration: 10
   curveMoveY:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.99868774
-      inSlope: 0.59134567
-      outSlope: 0.59134567
+      value: 1
+      inSlope: 7.236707
+      outSlope: 7.236707
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.011968963
-      value: 1.1104429
-      inSlope: 13.19558
-      outSlope: 13.19558
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.65187734
-      outWeight: 0.10977467
-    - serializedVersion: 3
-      time: 0.11817763
-      value: 1.2489462
-      inSlope: 0.57002765
-      outSlope: 0.57002765
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.18708187
-    - serializedVersion: 3
-      time: 0.77840173
-      value: 1.3482054
-      inSlope: 0.093832895
-      outSlope: 0.093832895
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.8690034
-      value: 1.275274
-      inSlope: -1.7938348
-      outSlope: -1.7938348
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9825112
+      time: 0.017488778
       value: 1.1265612
-      inSlope: -11.714394
-      outSlope: -11.714394
+      inSlope: 1.0138278
+      outSlope: 1.0138278
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.52350444
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.13099658
+      value: 1.275274
+      inSlope: 0.779708
+      outSlope: 0.779708
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.22159827
+      value: 1.3482054
+      inSlope: -0.19810723
+      outSlope: -0.19810723
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.88182235
+      value: 1.2489462
+      inSlope: -1.3617541
+      outSlope: -1.3617541
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.988031
+      value: 1.1104429
+      inSlope: -9.738727
+      outSlope: -9.738727
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: -3.6088035
-      outSlope: -3.6088035
+      value: 0.99868774
+      inSlope: -9.337077
+      outSlope: -9.337077
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -281,8 +282,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  StartPoint: {fileID: 4507911159960356}
-  EndPoint: {fileID: 4182270272254920}
+  StartPoint: {fileID: 4182270272254920}
+  EndPoint: {fileID: 4507911159960356}
+  PulseColor: {r: 0.7490196, g: 0.48235294, b: 0.10980392, a: 1}
+  ShineColor: {r: 0.10980392, g: 0.64705884, b: 0.7490196, a: 1}
+  PulseEmissiveMax: 0.75
+  PulseSpeed: 0.5
+  LerpSpeed: 1
 --- !u!135 &135569026482305374
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -293,5 +299,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 2.1
   m_Center: {x: 0, y: 0, z: 0}
