@@ -85,10 +85,12 @@ public class MasksMenu : MonoBehaviour {
 				GameLoopManager.DisableMouse ();
 			}
 
-			if (transform.localScale.x < Vector3.one.x)
-			{
-				transform.localScale += Vector3.one * 10 * Time.unscaledDeltaTime;
-			}
+            if (transform.localScale.x < Vector3.one.x)
+            {
+                transform.localScale += Vector3.one * 10 * Time.unscaledDeltaTime;
+            }
+            else
+                transform.localScale = Vector3.one;
 		} 
 		else if (masksParent.activeSelf == true) 
 		{
