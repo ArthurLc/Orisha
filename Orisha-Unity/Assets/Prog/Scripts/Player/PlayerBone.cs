@@ -60,6 +60,8 @@ public class PlayerBone : MonoBehaviour
         rend.enabled = _isVisible;
         coll.enabled = _isVisible;
         isVisible = _isVisible;
-        ps.Play();
+
+        if(_isVisible == false)
+            ps.Play();
     }
 }

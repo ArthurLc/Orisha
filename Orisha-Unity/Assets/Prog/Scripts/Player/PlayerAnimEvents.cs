@@ -38,17 +38,20 @@ public class PlayerAnimEvents : MonoBehaviour
     [SerializeField] private ParticleSystem ps_DustShockwave;
     [SerializeField] private ParticleSystem ps_SandShockwave;
 
-	[Header("sfx")]
+    private ParticleSystem leftBoxApear;
+    private ParticleSystem rightBoxApear;
+
+    [Header("sfx")]
     [SerializeField] private AudioClip swoosh;
 
-	//Temporary
-	[Header("Particle Tests")]
-	[SerializeField] bool enableTest = true;
-	[SerializeField] private GameObject particleTest;
+    //Temporary
+    [Header("Particle Tests")]
+    [SerializeField] bool enableTest = true;
+    [SerializeField] private GameObject particleTest;
 
 
     private Animator animator;
-    
+
     // Sécus
     private void Start()
     {
@@ -59,7 +62,8 @@ public class PlayerAnimEvents : MonoBehaviour
             {
                 Debug.LogError("DamageBox manquante dans le PlayerAnimEvents, il va  avoir des erreurs !");
             }
-
+            rightBoxApear = bone_RightArm.GetComponentInChildren<ParticleSystem>();
+            leftBoxApear = bone_LeftArm.GetComponentInChildren<ParticleSystem>();
             animator = GetComponent<Animator>();
         }
     }
@@ -73,23 +77,41 @@ public class PlayerAnimEvents : MonoBehaviour
         if (playerFight != null)
             playerFight.PlayChainAttack();
     }
-		
+
     public void ResetAttack()
     {
         if (playerFight != null)
             playerFight.ClearListInputs();
     }
-	//Temporary
-	void OnEnableBoxes(Vector3 _position)
-	{
-		if (enableTest) 
-		{
-			GameObject go = Instantiate (particleTest);
-			ParticleSystem ps = go.GetComponent<ParticleSystem> ();
-			go.transform.position = _position;
-			ps.Play ();
-		}
-	}
+    //Temporary
+    void OnEnableBoxes(Vector3 _position)
+    {
+        if (enableTest)
+        {
+            GameObject go = Instantiate(particleTest);
+            ParticleSystem ps = go.GetComponent<ParticleSystem>();
+            go.transform.position = _position;
+            ps.Play();
+        }
+    }
+
+    // 0 = Right, 1 = left, 2 = left + right
+    public void LaunchRightParticles()
+    {
+        rightBoxApear.Play();
+    }
+    public void LaunchLeftParticles()
+    {
+      
+        leftBoxApear.Play();
+
+    }
+    public void LaunchBothParticles()
+    {     
+        rightBoxApear.Play();
+        leftBoxApear.Play();
+    }
+
 
     /// <summary> 
     /// Fonction qui active l'attaque box du bras droit du joueur
@@ -101,8 +123,8 @@ public class PlayerAnimEvents : MonoBehaviour
             box_RightArm.enabled = true;
             box_RightArm.damageValue = _damageValue;
             bone_RightArm.SpawnBone(true);
-			SoundManager.instance.SFX_PlayAtPosition(swoosh, box_RightArm.transform.position);
-			OnEnableBoxes (box_RightArm.transform.position);
+            SoundManager.instance.SFX_PlayAtPosition(swoosh, box_RightArm.transform.position);
+            //OnEnableBoxes (box_RightArm.transform.position);
         }
     }
 
@@ -127,9 +149,9 @@ public class PlayerAnimEvents : MonoBehaviour
             box_LeftArm.enabled = true;
             box_LeftArm.damageValue = _damageValue;
             bone_LeftArm.SpawnBone(true);
-			SoundManager.instance.SFX_PlayAtPosition(swoosh, box_LeftArm.transform.position);
+            SoundManager.instance.SFX_PlayAtPosition(swoosh, box_LeftArm.transform.position);
 
-			OnEnableBoxes (box_LeftArm.transform.position);
+            //OnEnableBoxes (box_LeftArm.transform.position);
         }
     }
 
@@ -154,7 +176,7 @@ public class PlayerAnimEvents : MonoBehaviour
             box_RightFoot.enabled = true;
             box_RightFoot.damageValue = _damageValue;
 
-			OnEnableBoxes (box_RightFoot.transform.position);
+            //OnEnableBoxes (box_RightFoot.transform.position);
         }
     }
 
@@ -179,7 +201,7 @@ public class PlayerAnimEvents : MonoBehaviour
             box_LeftFoot.enabled = true;
             box_LeftFoot.damageValue = _damageValue;
 
-			OnEnableBoxes (box_LeftFoot.transform.position);
+            //OnEnableBoxes (box_LeftFoot.transform.position);
         }
     }
 
@@ -235,7 +257,7 @@ public class PlayerAnimEvents : MonoBehaviour
             bone_RightArm.SpawnBone(true);
             bone_LeftArm.SpawnBone(true);
 
-			SoundManager.instance.SFX_PlayAtPosition(swoosh, box_Body.transform.position);
+            SoundManager.instance.SFX_PlayAtPosition(swoosh, box_Body.transform.position);
         }
     }
 

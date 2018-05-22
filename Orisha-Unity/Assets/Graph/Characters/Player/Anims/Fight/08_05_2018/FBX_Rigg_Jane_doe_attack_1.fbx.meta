@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: bfee504aba6478c4e8e46e969a573c31
-timeCreated: 1525702495
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: accesoire6
     100002: cheveux
@@ -197,6 +195,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -236,6 +235,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.0051091
+        functionName: LaunchRightParticles
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.1893177
         functionName: DisableRotations
         data: 
@@ -244,14 +250,14 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.21422765
-        functionName: EnableBox_RightArm
+        functionName: EnableBox_RightFoot
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.21422765
-        functionName: EnableBox_RightFoot
+        functionName: EnableBox_RightArm
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -312,6 +318,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
