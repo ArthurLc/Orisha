@@ -15,6 +15,7 @@
 
 */
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -37,10 +38,22 @@ namespace vd_Menu
         [SerializeField] private Texture2D cursorTexture;
         [SerializeField] private Vector2 hotSpot = Vector2.zero;
 
+        [Header("Cosmetic")]
+        [SerializeField] private Image backgroundTransition;
+        [SerializeField] private float backgroundTransitionDuration = 1.0f;
+
 
         private void Start()
         {
+            backgroundTransition.color = Color.black;
             Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
+
+            StartCoroutine(BackgroundTransition());
+        }
+
+        private void OnApplicationQuit()
+        {
+            StopAllCoroutines();
         }
 
         void Update()
@@ -79,6 +92,21 @@ namespace vd_Menu
         public void QuitGame()
         {
             Application.Quit();
+        }
+
+        IEnumerator BackgroundTransition()
+        {
+            float timer = backgroundTransitionDuration;
+
+            while (timer > 0.0f)
+            {
+                timer -= Time.fixedDeltaTime;
+                backgroundTransition.color = new Color(backgroundTransition.color.r, backgroundTransition.color.g, backgroundTransition.color.b, timer / backgroundTransitionDuration);
+                yield return null;
+            }
+
+            backgroundTransition.color = new Color(backgroundTransition.color.r, backgroundTransition.color.g, backgroundTransition.color.b, 0.0f);
+            yield return null;
         }
     }
 }
