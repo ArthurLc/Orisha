@@ -17,9 +17,15 @@ public class DisplayZoneName : MonoBehaviour
     float displayDuration;
 
     float timer;
+    float timerBG;
     int index;
 
     Text txt;
+
+    [SerializeField] private Image background;
+    [SerializeField][Range(0.0f,255.0f)] private float transparenceMax;
+    private float transparenceSpeed;
+    private Color color_BG;
 
     // Sounds
     private AudioSource source;
@@ -38,6 +44,9 @@ public class DisplayZoneName : MonoBehaviour
     {       
         txt = GetComponent<Text>();
         source = GetComponent<AudioSource>();
+
+        if (background != null)
+            color_BG = background.color;
     }
 
 
@@ -69,8 +78,10 @@ public class DisplayZoneName : MonoBehaviour
         zoneName = name;
         fadeInDuration = apparitionSpeed;
         displayDuration = duration;
+        transparenceSpeed = transparenceMax / fadeInDuration;
 
         timer = 0.0f;
+        timerBG = 0.0f;
         index = 0;
         state = DisplayState.fadingIn;
 
@@ -83,6 +94,13 @@ public class DisplayZoneName : MonoBehaviour
         if(index < zoneName.Length + 1)// fading in
         {
             timer += Time.deltaTime;
+            timerBG += Time.deltaTime;
+            if (background != null && ((timerBG * transparenceSpeed) < transparenceMax))
+            {
+                background.color = new Color(color_BG.r, color_BG.r, color_BG.b, (timerBG * transparenceSpeed) / 100.0f);
+                if (timerBG > transparenceMax)
+                    background.color = new Color(color_BG.r, color_BG.r, color_BG.b, transparenceMax);
+            }
             if (timer > (fadeInDuration / zoneName.Length)) // Affichage lettre/lettre
             {
                 txt.text = "<color=#453800ff>";
@@ -104,7 +122,9 @@ public class DisplayZoneName : MonoBehaviour
         {
             index = 0;
             timer = displayDuration;
+            timerBG = fadeInDuration;
             state = DisplayState.showing;
+            background.color = new Color(color_BG.r, color_BG.r, color_BG.b, transparenceMax);
         }
     }
 
@@ -113,6 +133,13 @@ public class DisplayZoneName : MonoBehaviour
         if (index < zoneName.Length + 1)// fading out
         {
             timer += Time.deltaTime;
+            timerBG -= Time.deltaTime;
+            if (background != null)
+            {
+                background.color = new Color(color_BG.r, color_BG.r, color_BG.b, (timerBG * transparenceSpeed) / 100.0f);
+                if (timerBG < 0.0f)
+                    background.color = new Color(color_BG.r, color_BG.r, color_BG.b, 0.0f);
+            }
             if (timer > (fadeInDuration / zoneName.Length)) // Affichage lettre/lettre
             {
                 txt.text = "<color=#45380000>";
@@ -134,6 +161,7 @@ public class DisplayZoneName : MonoBehaviour
         {
             index = 0;
             state = DisplayState.inactive;
+            background.color = new Color(color_BG.r, color_BG.r, color_BG.b, 0.0f);
         }
     }
 }
