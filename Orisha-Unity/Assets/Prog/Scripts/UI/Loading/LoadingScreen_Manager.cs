@@ -159,7 +159,7 @@ public class LoadingScreen_Manager : MonoBehaviour
                 WidthRatio = 1.0f;
                 isLoadingFinish = true;
             }
-            Loading_IncreaseField_Rect.sizeDelta = new Vector2(CurrentIncrease_Width, Loading_IncreaseField_Rect.sizeDelta.y);
+            Loading_IncreaseField_Rect.sizeDelta = new Vector2(CurrentIncrease_Width * 0.96285714285f, Loading_IncreaseField_Rect.sizeDelta.y);
 
             yield return null;
         }
