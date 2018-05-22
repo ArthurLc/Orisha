@@ -130,6 +130,16 @@ public class AnimInfo_Enemy : MonoBehaviour
         }
     }
 
+    public void LockState()
+    {
+        enemyBasic.FreezeStates();
+    }
+
+    public void UnlockState()
+    {
+        enemyBasic.UnfreezeStates();
+    }
+
     /// <summary>
     /// Gestion des IK
     /// </summary>

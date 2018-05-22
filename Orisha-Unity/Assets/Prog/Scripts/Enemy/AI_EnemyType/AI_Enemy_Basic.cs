@@ -150,6 +150,16 @@ public class AI_Enemy_Basic : MonoBehaviour
         health -= damages;
     }
     
+    public void FreezeStates()
+    {
+        isFreeze = true;
+    }
+
+    public void UnfreezeStates()
+    {
+        isFreeze = false;
+    }
+
     public void FreezePosRot()
     {
 		if (myAgent != null) 
@@ -159,6 +169,7 @@ public class AI_Enemy_Basic : MonoBehaviour
 			myAgent.isStopped = true;
 		}
     }
+
     public void UnfreezePosRot()
     {
         if (myAgent != null)
