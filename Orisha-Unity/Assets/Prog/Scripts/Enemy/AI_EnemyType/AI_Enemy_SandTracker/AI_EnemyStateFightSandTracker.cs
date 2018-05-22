@@ -63,7 +63,7 @@ public class AI_EnemyStateFightSandTracker : AI_EnemyStateFight
         {
             if (targetDistance > range)
             {
-                myAgent.isStopped = false;
+                //myAgent.isStopped = false;
                 (myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Chasing);
 
             }

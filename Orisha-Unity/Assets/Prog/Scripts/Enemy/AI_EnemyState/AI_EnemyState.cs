@@ -162,8 +162,8 @@ public class AI_EnemyState
     /// </summary>
     public virtual void OnEnd()
     {
-        if(myAgent && myAgent.isOnNavMesh)
-            myAgent.isStopped = false;
+        //if(myAgent && myAgent.isOnNavMesh)
+        //    myAgent.isStopped = false;
     }
 
     public virtual void PropulseAgent(Vector3 _dir)

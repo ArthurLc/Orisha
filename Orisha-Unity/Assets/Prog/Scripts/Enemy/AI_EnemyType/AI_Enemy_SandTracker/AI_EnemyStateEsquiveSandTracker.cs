@@ -115,7 +115,7 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         }
         else if (myEsquiveState == EsquiveState.InDeplacement)
         {
-            myAgent.isStopped = false;
+           // myAgent.isStopped = false;
             
             if (Vector3.Distance(myIndividu.transform.position, destination) < minDistanceToTarget/* * 0.75f*/)
             {
@@ -137,7 +137,7 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
             {
                 ((AI_Enemy_SandTracker)myIndividu).SandShaderPos.Activate(false);
                 myAnimCroco.transform.position = new Vector3(myAnimCroco.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnimCroco.transform.position.z);
-                myAgent.isStopped = false;
+               // myAgent.isStopped = false;
 
                 foreach (HittenBox_Enemy hbe in allHittenBox)
                 {

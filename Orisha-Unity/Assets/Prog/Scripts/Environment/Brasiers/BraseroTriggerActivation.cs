@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BraseroTriggerActivation : MonoBehaviour
 {
     [SerializeField]Brasero[] braseros;
@@ -11,7 +10,7 @@ public class BraseroTriggerActivation : MonoBehaviour
         {
             for (int i = 0; i < braseros.Length; i++)
                 braseros[i].StartBrasero();
-            enabled = false;
+
             Destroy(this);
         }
     }

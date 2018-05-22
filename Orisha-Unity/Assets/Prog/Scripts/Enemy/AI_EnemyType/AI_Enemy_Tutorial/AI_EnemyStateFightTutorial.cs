@@ -58,7 +58,7 @@ public class AI_EnemyStateFightTutorial : AI_EnemyStateFight
         {
             if (targetDistance > range)
             {
-                myAgent.isStopped = false;
+               // myAgent.isStopped = false;
                 (myIndividu as AI_Enemy_Tutorial).ChangeState(AI_Enemy_Tutorial.State.Chasing);
 
             }

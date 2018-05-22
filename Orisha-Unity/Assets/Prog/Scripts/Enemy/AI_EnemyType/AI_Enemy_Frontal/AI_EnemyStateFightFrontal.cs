@@ -50,7 +50,7 @@ public class AI_EnemyStateFightFrontal : AI_EnemyStateFight
         {
             if (targetDistance > range)
             {
-                myAgent.isStopped = false;
+               // myAgent.isStopped = false;
                 (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.Chasing);
             }
 			else if(attackTimer == 0.0f && myIndividu.Health > 0)

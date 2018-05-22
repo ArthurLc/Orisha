@@ -165,7 +165,7 @@ public class AI_Enemy_Basic : MonoBehaviour
         {
             myAgent.updatePosition = true;
             myAgent.updateRotation = true;
-			myAgent.isStopped = false;
+            myAgent.isStopped = false;
         }
 	}
 
