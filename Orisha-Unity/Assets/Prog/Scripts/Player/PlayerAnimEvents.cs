@@ -70,10 +70,15 @@ public class PlayerAnimEvents : MonoBehaviour
     /// </summary>
     public void ChainAttack()
     {
-        if(playerFight != null)
+        if (playerFight != null)
             playerFight.PlayChainAttack();
     }
 		
+    public void ResetAttack()
+    {
+        if (playerFight != null)
+            playerFight.ClearListInputs();
+    }
 	//Temporary
 	void OnEnableBoxes(Vector3 _position)
 	{
