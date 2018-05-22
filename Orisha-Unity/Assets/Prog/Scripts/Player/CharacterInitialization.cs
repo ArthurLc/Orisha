@@ -108,6 +108,7 @@ namespace vd_Player
             set { isPlayerDying = value; }
         }
         private DisplayZoneName zoneScript;
+        private LifeBar lifeBarHUD;
         [Header("UI")]
         [SerializeField] float fadeInDuration = 3.0f;
         [SerializeField] float displayDuration = 3.0f;
@@ -124,6 +125,7 @@ namespace vd_Player
             anim = GetComponentInChildren<Animator>();
             animEvents = GetComponentInChildren<PlayerAnimEvents>();
             zoneScript = FindObjectOfType<DisplayZoneName>();
+            lifeBarHUD = FindObjectOfType<LifeBar>();
             startingTr = transform;
 
             originMaxHealth = health;
@@ -237,10 +239,11 @@ namespace vd_Player
         public void TakeDamage(int _damages)
         {
             health -= _damages;
-			//Debug.Log (_damages);
+            lifeBarHUD.UpdateLifeBar((float)health / (float)maxHealth);
+            //Debug.Log (_damages);
 
-			
-			if (health <= 0.0f)
+
+            if (health <= 0.0f)
 			{
 				if (isPlayerDying == false) 
 				{
