@@ -12,6 +12,7 @@ public class BraseroTriggerActivation : MonoBehaviour
             for (int i = 0; i < braseros.Length; i++)
                 braseros[i].StartBrasero();
             enabled = false;
+            Destroy(this);
         }
     }
 }
