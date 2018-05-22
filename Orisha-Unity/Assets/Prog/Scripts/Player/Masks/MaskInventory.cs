@@ -36,6 +36,7 @@ public class MaskInventory : MonoBehaviour {
     [SerializeField] private string hexEmissive = "#12110F";
 
     public static MaskInventory Instance;
+    private LifeBar lifeBarHUD;
 
     public List<Mask> ListMasks
     {
@@ -50,6 +51,7 @@ public class MaskInventory : MonoBehaviour {
             Destroy(this);
 
         characterInit = GetComponent<vd_Player.CharacterInitialization>();
+        lifeBarHUD = FindObjectOfType<LifeBar>();
         listMasks = new List<Mask>();
         EquipDefaultMask();
     }
@@ -70,6 +72,8 @@ public class MaskInventory : MonoBehaviour {
         animator.speed = defaultMask.SpeedFactor;
         fightDatas.StrengthFactor = defaultMask.StrengthFactor;
         characterInit.ChangeHealthFactor(defaultMask.HealthFactor);
+
+        lifeBarHUD.UpdateHUD(equipedMask);
     }
     public void EquipAMask(Mask _newMask)
     {
@@ -85,6 +89,8 @@ public class MaskInventory : MonoBehaviour {
         animator.speed = equipedMask.SpeedFactor;
         fightDatas.StrengthFactor = equipedMask.StrengthFactor;
         characterInit.ChangeHealthFactor(equipedMask.HealthFactor);
+
+        lifeBarHUD.UpdateHUD(equipedMask);
     }
 
     public void AddAMask(Mask _newMask)

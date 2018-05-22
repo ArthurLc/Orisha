@@ -30,7 +30,9 @@ public class MasksMenu : MonoBehaviour {
 
 	[SerializeField] GameObject menu;
 
-	private int idSelected = 0;
+    private LifeBar lifeBarHUD;
+
+    private int idSelected = 0;
 
 	//parce que sinon le get plante
 	private int IdSelected
@@ -50,7 +52,9 @@ public class MasksMenu : MonoBehaviour {
 
 	private void Start()
 	{
-		IdSelected = 0;
+        lifeBarHUD = FindObjectOfType<LifeBar>();
+
+        IdSelected = 0;
 	}
 
     private void Update()
@@ -59,7 +63,9 @@ public class MasksMenu : MonoBehaviour {
 		{
 			if (Input.GetButtonDown ("OpenMaskMenu")) 
 			{
-				TimeManager.Instance.Slow_AllScene (0.01f);
+                lifeBarHUD.SetActiveHUD(true);
+
+                TimeManager.Instance.Slow_AllScene (0.01f);
 				transform.localScale = Vector3.zero;
 			}
 			if (Input.GetButton ("OpenMaskMenu")) 
@@ -69,7 +75,10 @@ public class MasksMenu : MonoBehaviour {
 				GameLoopManager.EnableMouse ();
 			} else if (Input.GetButtonUp ("OpenMaskMenu")) 
 			{
-				TimeManager.Instance.Slow_UnactiveAll ();
+                if(Potential_Enemy.IsOnFight == false)
+                    lifeBarHUD.SetActiveHUD(false);
+
+                TimeManager.Instance.Slow_UnactiveAll ();
 				if (InputManager.GetInputMode == InputMode.joy && masks [idSelected].button.interactable)
 					masks [idSelected].button.onClick.Invoke ();
 				masksParent.SetActive (false);
