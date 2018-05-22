@@ -67,30 +67,37 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         OnEndCurrentUpdate();
     }
 
-	void WeaponSandShader_GoesUnderSand()
+	void WeaponSandShader_GoesUnderSand(Vector3 value)
 	{
-		myAnimWeapon.transform.position -= Vector3.up * (Time.deltaTime * moveSpeed);
+		//myAnimWeapon.transform.position -= Vector3.up * (Time.deltaTime * moveSpeed);
+		myAnimWeapon.transform.position -= value;
 
-		//((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
-	}
+        //((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
+    }
 
-	void WeaponSandShader_GoesUpperSand()
+	void WeaponSandShader_GoesUpperSand(Vector3 value)
 	{
-		myAnimWeapon.transform.position += Vector3.up * (Time.deltaTime * moveSpeed);
+		//myAnimWeapon.transform.position += Vector3.up * (Time.deltaTime * moveSpeed);
+		myAnimWeapon.transform.position += value;
 
-		//((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
-	}
+        if (myAnimWeapon.transform.localPosition.y > 0)
+            myAnimWeapon.transform.localPosition = Vector3.zero;
+
+        //((AI_Enemy_SandTracker)myIndividu).WeaponSandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
+    }
 
     protected override void CurrentFixedUpdate()
     {
         base.CurrentFixedUpdate();
+        Vector3 translation = Vector3.up * (Time.deltaTime * moveSpeed);
 
         if (myEsquiveState == EsquiveState.GoesUnderSand)
         {
-			WeaponSandShader_GoesUnderSand ();
+
+            WeaponSandShader_GoesUnderSand (translation);
 
             myAgent.isStopped = true;
-            myAnimCroco.transform.position -= Vector3.up * (Time.deltaTime * moveSpeed);
+            myAnimCroco.transform.position -= translation;
             currentYPos += (Time.deltaTime * moveSpeed);
             ((AI_Enemy_SandTracker)myIndividu).SandShaderPos.HightUpdate(((currentYPos > 0.1f) ? currentYPos : 0.1f) * 1.0f);
 
@@ -115,7 +122,7 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         }
         else if (myEsquiveState == EsquiveState.InDeplacement)
         {
-           // myAgent.isStopped = false;
+            myAgent.isStopped = false;
             
             if (Vector3.Distance(myIndividu.transform.position, destination) < minDistanceToTarget/* * 0.75f*/)
             {
@@ -126,9 +133,9 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
         }
         else
         {
-			WeaponSandShader_GoesUpperSand ();
+			WeaponSandShader_GoesUpperSand (translation);
             myAgent.isStopped = true;
-            myAnimCroco.transform.position += Vector3.up * (Time.deltaTime * moveSpeed);
+            myAnimCroco.transform.position += translation;
             currentYPos -= (Time.deltaTime * moveSpeed);
             myIndividu.transform.LookAt(currentTarget);
             myIndividu.transform.rotation = Quaternion.Euler(0.0f, myIndividu.transform.rotation.eulerAngles.y, 0.0f);
@@ -137,7 +144,8 @@ public class AI_EnemyStateEsquiveSandTracker : AI_EnemyStateReplaceToFight
             {
                 ((AI_Enemy_SandTracker)myIndividu).SandShaderPos.Activate(false);
                 myAnimCroco.transform.position = new Vector3(myAnimCroco.transform.position.x, myIndividu.transform.position.y + initialeYdeltaPos, myAnimCroco.transform.position.z);
-               // myAgent.isStopped = false;
+                myAnimWeapon.transform.position = new Vector3(myAnimWeapon.transform.position.x, myAnimWeapon.transform.position.y + initialeYdeltaPos, myAnimWeapon.transform.position.z);
+                myAgent.isStopped = false;
 
                 foreach (HittenBox_Enemy hbe in allHittenBox)
                 {

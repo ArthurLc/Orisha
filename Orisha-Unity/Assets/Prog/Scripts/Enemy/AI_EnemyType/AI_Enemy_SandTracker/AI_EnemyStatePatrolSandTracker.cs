@@ -56,7 +56,11 @@ public class AI_EnemyStatePatrolSandTracker : AI_EnemyStatePatrol
         if (currentTarget != null)
         {
 			if (myIndividu.AsCallReinforcement == false)
-				(myIndividu as AI_Enemy_SandTracker).ChangeState (AI_Enemy_SandTracker.State.Alert);
+            {
+                myAnimCroco.SetTrigger("Detected");
+                myAnimWeapon.SetTrigger("Detected");
+                (myIndividu as AI_Enemy_SandTracker).ChangeState (AI_Enemy_SandTracker.State.Alert);
+            }
 			else 
 			{
 				(myIndividu as AI_Enemy_SandTracker).ChangeState(AI_Enemy_SandTracker.State.Chasing);
