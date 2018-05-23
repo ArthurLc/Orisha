@@ -271,8 +271,8 @@ namespace vd_Inputs
 
                     run = "Keyboard_Shift";
                     lockRun = "Keyboard_Maj";
-                    dash = "Keyboard_Space";
-                    jump = "Keyboard_E";
+                    dash = "Keyboard_Dash";
+                    jump = "Keyboard_Space";
 
                     camX = GameLoopManager.camera_isXaxisInversed ? "Keyboard_CamX_Inverted" : "Keyboard_CamX";
                     camY = GameLoopManager.camera_isYaxisInversed ? "Keyboard_CamY_Inverted" : "Keyboard_CamY";
@@ -358,8 +358,7 @@ namespace vd_Inputs
                Input.GetButton("Keyboard_Vertical") ||
                Input.GetButton("Keyboard_Shift") ||
                Input.GetButton("Keyboard_Maj") ||
-               Input.GetButton("Keyboard_Space") ||
-               Input.GetButton("Keyboard_E") ||
+               Input.GetButton("Keyboard_Dash") ||
                Input.GetButton("Keyboard_Ctrl") ||
                Input.GetButton("Keyboard_MouseMiddle") ||
                Input.GetButton("Keyboard_Space") ||
