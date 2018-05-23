@@ -10,13 +10,60 @@
 
 using UnityEngine;
 using vd_Inputs;
+using vd_Player;
 
 [RequireComponent(typeof(MeshRenderer), typeof(Collider))]
 public class PlayerBone : MonoBehaviour
 {
     private MeshRenderer rend;
     private Collider coll;
-    private ParticleSystem ps;
+
+    private ParticleSystem psCurrent;
+    public ParticleSystem PsCurrent
+    {
+        get{ return psCurrent; }
+    }
+    [SerializeField] private ParticleSystem psDefault;
+    [SerializeField] private ParticleSystem psStrength;
+    [SerializeField] private ParticleSystem psSpeed;
+    [SerializeField] private ParticleSystem psHealth;
+
+    public enum EquipedMask
+    {
+        Default,
+        Strenght,
+        Speed,
+        Health,
+    }
+    EquipedMask currentMask;
+    public EquipedMask CurrentMask
+    {
+        get
+        {
+            return currentMask;
+        }
+        set
+        {
+            currentMask = value;
+            switch(value)
+            {
+                case EquipedMask.Strenght:
+                    psCurrent = psStrength;
+                    break;
+                case EquipedMask.Health:
+                    psCurrent = psHealth;
+                    break;
+                case EquipedMask.Speed:
+                    psCurrent = psSpeed;
+                    break;
+                case EquipedMask.Default:
+                    psCurrent = psDefault;
+                    break;
+            }
+
+
+        }
+    }
 
     float inactivityTimer = 0.0f;
     bool isVisible = false;
@@ -25,7 +72,7 @@ public class PlayerBone : MonoBehaviour
     {
         rend = GetComponent<MeshRenderer>();
         coll = GetComponent<Collider>();
-        ps = GetComponentInChildren<ParticleSystem>();
+        psCurrent = psDefault;
         rend.enabled = false;
         coll.enabled = false;
     }
@@ -47,8 +94,6 @@ public class PlayerBone : MonoBehaviour
                 inactivityTimer = 0.0f;
             }
         }
-
-
     }
 
     /// <summary>
@@ -62,6 +107,9 @@ public class PlayerBone : MonoBehaviour
         isVisible = _isVisible;
 
         if(_isVisible == false)
-            ps.Play();
+        {
+            //psCurrent.Play();
+
+        }
     }
 }

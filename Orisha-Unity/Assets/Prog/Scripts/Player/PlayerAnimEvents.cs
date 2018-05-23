@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using vd_Player;
 
 /*
@@ -36,10 +37,6 @@ public class PlayerAnimEvents : MonoBehaviour
 
     [Header("Particle systems")]
     [SerializeField] private ParticleSystem ps_DustShockwave;
-    [SerializeField] private ParticleSystem ps_SandShockwave;
-
-    private ParticleSystem leftBoxApear;
-    private ParticleSystem rightBoxApear;
 
     [Header("sfx")]
     [SerializeField] private AudioClip swoosh;
@@ -62,12 +59,9 @@ public class PlayerAnimEvents : MonoBehaviour
             {
                 Debug.LogError("DamageBox manquante dans le PlayerAnimEvents, il va  avoir des erreurs !");
             }
-            rightBoxApear = bone_RightArm.GetComponentInChildren<ParticleSystem>();
-            leftBoxApear = bone_LeftArm.GetComponentInChildren<ParticleSystem>();
             animator = GetComponent<Animator>();
         }
     }
-
 
     /// <summary>
     /// Fonction qui déclanche la prochaine attaque du joueur si elle doit avoir lieu.
@@ -98,18 +92,16 @@ public class PlayerAnimEvents : MonoBehaviour
     // 0 = Right, 1 = left, 2 = left + right
     public void LaunchRightParticles()
     {
-        rightBoxApear.Play();
+        bone_RightArm.PsCurrent.Play();
     }
     public void LaunchLeftParticles()
     {
-      
-        leftBoxApear.Play();
-
+        bone_LeftArm.PsCurrent.Play();
     }
     public void LaunchBothParticles()
-    {     
-        rightBoxApear.Play();
-        leftBoxApear.Play();
+    {
+        bone_RightArm.PsCurrent.Play();
+        bone_LeftArm.PsCurrent.Play();
     }
 
 
@@ -392,9 +384,6 @@ public class PlayerAnimEvents : MonoBehaviour
         {
             if (ps_DustShockwave.isPlaying == false)
                 ps_DustShockwave.Play();
-
-            if (ps_SandShockwave.isPlaying == false)
-                ps_SandShockwave.Play();
         }
     }
 

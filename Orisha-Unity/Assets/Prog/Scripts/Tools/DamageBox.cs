@@ -59,6 +59,9 @@ public class DamageBox : MonoBehaviour
                 ParticleSystem ps = Instantiate(playerDatas.PlayerFightDatas.psImpact);
                 ps.transform.position = hitPoint;
                 ps.transform.forward = (transform.position - hitPoint).normalized;
+
+                var mainPS = ps.main;
+                mainPS.startColor = MaskInventory.Instance.EquipedMask.GetEmissiveColor;
                 ps.Play();
                 Destroy(ps.gameObject, 1.0f);
             }

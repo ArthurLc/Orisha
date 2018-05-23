@@ -23,11 +23,18 @@ public class MaskInventory : MonoBehaviour {
     [SerializeField] private Mask defaultMask; //Masque par défault...
     private Mask equipedMask = null; //Masque actuellement sur le visage du personnage principal qui possède au moins 1 masque, ni moins, mais peut-être plus encore...
 
+    public Mask EquipedMask
+    {
+        get { return equipedMask; }
+    }
+
     [Header("LinksForEmissive")]
     [SerializeField] private SkinnedMeshRenderer skin;
     [SerializeField] private MeshFilter mask_MeshFilter;
     [SerializeField] private MeshRenderer mask_MeshRenderer;
     [SerializeField] private ParticleSystem dashEffect;
+    [SerializeField] public ParticleSystem maskEffect;
+
     [Header("LinksForFactor")]
     [SerializeField] private Animator animator;
     [SerializeField] private vd_Player.PlayerFight fightDatas;
@@ -35,9 +42,15 @@ public class MaskInventory : MonoBehaviour {
     [Header("BasicEmissiveSkin")]
     [SerializeField] private string hexEmissive = "#12110F";
 
+    [Header("Bones")]
+    [SerializeField] PlayerBone leftBone;
+    [SerializeField] PlayerBone rightBone;
+
     public static MaskInventory Instance;
     private LifeBar lifeBarHUD;
 
+    ParticleSystem.MainModule mainModule;
+    
     public List<Mask> ListMasks
     {
         get { return listMasks; }
@@ -50,10 +63,14 @@ public class MaskInventory : MonoBehaviour {
         else
             Destroy(this);
 
+        //dashEffect = dashEffect.gameObject.GetComponent<ParticleSystem>();
+        //maskEffect = dashEffect.gameObject.GetComponent<ParticleSystem>();
         characterInit = GetComponent<vd_Player.CharacterInitialization>();
         lifeBarHUD = FindObjectOfType<LifeBar>();
         listMasks = new List<Mask>();
         EquipDefaultMask();
+
+
     }
 
     public void EquipDefaultMask()
@@ -66,7 +83,12 @@ public class MaskInventory : MonoBehaviour {
         skin.sharedMaterial.SetColor("_EmissionColor", tatooColor);
         mask_MeshRenderer.sharedMaterial = defaultMask.GetMaterial;
         mask_MeshFilter.sharedMesh = defaultMask.GetMesh;
-        dashEffect.startColor = defaultMask.GetColor;
+
+        if (dashEffect)
+        {
+            var mainPs = dashEffect.main;
+            mainPs.startColor = defaultMask.GetColor;
+        }
 
         // A FAIRE: Modification du jeu en fonction du nouveau masque.
         animator.speed = defaultMask.SpeedFactor;
@@ -74,6 +96,13 @@ public class MaskInventory : MonoBehaviour {
         characterInit.ChangeHealthFactor(defaultMask.HealthFactor);
 
         lifeBarHUD.UpdateHUD(equipedMask);
+
+        var mainPS = maskEffect.main;
+        mainPS.startColor = defaultMask.GetEmissiveColor;
+        maskEffect.Play();
+
+        leftBone.CurrentMask = PlayerBone.EquipedMask.Default;
+        rightBone.CurrentMask = PlayerBone.EquipedMask.Default;
     }
     public void EquipAMask(Mask _newMask)
     {
@@ -83,7 +112,13 @@ public class MaskInventory : MonoBehaviour {
         skin.sharedMaterial.SetColor("_EmissionColor", _newMask.GetEmissiveColor);
         mask_MeshRenderer.sharedMaterial = _newMask.GetMaterial;
         mask_MeshFilter.sharedMesh = _newMask.GetMesh;
-        dashEffect.startColor = _newMask.GetEmissiveColor;
+
+        if(dashEffect != null)
+        {
+            var mainPs = dashEffect.main;
+            mainPs.startColor = _newMask.GetEmissiveColor;
+        }
+
 
         // A FAIRE: Modification du jeu en fonction du nouveau masque.
         animator.speed = equipedMask.SpeedFactor;
@@ -91,6 +126,26 @@ public class MaskInventory : MonoBehaviour {
         characterInit.ChangeHealthFactor(equipedMask.HealthFactor);
 
         lifeBarHUD.UpdateHUD(equipedMask);
+
+        var mainPS = maskEffect.main;
+        mainPS.startColor = defaultMask.GetEmissiveColor;
+        maskEffect.Play();
+
+        if(_newMask.StrengthFactor > 1)
+        {
+            leftBone.CurrentMask = PlayerBone.EquipedMask.Strenght;
+            rightBone.CurrentMask = PlayerBone.EquipedMask.Strenght;
+        }
+        else if(_newMask.SpeedFactor > 1)
+        {
+            leftBone.CurrentMask = PlayerBone.EquipedMask.Speed;
+            rightBone.CurrentMask = PlayerBone.EquipedMask.Speed;
+        }
+        else
+        {
+            leftBone.CurrentMask = PlayerBone.EquipedMask.Health;
+            rightBone.CurrentMask = PlayerBone.EquipedMask.Health;
+        }
     }
 
     public void AddAMask(Mask _newMask)
