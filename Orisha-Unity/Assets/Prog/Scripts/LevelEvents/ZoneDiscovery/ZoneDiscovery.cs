@@ -26,6 +26,7 @@ public class ZoneDiscovery : MonoBehaviour
     [SerializeField] private bool isBeginDisplay = false; //Booléan nécessaire pour la cinématique
     [Header("Cinematic")]
     [SerializeField] UnityEngine.Playables.PlayableDirector playableDirector;
+    [SerializeField] Scenar_Skip scenarSkip;
     [Header("Debug")]
     [SerializeField] private bool test = false;
 
@@ -52,7 +53,6 @@ public class ZoneDiscovery : MonoBehaviour
             zoneScript.BeginDisplay(zoneName, fadeInDuration, displayDuration);
             isBeginDisplay = false;
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,6 +61,8 @@ public class ZoneDiscovery : MonoBehaviour
         {
             //zoneScript.BeginDisplay(zoneName, fadeInDuration, displayDuration);
             playableDirector.Play();
+            if (scenarSkip != null)
+                scenarSkip.enabled = true;
 
             TimeManager.Instance.Block_Player_WithTimer((float)playableDirector.duration);
             TimeManager.Instance.Block_Ennemies_WithTimer((float)playableDirector.duration, true);
