@@ -162,7 +162,7 @@ public class AI_Enemy_Basic : MonoBehaviour
 
     public void FreezePosRot()
     {
-		if (myAgent != null) 
+		if (myAgent != null && myAgent.isOnNavMesh) 
 		{
 			myAgent.updatePosition = false;
 			myAgent.updateRotation = false;
@@ -172,7 +172,7 @@ public class AI_Enemy_Basic : MonoBehaviour
 
     public void UnfreezePosRot()
     {
-        if (myAgent != null)
+        if (myAgent != null && myAgent.isOnNavMesh)
         {
             myAgent.updatePosition = true;
             myAgent.updateRotation = true;
