@@ -6,6 +6,7 @@
 *   - Manage le HUD InGame, la barre de vie et le masque équipé
 */
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -70,6 +71,7 @@ public class LifeBar : MonoBehaviour {
     /// Active/Desactive le HUD du masque et de la vie
     /// </summary>
     /// <param name="_active"></param>
+    /// <param name="_duration"> Durée d'activation du l'UI. (0.0f == active l'UI sans timer)</param>
     public void SetActiveHUD(bool _active)
     {
         if (isNewMaskAdded && _active == false) //Si l'UI veut se désactiver mais que l'on a un nouveau masque
@@ -87,6 +89,22 @@ public class LifeBar : MonoBehaviour {
     {
         isNewMaskAdded = _active;
         newMaskFB.SetActive(_active);
+    }
+
+    public IEnumerator ActiveHUD_WithTimer(float _timer)
+    {
+        float localTimer = _timer;
+
+        SetActiveHUD(true);
+        while (localTimer > 0)
+        {
+            localTimer -= Time.fixedDeltaTime;
+            yield return null;
+        }
+        
+        if(isNewMaskAdded == false && Potential_Enemy.IsOnFight == false)
+            emptyParent.SetActive(false);
+        yield return null;
     }
 
     /// <summary>

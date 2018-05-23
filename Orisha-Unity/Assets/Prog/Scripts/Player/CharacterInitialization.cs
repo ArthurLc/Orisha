@@ -88,9 +88,12 @@ namespace vd_Player
         //Caractéristiques du player
         int originMaxHealth; //Vie max d'origine du joueur.
         int maxHealth; //Vie max actuel du joueur.
+        public int MaxHealth
+        {
+            get { return maxHealth; }
+        }
         [SerializeField] int health = 200; //Vie actuel du joueur.
         public int Health {
-            set { health = value; }
             get { return health;}
         }
 
@@ -101,8 +104,15 @@ namespace vd_Player
             get { return isPlayerDying; }
             set { isPlayerDying = value; }
         }
+
+
+
         private DisplayZoneName zoneScript;
         private LifeBar lifeBarHUD;
+        public LifeBar LifeBarHUD
+        {
+            get { return lifeBarHUD; }
+        }
         [Header("UI")]
         [SerializeField] float fadeInDuration = 3.0f;
         [SerializeField] float displayDuration = 3.0f;
