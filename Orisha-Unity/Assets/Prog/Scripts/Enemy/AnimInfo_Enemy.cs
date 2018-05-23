@@ -140,6 +140,44 @@ public class AnimInfo_Enemy : MonoBehaviour
         enemyBasic.UnfreezeStates();
     }
 
+
+    public void ScreamSound()
+    {
+        if(enemyBasic.screamsSfx != null)
+        {
+            int soundId = Random.Range(0, enemyBasic.screamsSfx.Length);
+            SoundManager.instance.SFX_PlayAtPosition(enemyBasic.screamsSfx[soundId], enemyBasic.transform.position, 1f, 100f);
+        }
+    }
+
+    public void DeathSound()
+    {
+        if (enemyBasic.deathSfx != null)
+        {
+            int soundId = Random.Range(0, enemyBasic.deathSfx.Length);
+            SoundManager.instance.SFX_PlayAtPosition(enemyBasic.deathSfx[soundId], enemyBasic.transform.position, 1f, 100f);
+        }
+    }
+
+    public void AttackSound()
+    {
+        if (enemyBasic.attacksSfx != null)
+        {
+            int soundId = Random.Range(0, enemyBasic.attacksSfx.Length);
+            SoundManager.instance.SFX_PlayAtPosition(enemyBasic.attacksSfx[soundId], enemyBasic.transform.position, 1f, 100f);
+        }
+    }
+
+    public void HitSound()
+    {
+        if (enemyBasic.hitSfx != null)
+        {
+            int soundId = Random.Range(0, enemyBasic.hitSfx.Length);
+            SoundManager.instance.SFX_PlayAtPosition(enemyBasic.attacksSfx[soundId], enemyBasic.transform.position, 1f, 100f);
+        }
+    }
+
+
     /// <summary>
     /// Gestion des IK
     /// </summary>

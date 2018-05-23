@@ -63,6 +63,12 @@ public class AI_Enemy_Basic : MonoBehaviour
     [SerializeField] protected float walkSpeed = 2;
     [SerializeField] protected float attackDamages = 10;
     [SerializeField] protected float attackSpeed = 1; // Minimal time between every attacks (In seconds)
+
+    [Header("Sounds")]
+    [SerializeField] public AudioClip[] screamsSfx;
+    [SerializeField] public AudioClip[] attacksSfx;
+    [SerializeField] public AudioClip[] deathSfx;
+    [SerializeField] public AudioClip[] hitSfx;
     public float AttackSpeed
     {
         get { return attackSpeed; }

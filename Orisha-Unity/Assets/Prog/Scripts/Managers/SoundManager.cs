@@ -155,6 +155,20 @@ public class SoundManager : MonoBehaviour
 		return false;
 	}
 
+    public bool SFX_PlayAtPosition(AudioClip _clipToPlay, Vector3 _position, float _minDistance, float _maxDistance)
+    {
+        if (_clipToPlay)
+        {
+            SFX_Object sfx =  SFX_Pool.Instance.GetSFXObject(_position, _clipToPlay);
+            sfx.source.minDistance = _minDistance;
+            sfx.source.maxDistance = _maxDistance;
+
+            return true;
+        }
+
+        return false;
+    }
+
     public bool SFX_LoopAtPosition(AudioClip _clipToPlay, Vector3 _position)
     {
         if (_clipToPlay)
