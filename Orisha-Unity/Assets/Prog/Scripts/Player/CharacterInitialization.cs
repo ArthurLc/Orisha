@@ -284,6 +284,7 @@ namespace vd_Player
             PlayerTr.rotation = _tr.rotation;
 
             health = maxHealth;
+            lifeBarHUD.UpdateLifeBar((float)health / (float)maxHealth);
 
             isPlayerDying = false;
         }
