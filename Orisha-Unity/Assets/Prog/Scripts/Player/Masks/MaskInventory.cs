@@ -96,6 +96,8 @@ public class MaskInventory : MonoBehaviour {
     public void AddAMask(Mask _newMask)
     {
         listMasks.Add(_newMask);
+        lifeBarHUD.SetActiveHUD(true);
+        lifeBarHUD.SetActiveNewMaskFB(true);
     }
     public void RemoveAMask(Mask _newMask)
     {

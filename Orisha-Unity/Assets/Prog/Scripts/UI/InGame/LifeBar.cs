@@ -13,6 +13,7 @@ public class LifeBar : MonoBehaviour {
 
     [Header("Links")]
     [SerializeField] GameObject emptyParent;
+    [SerializeField] GameObject newMaskFB;
     [SerializeField] Image maskUI;
 
     [Header("LifeBar")]
@@ -27,10 +28,13 @@ public class LifeBar : MonoBehaviour {
 
     private bool isHealthMask = false;
     private float lifeBarRatio = 1.0f;
+    private bool isNewMaskAdded = false;
 
     // Use this for initialization
     void Start () {
         emptyParent.SetActive(false);
+        SetActiveHUD(false);
+        SetActiveNewMaskFB(false);
         Potential_Enemy.enteringFight += SetActiveHUD;
 
         lifeBar_main = lifeBar_In.GetComponent<RectTransform>();
@@ -68,7 +72,21 @@ public class LifeBar : MonoBehaviour {
     /// <param name="_active"></param>
     public void SetActiveHUD(bool _active)
     {
-        emptyParent.SetActive(_active);
+        if (isNewMaskAdded && _active == false) //Si l'UI veut se désactiver mais que l'on a un nouveau masque
+        {
+            //On ne fait rien
+        }
+        else
+            emptyParent.SetActive(_active);
+    }
+    /// <summary>
+    /// Active/Desactive le Feedback de la touche d'un nouveau mask
+    /// </summary>
+    /// <param name="_active"></param>
+    public void SetActiveNewMaskFB(bool _active)
+    {
+        isNewMaskAdded = _active;
+        newMaskFB.SetActive(_active);
     }
 
     /// <summary>

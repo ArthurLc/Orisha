@@ -64,13 +64,14 @@ public class MasksMenu : MonoBehaviour {
 			if (Input.GetButtonDown ("OpenMaskMenu")) 
 			{
                 lifeBarHUD.SetActiveHUD(true);
+                lifeBarHUD.SetActiveNewMaskFB(false);
 
                 TimeManager.Instance.Slow_AllScene (0.01f);
 				transform.localScale = Vector3.zero;
 			}
 			if (Input.GetButton ("OpenMaskMenu")) 
 			{			
-				UpdateVisualMasks ();
+				UpdateVisualMasks(); 
 				masksParent.SetActive (true);
 				GameLoopManager.EnableMouse ();
 			} else if (Input.GetButtonUp ("OpenMaskMenu")) 
