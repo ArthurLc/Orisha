@@ -51,8 +51,8 @@ namespace vd_Player
             
             isChain = false;
 
-            ui_Masks = GameObject.Find("Canvas_InGame").transform.GetChild(1).GetChild(0).gameObject;
-            ui_Pause = GameObject.Find("Canvas_InGame").transform.GetChild(0).gameObject;
+            ui_Masks = GameObject.Find("Canvas_InGame").transform.GetChild(2).GetChild(0).gameObject;
+            ui_Pause = GameObject.Find("Canvas_InGame").transform.GetChild(3).gameObject;
 
             playerPredictionAttack = animator.GetComponent<PlayerPredictionAttack>();
         }

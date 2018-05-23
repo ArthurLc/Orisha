@@ -67,7 +67,7 @@ public class PauseMenu : MonoBehaviour
 	
 	void Update ()
     {
-		if (Input.GetButtonDown (vd_Inputs.InputManager.Pause)) 
+		if (Input.GetButtonDown (vd_Inputs.InputManager.Pause) && !ci.AreInputsFrozen) 
 		{
 			if (pauseMenu.activeInHierarchy == false)
 				Pause ();
