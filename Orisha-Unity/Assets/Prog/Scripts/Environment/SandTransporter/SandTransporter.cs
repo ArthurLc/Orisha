@@ -21,8 +21,9 @@ public class SandTransporter : MonoBehaviour
 	private Rigidbody playerRB;
 
 	public AnimationCurve curveMoveY;
-	public Transform StartPoint;
-	public Transform EndPoint;
+	public CallTransporter StartPoint;
+	public CallTransporter EndPoint;
+    [SerializeField] private MeshCollider platformMesh;
 
     [SerializeField] private Color PulseColor;
     [SerializeField] private Color ShineColor;
@@ -40,12 +41,25 @@ public class SandTransporter : MonoBehaviour
     float emissiveValue;
     int direction;
 
+    public bool IsMoving
+    {
+        get { return isMoving; }
+    }
+    public bool IsAtStart
+    {
+        get { return isAtStart; }
+    }
+
+
     private void Start()
 	{
 		bc = GetComponent<BoxCollider>();
 		for (int i = 0; i < curveMoveY.length; i++) {
 			curveMoveY.SmoothTangents (i, 1.1f);
 		}
+
+        StartPoint.gameObject.SetActive(false);
+        EndPoint.gameObject.SetActive(true);
 
         SetEmissiveMode(EmissiveMode.Pulse);
         prefabMaterial = platform.sharedMaterial;
@@ -67,8 +81,8 @@ public class SandTransporter : MonoBehaviour
         {
             if (Vector3.Distance(Ci.PlayerTr.position, transform.position) <= 0.25f)
             {
-                StartPoint.parent = null;
-                EndPoint.parent = null;
+                StartPoint.transform.parent = null;
+                EndPoint.transform.parent = null;
                 Ci.transform.parent = transform;
                 isMoving = true;
                 Ci.PlayerController.isPlayingCinematic = false;
@@ -87,7 +101,7 @@ public class SandTransporter : MonoBehaviour
             }
         }
 
-        if (playerRB && needToLeave)
+        if (playerRB && needToLeave && Ci)
         {
             Vector3 pos2D, playerPos2D;
             pos2D = transform.position;
@@ -96,6 +110,7 @@ public class SandTransporter : MonoBehaviour
             if (Vector3.Distance(playerPos2D, pos2D) >= bc.size.x + 0.5f)
             {
                 needToLeave = false;
+                Ci = null;
                 //Debug.Log("tu peut reprendre la plateforme !");	
             }
         }
@@ -113,19 +128,25 @@ public class SandTransporter : MonoBehaviour
             if (playerRB == null)
                 playerRB = Ci.Rb;
 
-            SetEmissiveMode(EmissiveMode.Shine);
-
-            if (isAtStart && !needToLeave)
+            if (isAtStart && !needToLeave && !isMoving)
             {
+                SetEmissiveMode(EmissiveMode.Shine);
+
                 isAtStart = false;
                 Ci.FreezeInputs();
                 playerRB.isKinematic = true;
                 Ci.PlayerTr.LookAt(transform);
                 Ci.PlayerController.isPlayingCinematic = true;
                 Ci.Anim.SetFloat("Speed", 0.5f);
+
+                StartPoint.gameObject.SetActive(false);
+                EndPoint.gameObject.SetActive(false);
+
+                platformMesh.enabled = false;
             }
         }
 	}
+
 
 	private void MoveTransporter()
 	{
@@ -133,13 +154,16 @@ public class SandTransporter : MonoBehaviour
         {
 			interpo += Time.deltaTime;
 
-            Ci.PlayerTr.position = transform.position;
-            Ci.PlayerTr.localRotation = Quaternion.Euler(0, Ci.PlayerTr.localRotation.eulerAngles.y, 0);
-            Ci.Anim.SetFloat("Speed", 0.0f);
+            if (Ci != null)
+            {
+                Ci.PlayerTr.position = transform.position;
+                Ci.PlayerTr.localRotation = Quaternion.Euler(0, Ci.PlayerTr.localRotation.eulerAngles.y, 0);
+                Ci.Anim.SetFloat("Speed", 0.0f);
+            }
 
 			if (interpo < GlobalDuration)
             {
-				transform.position = Vector3.Lerp(StartPoint.position, EndPoint.position, (interpo / GlobalDuration));
+				transform.position = Vector3.Lerp(StartPoint.transform.position, EndPoint.transform.position, (interpo / GlobalDuration));
 				transform.position = new Vector3 (transform.position.x, transform.position.y * curveMoveY.Evaluate (interpo / GlobalDuration)
 												 , transform.position.z);
 				//Debug.Log(transform.position + " | " + interpo);
@@ -148,19 +172,19 @@ public class SandTransporter : MonoBehaviour
             else
             {
 
-				transform.position = EndPoint.position;
+				transform.position = EndPoint.transform.position;
                 
 				//Debug.Log("End : " + transform.position + " | " + interpo);
 
 				//Arrivé
 				interpo = 0.0f;
 				isMoving = false;
-				Transform tmpTr = StartPoint;
+				CallTransporter tmpCallTransporter = StartPoint;
 				StartPoint = EndPoint;
-				EndPoint = tmpTr;
+				EndPoint = tmpCallTransporter;
 
-				StartPoint.parent = transform;
-				EndPoint.parent = transform;
+                StartPoint.transform.parent = transform;
+				EndPoint.transform.parent = transform;
 
 				Keyframe[] keys = curveMoveY.keys;
 				int keyCount = keys.Length;
@@ -180,13 +204,22 @@ public class SandTransporter : MonoBehaviour
 				curveMoveY.keys = keys;
 
                 //Debug.Log ("Tu ne peut pas prendre la platerforme");
-                Ci.transform.parent = null;
-                Ci.UnfreezeInputs();
-                playerRB.isKinematic = false;
+
+                if (Ci != null)
+                {
+                    Ci.transform.parent = null;
+                    Ci.UnfreezeInputs();
+                    playerRB.isKinematic = false;
+                }
                 isAtStart = true;
 
-                needToLeave = true;
+                needToLeave = (Ci != null);
                 SetEmissiveMode(EmissiveMode.Pulse);
+
+                platformMesh.enabled = true;
+
+                StartPoint.gameObject.SetActive(false);
+                EndPoint.gameObject.SetActive(true);
             }
 
             
@@ -253,5 +286,18 @@ public class SandTransporter : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void CallTransporter(Collider _col)
+    {
+        StartPoint.gameObject.SetActive(false);
+        EndPoint.gameObject.SetActive(false);
+
+        StartPoint.transform.parent = null;
+        EndPoint.transform.parent = null;
+        isMoving = true;
+        isAtStart = true;
+
+        platformMesh.enabled = false;
     }
 }
