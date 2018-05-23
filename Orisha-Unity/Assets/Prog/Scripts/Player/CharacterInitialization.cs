@@ -77,12 +77,6 @@ namespace vd_Player
             get { return animEvents; }
         }
 
-        private Transform startingTr; //Stockage du transform du player au spawn au cas où il meurt sans checkpoint.
-        public Transform StartingTr
-        {
-            get { return startingTr; }
-        }
-
 
         private bool areInputsFrozen = false;
         public bool AreInputsFrozen {  get { return areInputsFrozen; } }
@@ -126,7 +120,6 @@ namespace vd_Player
             animEvents = GetComponentInChildren<PlayerAnimEvents>();
             zoneScript = FindObjectOfType<DisplayZoneName>();
             lifeBarHUD = FindObjectOfType<LifeBar>();
-            startingTr = transform;
 
             originMaxHealth = health;
             maxHealth = health;
@@ -280,8 +273,16 @@ namespace vd_Player
         {
             Rb.velocity = Vector3.zero;
             Rb.angularVelocity = Vector3.zero;
-            PlayerTr.position = _tr.position;
-            PlayerTr.rotation = _tr.rotation;
+            if (_tr != null)
+            {
+                PlayerTr.position = _tr.position;
+                PlayerTr.rotation = _tr.rotation;
+            }
+            else
+            {
+                PlayerTr.localPosition = Vector3.zero;
+                PlayerTr.localRotation = Quaternion.identity;
+            }
 
             health = maxHealth;
             lifeBarHUD.UpdateLifeBar((float)health / (float)maxHealth);

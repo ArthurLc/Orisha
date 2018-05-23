@@ -27,7 +27,7 @@ public static class CheckpointsManager {
     public static void RepopPlayerToLastCheckpoint()
     {
         if(checkpointList.Count == 0)
-            player.RepopPlayerAtTransform(player.StartingTr);
+            player.RepopPlayerAtTransform(null);
         else
             player.RepopPlayerAtTransform(checkpointList[checkpointList.Count - 1].transform);
     }
@@ -45,6 +45,6 @@ public static class CheckpointsManager {
             }
         }
 
-        player.RepopPlayerAtTransform(closerCheckpoint != null ? closerCheckpoint : player.StartingTr);
+        player.RepopPlayerAtTransform(closerCheckpoint);
     }
 }
