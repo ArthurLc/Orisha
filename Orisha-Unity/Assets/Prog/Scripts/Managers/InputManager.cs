@@ -136,7 +136,12 @@ namespace vd_Inputs
         public static string Pause
         {
             get { return pause; }
-        }        
+        }
+        static string openMaskMenu;
+        public static string OpenMaskMenu
+        {
+            get { return openMaskMenu; }
+        }
 
         // Attaques : attackHeavy, attackSlight
         static string attackHeavy;
@@ -251,6 +256,7 @@ namespace vd_Inputs
                     cancel = "None";
                     launch = "None";
                     pause = "None";
+                    openMaskMenu = "None";
 
                     attackHeavy = "None";
                     attackSlight = "None";
@@ -277,6 +283,7 @@ namespace vd_Inputs
                     cancel = "Keyboard_Escape";
                     launch = "Keyboard_Return";
                     pause = "Keyboard_Escape";
+                    openMaskMenu = "Keyboard_OpenMaskMenu";
 
                     attackHeavy = "Keyboard_MouseRight";
                     attackSlight = "Keyboard_MouseLeft";
@@ -304,6 +311,7 @@ namespace vd_Inputs
                     cancel = "Joy1_B";
                     launch = "Joy1_Y";
                     pause = "Joy1_Start";
+                    openMaskMenu = "Joy1_OpenMaskMenu";
 
                     attackHeavy = "Joy1_Y";
                     attackSlight = "Joy1_X";
@@ -344,15 +352,30 @@ namespace vd_Inputs
         private static bool IsThereKeyboardInput()
         {
             // mouse & keyboard buttons
-            
-            if (Event.current != null && (Event.current.isKey ||
-                Event.current.isMouse))
+
+            //Debug.Log(Event.current.isKey);
+            if (Input.GetButton("Keyboard_Horizontal") ||
+               Input.GetButton("Keyboard_Vertical") ||
+               Input.GetButton("Keyboard_Shift") ||
+               Input.GetButton("Keyboard_Maj") ||
+               Input.GetButton("Keyboard_Space") ||
+               Input.GetButton("Keyboard_E") ||
+               Input.GetButton("Keyboard_Ctrl") ||
+               Input.GetButton("Keyboard_MouseMiddle") ||
+               Input.GetButton("Keyboard_Space") ||
+               Input.GetButton("Keyboard_Escape") ||
+               Input.GetButton("Keyboard_Return") ||
+               Input.GetButton("Keyboard_OpenMaskMenu") ||
+               Input.GetButton("Keyboard_MouseRight") ||
+               Input.GetButton("Keyboard_MouseLeft"))
             {
                 return true;
             }
+            
             // mouse movement
             if (Input.GetAxis("Keyboard_CamX") != 0.0f ||
-                Input.GetAxis("Keyboard_CamY") != 0.0f)
+                Input.GetAxis("Keyboard_CamY") != 0.0f ||
+               Input.GetAxis("Keyboard_OpenMaskMenu") != 0.0f)
             {
                 return true;
             }
@@ -390,7 +413,8 @@ namespace vd_Inputs
             if (Input.GetAxis("Joy1_Horizontal") != 0.0f ||
                Input.GetAxis("Joy1_Vertical") != 0.0f ||
                Input.GetAxis("Joy1_CamX") != 0.0f ||
-               Input.GetAxis("Joy1_CamY") != 0.0f)
+               Input.GetAxis("Joy1_CamY") != 0.0f ||
+               Input.GetAxis("Joy1_OpenMaskMenu") != 0.0f)
             {
                 return true;
             }

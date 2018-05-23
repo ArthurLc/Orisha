@@ -61,22 +61,23 @@ public class MasksMenu : MonoBehaviour {
     {
 		if (menu.activeSelf == false) 
 		{
-			if (Input.GetButtonDown ("OpenMaskMenu")) 
-			{
-                lifeBarHUD.SetActiveHUD(true);
-                lifeBarHUD.SetActiveNewMaskFB(false);
-
-                TimeManager.Instance.Slow_AllScene (0.01f);
-				transform.localScale = Vector3.zero;
-			}
-			if (Input.GetButton ("OpenMaskMenu")) 
+			if (Input.GetAxis(InputManager.OpenMaskMenu) >= 0.75f) 
 			{			
+                if(masksParent.activeInHierarchy == false)
+                {
+                    lifeBarHUD.SetActiveHUD(true);
+                    lifeBarHUD.SetActiveNewMaskFB(false);
+
+                    TimeManager.Instance.Slow_AllScene(0.01f);
+                    transform.localScale = Vector3.zero;
+                }
+
 				UpdateVisualMasks(); 
 				masksParent.SetActive (true);
 				GameLoopManager.EnableMouse ();
-			} else if (Input.GetButtonUp ("OpenMaskMenu")) 
-			{
-                if(Potential_Enemy.IsOnFight == false)
+			} else if (masksParent.activeInHierarchy && Input.GetAxis(InputManager.OpenMaskMenu) < 0.75f)
+            {
+                if (Potential_Enemy.IsOnFight == false)
                     lifeBarHUD.SetActiveHUD(false);
 
                 TimeManager.Instance.Slow_UnactiveAll ();
