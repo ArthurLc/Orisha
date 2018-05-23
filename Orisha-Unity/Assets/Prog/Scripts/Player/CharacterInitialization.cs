@@ -106,6 +106,8 @@ namespace vd_Player
         [Header("UI")]
         [SerializeField] float fadeInDuration = 3.0f;
         [SerializeField] float displayDuration = 3.0f;
+        [Header("ParticleSystem")]
+        [SerializeField] ParticleSystem ParticleHeal;
 
 
         void Start()
@@ -258,6 +260,14 @@ namespace vd_Player
 				else
 					anim.SetTrigger ("SoftHit");
 			}
+        }
+
+        public void HealPlayer(int _healNumber)
+        {
+            health = Mathf.Clamp(health + _healNumber, 0, maxHealth);
+            lifeBarHUD.UpdateLifeBar((float)health / (float)maxHealth);
+
+            ParticleHeal.Play();
         }
 
         public void PropulsePlayer(Vector3 _dir)

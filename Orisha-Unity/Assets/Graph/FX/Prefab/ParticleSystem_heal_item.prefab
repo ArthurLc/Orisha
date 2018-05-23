@@ -54,7 +54,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4664209369124908}
   - component: {fileID: 198664740342054142}
+  - component: {fileID: 114869174192100416}
   - component: {fileID: 199448919788523114}
+  - component: {fileID: 135987263569743582}
   m_Layer: 0
   m_Name: ParticleSystem_heal_item
   m_TagString: Untagged
@@ -133,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404625984014576}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -88.64, y: 114.098, z: 585.171}
+  m_LocalPosition: {x: -95.18073, y: 114.87, z: 582.8249}
   m_LocalScale: {x: 0.12394, y: 0.12394, z: 0.12394}
   m_Children:
   - {fileID: 4804724775702632}
@@ -196,6 +198,30 @@ Transform:
   m_Father: {fileID: 4664209369124908}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &114869174192100416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404625984014576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59ac8ef30d91c54c8d4a45aa9a193b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healPoints: 10
+--- !u!135 &135987263569743582
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404625984014576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198381705174834616
 ParticleSystem:
   m_ObjectHideFlags: 1
