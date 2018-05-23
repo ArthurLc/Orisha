@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: mat_Skybox_FBMCloud
   m_Shader: {fileID: 4800000, guid: 6504d8b22d20b2549a2023337ffecd0e, type: 3}
@@ -56,16 +56,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Altitude0: 1500
-    - _AtmosphereThickness: 3
+    - _AtmosphereThickness: 2.18
     - _Border: 0
-    - _Brightness: 0.5
+    - _Brightness: 0.33
     - _BumpScale: 1
-    - _CloudsExponent: 3.86
+    - _CloudsExponent: 10
     - _Cutoff: 0.5
-    - _Density: 0.1
+    - _Density: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Exposure: 1.3
+    - _Exposure: 1.24
     - _FarDist: 30000
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -78,28 +78,28 @@ Material:
     - _SkyExponent: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 1
+    - _Speed: 0.69
     - _SrcBlend: 1
     - _SunAlpha: 550
     - _SunAltitude: 38
     - _SunAzimuth: 20
     - _SunBeta: 1
     - _SunIntensity: 2
-    - _SunSize: 0.13
+    - _SunSize: 0.177
     - _TestUV: 0.5
     - _UVMul: 300
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.88235295, g: 0.89776874, b: 1, a: 1}
-    - _Color2: {r: 1, g: 0.9113591, b: 0.7205882, a: 1}
-    - _Color3: {r: 1, g: 0.91764706, b: 0.7941176, a: 1}
-    - _Color4: {r: 0.99264705, g: 0.67894644, b: 0.3941393, a: 1}
-    - _ColorHorizon: {r: 1, g: 0.8627789, b: 0.75735295, a: 1}
-    - _ColorSky: {r: 0.5994809, g: 0.6017361, b: 0.9264706, a: 1}
+    - _Color1: {r: 0.92175704, g: 0.9339623, b: 0.7885814, a: 1}
+    - _Color2: {r: 1, g: 0.96530664, b: 0.72156864, a: 1}
+    - _Color3: {r: 0.9716981, g: 0.8443174, b: 0.56376827, a: 1}
+    - _Color4: {r: 0.9433962, g: 0.9057491, b: 0.6630473, a: 1}
+    - _ColorHorizon: {r: 0.5568628, g: 0.7843138, b: 0.7607844, a: 1}
+    - _ColorSky: {r: 0.5182004, g: 0.8018868, b: 0.76294947, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 0.369, g: 0.349, b: 0.341, a: 1}
-    - _SkyTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _GroundColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
+    - _SkyTint: {r: 0.73800045, g: 0.5801887, b: 1, a: 1}
     - _SunColor: {r: 1, g: 0.99, b: 0.87, a: 1}
     - _SunVector: {r: 0.269, g: 0.615, b: 0.74, a: 0}
