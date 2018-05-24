@@ -173,7 +173,7 @@ public class AnimInfo_Enemy : MonoBehaviour
         if (enemyBasic.hitSfx != null)
         {
             int soundId = Random.Range(0, enemyBasic.hitSfx.Length);
-            SoundManager.instance.SFX_PlayAtPosition(enemyBasic.attacksSfx[soundId], enemyBasic.transform.position, 1f, 100f);
+            SoundManager.instance.SFX_PlayAtPosition(enemyBasic.hitSfx[soundId], enemyBasic.transform.position, 1f, 100f);
         }
     }
 
