@@ -21,13 +21,12 @@ GameObject:
   - component: {fileID: 4177742434213708}
   - component: {fileID: 33842427436823212}
   - component: {fileID: 23961207637220932}
-  - component: {fileID: 65453151639017462}
-  m_Layer: 25
+  m_Layer: 0
   m_Name: dalle_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 24
+  m_StaticEditorFlags: 16
   m_IsActive: 1
 --- !u!4 &4177742434213708
 Transform:
@@ -84,15 +83,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1118841838376848}
   m_Mesh: {fileID: 4300000, guid: 874a18dda624bf745b1b0a33c79d7dc9, type: 3}
---- !u!65 &65453151639017462
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1118841838376848}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5630908, y: 0.19455624, z: 0.6626413}
-  m_Center: {x: 0, y: 0.060943007, z: 0.00000014901161}
