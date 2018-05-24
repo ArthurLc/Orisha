@@ -347,6 +347,48 @@ namespace UnityEditor.Experimental.AutoLOD
                 Selection.activeObject = folderAsset;
         }
 
+        [MenuItem("GameObject/AutoLOD/Update LODs", validate = true, priority = 11)]
+        static bool UpdateLODsValidate()
+        {
+            // Allow processing of whole directories
+            var activeObject = Selection.activeObject;
+            if (IsDirectoryAsset(activeObject))
+                return true;
+
+            var gameObjects = Selection.gameObjects;
+            if (gameObjects.Length == 0)
+                return false;
+
+            foreach (var go in gameObjects)
+            {
+                if (go.GetComponent<LODGroup>())
+                    return true;
+            }
+
+            return false;
+        }
+
+        [MenuItem("GameObject/AutoLOD/Update LODs", priority = 11)]
+        static void UpdateLODs(MenuCommand menuCommand)
+        {
+            var activeObject = Selection.activeObject;
+            DefaultAsset folderAsset = null;
+            if (IsDirectoryAsset(activeObject))
+            {
+                folderAsset = (DefaultAsset)activeObject;
+                SelectAllGameObjectsUnderneathFolder(folderAsset, HasLODChain);
+            }
+
+            var go = menuCommand.context as GameObject;
+            if (go)
+                UpdateLODs(go);
+            else
+                IterateOverSelectedGameObjects(UpdateLODs);
+
+            if (folderAsset)
+                Selection.activeObject = folderAsset;
+        }
+
         static void IterateOverSelectedGameObjects(Action<GameObject> callback)
         {
             AssetDatabase.StartAssetEditing();
@@ -529,6 +571,34 @@ namespace UnityEditor.Experimental.AutoLOD
                 var lodAssetPath = GetLODAssetPath(prefab);
                 AssetDatabase.DeleteAsset(lodAssetPath);
             }
+        }
+
+        static void UpdateLODs(GameObject go)
+        {
+            GameObject originalAsset = GameObject.Instantiate((GameObject)AssetDatabase.LoadAssetAtPath(AssetDatabase.GetAssetPath(go.GetComponent<MeshFilter>().sharedMesh), typeof(GameObject)));
+            var lodGroup = go.GetComponent<LODGroup>();
+            if (lodGroup)
+            {
+                var lods = lodGroup.GetLODs();
+                for (var i = 1; i < lods.Length; i++)
+                {
+                    var lod = lods[i];
+                    var renderers = lod.renderers;
+                    foreach (var r in renderers)
+                    {
+                        r.GetComponent<MeshFilter>().sharedMesh = originalAsset.transform.GetChild(i).GetComponentInChildren<MeshFilter>().sharedMesh;
+                    }
+                }
+            }
+            
+            var prefab = PrefabUtility.GetCorrespondingObjectFromSource(go);
+            if (prefab)
+            {
+                var lodAssetPath = GetLODAssetPath(prefab);
+                AssetDatabase.DeleteAsset(lodAssetPath);
+            }
+
+            GameObject.DestroyImmediate(originalAsset);
         }
 
         [PreferenceItem("AutoLOD")]
