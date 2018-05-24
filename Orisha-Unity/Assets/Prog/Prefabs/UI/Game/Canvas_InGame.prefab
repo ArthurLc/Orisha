@@ -1489,11 +1489,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptyParent: {fileID: 1494761697689764}
   newMaskFB: {fileID: 1280247489706936}
+  maskBG: {fileID: 114162652453590134}
   maskUI: {fileID: 114578145903263548}
+  lifeBar_Fond: {fileID: 114242130107612112}
   lifeBar_In: {fileID: 114497636624867678}
+  lifeBar_Cadre: {fileID: 114393367068192706}
   lifeBarMask_MotifPlein: {fileID: 114859884799568712}
   lifeBarMask_MotifVide: {fileID: 114057117746225654}
   lifeBarMask_In: {fileID: 114547100626909194}
+  fadeSpeed: 1.5
 --- !u!114 &114093604250838428
 MonoBehaviour:
   m_ObjectHideFlags: 1

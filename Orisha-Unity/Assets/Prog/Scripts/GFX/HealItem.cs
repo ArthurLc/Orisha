@@ -19,7 +19,9 @@ public class HealItem : MonoBehaviour {
             vd_Player.CharacterInitialization ci = other.GetComponentInParent<vd_Player.CharacterInitialization>();
 
             ci.HealPlayer(healPoints);
-            ci.LifeBarHUD.StartCoroutine(ci.LifeBarHUD.ActiveHUD_WithTimer(2.0f));
+            ci.LifeBarHUD.StopAllCoroutines();
+            ci.LifeBarHUD.SetActiveHUD(true);
+            ci.LifeBarHUD.Invoke("DisableHUD", 2.0f);
             Destroy(this.gameObject);
         }
     }
