@@ -7,9 +7,9 @@ public class AI_EnemyStateFleeTutorial : AI_EnemyStateFlee
 {
     Transform playerTr;
 
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget, ref int _patrolIndex)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _armorAnim, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget, ref int _patrolIndex)
     {
-        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _patrolPositions, _myTarget, ref _patrolIndex);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _armorAnim, _agent, _rb, _patrolPositions, _myTarget, ref _patrolIndex);
         UpdateState = CurrentUpdate;
         FixedUpdateState = CurrentFixedUpdate;
         myAgent.SetDestination(patrolPositions[_patrolIndex].position);

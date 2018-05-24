@@ -18,24 +18,24 @@ public class AI_EnemyStateAlert : AI_EnemyState
         base.OnBegin();
         LaunchAlert();
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _animArmor, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
     {
-        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _startPosition);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _animArmor, _agent, _rb, _startPosition);
         LaunchAlert();
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _animArmor, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
     {
-        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _patrolPositions);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _animArmor, _agent, _rb, _patrolPositions);
         LaunchAlert();
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _animArmor, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
     {
-        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _startPosition, _myTarget);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _animArmor, _agent, _rb, _startPosition, _myTarget);
         LaunchAlert();
     }
-    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
+    public override void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _animArmor, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
     {
-        base.OnBegin(_individu, _animCroco, _animWeapon, _agent, _rb, _patrolPositions, _myTarget);
+        base.OnBegin(_individu, _animCroco, _animWeapon, _animArmor, _agent, _rb, _patrolPositions, _myTarget);
         LaunchAlert();
     }
 
@@ -57,6 +57,7 @@ public class AI_EnemyStateAlert : AI_EnemyState
         myIndividu.transform.LookAt(currentTarget);
         myIndividu.transform.rotation = Quaternion.Euler(0.0f, myIndividu.transform.rotation.eulerAngles.y, 0.0f);
         myAnimCroco.SetTrigger("Alert");
+        myAnimArmor.SetTrigger("Alert");
         myAnimWeapon.SetTrigger("Alert");
         myAgent.destination = myIndividu.transform.position;
         myIndividu.AsCallReinforcement = true;

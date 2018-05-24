@@ -51,6 +51,7 @@ public class AI_EnemyState
     protected AI_Enemy_Basic myIndividu;
     protected Animator myAnimCroco;
     protected Animator myAnimWeapon;
+    protected Animator myAnimArmor;
     protected NavMeshAgent myAgent;
     protected Rigidbody myRb;
 
@@ -74,49 +75,54 @@ public class AI_EnemyState
     {
         
     }
-    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _animArmor, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition)
     {
         myIndividu = _individu;
         myAnimCroco = _animCroco;
         myAnimWeapon = _animWeapon;
+        myAnimArmor = _animArmor;
         myAgent = _agent;
         myRb = _rb;
         startTransform = _startPosition;
     }
-    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _animArmor, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions)
     {
         myIndividu = _individu;
         myAnimCroco = _animCroco;
         myAnimWeapon = _animWeapon;
+        myAnimArmor = _animArmor;
         myAgent = _agent;
         myRb = _rb;
         patrolPositions = _patrolPositions;
     }
-    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _animArmor, NavMeshAgent _agent, Rigidbody _rb, Vector3 _startPosition, Transform _myTarget)
     {
         myIndividu = _individu;
         myAnimCroco = _animCroco;
         myAnimWeapon = _animWeapon;
+        myAnimArmor = _animArmor;
         myAgent = _agent;
         myRb = _rb;
         startTransform = _startPosition;
         currentTarget = _myTarget;
     }
-    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _animArmor, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget)
     {
         myIndividu = _individu;
         myAnimCroco = _animCroco;
         myAnimWeapon = _animWeapon;
+        myAnimArmor = _animArmor;
         myAgent = _agent;
         myRb = _rb;
         patrolPositions = _patrolPositions;
         currentTarget = _myTarget;
     }
-    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget, ref int _patrolIndex)
+    public virtual void OnBegin(AI_Enemy_Basic _individu, Animator _animCroco, Animator _animWeapon, Animator _animArmor, NavMeshAgent _agent, Rigidbody _rb, List<Transform> _patrolPositions, Transform _myTarget, ref int _patrolIndex)
     {
         myIndividu = _individu;
         myAnimCroco = _animCroco;
         myAnimWeapon = _animWeapon;
+        myAnimArmor = _animArmor;
         myAgent = _agent;
         myRb = _rb;
         patrolPositions = _patrolPositions;
@@ -145,6 +151,7 @@ public class AI_EnemyState
         {
             myAnimCroco.SetFloat("Velocity", myAgent.velocity.magnitude);
             myAnimWeapon.SetFloat("Velocity", myAgent.velocity.magnitude);
+            myAnimArmor.SetFloat("Velocity", myAgent.velocity.magnitude);
         }
     }
 
@@ -174,6 +181,7 @@ public class AI_EnemyState
 			if(_dir != Vector3.zero)
             {
 				myAnimCroco.SetTrigger ("Propulsed");
+				myAnimArmor.SetTrigger ("Propulsed");
                 myAnimWeapon.enabled = false;
                 myAnimWeapon.gameObject.AddComponent<Rigidbody>();
                 myAnimWeapon.transform.parent = null;

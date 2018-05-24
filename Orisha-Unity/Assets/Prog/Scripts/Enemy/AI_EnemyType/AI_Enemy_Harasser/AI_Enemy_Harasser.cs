@@ -69,26 +69,26 @@ public class AI_Enemy_Harasser : AI_Enemy_Basic
 
                 case State.Patroling:
                     myCurrentState = new AI_EnemyStatePatrolHarasser();
-                    (myCurrentState as AI_EnemyStatePatrolHarasser).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStatePatrolHarasser).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform, currentTarget);
                     (myCurrentState as AI_EnemyStatePatrolHarasser).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertHarasser();
-                    (myCurrentState as AI_EnemyStateAlertHarasser).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateAlertHarasser).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateAlertHarasser).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightHarasser();
-                    (myCurrentState as AI_EnemyStateFightHarasser).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateFightHarasser).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateFightHarasser).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.IsHit:
                     myCurrentState = new AI_EnemyStateIsHitHarasser();
-                    (myCurrentState as AI_EnemyStateIsHitHarasser).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform);
+                    (myCurrentState as AI_EnemyStateIsHitHarasser).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform);
                     break;
                 case State.Die:
                     myCurrentState = new AI_EnemyStateDieHarasser();
-                    (myCurrentState as AI_EnemyStateDieHarasser).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform);
+                    (myCurrentState as AI_EnemyStateDieHarasser).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform);
                     StopAllCoroutines();
                     break;
 

@@ -102,8 +102,9 @@ public class AI_Enemy_Basic : MonoBehaviour
 	[Header("Links")]
 	[SerializeField]protected Animator crocoAnim;
 	[SerializeField]protected Animator weaponAnim;
+	[SerializeField]protected Animator armorAnim;
 
-	public State myState
+    public State myState
 	{
 		get
 		{
@@ -191,14 +192,16 @@ public class AI_Enemy_Basic : MonoBehaviour
 		float toReturn = crocoAnim.speed;
 		crocoAnim.speed = 0f;
 		weaponAnim.speed = 0f;
-		return toReturn;
+		armorAnim.speed = 0f;
+        return toReturn;
 	}
 
 	public void UnfreezeAnim(float _speed)
 	{
 		crocoAnim.speed = _speed;
 		weaponAnim.speed = _speed;
-	}
+        armorAnim.speed = _speed;
+    }
 
 	public virtual void AttackFail()
 	{

@@ -88,39 +88,39 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
             {
                 case State.Idle:
                     myCurrentState = new AI_EnemyStateIdleTutorial();
-                    (myCurrentState as AI_EnemyStateIdleTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform);
+                    (myCurrentState as AI_EnemyStateIdleTutorial).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform);
                     break;
                 case State.Taunt:
                     myCurrentState = new AI_EnemyStateTauntTutorial();
-                    (myCurrentState as AI_EnemyStateTauntTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform);
+                    (myCurrentState as AI_EnemyStateTauntTutorial).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform);
                     break;
                 case State.Patroling:
                     myCurrentState = new AI_EnemyStatePatrolTutorial();
-                    (myCurrentState as AI_EnemyStatePatrolTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStatePatrolTutorial).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform, currentTarget);
                     (myCurrentState as AI_EnemyStatePatrolTutorial).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertTutorial();
-                    (myCurrentState as AI_EnemyStateAlertTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateAlertTutorial).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateAlertTutorial).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightTutorial();
-                    (myCurrentState as AI_EnemyStateFightTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateFightTutorial).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateFightTutorial).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.IsHit:
                     myCurrentState = new AI_EnemyStateIsHitTutorial();
-                    (myCurrentState as AI_EnemyStateIsHitTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateIsHitTutorial).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform, currentTarget);
                     break;
                 case State.Die:
                     myCurrentState = new Ai_EnemyStateDieTutorial();
-                    (myCurrentState as Ai_EnemyStateDieTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform);
+                    (myCurrentState as Ai_EnemyStateDieTutorial).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform);
                     StopAllCoroutines();
                     break;
                 case State.Fleeing:
                     myCurrentState = new AI_EnemyStateFleeTutorial();
-                    (myCurrentState as AI_EnemyStateFleeTutorial).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, patrolTransform, currentTarget, ref patrolIndex);
+                    (myCurrentState as AI_EnemyStateFleeTutorial).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, patrolTransform, currentTarget, ref patrolIndex);
                     (myCurrentState as AI_EnemyStateFleeTutorial).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
 

@@ -43,13 +43,15 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
 	{
 		crocoAnim.SetBool ("CanLandCombo", true);
 		weaponAnim.SetBool ("CanLandCombo", true);
-	}
+		armorAnim.SetBool ("CanLandCombo", true);
+    }
 
 	public override void AttackFail()
 	{
 		weaponAnim.SetTrigger ("Fail");
 		crocoAnim.SetTrigger ("Fail");
-	}
+		armorAnim.SetTrigger ("Fail");
+    }
 
     void Update ()
     {
@@ -87,35 +89,35 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
             {
                 case State.Idle:
                     myCurrentState = new AI_EnemyStateIdleFrontal();
-                    (myCurrentState as AI_EnemyStateIdleFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform);
+                    (myCurrentState as AI_EnemyStateIdleFrontal).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform);
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertFrontal();
-                    (myCurrentState as AI_EnemyStateAlertFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateAlertFrontal).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateAlertFrontal).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.Chasing:
                     myCurrentState = new AI_EnemyStateChaseFrontal();
-                    (myCurrentState as AI_EnemyStateChaseFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateChaseFrontal).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateChaseFrontal).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightFrontal();
-                    (myCurrentState as AI_EnemyStateFightFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateFightFrontal).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateFightFrontal).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.ReplacingToFight:
                     myCurrentState = new AI_EnemyStateReplaceToFightFrontal();
-                    (myCurrentState as AI_EnemyStateReplaceToFightFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateReplaceToFightFrontal).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateReplaceToFightFrontal).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     break;
                 case State.IsHit:
                     myCurrentState = new AI_EnemyStateIsHitFrontal();
-                    (myCurrentState as AI_EnemyStateIsHitFrontal).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateIsHitFrontal).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     break;
 			case State.Die:
 				myCurrentState = new Ai_EnemyStateDieFrontal ();
-				(myCurrentState as Ai_EnemyStateDieFrontal).OnBegin (this, crocoAnim, weaponAnim, myAgent, rb, startTransform);
+				(myCurrentState as Ai_EnemyStateDieFrontal).OnBegin (this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform);
                     StopAllCoroutines();
                     break;
             }

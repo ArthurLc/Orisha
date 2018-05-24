@@ -18,8 +18,6 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
 
     Potential_Enemy pe;
 
-
-    
     Rigidbody rb;
     [Header("Links")]
 	[SerializeField] Material weaponSandMaterial;
@@ -93,46 +91,46 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
             {
                 case State.Idle:
                     myCurrentState = new AI_EnemyStateIdleSandTracker();
-                    (myCurrentState as AI_EnemyStateIdleSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform);
+                    (myCurrentState as AI_EnemyStateIdleSandTracker).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform);
                     break;
                 case State.Patroling:
                     myCurrentState = new AI_EnemyStatePatrolSandTracker();
-                    (myCurrentState as AI_EnemyStatePatrolSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStatePatrolSandTracker).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStatePatrolSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     myAgent.speed = walkSpeed;
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertSandTracker();
-                    (myCurrentState as AI_EnemyStateAlertSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateAlertSandTracker).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateAlertSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
 					myAgent.speed = sprintSpeed;
                     break;
                 case State.Chasing:
                     myCurrentState = new AI_EnemyStateChaseSandTracker();
-                    (myCurrentState as AI_EnemyStateChaseSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateChaseSandTracker).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateChaseSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     myAgent.speed = sprintSpeed;
                     break;
                 case State.Fighting:
                     myCurrentState = new AI_EnemyStateFightSandTracker();
-                    (myCurrentState as AI_EnemyStateFightSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateFightSandTracker).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateFightSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
 
                     break;
                 case State.Esquive:
                       myCurrentState = new AI_EnemyStateEsquiveSandTracker();
-                    (myCurrentState as AI_EnemyStateEsquiveSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateEsquiveSandTracker).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     (myCurrentState as AI_EnemyStateEsquiveSandTracker).InitCombat(abandonDistance, range, myAgent.stoppingDistance, dieWhenTouchingTarget);
                     myAgent.speed = sprintSpeed;
                     break;
                 case State.Die:
                     myCurrentState = new Ai_EnemyStateDieSandTracker();
-                    (myCurrentState as Ai_EnemyStateDieSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform);
+                    (myCurrentState as Ai_EnemyStateDieSandTracker).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform);
                     StopAllCoroutines();
                     break;
                 case State.IsHit:
                     myCurrentState = new AI_EnemyStateIsHitSandTracker();
-                    (myCurrentState as AI_EnemyStateIsHitSandTracker).OnBegin(this, crocoAnim, weaponAnim, myAgent, rb, startTransform, currentTarget);
+                    (myCurrentState as AI_EnemyStateIsHitSandTracker).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform, currentTarget);
                     break;
 
             }

@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: b43dc1147a4011e48a681dae6b6710f3
-timeCreated: 1523623603
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: CrocoBindTrue
     100002: //RootNode
@@ -142,6 +140,7 @@ ModelImporter:
     3300006: CrocoBindTrue_LOD2
     4300000: CrocoBindTrue
     7400000: Croco_Walk
+    7400002: CrocoArmor_Walk
     9500000: //RootNode
     20500000: //RootNode
   externalObjects: {}
@@ -163,6 +162,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -236,6 +236,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 0.0025
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
