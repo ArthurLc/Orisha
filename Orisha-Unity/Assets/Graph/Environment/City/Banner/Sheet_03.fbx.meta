@@ -4,14 +4,63 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: LOD_0
+    100004: LOD_1
+    100006: LOD_2
+    100008: LOD_3
+    100010: LOD_4
+    100012: LOD_5
+    100014: LOD_6
+    100016: pPlane3
+    100018: pPlane3 1
+    100020: pPlane3 2
+    100022: pPlane3 3
+    100024: pPlane3 4
+    100026: pPlane3 5
+    100028: pPlane3 6
     400000: //RootNode
+    400002: LOD_0
+    400004: LOD_1
+    400006: LOD_2
+    400008: LOD_3
+    400010: LOD_4
+    400012: LOD_5
+    400014: LOD_6
+    400016: pPlane3
+    400018: pPlane3 1
+    400020: pPlane3 2
+    400022: pPlane3 3
+    400024: pPlane3 4
+    400026: pPlane3 5
+    400028: pPlane3 6
     2100000: blinn14
+    2100002: blinn26
     2300000: //RootNode
+    2300002: pPlane3
+    2300004: pPlane3 1
+    2300006: pPlane3 2
+    2300008: pPlane3 3
+    2300010: pPlane3 4
+    2300012: pPlane3 5
+    2300014: pPlane3 6
     3300000: //RootNode
+    3300002: pPlane3
+    3300004: pPlane3 1
+    3300006: pPlane3 2
+    3300008: pPlane3 3
+    3300010: pPlane3 4
+    3300012: pPlane3 5
+    3300014: pPlane3 6
     4300000: pPlane3
+    4300002: pPlane3
+    4300004: pPlane3
+    4300006: pPlane3
+    4300008: pPlane3
+    4300010: pPlane3
+    4300012: pPlane3
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -45,8 +94,8 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -67,7 +116,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
