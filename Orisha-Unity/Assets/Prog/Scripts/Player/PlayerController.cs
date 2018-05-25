@@ -110,7 +110,7 @@ namespace vd_Player
             else
                 currentSpeed = 0.0f;
 
-            CheckIfGrounded();
+            isGrounded = CheckIfGrounded();
         }
 
 
@@ -156,10 +156,21 @@ namespace vd_Player
         /// <summary>
         /// Met à jour le booléen IsGrounded (RayCast)
         /// </summary>
-        private void CheckIfGrounded()
+        private bool CheckIfGrounded()
         {
             Vector3 begin = new Vector3(tr.position.x, tr.position.y + 0.05f, tr.position.z);
-            isGrounded = Physics.Raycast(begin, -Vector3.up, raycastLength);        
+            if (Physics.Raycast(begin, -Vector3.up, raycastLength))
+                return true;
+
+            for (int i = 0; i < 4; i++)
+            {
+                Vector3 beginLoop = new Vector3(tr.position.x + ((((i % 2) * 2) - 1) * 0.075f), tr.position.y + 0.05f, tr.position.z + ((((i / 2) * 2) - 1) * 0.075f));
+                //Debug.DrawRay(begin, -Vector3.up, Color.magenta);
+                if (Physics.Raycast(begin, -Vector3.up, raycastLength))
+                    return true;
+            }
+
+            return false;      
         }
 
 
