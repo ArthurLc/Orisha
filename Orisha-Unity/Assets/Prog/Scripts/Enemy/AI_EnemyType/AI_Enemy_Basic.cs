@@ -20,7 +20,6 @@ public class AI_Enemy_Basic : MonoBehaviour
 		IsHit,
 		Die,
 	}
-
     protected AI_EnemyState myCurrentState;
     public AI_EnemyState MyCurrentState
     {
@@ -31,6 +30,7 @@ public class AI_Enemy_Basic : MonoBehaviour
     }
 
     protected Transform currentTarget;
+    protected Rigidbody rb;
 
     protected bool isFreeze;
 
@@ -205,5 +205,13 @@ public class AI_Enemy_Basic : MonoBehaviour
 
 	public virtual void AttackFail()
 	{
+
 	}
+
+    public void DisablePlayerCollision()
+    {
+        //pipoui layer;
+        gameObject.layer = 17;
+        crocoAnim.gameObject.layer = 17;
+    }
 }

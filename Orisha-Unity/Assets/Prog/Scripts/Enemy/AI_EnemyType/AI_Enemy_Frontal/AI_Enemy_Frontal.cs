@@ -18,7 +18,6 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
 
     Potential_Enemy pe;
     
-    Rigidbody rb;
 
     void Start ()
     {

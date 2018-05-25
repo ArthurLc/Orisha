@@ -17,8 +17,6 @@ public class AI_Enemy_Harasser : AI_Enemy_Basic
     [SerializeField] private List<Transform> patrolTransform;
 
     Potential_Enemy pe;
-    
-    Rigidbody rb;
 
     void Start()
     {

@@ -21,8 +21,6 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
 
     [HideInInspector] public Transform LookAtPlayer;
 
-    Rigidbody rb;
-
     private SandShaderPositionner sandShaderPos;
     public SandShaderPositionner SandShaderPos
     {
