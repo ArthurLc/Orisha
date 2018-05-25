@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404625984014576}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -95.18073, y: 114.87, z: 582.8249}
+  m_LocalPosition: {x: -94.68, y: 115.1, z: 582.7438}
   m_LocalScale: {x: 0.12394, y: 0.12394, z: 0.12394}
   m_Children:
   - {fileID: 4804724775702632}
@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healPoints: 10
+  heal: {fileID: 8300000, guid: d5703350d05b1d441abba0ea796a21bc, type: 3}
 --- !u!135 &135987263569743582
 SphereCollider:
   m_ObjectHideFlags: 1

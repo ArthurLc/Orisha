@@ -11,6 +11,7 @@ using UnityEngine;
 public class HealItem : MonoBehaviour {
 
     [SerializeField] private int healPoints = 10;
+    [SerializeField] AudioClip heal;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +24,7 @@ public class HealItem : MonoBehaviour {
             ci.LifeBarHUD.SetActiveHUD(true);
             ci.LifeBarHUD.Invoke("DisableHUD", 2.0f);
             Destroy(this.gameObject);
+            SoundManager.instance.SFX_PlayOneShot(heal);
         }
     }
 }
