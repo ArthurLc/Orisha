@@ -97,8 +97,8 @@ public class MaskInventory : MonoBehaviour {
 
         lifeBarHUD.UpdateHUD(equipedMask);
 
-        var mainPS = maskEffect.main;
-        mainPS.startColor = defaultMask.GetEmissiveColor;
+        //var mainPS = maskEffect.main;
+        //mainPS.startColor = defaultMask.GetEmissiveColor;
         maskEffect.Play();
 
         leftBone.CurrentMask = PlayerBone.EquipedMask.Default;
@@ -127,8 +127,8 @@ public class MaskInventory : MonoBehaviour {
 
         lifeBarHUD.UpdateHUD(equipedMask);
 
-        var mainPS = maskEffect.main;
-        mainPS.startColor = defaultMask.GetEmissiveColor;
+        //var mainPS = maskEffect.main;
+        //mainPS.startColor = defaultMask.GetEmissiveColor;
         maskEffect.Play();
 
         if(_newMask.StrengthFactor > 1)
