@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: HighCloud
   m_Shader: {fileID: 4800000, guid: ac2b0859971724c4f9138c653f11b8a0, type: 3}
@@ -111,7 +111,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _CloudColor: {r: 0.99264705, g: 0.893181, b: 0.8028763, a: 0.409}
+    - _CloudColor: {r: 0.99215686, g: 0.9829946, b: 0.8039216, a: 0.409}
     - _Color: {r: 1, g: 1, b: 1, a: 0.422}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SkyColor: {r: 0, g: 0.036156174, b: 0.16911763, a: 1}
