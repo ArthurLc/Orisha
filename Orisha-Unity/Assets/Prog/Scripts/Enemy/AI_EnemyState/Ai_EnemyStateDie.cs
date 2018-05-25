@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ai_EnemyStateDie : AI_EnemyState
 {
-    protected float timerBeforeDisappear = 3.0f;
+    protected float timerBeforeDisappear = 8.0f;
     protected float distanceToTheGroundDisappear = 1.38f;
     protected float maxDistanceToTheGroundDisappear = 15.0f;
     protected Vector3 finalPos = Vector3.zero;
@@ -33,7 +33,7 @@ public class Ai_EnemyStateDie : AI_EnemyState
         myAgent.updateRotation = false;
         myAgent.updateUpAxis = false;
 
-		timerBeforeDisappear = 3.0f;
+		timerBeforeDisappear = 5.0f;
         //myAnimCroco.GetComponent<CapsuleCollider>().height = 0.0f;
 
         GameObject.Destroy(myAgent);
@@ -59,6 +59,7 @@ public class Ai_EnemyStateDie : AI_EnemyState
         else
         {
             GameObject.Destroy(myIndividu.gameObject);           
+            GameObject.Destroy(myAnimWeapon.gameObject);
         }
 
         myAnimCroco.GetComponent<CapsuleCollider>().center = new Vector3(0.0f, distanceToTheGroundDisappear, 0.0f);
