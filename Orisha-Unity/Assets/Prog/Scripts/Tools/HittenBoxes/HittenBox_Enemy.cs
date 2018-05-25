@@ -83,7 +83,7 @@ public class HittenBox_Enemy : MonoBehaviour, HittenBox
     {
         DamageBox box = other.GetComponent<DamageBox>();
         //Debug.Log("je suis tapé par un truc");
-        if (box != null)
+        if (box != null && enemy.Health > 0)
         {
             if(camShaker == null)
                 camShaker = other.GetComponentInParent<CameraShaker>();

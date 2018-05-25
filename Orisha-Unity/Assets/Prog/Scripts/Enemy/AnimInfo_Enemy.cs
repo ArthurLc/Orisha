@@ -23,6 +23,9 @@ public class AnimInfo_Enemy : MonoBehaviour
     
     private Animator animator;
 
+    [SerializeField] ParticleSystem boss_Estoc_Particle; 
+    [SerializeField] ParticleSystem boss_Hammer_Particle;
+
     // Use this for initialization
     void Start ()
     {
@@ -37,6 +40,24 @@ public class AnimInfo_Enemy : MonoBehaviour
         }
     }
 
+
+    void LaunchParticlesBoss()
+    {
+        if (boss_Estoc_Particle)
+            boss_Estoc_Particle.Play();
+    }
+
+
+    void LaunchHammerParticlesBoss()
+    {
+        if(boss_Hammer_Particle)
+            boss_Hammer_Particle.Play();
+    }
+
+    void DisablePlayerCollision()
+    {
+        enemyBasic.DisablePlayerCollision();
+    }
     /// <summary> 
     /// Fonction qui active l'attaque box de l'arme de l'ennemi
     /// </summary>
