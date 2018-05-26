@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /*
 * @ArthurLacour
@@ -99,6 +100,8 @@ public class AnimInfo_Enemy : MonoBehaviour
         }
     }
 
+   
+
 
     /// <summary> 
     ///Active toutes les box de dommage de l'ennemi
@@ -198,6 +201,24 @@ public class AnimInfo_Enemy : MonoBehaviour
         }
     }
 
+    public void BossDeath()
+    {
+        //faire tomber/voler le masque ici (coroutine tt ça)
+        //enemyBasic.SandMaterial.SetFloat("_EmissiveIntensity", 0.0f);
+        StartCoroutine(Fade(GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterial, 10, 0));
+    }
+
+    IEnumerator Fade(Material mat, float lossPercentage, int iteratons)
+    {
+        for (float f = 1f; f >= 0; f -= (lossPercentage/100))
+        {
+            mat.SetFloat("_EmissiveIntensity", f);
+            yield return new WaitForSeconds(.1f);
+        }
+
+        if(iteratons > 0)
+            StartCoroutine(Fade(mat, 10, iteratons - 1));
+    }
 
     /// <summary>
     /// Gestion des IK

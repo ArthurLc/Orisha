@@ -18,7 +18,6 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
 
     Potential_Enemy pe;
 
-    Rigidbody rb;
     [Header("Links")]
 	[SerializeField] Material weaponSandMaterial;
 
