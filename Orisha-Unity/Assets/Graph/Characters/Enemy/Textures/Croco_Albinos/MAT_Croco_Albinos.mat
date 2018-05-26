@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MAT_Croco_Albinos
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: dbb0e0d4d72422c4993a52cdc4a7ac13, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -38,12 +38,28 @@ Material:
         m_Texture: {fileID: 2800000, guid: 009158d131716b344ab0665d90ac6e04, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _EmissiveMap:
+        m_Texture: {fileID: 2800000, guid: a63a7ef332583004f98d1682716ff968, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: babb23daf88c4324bbaaaa3997c51fe3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MeltTex:
+        m_Texture: {fileID: 2800000, guid: 7c2da01d4b78e084d8c8cf52848b8f13, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: 0c70adb1775dd3c4d84767cca918490d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicMap:
+        m_Texture: {fileID: 2800000, guid: e442c86f6c1fb574991740277d80f6e8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: f9e6c6d1a8989354e9dcb94f213dc18c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -59,9 +75,15 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EmissiveIntensity: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 1
+    - _MeltCurve: 3.64
+    - _MeltDistance: 1
+    - _MeltGlossiness: 1
+    - _MeltMetallic: 0
+    - _MeltY: -100
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -74,3 +96,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissiveColor: {r: 0.68235296, g: 0.6039216, b: 0.34117648, a: 1}
+    - _MeltColor: {r: 1, g: 1, b: 1, a: 1}
