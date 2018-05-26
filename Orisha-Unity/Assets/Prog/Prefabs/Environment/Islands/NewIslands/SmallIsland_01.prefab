@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4403114108427354}
   - component: {fileID: 33599085445093642}
   - component: {fileID: 23403049155841810}
+  - component: {fileID: 64942133587469574}
   m_Layer: 0
   m_Name: MeshIsland
   m_TagString: Untagged
@@ -483,6 +484,20 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e71327a5c7438be42a2f06d7e0976c0e, type: 3}
+--- !u!64 &64942133587469574
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410235828491070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: b837be74c4d1acb4e8280f7b08f6a92e, type: 3}
 --- !u!64 &64996039553779796
 MeshCollider:
   m_ObjectHideFlags: 1
