@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class Landmark : MonoBehaviour
 {
-    const int maxRank = 4;
+    const int maxRank = 5;
     public int MaxRank { get { return maxRank; } }
     /// <summary>
     /// A quel point le point d'intérêt va attirer l'oeil de la caméra
