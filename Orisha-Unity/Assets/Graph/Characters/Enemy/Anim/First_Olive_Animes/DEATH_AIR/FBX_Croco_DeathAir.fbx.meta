@@ -181,6 +181,13 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.022900762
+        functionName: BossDeath
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.032786883
         functionName: UnlockState
         data: 
@@ -202,15 +209,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.41161305
-        functionName: DeathSound
+      - time: 0.107158385
+        functionName: DisablePlayerCollision
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.107158385
-        functionName: DisablePlayerCollision
+      - time: 0.41161305
+        functionName: DeathSound
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

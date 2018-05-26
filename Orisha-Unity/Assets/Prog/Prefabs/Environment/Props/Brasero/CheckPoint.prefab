@@ -550,7 +550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50bb5f2211530244091a717de551154b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 198660344768766316}
+  mainPs: {fileID: 198660344768766316}
+  subPs: {fileID: 0}
   fireLoop: {fileID: 8300000, guid: 7420671962538854e94a7a617d884830, type: 3}
   fireStart: {fileID: 8300000, guid: 9f3c5272a9681154a9c82ceccf29bf6a, type: 3}
 --- !u!114 &114570828443973908
@@ -564,7 +565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50bb5f2211530244091a717de551154b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 198920304382262284}
+  mainPs: {fileID: 198920304382262284}
+  subPs: {fileID: 0}
   fireLoop: {fileID: 8300000, guid: 7420671962538854e94a7a617d884830, type: 3}
   fireStart: {fileID: 8300000, guid: 9f3c5272a9681154a9c82ceccf29bf6a, type: 3}
 --- !u!114 &114638742533227538
