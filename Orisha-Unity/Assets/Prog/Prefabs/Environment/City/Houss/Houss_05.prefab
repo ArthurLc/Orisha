@@ -30,7 +30,7 @@ GameObject:
   m_Name: Houss_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 26
   m_IsActive: 1
 --- !u!1 &1433412868297024
@@ -141,8 +141,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1112815733136672}
-  m_LocalRotation: {x: -0, y: 0.79334325, z: -0, w: 0.60877454}
-  m_LocalPosition: {x: -271.78, y: 108.87, z: 399.13}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4603919418037900}
@@ -153,7 +153,7 @@ Transform:
   - {fileID: 4675769492151476}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 104.99801, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4178470317303196
 Transform:
   m_ObjectHideFlags: 1
