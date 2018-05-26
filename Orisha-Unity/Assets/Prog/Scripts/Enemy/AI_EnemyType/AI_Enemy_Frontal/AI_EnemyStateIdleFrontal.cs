@@ -75,6 +75,6 @@ public class AI_EnemyStateIdleFrontal : AI_EnemyStateIdle
     {
         base.PropulseAgent(_dir);
 
-        (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.IsHit);
+        //(myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.IsHit);
     }
 }

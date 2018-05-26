@@ -138,8 +138,10 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
     public override void TakeDamage(int damages)
     {
         base.TakeDamage(damages);
+        if((isBoss && damages > 30) || !isBoss)
+            ChangeState(State.IsHit);
 
-        if(health <= 0)
+        if (health <= 0)
         {
             if (pe)
                 pe.Pop_Potential_Ennemy(this);
@@ -193,6 +195,12 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
                     Debug.Log("No Potential_Enemy script on : " + other.name + " or :" + other.transform.parent.name);
             }
         }
+    }
+
+    public override void Reset()
+    {
+        base.Reset();
+        ChangeState(State.Idle);
     }
 
 

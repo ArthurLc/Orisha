@@ -19,6 +19,8 @@ public static class CheckpointsManager {
     public static List<Checkpoint> checkpointList = new List<Checkpoint>(); //Checkpoints enregistrés par le joueur.
 
     private static CharacterInitialization player;
+    public delegate void voidDelegate();
+    public static voidDelegate OnPlayerRespawn;
     public static CharacterInitialization PlayerRef
     {
         set { player = value; }
@@ -30,6 +32,8 @@ public static class CheckpointsManager {
             player.RepopPlayerAtTransform(null);
         else
             player.RepopPlayerAtTransform(checkpointList[checkpointList.Count - 1].transform);
+
+        OnPlayerRespawn();
     }
     public static void RepopPlayerToCloserCheckpoint()
     {
@@ -46,5 +50,7 @@ public static class CheckpointsManager {
         }
 
         player.RepopPlayerAtTransform(closerCheckpoint);
+
+        OnPlayerRespawn();
     }
 }

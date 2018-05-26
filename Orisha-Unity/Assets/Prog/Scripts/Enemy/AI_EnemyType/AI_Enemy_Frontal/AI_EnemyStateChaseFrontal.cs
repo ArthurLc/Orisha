@@ -83,7 +83,7 @@ public class AI_EnemyStateChaseFrontal : AI_EnemyStateChase
     {
         base.PropulseAgent(_dir);
 
-        (myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.IsHit);
+        //(myIndividu as AI_Enemy_Frontal).ChangeState(AI_Enemy_Frontal.State.IsHit);
         //OnBeginHit();
     }
 

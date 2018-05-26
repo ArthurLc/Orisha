@@ -208,6 +208,7 @@ public class AnimInfo_Enemy : MonoBehaviour
         StartCoroutine(Fade(GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterial, 10, 0));
     }
 
+
     IEnumerator Fade(Material mat, float lossPercentage, int iteratons)
     {
         for (float f = 1f; f >= 0; f -= (lossPercentage/100))
@@ -218,6 +219,21 @@ public class AnimInfo_Enemy : MonoBehaviour
 
         if(iteratons > 0)
             StartCoroutine(Fade(mat, 10, iteratons - 1));
+    }
+
+    void SpawnEnemies()
+    {
+        GetComponentInParent<StrengthInvoc>().SpawnEnemies();
+    }
+
+    void ActivateInvincibility()
+    {
+        enemyBasic.IsInvincible = true;
+    }
+
+    void DesactivateInvincibility()
+    {
+        enemyBasic.IsInvincible = false;
     }
 
     /// <summary>

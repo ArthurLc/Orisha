@@ -5,21 +5,21 @@ using UnityEngine.AI;
 
 public class AI_Enemy_Basic : MonoBehaviour
 {
-	public enum State
-	{
-		Idle,
+    public enum State
+    {
+        Idle,
         Taunt,
-		Patroling,
-		Chasing,
-		Alert,
-		Fighting,
-		Esquive,
-		ReplacingToFight,
-		ChasingOnFlank,
-		Fleeing,
-		IsHit,
-		Die,
-	}
+        Patroling,
+        Chasing,
+        Alert,
+        Fighting,
+        Esquive,
+        ReplacingToFight,
+        ChasingOnFlank,
+        Fleeing,
+        IsHit,
+        Die,
+    }
     protected AI_EnemyState myCurrentState;
     public AI_EnemyState MyCurrentState
     {
@@ -31,6 +31,8 @@ public class AI_Enemy_Basic : MonoBehaviour
 
     protected Transform currentTarget;
     protected Rigidbody rb;
+
+    public Transform CurrentTarget { get { return currentTarget; } }
 
     protected bool isFreeze;
 
@@ -96,31 +98,43 @@ public class AI_Enemy_Basic : MonoBehaviour
     [Header("Debug")]
     [SerializeField] protected bool debugLog = false;
 
-	[Header("AI")]
-	[SerializeField] protected State state;
+    [Header("AI")]
+    [SerializeField] protected State state;
+    [SerializeField] public bool IsBoss { get { return isBoss; } }
 
-	[Header("Links")]
-	[SerializeField]protected Animator crocoAnim;
-	[SerializeField]protected Animator weaponAnim;
-	[SerializeField]protected Animator armorAnim;
+    [Header("Links")]
+    [SerializeField] protected Animator crocoAnim;
+    [SerializeField] protected Animator weaponAnim;
+    [SerializeField] protected Animator armorAnim;
 
     public State myState
-	{
-		get
-		{
-			return state;
-		}
+    {
+        get
+        {
+            return state;
+        }
 
-		set
-		{
-			state = value;
-		}
-	}
+        set
+        {
+            state = value;
+        }
+    }
 
     protected NavMeshAgent myAgent;
 
+    protected bool isInvincible = false;
+    [SerializeField] protected bool isBoss;
+
+
+    public bool IsInvincible
+    {
+        get { return isInvincible; }
+        set { isInvincible = value; }
+    }
+
     private void Awake()
     {
+        isInvincible = false;
         isFreeze = false;
         asCallReinforcement = false;
         Material mat = new Material(SandMaterial);
@@ -213,5 +227,18 @@ public class AI_Enemy_Basic : MonoBehaviour
         //pipoui layer;
         gameObject.layer = 17;
         crocoAnim.gameObject.layer = 17;
+    }
+
+    public virtual void Reset()
+    {
+        health = Basehealth;
+        currentTarget = null;
+    }
+
+    public void CallEnemies()
+    {
+        crocoAnim.SetTrigger("CallForAlly");
+        weaponAnim.SetTrigger("CallForAlly");
+        armorAnim.SetTrigger("CallForAlly");
     }
 }

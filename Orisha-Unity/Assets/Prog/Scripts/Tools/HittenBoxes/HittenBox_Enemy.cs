@@ -91,7 +91,7 @@ public class HittenBox_Enemy : MonoBehaviour, HittenBox
             // je prends mes dégats
             //TakeDamage(box.damageValue);
             //Temp pour la millestone Applique les damages de l'anim du joueur si c'est un player qui a frappé
-            if (enemy.DmgBoxList != null && enemy.DmgBoxList.Contains(box) == false)
+            if (enemy.DmgBoxList != null && enemy.DmgBoxList.Contains(box) == false && !enemy.IsInvincible)
             {
                 enemy.DmgBoxList.Add(box); //Ajout de la box à la liste.
 
@@ -100,7 +100,10 @@ public class HittenBox_Enemy : MonoBehaviour, HittenBox
                 {
                     int currentAttackDmg = (int)(box.PlayerDatas.PlayerFightDatas.damages * box.PlayerDatas.StrengthFactor);
                     TakeDamage(currentAttackDmg == 0 ? box.damageValue : currentAttackDmg);
-                    PropulseAgent(box);
+
+                    if(!enemy.IsBoss)
+                        PropulseAgent(box);
+
                     float vibrationLevel = (int)box.PlayerDatas.PlayerFightDatas.expulsionLevel / 20.0f;
                     vd_Inputs.InputManager.GamePad_StartVibration(0, vibrationLevel, vibrationLevel, vibrationLevel);
                     
