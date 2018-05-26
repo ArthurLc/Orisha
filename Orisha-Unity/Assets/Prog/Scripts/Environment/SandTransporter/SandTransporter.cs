@@ -75,7 +75,7 @@ public class SandTransporter : MonoBehaviour
         platform.sharedMaterial = prefabMaterial;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!isAtStart && !isMoving && !needToLeave)
         {
@@ -119,7 +119,7 @@ public class SandTransporter : MonoBehaviour
         UpdateEmissive();
     }
 
-	private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
 	{
         if (other.tag == "Player")
         {
@@ -152,7 +152,7 @@ public class SandTransporter : MonoBehaviour
 	{
         if (isMoving)
         {
-			interpo += Time.deltaTime;
+			interpo += Time.fixedDeltaTime;
 
             if (Ci != null)
             {

@@ -40,12 +40,13 @@ GameObject:
   - component: {fileID: 23781976881626434}
   - component: {fileID: 136928321369358546}
   - component: {fileID: 205029771448126424}
+  - component: {fileID: 208114518829677254}
   m_Layer: 0
   m_Name: Garden
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 26
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &4650180136621756
 Transform:
@@ -194,3 +195,18 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23818103126347432}
   m_Enabled: 1
+--- !u!208 &208114518829677254
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819308431452754}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 3.5040002, y: 5.51, z: 3.5040002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.27, y: 1, z: 0.03}
+  m_TimeToStationary: 0.5
