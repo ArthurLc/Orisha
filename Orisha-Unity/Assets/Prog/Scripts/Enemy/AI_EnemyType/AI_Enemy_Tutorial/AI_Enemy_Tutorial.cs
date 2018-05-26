@@ -21,6 +21,11 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
 
     [HideInInspector] public Transform LookAtPlayer;
 
+    [SerializeField] private bool asCrocoHaveTheMask;
+    private bool asCrocoEquippedTheMask;
+    [SerializeField][Range(0.5f, 8.0f)] private float emissiveApparitionSpeed = 3.0f;
+    [SerializeField][Range(0.0f, 1.0f)] private float emissiveIntensityMax = 1.0f;
+
     private SandShaderPositionner sandShaderPos;
     public SandShaderPositionner SandShaderPos
     {
@@ -44,20 +49,31 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
 
         ChangeState(State.Idle, true);
 
+        asCrocoEquippedTheMask = asCrocoHaveTheMask;
+        CrocoMaterial.SetFloat("_EmissiveIntensity", 0.0f);
+
         if (crocoAnim == null) {
             Debug.LogError("Il manque le link de l'Animator du Croco !");
             Destroy(this);
         }
     }
-	
-	void Update ()
+
+    void OnApplicationQuit()
+    {
+        CrocoMaterial.SetFloat("_EmissiveIntensity", 1.0f);
+    }
+
+    void Update ()
     {
         if(debugLog)
             Debug.Log("State: " + state);
 
         UpdateDmgBoxList();
         if(!isFreeze && myCurrentState != null && myCurrentState.UpdateState != null)
-            myCurrentState.UpdateState(); 
+            myCurrentState.UpdateState();
+
+        if (asCrocoEquippedTheMask == false && asCrocoHaveTheMask)
+            EquipMask();
     }
 
 
@@ -170,6 +186,28 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
         yield break;
     }
 
+
+    private void EquipMask()
+    {
+        asCrocoEquippedTheMask = true;
+        StartCoroutine(EquipLerpMask());
+    }
+
+    private IEnumerator EquipLerpMask()
+    {
+        float timer = 0.0f;
+
+        while(timer < 1.0f)
+        {
+            timer = Mathf.Clamp(timer + (Time.fixedDeltaTime * emissiveApparitionSpeed), 0.0f, emissiveIntensityMax);
+            CrocoMaterial.SetFloat("_EmissiveIntensity", timer);
+            yield return null;
+        }
+
+        yield return null;
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         //if (debugEnabled)
@@ -196,7 +234,6 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
             }
         }
     }
-
 
     private void OnTriggerExit(Collider other)
     {

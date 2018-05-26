@@ -17,8 +17,7 @@ public class CallTransporter : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            //Call the platform
-            Debug.Log("Viens à moi !");
+            //Debug.Log("Viens à moi !");
             sandTransporter.CallTransporter(other);
         }
     }

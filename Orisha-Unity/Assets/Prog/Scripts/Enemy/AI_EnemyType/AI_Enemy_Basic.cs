@@ -37,6 +37,7 @@ public class AI_Enemy_Basic : MonoBehaviour
     protected bool isFreeze;
 
     public Material SandMaterial;
+    protected Material CrocoMaterial;
 
     [SerializeField] protected bool debugEnabled = true;
     public bool agentIsControlledByOther;
@@ -137,13 +138,13 @@ public class AI_Enemy_Basic : MonoBehaviour
         isInvincible = false;
         isFreeze = false;
         asCallReinforcement = false;
-        Material mat = new Material(SandMaterial);
+        CrocoMaterial = new Material(SandMaterial);
         Renderer tempRend = GetComponentInChildren<SandShaderPositionner>().gameObject.GetComponent<Renderer>();
         Material[] RememberMat = tempRend.materials;
 
         for (int i = 0; i < RememberMat.Length; i++)
         {
-            RememberMat[i] = mat;
+            RememberMat[i] = CrocoMaterial;
         }
 
         if (tempRend.material != null)
@@ -152,7 +153,7 @@ public class AI_Enemy_Basic : MonoBehaviour
         }
         tempRend.materials = RememberMat;
 
-        GetComponentInChildren<SandShaderPositionner>().myMat = mat;
+        GetComponentInChildren<SandShaderPositionner>().myMat = CrocoMaterial;
         myAgent = GetComponent<NavMeshAgent>();
     }
 
