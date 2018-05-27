@@ -671,11 +671,15 @@ public class TimeManager : MonoBehaviour
         if (currentAgent != null)
         {
             Unblock_Character(currentAgent.gameObject, true);
+            Unblock_Character(currentAgent.transform.GetChild(1).gameObject, true);
+            Unblock_Character(currentAgent.transform.GetChild(2).gameObject, true);
 
             currentAgent.FreezePosRot();
             if (freezeAnimation)
             {
                 Slow_OneCharacter(currentAgent.gameObject, 0.0f);
+                Slow_OneCharacter(currentAgent.transform.GetChild(1).gameObject, 0.0f);
+                Slow_OneCharacter(currentAgent.transform.GetChild(2).gameObject, 0.0f);
             }
         }
         else
@@ -708,6 +712,8 @@ public class TimeManager : MonoBehaviour
         if (currentAgent != null)
         {
             Unblock_Character(currentAgent.gameObject, true);
+            Unblock_Character(currentAgent.transform.GetChild(1).gameObject, true);
+            Unblock_Character(currentAgent.transform.GetChild(2).gameObject, true);
 
             Coroutine tempNewCoroutine = StartCoroutine(BlockCharacter_Timer(currentAgent, _timer));
             blockageEventList.Add(currentAgent.gameObject, tempNewCoroutine);
@@ -715,6 +721,8 @@ public class TimeManager : MonoBehaviour
             if (freezeAnimation)
             {
                 Slow_OneCharacter_WithTimer(currentAgent.gameObject, _timer, 0.0f);
+                Slow_OneCharacter_WithTimer(currentAgent.transform.GetChild(2).gameObject, _timer, 0.0f);
+                Slow_OneCharacter_WithTimer(currentAgent.transform.GetChild(1).gameObject, _timer, 0.0f);
             }
         }
         else

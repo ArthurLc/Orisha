@@ -47,7 +47,7 @@ public class StrengthInvoc : MonoBehaviour
 
     IEnumerator Invoque(float _frequency)
     {
-        while(me.Health > 0 && waves.Count > 0)
+        while(me.Health > 0 && waves.Count > 0 && me.myState != AI_Enemy_Basic.State.Die)
         {
             if (me.CurrentTarget)
             {
@@ -59,13 +59,16 @@ public class StrengthInvoc : MonoBehaviour
 
     private void Reset()
     {
-        StopCoroutine(Invoque(invoqueFrequency));
-        me.Reset();
+        if(me.Health > 0)
+        {
+            StopCoroutine(Invoque(invoqueFrequency));
+            me.Reset();
 
-        DestroyImmediate(currentWavesGo);
-        currentWavesGo = Instantiate(wavesPrefab, startPos, Quaternion.Euler(0, 0, 0));
-        InitWaves();
+            DestroyImmediate(currentWavesGo);
+            currentWavesGo = Instantiate(wavesPrefab, startPos, Quaternion.Euler(0, 0, 0));
+            InitWaves();
 
-        StartCoroutine(Invoque(invoqueFrequency));
+            StartCoroutine(Invoque(invoqueFrequency));
+        }
     }
 }

@@ -196,6 +196,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.22263874
+        functionName: AttackSound
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.22941174
         functionName: FailAttack
         data: 
@@ -210,6 +217,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 15
         messageOptions: 0
+      - time: 0.345438
+        functionName: LaunchHammerParticlesBoss
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.5558823
         functionName: DisableBox_Weapon
         data: 
@@ -219,20 +233,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.96764696
         functionName: EnableRotations
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.22263874
-        functionName: AttackSound
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.345438
-        functionName: LaunchHammerParticlesBoss
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

@@ -27,7 +27,7 @@ public class Ai_EnemyStateDie : AI_EnemyState
         myAnimCroco.SetTrigger("Die");
         myAnimWeapon.SetTrigger("Die");
         myAnimArmor.SetTrigger("Die");
-        myIndividu.DmgBoxList[0].enabled = false;
+        myIndividu.mydb.enabled = false;
         //myAnim.GetComponent<CapsuleCollider>().direction = 0;
 
         myAgent.updatePosition = false;

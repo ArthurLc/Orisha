@@ -185,7 +185,9 @@ public class AI_EnemyState
                 myAnimWeapon.enabled = false;
                 myAnimWeapon.gameObject.AddComponent<Rigidbody>();
                 myAnimWeapon.transform.parent = null;
-                myIndividu.DmgBoxList[0].GetComponent<BoxCollider>().isTrigger = false;
+                myIndividu.mydb.GetComponent<BoxCollider>().isTrigger = false;
+                myIndividu.mydb.enabled = false;
+                myIndividu.mydb.gameObject.layer = SortingLayer.NameToID("Littel_Obstacle");
             }
 		}
 		

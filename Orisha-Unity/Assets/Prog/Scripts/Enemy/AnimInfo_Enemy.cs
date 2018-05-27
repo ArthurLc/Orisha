@@ -27,6 +27,8 @@ public class AnimInfo_Enemy : MonoBehaviour
     [SerializeField] ParticleSystem boss_Estoc_Particle; 
     [SerializeField] ParticleSystem boss_Hammer_Particle;
 
+    [SerializeField] Animator[] toSync;
+
     // Use this for initialization
     void Start ()
     {

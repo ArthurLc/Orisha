@@ -16,7 +16,7 @@ public class Brasero : MonoBehaviour
 
     private void Start()
     {
-        if(mainPs.gameObject.activeSelf || subPs.gameObject.activeSelf)
+        if((mainPs && mainPs.gameObject.activeSelf) || (subPs && subPs.gameObject.activeSelf))
             fireLoopSource = SoundManager.instance.SFX_LoopAtPosition(fireLoop, transform.position, 0, 30);
     }
 

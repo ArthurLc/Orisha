@@ -126,7 +126,7 @@ public class AI_Enemy_Basic : MonoBehaviour
     protected bool isInvincible = false;
     [SerializeField] protected bool isBoss;
 
-
+    public DamageBox mydb;
     public bool IsInvincible
     {
         get { return isInvincible; }
@@ -141,6 +141,8 @@ public class AI_Enemy_Basic : MonoBehaviour
         CrocoMaterial = new Material(SandMaterial);
         Renderer tempRend = GetComponentInChildren<SandShaderPositionner>().gameObject.GetComponent<Renderer>();
         Material[] RememberMat = tempRend.materials;
+
+        mydb = weaponAnim.GetComponentsInChildren<DamageBox>()[0];
 
         for (int i = 0; i < RememberMat.Length; i++)
         {
