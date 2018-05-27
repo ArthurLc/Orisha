@@ -111,7 +111,7 @@ public class SoundManager : MonoBehaviour
 		if (_clipToPlay) 
 		{
 			sfxSource.clip = _clipToPlay;
-			sfxSource.Play ();
+            sfxSource.Play ();
 			return true;
 		}
 
@@ -128,7 +128,7 @@ public class SoundManager : MonoBehaviour
 		{			
 			int randSfx = Random.Range (0, _clipToPlay.Length);
 			sfxSource.clip = _clipToPlay [randSfx];
-			sfxSource.Play ();
+            sfxSource.Play ();
 			return true;
 		}
 
@@ -147,9 +147,10 @@ public class SoundManager : MonoBehaviour
 	{
 		if (_clipToPlay) 
 		{
-			SFX_Pool.Instance.GetSFXObject ( _position,_clipToPlay);
-			//SFX_Pool.GetSFXObject ( _position,_clipToPlay);
-			return true;
+            SFX_Object sfx = SFX_Pool.Instance.GetSFXObject ( _position,_clipToPlay);
+            sfx.source.loop = false;
+            //SFX_Pool.GetSFXObject ( _position,_clipToPlay);
+            return true;
 		}
 
 		return false;
@@ -162,7 +163,7 @@ public class SoundManager : MonoBehaviour
             SFX_Object sfx =  SFX_Pool.Instance.GetSFXObject(_position, _clipToPlay);
             sfx.source.minDistance = _minDistance;
             sfx.source.maxDistance = _maxDistance;
-
+            sfx.source.loop = false;
             return true;
         }
 

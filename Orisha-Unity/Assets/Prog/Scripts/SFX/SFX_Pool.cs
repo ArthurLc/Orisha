@@ -39,7 +39,7 @@ public class SFX_Pool : MonoBehaviour
 
 		bool isDone = InitwithChilds ();
 		if (!isDone) 
-			InitByCreatingChilds (20);
+			InitByCreatingChilds (50);
 	}
 
 	bool InitwithChilds()
