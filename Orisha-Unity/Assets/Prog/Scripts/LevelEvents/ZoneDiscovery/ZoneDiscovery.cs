@@ -23,7 +23,8 @@ public class ZoneDiscovery : MonoBehaviour
     [SerializeField] private string zoneName = "Fading Island";
     [SerializeField] float fadeInDuration = 0.5f;
     [SerializeField] float displayDuration = 5.0f;
-    [SerializeField] private bool isBeginDisplay = false; //Booléan nécessaire pour la cinématique
+    [SerializeField] private bool isCinematicFreezeEnnemies = true; //Booléan nécessaire pour la cinématique
+    public bool isBeginDisplay = false; //Booléan nécessaire pour la cinématique
     [Header("Cinematic")]
     [SerializeField] UnityEngine.Playables.PlayableDirector playableDirector;
     [Header("Debug")]
@@ -62,7 +63,8 @@ public class ZoneDiscovery : MonoBehaviour
             playableDirector.Play();
 
             TimeManager.Instance.Block_Player_WithTimer((float)playableDirector.duration);
-            TimeManager.Instance.Block_Ennemies_WithTimer((float)playableDirector.duration, true);
+            if(isCinematicFreezeEnnemies)
+                TimeManager.Instance.Block_Ennemies_WithTimer((float)playableDirector.duration, true);
 
             col.enabled = false;
         }

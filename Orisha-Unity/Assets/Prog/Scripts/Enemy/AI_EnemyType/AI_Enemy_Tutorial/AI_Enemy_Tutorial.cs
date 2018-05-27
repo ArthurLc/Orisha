@@ -215,23 +215,6 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
         {
             if (targetsInReach.Contains(other.transform) == false)
                 targetsInReach.Add(other.transform);
-            //StopAllCoroutines();
-            if (pe && health > 0)
-            {
-                pe.Add_Potential_Ennemy(this);
-            }
-            else if (!pe && health > 0)
-            {
-                if(string.Compare(other.name,"HB_Player") == 0)
-                    pe = other.GetComponentInParent<Potential_Enemy>();
-                else
-                    pe = other.GetComponent<Potential_Enemy>();
-
-                if (pe)
-                    pe.Add_Potential_Ennemy(this);
-                else
-                    Debug.Log("No Potential_Enemy script on : " + other.name + " or :" + other.transform.parent.name);
-            }
         }
     }
 
@@ -242,12 +225,6 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
         {
             if (targetsInReach.Contains(other.transform) == true)
                 targetsInReach.Remove(other.transform);
-
-            if (pe)
-            {
-                StopCoroutine(PotentialEnemypopRequest(2.0f));
-                StartCoroutine(PotentialEnemypopRequest(2.0f));
-            }
         }
     }
 

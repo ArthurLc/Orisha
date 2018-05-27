@@ -304,7 +304,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170560816656984}
-  m_LocalRotation: {x: 0.1134641, y: -0.43351614, z: 0.05512718, w: 0.8922727}
+  m_LocalRotation: {x: 0.11346408, y: -0.43351614, z: 0.055127207, w: 0.8922727}
   m_LocalPosition: {x: 100.61, y: 4.36, z: -157.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playableDirector: {fileID: 320422338962581484}
+  zoneDiscovery: {fileID: 114563603792787674}
   vCam1: {fileID: 114765763043609614}
   imageFilled: {fileID: 114479067575221860}
   imageButtonFB: {fileID: 114691729364575136}
@@ -573,6 +574,7 @@ MonoBehaviour:
   zoneName: Halivaara
   fadeInDuration: 1
   displayDuration: 4
+  isCinematicFreezeEnnemies: 0
   isBeginDisplay: 0
   playableDirector: {fileID: 320422338962581484}
   test: 0

@@ -416,7 +416,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209846455583538}
-  m_LocalRotation: {x: -0.06755507, y: 0.76383513, z: -0.08104224, w: -0.6367294}
+  m_LocalRotation: {x: -0.06755503, y: 0.76383513, z: -0.08104219, w: -0.6367294}
   m_LocalPosition: {x: 5.6, y: 16.28, z: -3.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1048,9 +1048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e109f1110e2e414085b8cc0ba19a075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneName: Halivaara
-  fadeInDuration: 1
-  displayDuration: 4
+  zoneName: 
+  fadeInDuration: 0
+  displayDuration: 0
   isBeginDisplay: 0
   playableDirector: {fileID: 320117989979405088}
   test: 0
