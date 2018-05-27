@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 23103956525749694}
   - component: {fileID: 65087102767491316}
   - component: {fileID: 65280721034990062}
+  - component: {fileID: 65255039056253678}
   - component: {fileID: 205265545486575236}
   m_Layer: 20
   m_Name: Houss_02
@@ -550,6 +551,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.098187, y: 9.285934, z: 5.010731}
   m_Center: {x: 0.000041947143, y: 4.642967, z: 0.1594069}
+--- !u!65 &65255039056253678
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1187499340583784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9671631, y: 2.4927254, z: 1.2554932}
+  m_Center: {x: 0.0025939941, y: 2.0394783, z: -2.218689}
 --- !u!65 &65280721034990062
 BoxCollider:
   m_ObjectHideFlags: 1
