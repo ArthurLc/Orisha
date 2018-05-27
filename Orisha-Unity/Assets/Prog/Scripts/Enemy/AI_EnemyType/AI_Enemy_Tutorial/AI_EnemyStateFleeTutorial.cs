@@ -22,7 +22,7 @@ public class AI_EnemyStateFleeTutorial : AI_EnemyStateFlee
     {
         base.CurrentUpdate();
 
-        if (myAgent.remainingDistance < minDistanceToTarget)
+        if (Vector3.Distance(myAgent.transform.position, myAgent.destination) < minDistanceToTarget)
         {
             (myIndividu as AI_Enemy_Tutorial).ChangeState(AI_Enemy_Tutorial.State.Taunt);
         }
@@ -51,6 +51,6 @@ public class AI_EnemyStateFleeTutorial : AI_EnemyStateFlee
     {
         base.PropulseAgent(_dir);
 
-        (myIndividu as AI_Enemy_Tutorial).ChangeState(AI_Enemy_Tutorial.State.IsHit);
+        //(myIndividu as AI_Enemy_Tutorial).ChangeState(AI_Enemy_Tutorial.State.IsHit);
     }
 }

@@ -15,6 +15,7 @@ public class Scenar_Skip : MonoBehaviour {
 
     [Header("Links")]
     [SerializeField] private UnityEngine.Playables.PlayableDirector playableDirector;
+    [SerializeField] private ZoneDiscovery zoneDiscovery;
     [SerializeField] private Cinemachine.CinemachineVirtualCamera vCam1;
     [SerializeField] private Image imageFilled;
     [SerializeField] private Image imageButtonFB;
@@ -53,6 +54,8 @@ public class Scenar_Skip : MonoBehaviour {
             else
             {
                 imageFilled.fillAmount = 1.0f;
+                if(zoneDiscovery != null)
+                    zoneDiscovery.isBeginDisplay = true;
                 playableDirector.Stop();
                 vCam1.gameObject.SetActive(false);
                 TimeManager.Instance.Unblock_Player();
