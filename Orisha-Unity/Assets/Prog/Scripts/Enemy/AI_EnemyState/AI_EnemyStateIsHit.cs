@@ -37,6 +37,7 @@ public class AI_EnemyStateIsHit : AI_EnemyState
 	{
 		if (myIndividu.Health > 0)
 		{
+            myIndividu.DmgBoxList[0].enabled = false;
 			secureCount = 0;
 			myAnimCroco.SetTrigger ("GetHit");
 			myAnimWeapon.SetTrigger ("GetHit");
