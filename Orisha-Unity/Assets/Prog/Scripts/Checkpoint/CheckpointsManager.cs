@@ -33,7 +33,8 @@ public static class CheckpointsManager {
         else
             player.RepopPlayerAtTransform(checkpointList[checkpointList.Count - 1].transform);
 
-        OnPlayerRespawn();
+        if (OnPlayerRespawn != null)
+            OnPlayerRespawn();
     }
     public static void RepopPlayerToCloserCheckpoint()
     {
@@ -51,6 +52,7 @@ public static class CheckpointsManager {
 
         player.RepopPlayerAtTransform(closerCheckpoint);
 
-        OnPlayerRespawn();
+        if(OnPlayerRespawn != null)
+            OnPlayerRespawn();
     }
 }
