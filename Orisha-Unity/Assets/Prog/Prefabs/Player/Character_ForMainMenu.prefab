@@ -894,6 +894,7 @@ GameObject:
   - component: {fileID: 54680416974653480}
   - component: {fileID: 135588751703069570}
   - component: {fileID: 59242168140094256}
+  - component: {fileID: 114264465034139582}
   m_Layer: 24
   m_Name: joint_Out_braid_C0_woman_parentConstraint1
   m_TagString: Untagged
@@ -2394,14 +2395,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610369159776184}
-  m_LocalRotation: {x: 0.0038805231, y: 0.9022874, z: -0.008122323, w: 0.43104106}
-  m_LocalPosition: {x: -86.76, y: 131.95, z: 786.49}
+  m_LocalRotation: {x: 0.0041330885, y: 0.9153489, z: -0.007996761, w: 0.4025612}
+  m_LocalPosition: {x: -86.77003, y: 131.93, z: 786.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4945345114383946}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 1.0320001, y: 128.931, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.0300001, y: 132.522, z: 0.065000005}
 --- !u!4 &4754172481108094
 Transform:
   m_ObjectHideFlags: 1
@@ -3191,7 +3192,7 @@ Rigidbody:
   m_GameObject: {fileID: 1935184077412666}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -3236,7 +3237,7 @@ Rigidbody:
   m_GameObject: {fileID: 1633251941954256}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -3251,7 +3252,7 @@ Rigidbody:
   m_GameObject: {fileID: 1042132927455978}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -3266,7 +3267,7 @@ Rigidbody:
   m_GameObject: {fileID: 1133271687746490}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -3281,7 +3282,7 @@ Rigidbody:
   m_GameObject: {fileID: 1034103458914534}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -3296,7 +3297,7 @@ Rigidbody:
   m_GameObject: {fileID: 1062286336983988}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -3313,7 +3314,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.33501, y: -7.210559, z: 0.026905313}
+  m_ConnectedAnchor: {x: 1.3343806, y: -7.211338, z: 0.026824147}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -3347,7 +3348,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -9.637785, y: -0.0007120182, z: 0.004770087}
+  m_ConnectedAnchor: {x: -9.639094, y: 0.00036917324, z: 0.0023897062}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -3360,8 +3361,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: -20
-    max: 20
+    min: 35.38718
+    max: 61.10294
     bounciness: 0
     bounceMinVelocity: 1000000
     contactDistance: 0
@@ -3381,7 +3382,7 @@ HingeJoint:
   m_Anchor: {x: 5.5, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -7.307574, y: 0.0024840534, z: 0.0013712151}
+  m_ConnectedAnchor: {x: -7.307408, y: 0.0032594204, z: 0.00025732373}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -3415,7 +3416,7 @@ HingeJoint:
   m_Anchor: {x: 10, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.025267467, y: -0.9965826, z: -1.2554576}
+  m_ConnectedAnchor: {x: 0.023165762, y: -0.997263, z: -1.2547541}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -3449,7 +3450,7 @@ HingeJoint:
   m_Anchor: {x: 12, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.2110941, y: -0.0025984608, z: -0.000813961}
+  m_ConnectedAnchor: {x: -2.2110171, y: -0.0018936042, z: -0.0016100407}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -3483,7 +3484,7 @@ HingeJoint:
   m_Anchor: {x: 2.75, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -6.9820566, y: 0.0017742664, z: -0.0019243741}
+  m_ConnectedAnchor: {x: -6.982823, y: 0.0026251376, z: -0.00392328}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -3735,6 +3736,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114264465034139582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1633251941954256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9844d444de8688549907730336b8cbca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  braids:
+  - {fileID: 54685921192081346}
+  - {fileID: 54960603752890514}
+  - {fileID: 54007385339941292}
+  - {fileID: 54703099235512316}
+  - {fileID: 54880891478540396}
+  permissivity: 10
 --- !u!114 &114272513922817008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3819,6 +3838,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5858c8f2c220fb4ebeb6d901e0d6087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  psDefault: {fileID: 0}
+  psStrength: {fileID: 0}
+  psSpeed: {fileID: 0}
+  psHealth: {fileID: 0}
 --- !u!114 &114799582247084780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3845,6 +3868,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5858c8f2c220fb4ebeb6d901e0d6087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  psDefault: {fileID: 0}
+  psStrength: {fileID: 0}
+  psSpeed: {fileID: 0}
+  psHealth: {fileID: 0}
 --- !u!114 &114951820100720192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4050,8 +4077,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 4017894502485758}
   m_AABB:
-    m_Center: {x: 0, y: 77.853516, z: -2.2265625}
-    m_Extent: {x: 24.943043, y: 40.119995, z: 31.143738}
+    m_Center: {x: 0.001953125, y: 77.856445, z: -2.2265625}
+    m_Extent: {x: 24.794235, y: 38.843708, z: 27.794151}
   m_DirtyAABB: 0
 --- !u!137 &137541902982589950
 SkinnedMeshRenderer:
