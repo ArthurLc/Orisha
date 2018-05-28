@@ -4507,7 +4507,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 82a1a3691d751024a8fcda90666363e7, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 100
+  baseHealth: 1000
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -4540,7 +4540,7 @@ MonoBehaviour:
   crocoAnim: {fileID: 95694720023802208}
   weaponAnim: {fileID: 95199340993919678}
   armorAnim: {fileID: 95469932135090380}
-  isBoss: 0
+  isBoss: 1
   mydb: {fileID: 0}
 --- !u!135 &135790687951738452
 SphereCollider:
