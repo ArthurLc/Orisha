@@ -273,4 +273,10 @@ public class AI_Enemy_Basic : MonoBehaviour
         weaponAnim.SetFloat("Velocity", 5);
         armorAnim.SetFloat("Velocity", 5);
     }
+
+    public void Heal(float amount)
+    {
+        if(health > 0)
+            health = Mathf.Clamp(health + amount, 0, BaseHealth);
+    }
 }
