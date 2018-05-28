@@ -43,7 +43,7 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
         rb = GetComponent<Rigidbody>();
         sandShaderPos = GetComponentInChildren<SandShaderPositionner>();
         myAgent.speed = sprintSpeed;
-        health = Basehealth;
+        health = baseHealth;
         agentIsControlledByOther = false;
         patrolIndex = 0;
 

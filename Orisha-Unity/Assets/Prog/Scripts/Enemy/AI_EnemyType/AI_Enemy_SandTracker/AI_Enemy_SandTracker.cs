@@ -43,7 +43,7 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
 		sandShaderPos = GetComponentInChildren<SandShaderPositionner>();
 		weaponSandShaderPos = weaponAnim.GetComponentInChildren<SandShaderPositionner>();
 		myAgent.speed = sprintSpeed;
-        health = Basehealth;
+        health = baseHealth;
         agentIsControlledByOther = false;
 
         ChangeState(State.Idle, true);
@@ -60,14 +60,14 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
             Debug.Log("State: " + state);
 
         UpdateDmgBoxList();
-        if(!isFreeze && myCurrentState != null && myCurrentState.UpdateState != null)
+        if(!isFreeze && !isFreezeByScript && myCurrentState != null && myCurrentState.UpdateState != null)
             myCurrentState.UpdateState(); 
     }
 
 
     private void FixedUpdate()
     {
-        if (!isFreeze && myCurrentState != null && myCurrentState.FixedUpdateState != null)
+        if (!isFreeze && !isFreezeByScript && myCurrentState != null && myCurrentState.FixedUpdateState != null)
             myCurrentState.FixedUpdateState();
     }
 

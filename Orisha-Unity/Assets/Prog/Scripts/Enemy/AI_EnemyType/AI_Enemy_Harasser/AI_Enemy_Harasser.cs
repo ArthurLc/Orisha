@@ -24,7 +24,7 @@ public class AI_Enemy_Harasser : AI_Enemy_Basic
         myAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         myAgent.speed = sprintSpeed;
-        health = Basehealth;
+        health = baseHealth;
         agentIsControlledByOther = false;
 
         ChangeState(State.Patroling, true);

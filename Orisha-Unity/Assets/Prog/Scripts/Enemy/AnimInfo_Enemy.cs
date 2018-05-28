@@ -225,7 +225,13 @@ public class AnimInfo_Enemy : MonoBehaviour
 
     void SpawnEnemies()
     {
-        GetComponentInParent<StrengthInvoc>().SpawnEnemies();
+        StrengthInvoc si = GetComponentInParent<StrengthInvoc>();
+        if(si)
+            si.SpawnEnemies();
+        
+        Albinos a = GetComponentInParent<Albinos>();
+        if (a)
+            a.SpawnEnemies();
     }
 
     void ActivateInvincibility()

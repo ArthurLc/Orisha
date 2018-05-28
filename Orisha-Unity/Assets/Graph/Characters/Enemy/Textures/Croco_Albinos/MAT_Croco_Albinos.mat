@@ -39,11 +39,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissiveMap:
-        m_Texture: {fileID: 2800000, guid: a63a7ef332583004f98d1682716ff968, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8265313294940bc419f204423b63ccfb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: babb23daf88c4324bbaaaa3997c51fe3, type: 3}
+        m_Texture: {fileID: 2800000, guid: ab8eed76f634cce45b55aa053b2ad341, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MeltTex:
@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: f9e6c6d1a8989354e9dcb94f213dc18c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 87f81b11d3da0194ead260b63f3e58a4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -96,5 +96,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColor: {r: 0.68235296, g: 0.6039216, b: 0.34117648, a: 1}
+    - _EmissiveColor: {r: 0.9245283, g: 0.16135636, b: 0.20465712, a: 1}
     - _MeltColor: {r: 1, g: 1, b: 1, a: 1}

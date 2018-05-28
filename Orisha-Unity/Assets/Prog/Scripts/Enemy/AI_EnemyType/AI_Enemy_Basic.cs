@@ -35,6 +35,8 @@ public class AI_Enemy_Basic : MonoBehaviour
     public Transform CurrentTarget { get { return currentTarget; } }
 
     protected bool isFreeze;
+    protected bool isFreezeByScript;
+
 
     public Material SandMaterial;
     protected Material CrocoMaterial;
@@ -61,7 +63,8 @@ public class AI_Enemy_Basic : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField]
-    protected float Basehealth = 50;
+    protected float baseHealth = 50;
+    public float BaseHealth { get { return baseHealth; } }
     [SerializeField] protected float sprintSpeed = 4;
     [SerializeField] protected float walkSpeed = 2;
     [SerializeField] protected float attackDamages = 10;
@@ -122,6 +125,7 @@ public class AI_Enemy_Basic : MonoBehaviour
     }
 
     protected NavMeshAgent myAgent;
+    public NavMeshAgent MyAgent { get { return myAgent; } }
 
     protected bool isInvincible = false;
     [SerializeField] protected bool isBoss;
@@ -184,6 +188,17 @@ public class AI_Enemy_Basic : MonoBehaviour
         isFreeze = false;
     }
 
+    public void HardFreezeStates()
+    {
+        isFreezeByScript = true;
+    }
+
+    public void HardUnfreezeStates()
+    {
+        isFreezeByScript = false;
+    }
+
+
     public void FreezePosRot()
     {
 		if (myAgent != null && myAgent.isOnNavMesh) 
@@ -234,7 +249,7 @@ public class AI_Enemy_Basic : MonoBehaviour
 
     public virtual void Reset()
     {
-        health = Basehealth;
+        health = baseHealth;
         currentTarget = null;
     }
 
@@ -243,5 +258,19 @@ public class AI_Enemy_Basic : MonoBehaviour
         crocoAnim.SetTrigger("CallForAlly");
         weaponAnim.SetTrigger("CallForAlly");
         armorAnim.SetTrigger("CallForAlly");
+
+        crocoAnim.SetFloat("Velocity", 0);
+        weaponAnim.SetFloat("Velocity", 0);
+        armorAnim.SetFloat("Velocity", 0);
+    }
+
+    public void GoTo(Transform dest)
+    {
+        if(myAgent)
+            myAgent.SetDestination(dest.position);
+
+        crocoAnim.SetFloat("Velocity", 5);
+        weaponAnim.SetFloat("Velocity", 5);
+        armorAnim.SetFloat("Velocity", 5);
     }
 }
