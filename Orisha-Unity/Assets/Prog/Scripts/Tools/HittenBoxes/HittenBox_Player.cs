@@ -19,7 +19,7 @@ public class HittenBox_Player : MonoBehaviour, HittenBox
     public void TakeDamage(int _damage)
     {
         if (player != null)
-            player.TakeDamage(_damage);
+            player.TakeDamage(_damage,false);
     }
     private void PropulsePlayer(DamageBox _box, int _damage)
     {

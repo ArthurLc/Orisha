@@ -241,7 +241,7 @@ namespace vd_Player
         }
 
 
-        public void TakeDamage(int _damages)
+        public void TakeDamage(int _damages, bool _takeAnimControl)
         {
             health -= _damages;
             lifeBarHUD.UpdateLifeBar((float)health / (float)maxHealth);
@@ -263,13 +263,20 @@ namespace vd_Player
 					isPlayerDying = true;
 				}
 			}
-			else if(!DashController.IsDashing)
+			else if(!DashController.IsDashing && !_takeAnimControl)
 			{
 				if (_damages > 10)
 					anim.SetTrigger ("HugeHit");
 				else
 					anim.SetTrigger ("SoftHit");
 			}
+        }
+
+        public void RoarDamages(int _damages, Vector3 _roarSource)
+        {
+            TakeDamage(_damages, true);
+            playerTr.forward = (playerTr.position - _roarSource).normalized;
+            anim.SetTrigger("Eject");
         }
 
         public void HealPlayer(int _healNumber)

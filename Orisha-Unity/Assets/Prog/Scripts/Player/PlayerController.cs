@@ -29,6 +29,7 @@ namespace vd_Player
     {
 
         [SerializeField] CharacterInitialization ci; //Référence nécessaire pour récupérer le numéro du joueur
+        public CharacterInitialization Ci { get { return ci; } }
         [SerializeField] Animator anim;
         [SerializeField] Rigidbody rb;
         [SerializeField] Transform tr;

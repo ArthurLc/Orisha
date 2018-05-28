@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using vd_Player;
 
 [RequireComponent(typeof(AI_Enemy_Basic))]
 public class StrengthInvoc : MonoBehaviour
@@ -12,8 +13,12 @@ public class StrengthInvoc : MonoBehaviour
     [SerializeField] float invoqueFrequency = 20.0f;
     Vector3 startPos;
     GameObject currentWavesGo;
-	// Use this for initialization
-	void Start ()
+
+    [SerializeField] int roarDamages = 10;
+
+    [SerializeField] LayerMask maskPlayer;
+    // Use this for initialization
+    void Start ()
     {
         me = GetComponent<AI_Enemy_Basic>();
         startPos = transform.position;
@@ -43,6 +48,18 @@ public class StrengthInvoc : MonoBehaviour
     {
         waves[0].SetActive(true);
         waves.Remove(waves[0]);
+
+        Collider[] cols = Physics.OverlapSphere(me.transform.position, 50, maskPlayer);
+
+        if (cols.Length > 0)
+        {
+            for (int i = 0; i < cols.Length; ++i)
+            {
+                PlayerController pc = cols[i].GetComponentInParent<PlayerController>();
+                if (pc)
+                    pc.Ci.RoarDamages(roarDamages, transform.position);
+            }
+        }
     }
 
     IEnumerator Invoque(float _frequency)
@@ -51,10 +68,11 @@ public class StrengthInvoc : MonoBehaviour
         {
             if (me.CurrentTarget)
             {
-                me.CallEnemies();
+                me.CallEnemies();               
             }
             yield return new WaitForSeconds(_frequency);
         };
+
     }
 
     private void Reset()
