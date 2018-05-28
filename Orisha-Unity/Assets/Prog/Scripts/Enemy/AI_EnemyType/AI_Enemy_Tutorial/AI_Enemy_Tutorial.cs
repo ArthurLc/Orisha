@@ -26,7 +26,7 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
     [SerializeField] private bool asCrocoHaveTheMask;
     private bool asCrocoEquippedTheMask;
     [SerializeField][Range(0.5f, 8.0f)] private float emissiveApparitionSpeed = 3.0f;
-    [SerializeField][Range(0.0f, 1.0f)] private float emissiveIntensityMax = 1.0f;
+    private float emissiveIntensityMax = 1.0f;
 
     private SandShaderPositionner sandShaderPos;
     public SandShaderPositionner SandShaderPos
@@ -51,6 +51,7 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
 
         ChangeState(State.Idle, true);
 
+        emissiveIntensityMax = CrocoMaterial.GetFloat("_EmissiveIntensity");
         asCrocoEquippedTheMask = asCrocoHaveTheMask;
         if(asCrocoEquippedTheMask == false)
             CrocoMaterial.SetFloat("_EmissiveIntensity", 0.0f);
