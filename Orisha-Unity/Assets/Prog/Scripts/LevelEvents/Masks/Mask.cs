@@ -24,6 +24,9 @@ public class Mask : MonoBehaviour {
     [SerializeField] private MeshFilter meshFilter;
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private Sprite sprite2D;
+    [SerializeField] private ParticleSystem particleSystem;
+
+    [SerializeField] private bool isEnable = true;
 
     //
     private Collider colTrigger;
@@ -75,6 +78,9 @@ public class Mask : MonoBehaviour {
     {
         if (colTrigger.enabled == false)
             AddThisMaskToTheList();
+
+        meshRenderer.enabled = isEnable;
+        particleSystem.gameObject.SetActive(isEnable);
     }
 
     /// <summary>

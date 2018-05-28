@@ -33,8 +33,6 @@ public class BraidManager : MonoBehaviour {
             braidsOriginRot.Add(braids[i].transform.localEulerAngles);
             braidsPreviousRot.Add(braids[i].transform.localEulerAngles);
         }
-
-        Debug.Log(braidsOriginPos[0].x);
 	}
 	
 	// Update is called once per frame
