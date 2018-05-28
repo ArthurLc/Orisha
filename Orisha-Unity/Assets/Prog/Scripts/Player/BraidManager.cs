@@ -15,6 +15,7 @@ using UnityEngine;
 public class BraidManager : MonoBehaviour {
 
     [SerializeField] private List<Rigidbody> braids;
+    private Vector3 braidOriginalPos;
     private List<Vector3> braidsPreviousRot;
     private List<Vector3> braidsOriginPos;
     private List<Vector3> braidsOriginRot;
@@ -22,6 +23,8 @@ public class BraidManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        braidOriginalPos = transform.localPosition;
+
         braidsPreviousRot = new List<Vector3>();
         braidsOriginPos = new List<Vector3>();
         braidsOriginRot = new List<Vector3>();
@@ -55,5 +58,7 @@ public class BraidManager : MonoBehaviour {
             
             braidsPreviousRot[i] = braids[i].transform.localEulerAngles;
         }
+
+        transform.localPosition = braidOriginalPos;
     }
 }
