@@ -36,7 +36,8 @@ public class PlayerAnimEvents : MonoBehaviour
     [SerializeField] private PlayerBone bone_LeftArm;
 
     [Header("Particle systems")]
-    [SerializeField] private ParticleSystem ps_DustShockwave;
+	[SerializeField] private ParticleSystem ps_DustShockwave;
+    [SerializeField] private ParticleSystem ps_DoubleAttacks;
 
     [Header("sfx")]
     [SerializeField] private AudioClip swoosh;
@@ -389,6 +390,17 @@ public class PlayerAnimEvents : MonoBehaviour
                 ps_DustShockwave.Play();
         }
     }
+
+	/// <summary>
+	/// Active les particules de doubleAttacks (sable soulevé l'atterrissage du personnage)
+	/// </summary>
+	public void DoubleAttacks()
+	{
+		if (isActive) {
+			if (ps_DoubleAttacks.isPlaying == false)
+				ps_DoubleAttacks.Play ();
+		}
+	}
 
     /// <summary>
     /// Gestion des IK

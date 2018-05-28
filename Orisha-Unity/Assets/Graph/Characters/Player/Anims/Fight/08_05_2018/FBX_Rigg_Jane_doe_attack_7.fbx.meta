@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: c9b3605ad58cb0248b46cb5c4305de02
-timeCreated: 1525702496
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: accesoire6
     100002: cheveux
@@ -202,6 +200,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -235,21 +234,21 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: DisableAllBoxes
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0
         functionName: DisableRotations
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.42079926
-        functionName: EnableBox_RightArm
+      - time: 0
+        functionName: DisableAllBoxes
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.39732602
+        functionName: DoubleAttacks
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -262,14 +261,21 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.64311385
+      - time: 0.42079926
+        functionName: EnableBox_RightArm
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.74771637
         functionName: DisableAllBoxes
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.6621411
+      - time: 0.9194633
         functionName: EnableRotations
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -310,6 +316,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
