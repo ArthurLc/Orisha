@@ -1,20 +1,78 @@
 fileFormatVersion: 2
 guid: 7da25b969d9dd6e42ba0611d406d8f9a
-timeCreated: 1522760988
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: LOD_0
+    100004: LOD_1
+    100006: LOD_2
+    100008: LOD_3
+    100010: LOD_4
+    100012: LOD_5
+    100014: LOD_6
+    100016: polySurface_ground_02 1
+    100018: polySurface_ground_02 2
+    100020: polySurface_ground_02 3
+    100022: polySurface_ground_02 4
+    100024: polySurface_ground_02 5
+    100026: polySurface_ground_02 6
+    100028: polySurface_ground_02 7
     400000: //RootNode
+    400002: LOD_0
+    400004: LOD_1
+    400006: LOD_2
+    400008: LOD_3
+    400010: LOD_4
+    400012: LOD_5
+    400014: LOD_6
+    400016: polySurface_ground_02 1
+    400018: polySurface_ground_02 2
+    400020: polySurface_ground_02 3
+    400022: polySurface_ground_02 4
+    400024: polySurface_ground_02 5
+    400026: polySurface_ground_02 6
+    400028: polySurface_ground_02 7
     2300000: //RootNode
+    2300002: polySurface_ground_02 1
+    2300004: polySurface_ground_02 2
+    2300006: polySurface_ground_02 3
+    2300008: polySurface_ground_02 4
+    2300010: polySurface_ground_02 5
+    2300012: polySurface_ground_02 6
+    2300014: polySurface_ground_02 7
     3300000: //RootNode
+    3300002: polySurface_ground_02 1
+    3300004: polySurface_ground_02 2
+    3300006: polySurface_ground_02 3
+    3300008: polySurface_ground_02 4
+    3300010: polySurface_ground_02 5
+    3300012: polySurface_ground_02 6
+    3300014: polySurface_ground_02 7
     4300000: polySurface_ground_02
+    4300002: polySurface_ground_02
+    4300004: polySurface_ground_02
+    4300006: polySurface_ground_02
+    4300008: polySurface_ground_02
+    4300010: polySurface_ground_02
+    4300012: polySurface_ground_02
     9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_rocks24
+    second: {fileID: 2100000, guid: da21a26c9b3d6774884a5af223f20f5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_sand44
+    second: {fileID: 2100000, guid: 7390197a2f0833e458a2cef7ba28f08c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -27,6 +85,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -51,11 +111,15 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
