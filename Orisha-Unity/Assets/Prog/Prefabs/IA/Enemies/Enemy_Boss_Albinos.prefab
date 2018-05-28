@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 135659439027942570}
   - component: {fileID: 54526057771111520}
   - component: {fileID: 114174375917211482}
+  - component: {fileID: 114738091195610536}
   m_Layer: 18
   m_Name: Enemy_Boss_Albinos
   m_TagString: Enemy
@@ -2199,8 +2200,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285026705450174}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.99282676, z: -0, w: -0.11956224}
+  m_LocalPosition: {x: -768.4555, y: 155.46526, z: 602.6795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4095051810475900}
@@ -4122,7 +4123,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: e05e34c24ba5090458e92942991506e4, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 1000
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -4155,7 +4156,7 @@ MonoBehaviour:
   crocoAnim: {fileID: 95798222094412318}
   weaponAnim: {fileID: 95459261424719534}
   armorAnim: {fileID: 95967492219008182}
-  isBoss: 0
+  isBoss: 1
   mydb: {fileID: 0}
 --- !u!114 &114196058620186784
 MonoBehaviour:
@@ -4282,6 +4283,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114174375917211482}
   partOfBody: 5
+--- !u!114 &114738091195610536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285026705450174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff50223213519814eaa0e1fe06347f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavesPrefab: {fileID: 1959491226148388, guid: 83cca14dbac998b40ae279ed5fbd53e9,
+    type: 2}
+  invoqueFrequency: 20
+  backUpPos: {fileID: 0}
 --- !u!114 &114768408401317994
 MonoBehaviour:
   m_ObjectHideFlags: 1
