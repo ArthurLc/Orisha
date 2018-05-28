@@ -76,6 +76,9 @@ public class Scenar : MonoBehaviour
         {
             if ((playOneTimeOnly && !hasBeenPlayed && !isPlaying) || !playOneTimeOnly && !isPlaying)
             {
+                if (redirectPlayerOnPlay == false)
+                    TimeManager.Instance.Block_Player_WithTimer((float)mainTimeline.duration);
+
 				wall.SetTrWall (playerBeginDest.position);
 				wall.SetSizeWall (30.0f);
                 mainTimeline.Play();
