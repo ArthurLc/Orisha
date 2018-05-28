@@ -20,16 +20,17 @@ public class Albinos : MonoBehaviour
     int waveId;
 
     bool wantToInvoc = false;
-    [SerializeField] Transform backUpPos;
+    [SerializeField] Transform spawnPos;
 
     AI_Enemy_Basic ally;
 	// Use this for initialization
 	void Start ()
     {
+        spawnPos.parent = null;
         me = GetComponent<AI_Enemy_Basic>();
         startPos = transform.position;
 
-        currentWavesGo = Instantiate(wavesPrefab, startPos, Quaternion.Euler(0,0,0));
+        currentWavesGo = Instantiate(wavesPrefab, spawnPos.position, Quaternion.Euler(0,0,0));
 
         waves = new List<GameObject>();
 
@@ -62,7 +63,7 @@ public class Albinos : MonoBehaviour
     {
         Debug.Log("Vas là bas !");
         me.HardFreezeStates();
-        me.GoTo(backUpPos);
+        me.GoTo(startPos);
         me.IsInvincible = true;
         wantToInvoc = true;
     }
@@ -114,6 +115,7 @@ public class Albinos : MonoBehaviour
     {
         waves[0].SetActive(true);
         ally = waves[0].transform.GetChild(1).GetChild(0).GetComponent<AI_Enemy_Basic>();
+        ally.transform.LookAt(me.CurrentTarget.transform);
         waves.Remove(waves[0]);
     }
 
@@ -123,7 +125,7 @@ public class Albinos : MonoBehaviour
         {
             me.Reset();
             DestroyImmediate(currentWavesGo);
-            currentWavesGo = Instantiate(wavesPrefab, startPos, Quaternion.Euler(0, 0, 0));
+            currentWavesGo = Instantiate(wavesPrefab, spawnPos.position, Quaternion.Euler(0, 0, 0));
             InitWaves();
         }
     }

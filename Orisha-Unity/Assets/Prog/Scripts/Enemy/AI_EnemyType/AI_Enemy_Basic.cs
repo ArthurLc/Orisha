@@ -264,10 +264,10 @@ public class AI_Enemy_Basic : MonoBehaviour
         armorAnim.SetFloat("Velocity", 0);
     }
 
-    public void GoTo(Transform dest)
+    public void GoTo(Vector3 dest)
     {
         if(myAgent)
-            myAgent.SetDestination(dest.position);
+            myAgent.SetDestination(dest);
 
         crocoAnim.SetFloat("Velocity", 5);
         weaponAnim.SetFloat("Velocity", 5);

@@ -4246,6 +4246,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114454595616049954}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114645559349912058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4351,7 +4352,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 208cc4222e68a894797c126bce70694e, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 50
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -4376,7 +4377,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cabb29aa47112e54ba4cf75ced891963, type: 3}
   - {fileID: 8300000, guid: 6e24feeb246d725479f9f160353344b7, type: 3}
   health: 250
-  abandonDistance: 10.5
+  abandonDistance: 100
   range: 2
   dieWhenTouchingTarget: 0
   debugLog: 0
@@ -4384,6 +4385,8 @@ MonoBehaviour:
   crocoAnim: {fileID: 95694720023802208}
   weaponAnim: {fileID: 95199340993919678}
   armorAnim: {fileID: 95469932135090380}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!135 &135790687951738452
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -4394,7 +4397,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 50
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136907616015303514
 CapsuleCollider:
