@@ -13,6 +13,8 @@ using UnityEngine.AI;
 public class AI_Enemy_Tutorial : AI_Enemy_Basic
 {
     // Lieu d'idle
+    [SerializeField] private bool isDisable = false;
+
     protected Vector3 startTransform;
     [SerializeField] private List<Transform> patrolTransform;
     protected int patrolIndex;
@@ -50,7 +52,8 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
         ChangeState(State.Idle, true);
 
         asCrocoEquippedTheMask = asCrocoHaveTheMask;
-        CrocoMaterial.SetFloat("_EmissiveIntensity", 0.0f);
+        if(asCrocoEquippedTheMask == false)
+            CrocoMaterial.SetFloat("_EmissiveIntensity", 0.0f);
 
         if (crocoAnim == null) {
             Debug.LogError("Il manque le link de l'Animator du Croco !");
@@ -74,6 +77,11 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
 
         if (asCrocoEquippedTheMask == false && asCrocoHaveTheMask)
             EquipMask();
+
+        if(isDisable)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 
