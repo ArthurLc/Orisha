@@ -33,7 +33,8 @@ public class FightWall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Potential_Enemy.IsOnFight && !wallIsActivaded) {//Detection d'un enemy et activation de la zone
-			wallIsActivaded = true;
+			float distWallPlayer = (Player.position - transform.position).magnitude;
+			wallIsActivaded = distWallPlayer < sizeWall ? true : false;
 		}
 
 		//Gestion de la zone
