@@ -27,6 +27,13 @@ public class FightWall : MonoBehaviour {
 		Player = FindObjectOfType<vd_Player.CharacterInitialization>().PlayerTr;
 		particleSys = GetComponent<ParticleSystem>();
 
+		Quaternion rotation = Quaternion.identity;
+		rotation.eulerAngles = new Vector3(transform.rotation.eulerAngles.x - transform.parent.rotation.eulerAngles.x,
+										   transform.rotation.eulerAngles.y - transform.parent.rotation.eulerAngles.y,
+										   transform.rotation.eulerAngles.z - transform.parent.rotation.eulerAngles.z);
+
+		transform.rotation = rotation;
+
 		SetSizeWall (sizeWall);
 	}
 	
