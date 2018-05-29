@@ -340,7 +340,7 @@ public class PlayerAnimEvents : MonoBehaviour
         if (isActive)
         {
             Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Little_Obstacle"), true);
-            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Jar"), false);
+            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("BreakJar"), false);
         }
     }
 
@@ -352,7 +352,7 @@ public class PlayerAnimEvents : MonoBehaviour
         if (isActive)
         {
             Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Little_Obstacle"), false);
-            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Jar"), true);
+            Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("BreakJar"), true);
 
         }
     }
