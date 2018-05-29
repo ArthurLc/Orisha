@@ -32,8 +32,10 @@ public class OpenDoor : MonoBehaviour {
 
     private float lerpValueMask = 0.0f;
     private bool doorActivaded = false;
-    private bool isTryOpenning = false;
+	private bool isTryOpenning = false;
+    private bool emissiveActivated = false;
 
+	private MeshRenderer MrEmissve;
 
     private MaskInventory maskInventory;
     private Transform playerPos;
@@ -58,6 +60,10 @@ public class OpenDoor : MonoBehaviour {
 				doorPart[2] = partDoor.GetChild(2);
 			}
         }
+		MrEmissve = GetComponent<MeshRenderer> ();
+
+		MrEmissve.sharedMaterials[1].SetColor ("_EmissionColor", Color.clear);
+		MrEmissve.sharedMaterials[2].SetColor ("_EmissionColor", Color.clear);
 	}
 	
 	// Update is called once per frame
@@ -65,9 +71,6 @@ public class OpenDoor : MonoBehaviour {
 
         if (maskInventory == null)
             return;
-
-
-        Debug.Log("up : " + maskInventory.ListMasks.Count);
 
 		if (isTryOpenning && maskInventory.ListMasks.Count >= nbrMaskToOpen) {
 			lerpValueMask += Time.deltaTime * 0.5f;
@@ -86,14 +89,33 @@ public class OpenDoor : MonoBehaviour {
 			//Fin du lerp reset rotation , list player, et déclanche la porte
 			if (lerpValueMask >= 1.0f) {
 				for (int i = 0; i < 3; i++) {
-					listDoorMask [i].rotation = Quaternion.Euler (0.0f, 90.0f, 0.0f);
+					listDoorMask [i].rotation = transform.GetChild (i).rotation;
 					listDoorMask [i].parent = doorPart [i];
 				}
 				maskInventory.ResetListMask ();
-				doorActivaded = true;
+
+				lerpValueMask = 0.0f;
+				emissiveActivated = true;
 			}
 		} else {
 			isTryOpenning = false;
+		}
+
+		if (emissiveActivated) {
+			lerpValueMask += Time.deltaTime;
+			if (lerpValueMask <= 1.0f) {
+				Color emissiveColor = new Color (255.0f, 135.0f, 0.0f, 255.0f);
+				float H,S,V;
+				Color.RGBToHSV (emissiveColor, out H, out S, out V);
+
+				MrEmissve.sharedMaterials[1].SetColor ("_EmissionColor", Color.HSVToRGB (H, S, lerpValueMask));
+				MrEmissve.sharedMaterials[2].SetColor ("_EmissionColor", Color.HSVToRGB (H, S, lerpValueMask));
+			} else {
+				doorActivaded = true;
+				emissiveActivated = false;
+
+				playerPos.GetComponentInParent<CameraShaker>().ShakeActualCam (6.5f, 0.1f, 0.001f);
+			}
 		}
 
         //move the door
@@ -101,9 +123,9 @@ public class OpenDoor : MonoBehaviour {
         {
 			Debug.Log ("OPENING !!");
             //transform.position += (Vector3.up * Time.deltaTime);
-			doorPart[0].localPosition += (partDoor.up * Time.deltaTime);
-			doorPart[1].localPosition += (partDoor.right * Time.deltaTime);
-			doorPart[2].localPosition += (-partDoor.right * Time.deltaTime);
+			doorPart[0].position += (partDoor.up * Time.deltaTime);
+			doorPart[1].position += (partDoor.right * Time.deltaTime);
+			doorPart[2].position += (-partDoor.right * Time.deltaTime);
 
 			if (doorPart [0].localPosition.y >= 9.0f) {
 				isTryOpenning = false;
@@ -125,7 +147,6 @@ public class OpenDoor : MonoBehaviour {
         {
             playerPos = other.transform;
             maskInventory = other.GetComponentInParent<MaskInventory>();
-            Debug.Log("in : " + maskInventory.ListMasks.Count);
             if (maskInventory.ListMasks.Count >= nbrMaskToOpen)
             {
                 for (int i = 0; i < StockMask.childCount; i++)
