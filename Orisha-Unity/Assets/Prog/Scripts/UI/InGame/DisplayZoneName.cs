@@ -97,9 +97,9 @@ public class DisplayZoneName : MonoBehaviour
             timerBG += Time.deltaTime;
             if (background != null && ((timerBG * transparenceSpeed) < transparenceMax))
             {
-                background.color = new Color(color_BG.r, color_BG.r, color_BG.b, (timerBG * transparenceSpeed) / 100.0f);
+                background.color = new Color(color_BG.r, color_BG.g, color_BG.b, (timerBG * transparenceSpeed) / 100.0f);
                 if (timerBG > transparenceMax)
-                    background.color = new Color(color_BG.r, color_BG.r, color_BG.b, transparenceMax);
+                    background.color = new Color(color_BG.r, color_BG.g, color_BG.b, transparenceMax);
             }
             if (timer > (fadeInDuration / zoneName.Length)) // Affichage lettre/lettre
             {
@@ -124,7 +124,7 @@ public class DisplayZoneName : MonoBehaviour
             timer = displayDuration;
             timerBG = fadeInDuration;
             state = DisplayState.showing;
-            background.color = new Color(color_BG.r, color_BG.r, color_BG.b, transparenceMax);
+            background.color = new Color(color_BG.r, color_BG.g, color_BG.b, transparenceMax);
         }
     }
 
@@ -136,9 +136,9 @@ public class DisplayZoneName : MonoBehaviour
             timerBG -= Time.deltaTime;
             if (background != null)
             {
-                background.color = new Color(color_BG.r, color_BG.r, color_BG.b, (timerBG * transparenceSpeed) / 100.0f);
+                background.color = new Color(color_BG.r, color_BG.g, color_BG.b, (timerBG * transparenceSpeed) / 100.0f);
                 if (timerBG < 0.0f)
-                    background.color = new Color(color_BG.r, color_BG.r, color_BG.b, 0.0f);
+                    background.color = new Color(color_BG.r, color_BG.g, color_BG.b, 0.0f);
             }
             if (timer > (fadeInDuration / zoneName.Length)) // Affichage lettre/lettre
             {
@@ -161,7 +161,7 @@ public class DisplayZoneName : MonoBehaviour
         {
             index = 0;
             state = DisplayState.inactive;
-            background.color = new Color(color_BG.r, color_BG.r, color_BG.b, 0.0f);
+            background.color = new Color(color_BG.r, color_BG.g, color_BG.b, 0.0f);
         }
     }
 }
