@@ -44,8 +44,13 @@ public class OpenDoor : MonoBehaviour {
 	private Transform[] doorPart = new Transform[3];
     private List<Transform> listDoorMask = new List<Transform>();
 
-	// Use this for initialization
-	void Start () {
+    [Header("Cinematic")]
+    [SerializeField] UnityEngine.Playables.PlayableDirector playableDirector;
+    [SerializeField] private bool isCinematicFreezeEnnemies = true; //Booléan nécessaire pour la cinématique
+    private bool isCinematicDoorNoMaskPlayed;
+
+    // Use this for initialization
+    void Start () {
         for (int i = 0; i < transform.childCount; i++)
         {
             if(transform.GetChild(i).name == "StockMask")
@@ -64,6 +69,8 @@ public class OpenDoor : MonoBehaviour {
 
 		MrEmissve.sharedMaterials[1].SetColor ("_EmissionColor", Color.clear);
 		MrEmissve.sharedMaterials[2].SetColor ("_EmissionColor", Color.clear);
+
+        isCinematicDoorNoMaskPlayed = false;
 	}
 	
 	// Update is called once per frame
@@ -156,7 +163,17 @@ public class OpenDoor : MonoBehaviour {
                 }
 
                 TimeManager.Instance.Block_Player_WithTimer(durationFreeze);
-				MaskInventory.Instance.EquipDefaultMask();
+                MaskInventory.Instance.EquipDefaultMask();
+            }
+            else if(isCinematicDoorNoMaskPlayed == false) //Sinon, on envois le tuto
+            {
+                playableDirector.Play();
+
+                TimeManager.Instance.Block_Player_WithTimer((float)playableDirector.duration);
+                if (isCinematicFreezeEnnemies)
+                    TimeManager.Instance.Block_Ennemies_WithTimer((float)playableDirector.duration, true);
+
+                isCinematicDoorNoMaskPlayed = true;
             }
         }
     }
