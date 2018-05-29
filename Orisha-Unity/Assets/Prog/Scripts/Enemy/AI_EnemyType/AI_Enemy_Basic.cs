@@ -91,6 +91,7 @@ public class AI_Enemy_Basic : MonoBehaviour
     protected float abandonDistance = 10.0f;
     [SerializeField] protected float range = 2.0f;
     [SerializeField] protected bool dieWhenTouchingTarget = false;
+    [SerializeField] ParticleSystem shield;
     //Alert
     protected bool asCallReinforcement = false;
     public bool AsCallReinforcement
@@ -134,7 +135,19 @@ public class AI_Enemy_Basic : MonoBehaviour
     public bool IsInvincible
     {
         get { return isInvincible; }
-        set { isInvincible = value; }
+        set
+        {
+            isInvincible = value;
+            if (value == true)
+            {
+                shield.Play();
+            }
+            else
+            {
+                shield.Stop();
+            }
+
+        }
     }
 
     private void Awake()
