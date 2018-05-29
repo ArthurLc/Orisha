@@ -343,29 +343,51 @@ public class TimeManager : MonoBehaviour
         Animator currentAnimator;
         currentAnimator = _goCharacter.GetComponent<Animator>();
 
-
-        if (currentAnimator == null)
+        if(_goCharacter.GetComponent<AI_Enemy_Basic>() != null)
         {
-            currentAnimator = _goCharacter.GetComponentInParent<Animator>();
-        }
-        if (currentAnimator == null)
-        {
-            currentAnimator = _goCharacter.GetComponentInChildren<Animator>();
-        }
+            for(int i = 0; i < 3; ++i)
+            {
+                Animator anim = _goCharacter.transform.GetChild(i).GetComponent<Animator>();
 
-        if (currentAnimator != null)
-        {
-			
-			if (!Slow_OneCharacter_Unactive (currentAnimator.gameObject, true)) 
-			{
-				float animationSpeedAtBegin = currentAnimator.speed;
-				//Debug.Log (_goCharacter.name + " " + animationSpeedAtBegin);
-				slowMotionSpeedAtBegin.Add (currentAnimator, animationSpeedAtBegin);
-			}
-            Coroutine currentCoroutine = StartCoroutine(Slow_OneCharacterTimer(currentAnimator, _timer, _value));
-            slowMotionList.Add(currentAnimator, currentCoroutine);
-        }
+                if (anim != null)
+                {
 
+                    if (!Slow_OneCharacter_Unactive(anim.gameObject, true))
+                    {
+                        float animationSpeedAtBegin = anim.speed;
+                        //Debug.Log (_goCharacter.name + " " + animationSpeedAtBegin);
+                        slowMotionSpeedAtBegin.Add(anim, animationSpeedAtBegin);
+                    }
+                    Coroutine currentCoroutine = StartCoroutine(Slow_OneCharacterTimer(anim, _timer, _value));
+                    slowMotionList.Add(anim, currentCoroutine);
+                }
+            }
+
+        }
+        else
+        {
+            if (currentAnimator == null)
+            {
+                currentAnimator = _goCharacter.GetComponentInParent<Animator>();
+            }
+            if (currentAnimator == null)
+            {
+                currentAnimator = _goCharacter.GetComponentInChildren<Animator>();
+            }
+
+            if (currentAnimator != null)
+            {
+
+                if (!Slow_OneCharacter_Unactive(currentAnimator.gameObject, true))
+                {
+                    float animationSpeedAtBegin = currentAnimator.speed;
+                    //Debug.Log (_goCharacter.name + " " + animationSpeedAtBegin);
+                    slowMotionSpeedAtBegin.Add(currentAnimator, animationSpeedAtBegin);
+                }
+                Coroutine currentCoroutine = StartCoroutine(Slow_OneCharacterTimer(currentAnimator, _timer, _value));
+                slowMotionList.Add(currentAnimator, currentCoroutine);
+            }
+        }
     }
     private IEnumerator Slow_OneCharacterTimer(Animator _characterAnimator, float _timer, float _value)
     {
@@ -440,29 +462,54 @@ public class TimeManager : MonoBehaviour
 
             if (theOne != null)
             {
-				
+                
                 Animator currentAnimator;
-                currentAnimator = _goCharacter.GetComponent<Animator>();
+                
 
-                if (currentAnimator == null)
+
+                if (_goCharacter.GetComponent<AI_Enemy_Basic>() != null)
                 {
-                    currentAnimator = _goCharacter.GetComponentInParent<Animator>();
+                    for (int i = 0; i < 3; ++i)
+                    {
+                        Animator anim = currentAnimator = _goCharacter.transform.GetChild(i).GetComponent<Animator>();
+
+                        if (anim != null)
+                        {
+                            if (!Slow_OneCharacter_Unactive(anim.gameObject, true))
+                            {
+                                float animationSpeedAtBegin = anim.speed;
+                                //Debug.Log (_goCharacter.name + " " + animationSpeedAtBegin);
+                                slowMotionSpeedAtBegin.Add(anim, animationSpeedAtBegin);
+                            }
+                            Coroutine currentCoroutine = StartCoroutine(Slow_OneCharacterCurve(anim, _timer, theOne));
+                            slowMotionList.Add(anim, currentCoroutine);
+                        }
+                    }
+
                 }
-                if (currentAnimator == null)
+                else
                 {
-                    currentAnimator = _goCharacter.GetComponentInChildren<Animator>();
-                }
+                    currentAnimator = _goCharacter.GetComponent<Animator>();
+                    if (currentAnimator == null)
+                    {
+                        currentAnimator = _goCharacter.GetComponentInParent<Animator>();
+                    }
+                    if (currentAnimator == null)
+                    {
+                        currentAnimator = _goCharacter.GetComponentInChildren<Animator>();
+                    }
 
-                if (currentAnimator != null)
-                {
-                    float animationSpeedAtBegin = currentAnimator.speed;
+                    if (currentAnimator != null)
+                    {
+                        float animationSpeedAtBegin = currentAnimator.speed;
 
-					if(!Slow_OneCharacter_Unactive(currentAnimator.gameObject, true))
-						slowMotionSpeedAtBegin.Add(currentAnimator, animationSpeedAtBegin);
+                        if (!Slow_OneCharacter_Unactive(currentAnimator.gameObject, true))
+                            slowMotionSpeedAtBegin.Add(currentAnimator, animationSpeedAtBegin);
 
-                    Coroutine currentCoroutine = StartCoroutine(Slow_OneCharacterCurve(currentAnimator, _timer, theOne));
-                    slowMotionList.Add(currentAnimator, currentCoroutine);
-                }
+                        Coroutine currentCoroutine = StartCoroutine(Slow_OneCharacterCurve(currentAnimator, _timer, theOne));
+                        slowMotionList.Add(currentAnimator, currentCoroutine);
+                    }
+                }             
             }
         }
     }

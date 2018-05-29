@@ -176,9 +176,8 @@ public class PlayerPredictionAttack : MonoBehaviour
             {
                 for (int i = 0; i < results.Length; i++)
                 {
-					TimeManager.Instance.Slow_OneCharacter_WithCurve(results[i].gameObject, duration, _fightDatas.slowMoCurve);
-					TimeManager.Instance.Slow_OneCharacter_WithCurve(results[i].transform.parent.GetChild(1).gameObject, duration, _fightDatas.slowMoCurve);
-					TimeManager.Instance.Slow_OneCharacter_WithCurve(results[i].transform.parent.GetChild(2).gameObject, duration, _fightDatas.slowMoCurve);
+                    if (results[i].gameObject.transform.parent != null)
+                        TimeManager.Instance.Slow_OneCharacter_WithCurve(results[i].gameObject.transform.parent.gameObject, duration, _fightDatas.slowMoCurve);
                     //Debug.Log (results [i].name);
                 }
             }
@@ -322,9 +321,9 @@ public class PlayerPredictionAttack : MonoBehaviour
             {
                 for (int i = 0; i < results.Length; i++)
                 {
-                    TimeManager.Instance.Slow_OneCharacter_WithTimer(results[i].gameObject, duration, _fightDatas.slowMoValue);
-					TimeManager.Instance.Slow_OneCharacter_WithCurve(results[i].transform.parent.GetChild(1).gameObject, duration, _fightDatas.slowMoCurve);
-					TimeManager.Instance.Slow_OneCharacter_WithCurve(results[i].transform.parent.GetChild(2).gameObject, duration, _fightDatas.slowMoCurve);
+               
+                    if(results[i].gameObject.transform.parent != null)
+                        TimeManager.Instance.Slow_OneCharacter_WithTimer(results[i].gameObject.transform.parent.gameObject, duration, _fightDatas.slowMoValue);
                     //Debug.Log (results [i].name);
                 }
             }
