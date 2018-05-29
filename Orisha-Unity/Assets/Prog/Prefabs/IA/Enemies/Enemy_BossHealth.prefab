@@ -2485,8 +2485,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517850221800832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -492.89258, y: 212.30751, z: 2.7046251}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4492629296094476}
   - {fileID: 4695496536246204}
@@ -4549,6 +4549,7 @@ MonoBehaviour:
   abandonDistance: 100
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95694720023802208}
