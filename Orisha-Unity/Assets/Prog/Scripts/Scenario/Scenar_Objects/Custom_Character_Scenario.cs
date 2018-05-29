@@ -49,12 +49,14 @@ public class Custom_Character_Scenario : Scenar_Object
             timeline.Play();
 
         //Désactive les controlles
-        if (controller)
-            controller.enabled = false;
-        if (dash)
-            dash.enabled = false;
-        if (fight)
-            fight.enabled = false;
+        //if (controller)
+        //    controller.enabled = false;
+        //if (dash)
+        //    dash.enabled = false;
+        //if (fight)
+        //    fight.enabled = false;
+
+        TimeManager.Instance.Block_Player();
 
         //Donne une direction de départ au joueur si cela est demandé dans le scénario
         Scenar currentScenar = Scenar_Manager.GetCurrentPlayingScenario();
@@ -75,12 +77,14 @@ public class Custom_Character_Scenario : Scenar_Object
             timeline.Stop();
 
         //Réactive les controlles
-        if (controller)
-            controller.enabled = true;
-        if (dash)
-            dash.enabled = true;
-        if (fight)
-            fight.enabled = true;
+        //if (controller)
+        //    controller.enabled = true;
+        //if (dash)
+        //    dash.enabled = true;
+        //if (fight)
+        //    fight.enabled = true;
+
+        TimeManager.Instance.Unblock_Player();
     }
 
     // Use this for initialization
