@@ -50,7 +50,8 @@ public class Scenar_Manager : MonoBehaviour
 		}
 
 		//Debug.Log ("OUIIIIIIIIIIIIIIIIIIIIIIIIIII");
-		OnScenario_Initialize();
+        if(OnScenario_Initialize != null)
+		    OnScenario_Initialize();
 		initialized = true;
 	}
 	
