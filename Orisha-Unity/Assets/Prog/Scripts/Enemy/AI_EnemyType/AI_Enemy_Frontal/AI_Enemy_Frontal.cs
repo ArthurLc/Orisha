@@ -59,7 +59,7 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
 
         UpdateDmgBoxList();
         if(!isFreeze && !isFreezeByScript && myCurrentState != null && myCurrentState.UpdateState != null)
-            myCurrentState.UpdateState(); 
+            myCurrentState.UpdateState();
     }
 
 
@@ -89,6 +89,11 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
                 case State.Idle:
                     myCurrentState = new AI_EnemyStateIdleFrontal();
                     (myCurrentState as AI_EnemyStateIdleFrontal).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform);
+                    if (pe)
+                    {
+                        StopCoroutine(PotentialEnemypopRequest(2.0f));
+                        StartCoroutine(PotentialEnemypopRequest(2.0f));
+                    }
                     break;
                 case State.Alert:
                     myCurrentState = new AI_EnemyStateAlertFrontal();
@@ -155,7 +160,7 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
     {
         yield return new WaitForSeconds(waitTime);
 
-        Collider[] col = Physics.OverlapSphere(transform.position, 10.0f, 1 << 16);
+        Collider[] col = Physics.OverlapSphere(transform.position, abandonDistance, 1 << 16);
 
         if (col.Length == 0)
         {
@@ -211,12 +216,6 @@ public class AI_Enemy_Frontal : AI_Enemy_Basic
         {
             if (targetsInReach.Contains(other.transform) == true)
                 targetsInReach.Remove(other.transform);
-
-            if (pe)
-            {
-                StopCoroutine(PotentialEnemypopRequest(2.0f));
-                StartCoroutine(PotentialEnemypopRequest(2.0f));
-            }
         }
     }
 }

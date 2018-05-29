@@ -91,6 +91,11 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
                 case State.Idle:
                     myCurrentState = new AI_EnemyStateIdleSandTracker();
                     (myCurrentState as AI_EnemyStateIdleSandTracker).OnBegin(this, crocoAnim, weaponAnim, armorAnim, myAgent, rb, startTransform);
+                    if (pe)
+                    {
+                        StopCoroutine(PotentialEnemypopRequest(2.0f));
+                        StartCoroutine(PotentialEnemypopRequest(2.0f));
+                    }
                     break;
                 case State.Patroling:
                     myCurrentState = new AI_EnemyStatePatrolSandTracker();
@@ -166,7 +171,7 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
     {
         yield return new WaitForSeconds(waitTime);
 
-        Collider[] col = Physics.OverlapSphere(transform.position, 10.0f, 1 << 16);
+        Collider[] col = Physics.OverlapSphere(transform.position, abandonDistance, 1 << 16);
         if (col.Length == 0)
         {
             pe.Pop_Potential_Ennemy(this);
@@ -215,12 +220,6 @@ public class AI_Enemy_SandTracker : AI_Enemy_Basic
         {
             if (targetsInReach.Contains(other.transform) == true)
                 targetsInReach.Remove(other.transform);
-
-            if (pe)
-            {
-                StopCoroutine(PotentialEnemypopRequest(2.0f));
-                StartCoroutine(PotentialEnemypopRequest(2.0f));
-            }
         }
     }
 

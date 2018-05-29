@@ -140,11 +140,13 @@ public class AI_Enemy_Basic : MonoBehaviour
             isInvincible = value;
             if (value == true)
             {
+                shield.gameObject.SetActive(true);
                 shield.Play();
             }
             else
             {
                 shield.Stop();
+                shield.gameObject.SetActive(false);
             }
 
         }

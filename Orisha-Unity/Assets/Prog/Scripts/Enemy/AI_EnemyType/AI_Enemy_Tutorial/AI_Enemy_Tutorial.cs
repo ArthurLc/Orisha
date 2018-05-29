@@ -181,7 +181,7 @@ public class AI_Enemy_Tutorial : AI_Enemy_Basic
     {
         yield return new WaitForSeconds(waitTime);
 
-        Collider[] col = Physics.OverlapSphere(transform.position, 10.0f, 1 << 16);
+        Collider[] col = Physics.OverlapSphere(transform.position, abandonDistance, 1 << 16);
         if (col.Length == 0)
         {
             pe.Pop_Potential_Ennemy(this);
