@@ -258,7 +258,8 @@ namespace vd_Player
 					TimeManager.Instance.Block_Player_WithTimer (fadeInDuration + displayDuration);
 					TimeManager.Instance.Block_Ennemies_WithTimer (fadeInDuration + displayDuration, true);
 					StartCoroutine (WaitToRepop (fadeInDuration + displayDuration));
-					anim.SetTrigger ("IsDead");
+                    if(!_takeAnimControl)
+					    anim.SetTrigger ("IsDead");
 
 					isPlayerDying = true;
 				}
@@ -276,7 +277,12 @@ namespace vd_Player
         {
             TakeDamage(_damages, true);
             playerTr.forward = (playerTr.position - _roarSource).normalized;
-            anim.SetTrigger("Eject");
+
+            if(health > 0)
+            {
+                anim.SetTrigger("Eject");
+                TimeManager.Instance.Block_Player_WithTimer(0.5f);
+            }
         }
 
         public void HealPlayer(int _healNumber)
