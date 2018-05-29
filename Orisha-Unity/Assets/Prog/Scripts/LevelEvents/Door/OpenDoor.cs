@@ -133,7 +133,7 @@ public class OpenDoor : MonoBehaviour {
 				if (doorActivaded)
 				{
 					maskInventory = null;
-					GetComponents<BoxCollider>()[0].enabled = false;
+					GetComponent<SphereCollider>().enabled = false;
 					doorActivaded = false;
 				}
 			}
