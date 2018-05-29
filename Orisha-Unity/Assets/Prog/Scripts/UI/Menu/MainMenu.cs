@@ -84,6 +84,7 @@ namespace vd_Menu
         public void LaunchGame()
         {
             GameLoopManager.LaunchLevel(level, true);
+			SoundManager.instance.SFX_PlayOneShot (SoundManager.instance.audioList.MainMenuSound [0]);
         }
 
         /// <summary>

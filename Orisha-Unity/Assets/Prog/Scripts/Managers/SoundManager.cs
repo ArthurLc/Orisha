@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource sfxSource;
 	public GameObject sfx_Object_Model;
 	public static SoundManager instance = null;
+	public AudioList audioList;
 
 	// Use this for initialization
 	void Start ()
