@@ -1133,6 +1133,7 @@ GameObject:
   - component: {fileID: 135790687951738452}
   - component: {fileID: 54635508203605334}
   - component: {fileID: 114945917185975088}
+  - component: {fileID: 114718948253982446}
   m_Layer: 18
   m_Name: Enemy_BossStrength
   m_TagString: Enemy
@@ -2505,7 +2506,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517850221800832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -766.41364, y: 155.49861, z: 605.5999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4492629296094476}
@@ -4472,6 +4473,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 114945917185975088}
   partOfBody: 2
+--- !u!114 &114718948253982446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517850221800832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92440c160f23b894e8abd40895a16c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavesPrefab: {fileID: 1663766210086408, guid: c81af8a8a2bb7fa439cfa958e9911ade,
+    type: 2}
+  invoqueFrequency: 20
+  roarRange: 10
+  roarDamages: 10
+  maskPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  shield: {fileID: 198426528024779708}
 --- !u!114 &114834956320928468
 MonoBehaviour:
   m_ObjectHideFlags: 1
