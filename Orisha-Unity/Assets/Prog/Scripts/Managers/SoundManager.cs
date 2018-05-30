@@ -80,8 +80,14 @@ public class SoundManager : MonoBehaviour
 		if (_clipToPlay.Length > 0) 
 		{			
 			int randSfx = Random.Range (0, _clipToPlay.Length);
-			sfxSource.PlayOneShot (_clipToPlay [randSfx]);
-			return true;
+            if (_clipToPlay[randSfx])
+            {
+                sfxSource.PlayOneShot(_clipToPlay[randSfx]);
+                return true;
+
+            }
+            else
+                return false;
 		}
 
 		return false;
@@ -96,8 +102,13 @@ public class SoundManager : MonoBehaviour
 		if (_clipToPlay.Length > 0) 
 		{			
 			int randSfx = Random.Range (0, _clipToPlay.Length);
-			sfxSource.PlayOneShot (_clipToPlay [randSfx], _volumeScale);
-			return true;
+            if (_clipToPlay[randSfx])
+            {
+                sfxSource.PlayOneShot(_clipToPlay[randSfx], _volumeScale);
+                return true;
+            }
+            else
+                return false;
 		}
 
 		return false;
@@ -128,9 +139,14 @@ public class SoundManager : MonoBehaviour
 		if (_clipToPlay.Length > 0) 
 		{			
 			int randSfx = Random.Range (0, _clipToPlay.Length);
-			sfxSource.clip = _clipToPlay [randSfx];
-            sfxSource.Play ();
-			return true;
+            if (_clipToPlay[randSfx])
+            {
+                sfxSource.clip = _clipToPlay[randSfx];
+                sfxSource.Play();
+                return true;
+            }
+            else
+                return false;
 		}
 
 		return false;
@@ -149,6 +165,8 @@ public class SoundManager : MonoBehaviour
 		if (_clipToPlay) 
 		{
             SFX_Object sfx = SFX_Pool.Instance.GetSFXObject ( _position,_clipToPlay);
+            sfx.source.minDistance = 0f;
+            sfx.source.maxDistance = 30f;
             sfx.source.loop = false;
             //SFX_Pool.GetSFXObject ( _position,_clipToPlay);
             return true;
@@ -177,6 +195,8 @@ public class SoundManager : MonoBehaviour
         {
             SFX_Object sfx = SFX_Pool.Instance.GetSFXObject(_position, _clipToPlay);
             sfx.source.loop = true;
+            sfx.source.minDistance = 0f;
+            sfx.source.maxDistance = 30f;
             return sfx;
         }
 

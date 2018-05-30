@@ -79,7 +79,9 @@ public class SFX_Pool : MonoBehaviour
 		if (!toReturn) 
 		{
 			toReturn = CreateSFX_Object (_position);
-			return toReturn;
+            toReturn.source.clip = _clip;
+
+            return toReturn;
 		}
 		return null;
 	}
@@ -88,6 +90,7 @@ public class SFX_Pool : MonoBehaviour
 	{
 		SFX_Object go = Instantiate (objects[0].gameObject).GetComponent<SFX_Object>();
 		go.transform.parent = objects [0].transform.parent;
+        go.source.clip = null;
 		objects.Add (go);
 		go.transform.position = _position;
 		return go;
@@ -106,8 +109,9 @@ public class SFX_Pool : MonoBehaviour
 	void ActivateSFX_object(SFX_Object _sfx, Vector3 _position, AudioClip _clip)
 	{
 		_sfx.transform.position = _position;
+
 		if (_sfx.source)
-			_sfx.source.clip = _clip;
+                _sfx.source.clip = _clip;
 		else 
 			InitSource(_sfx, _clip);
 		
