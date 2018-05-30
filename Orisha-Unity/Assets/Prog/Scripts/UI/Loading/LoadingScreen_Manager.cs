@@ -65,6 +65,18 @@ public class LoadingScreen_Manager : MonoBehaviour
     [SerializeField]
     private float Timer_waitAfterLoad_BeforeFade;
 
+    [Header("LinksLastModif")]
+    [SerializeField] private GameObject LoadingProcess;
+    [SerializeField] private GameObject LoadingImages;
+    [SerializeField] private GameObject LoadingPress_Text;
+    [SerializeField] private GameObject LoadingEnd_Text;
+    [SerializeField] private GameObject LoadingEnd_Image;
+    [Header("LinksImageTuto")]
+    [SerializeField] private GameObject Image01;
+    [SerializeField] private GameObject Image02;
+
+    private bool isPlayerPressStart;
+
     private AsyncOperation async;
 
     void Start()
@@ -86,10 +98,35 @@ public class LoadingScreen_Manager : MonoBehaviour
 
         Loading_IncreaseField_Rect.sizeDelta = new Vector2(CurrentIncrease_Width, Loading_IncreaseField_Rect.sizeDelta.y);
 
+        isPlayerPressStart = false;
+
+        LoadingProcess.SetActive(true);
+        LoadingImages.SetActive(true);
+        LoadingPress_Text.SetActive(false);
+        LoadingEnd_Text.SetActive(false);
+        LoadingEnd_Image.SetActive(false);
     }
 
     void Update()
     {
+        if(isPlayerPressStart == false)
+        {
+            if(Input.GetButtonDown("LoadingMenu_Left") || Input.GetButtonDown("LoadingMenu_Right"))
+            {
+                if(Image01.activeInHierarchy)
+                {
+                    Image02.SetActive(true);
+                    Image01.SetActive(false);
+                }
+                else
+                {
+                    Image01.SetActive(true);
+                    Image02.SetActive(false);
+                }
+            }
+        }
+
+
         TimerLoading += Time.deltaTime;
         if (TimerLoading >= MaxTimerLoading) // increase the number of points with the time after the word "loading"
         {
@@ -122,18 +159,35 @@ public class LoadingScreen_Manager : MonoBehaviour
         }
         else if (isLoadingFinish)// Closing black screen fade
         {
-            timer_fadeBlack += Time.deltaTime;
-            if (timer_fadeBlack >= MaxTimer_fadeBlack)
+            if (isPlayerPressStart)
             {
-                isBeginFadeFinished = true;
-                BlackScreen_Image_alphaValue = 1.0f;
-                async.allowSceneActivation = true; // change scene to sceneToLoad
+                timer_fadeBlack += Time.deltaTime;
+                if (timer_fadeBlack >= MaxTimer_fadeBlack)
+                {
+                    isBeginFadeFinished = true;
+                    BlackScreen_Image_alphaValue = 1.0f;
+                    async.allowSceneActivation = true; // change scene to sceneToLoad
+                }
+                else
+                {
+                    BlackScreen_Image_alphaValue = (timer_fadeBlack / MaxTimer_fadeBlack);
+                }
+                BlackScreen_Image.color = new Color(BlackScreen_Image.color.r, BlackScreen_Image.color.g, BlackScreen_Image.color.b, BlackScreen_Image_alphaValue);
             }
             else
             {
-                BlackScreen_Image_alphaValue = (timer_fadeBlack / MaxTimer_fadeBlack);
+                LoadingProcess.SetActive(false);
+                LoadingPress_Text.SetActive(true);
+                if (Input.GetButtonDown("Submit"))
+                {
+                    LoadingPress_Text.SetActive(false);
+                    LoadingEnd_Text.SetActive(true);
+                    LoadingEnd_Image.SetActive(true);
+                    LoadingImages.SetActive(false);
+
+                    isPlayerPressStart = true;
+                }
             }
-            BlackScreen_Image.color = new Color(BlackScreen_Image.color.r, BlackScreen_Image.color.g, BlackScreen_Image.color.b, BlackScreen_Image_alphaValue);
         }
 
     }
