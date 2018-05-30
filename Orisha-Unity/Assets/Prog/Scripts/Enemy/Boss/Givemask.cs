@@ -9,6 +9,7 @@ public class Givemask : MonoBehaviour
 
     AI_Enemy_Basic me;
     bool spawnMask = false;
+    bool colEnabled = false;
     [SerializeField] float yOffest;
     [SerializeField] float ySpeed;
 
@@ -49,9 +50,10 @@ public class Givemask : MonoBehaviour
 
             MaskToGive.transform.position = new Vector3(MaskToGive.transform.position.x, startPos.y + yCount, MaskToGive.transform.position.z);
         }
-        else if(yCount >= yOffest)
+        else if(!colEnabled && yCount >= yOffest)
         {
             zd.enabled = mask.enabled = c.enabled = true;
+            colEnabled = true;
         }
 	}
 }
