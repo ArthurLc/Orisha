@@ -5970,7 +5970,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957774066352762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -171.66418, y: 109.44666, z: 669.29834}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4729233270093656}
@@ -8365,7 +8365,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6facadcd8d0ef8a48928fe6c2ddda7b3, type: 3}
   hitSfx: []
   health: 100
-  abandonDistance: 22
+  abandonDistance: 45
   range: 2
   dieWhenTouchingTarget: 0
   shield: {fileID: 0}
@@ -8716,7 +8716,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cabb29aa47112e54ba4cf75ced891963, type: 3}
   - {fileID: 8300000, guid: 6e24feeb246d725479f9f160353344b7, type: 3}
   health: 250
-  abandonDistance: 22
+  abandonDistance: 45
   range: 2
   dieWhenTouchingTarget: 0
   shield: {fileID: 0}
@@ -8949,7 +8949,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20.5
+  m_Radius: 35
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135258220625247592
 SphereCollider:
@@ -8973,7 +8973,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20.5
+  m_Radius: 35
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136050259965682962
 CapsuleCollider:
