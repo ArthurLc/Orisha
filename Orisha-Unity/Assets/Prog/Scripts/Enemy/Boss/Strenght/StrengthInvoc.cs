@@ -75,7 +75,7 @@ public class StrengthInvoc : MonoBehaviour
                 //donne boss pile la vie pour son invoc
                 me.Health = (nextPercentSpawn / 100) * me.BaseHealth;
                 nextPercentSpawn -= percentLossPerSpawn;
-                Debug.Log(waveId + " / " + waveNumber + " / " + nextPercentSpawn);
+                //Debug.Log(waveId + " / " + waveNumber + " / " + nextPercentSpawn);
                 waveId++;               
 
                 me.HardFreezeStates();

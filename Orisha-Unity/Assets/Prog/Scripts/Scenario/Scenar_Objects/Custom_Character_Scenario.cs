@@ -109,7 +109,7 @@ public class Custom_Character_Scenario : Scenar_Object
         {
             entry.Value.OnScenario_Begin += On_Scenar_Begin;
             entry.Value.OnScenario_End += On_Scenar_End;
-            Debug.Log("Player Binded to scenario : " + entry.Key);
+            //Debug.Log("Player Binded to scenario : " + entry.Key);
         }
 
 		//Debug.Log ("PUTAIN DE TA RACE");

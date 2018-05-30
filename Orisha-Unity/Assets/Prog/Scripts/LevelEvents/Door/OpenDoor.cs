@@ -128,7 +128,7 @@ public class OpenDoor : MonoBehaviour {
         //move the door
         if(doorActivaded)
         {
-			Debug.Log ("OPENING !!");
+			//Debug.Log ("OPENING !!");
             //transform.position += (Vector3.up * Time.deltaTime);
 			doorPart[0].position += (partDoor.up * Time.deltaTime);
 			doorPart[1].position += (partDoor.right * Time.deltaTime);
@@ -136,7 +136,7 @@ public class OpenDoor : MonoBehaviour {
 
 			if (doorPart [0].localPosition.y >= 9.0f) {
 				isTryOpenning = false;
-				Debug.Log("out : " + maskInventory.ListMasks.Count);
+				//Debug.Log("out : " + maskInventory.ListMasks.Count);
 				if (doorActivaded)
 				{
 					maskInventory = null;

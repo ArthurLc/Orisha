@@ -51,7 +51,7 @@ public class Albinos : MonoBehaviour
         nextPercentSpawn = lastLifePercentage - percentLossPerSpawn;
         waveId = 0;
 
-        Debug.Log(lastLifePercentage + " / " + percentLossPerSpawn + " / " + nextPercentSpawn + " / " + waveNumber);
+        //Debug.Log(lastLifePercentage + " / " + percentLossPerSpawn + " / " + nextPercentSpawn + " / " + waveNumber);
 
         waves.Clear();
         for (int i = 0; i < waveNumber; ++i)
@@ -64,7 +64,7 @@ public class Albinos : MonoBehaviour
 
     void GoToBackUpPos()
     {
-        Debug.Log("Vas là bas !");
+        //Debug.Log("Vas là bas !");
         me.HardFreezeStates();
         me.GoTo(startPos);
         me.IsInvincible = true;
@@ -79,7 +79,7 @@ public class Albinos : MonoBehaviour
             //si la vie vient de passer sous le seuil d'invoc
             if(waveId < waveNumber && lastLifePercentage > nextPercentSpawn && CurrentHealthToPercent() < nextPercentSpawn)
             {
-                Debug.Log(waveId + " / " + waveNumber);
+                //Debug.Log(waveId + " / " + waveNumber);
                 //donne boss pile la vie pour son invoc
                 me.Health = (nextPercentSpawn / 100) * me.BaseHealth;
                 //demande à l'ennemi d'aller ) la position de BackUp
@@ -88,7 +88,7 @@ public class Albinos : MonoBehaviour
                 nextPercentSpawn -= percentLossPerSpawn;
                 waveId++;
             }
-            Debug.Log("La vie a baissé");
+            //Debug.Log("La vie a baissé");
         }
 
         if(me.Health <= 0 && !mask.activeSelf)

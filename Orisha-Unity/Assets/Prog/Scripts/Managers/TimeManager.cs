@@ -566,7 +566,7 @@ public class TimeManager : MonoBehaviour
                 currentAnimator.speed = slowMotionSpeedAtBegin[currentAnimator];
 				if (!_becauseNewSlowMotion) 
 				{
-					Debug.Log ("DestroyInforrmation " + currentAnimator.gameObject.name);
+					//Debug.Log ("DestroyInforrmation " + currentAnimator.gameObject.name);
 					slowMotionSpeedAtBegin.Remove (currentAnimator);
 				}
             }
