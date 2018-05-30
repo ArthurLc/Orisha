@@ -18,6 +18,7 @@ public class AnimInfo_Enemy : MonoBehaviour
     public bool isActive = true;
 
     [SerializeField] private AI_Enemy_Basic enemyBasic;
+    Collider col;
 
     [Header("Damage boxes")]
     [SerializeField] private DamageBox box_Weapon;
@@ -38,7 +39,7 @@ public class AnimInfo_Enemy : MonoBehaviour
             {
                 Debug.LogError("DamageBox manquante dans le PlayerAnimEvents, il va  avoir des erreurs !");
             }
-
+            col = GetComponent<Collider>();
             animator = GetComponent<Animator>();
         }
     }
@@ -262,5 +263,15 @@ public class AnimInfo_Enemy : MonoBehaviour
             //else
             //    animator.SetLookAtWeight(0.0f);
         }
+    }
+
+    public void DisableCollision()
+    {
+        col.enabled = false;
+    }
+
+    public void EnableCollision()
+    {
+        col.enabled = true;
     }
 }
