@@ -178,7 +178,7 @@ public class LoadingScreen_Manager : MonoBehaviour
             {
                 LoadingProcess.SetActive(false);
                 LoadingPress_Text.SetActive(true);
-                if (Input.GetButtonDown("Submit"))
+                if (Input.GetButtonDown("StartGame"))
                 {
                     LoadingPress_Text.SetActive(false);
                     LoadingEnd_Text.SetActive(true);
