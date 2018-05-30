@@ -66,9 +66,11 @@ namespace vd_Debug
 			if (instance != null) {
 				Destroy (this);
 			}
-			instance = this;
-
-            DontDestroyOnLoad(gameObject);
+            else
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
         }
 
         void Update()

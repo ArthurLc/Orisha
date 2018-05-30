@@ -171,13 +171,16 @@ namespace vd_Inputs
         void Start()
         {
 			if (instance != null) {
-				Destroy (this.gameObject);
-			}
-			instance = this;
-            ChangeInputMode(InputMode.keyboard);
-            
-            InitGamePadFactors();
-            DontDestroyOnLoad(gameObject);
+                Destroy (this.gameObject);
+            }
+            else
+            {
+                instance = this;
+                ChangeInputMode(InputMode.keyboard);
+
+                InitGamePadFactors();
+                DontDestroyOnLoad(gameObject);
+            }
         }
 
         private void Update()

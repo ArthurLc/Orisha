@@ -15447,7 +15447,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4626848592559402, guid: 620aed1ca98106e43acf1cef2772deab, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1002.71497
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4626848592559402, guid: 620aed1ca98106e43acf1cef2772deab, type: 2}
       propertyPath: m_LocalRotation.x
@@ -15469,11 +15469,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114539901333192520, guid: 620aed1ca98106e43acf1cef2772deab,
-        type: 2}
-      propertyPath: audioList
-      value: 
-      objectReference: {fileID: 1117581184}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620aed1ca98106e43acf1cef2772deab, type: 2}
   m_IsPrefabAsset: 0
@@ -16868,24 +16863,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1636363474095568, guid: 620aed1ca98106e43acf1cef2772deab,
     type: 2}
   m_PrefabInternal: {fileID: 996402200}
---- !u!114 &1117581184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1117581183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aa7ee57272b8454baf31ce1ced65042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenuSound:
-  - {fileID: 8300000, guid: 1c9d885e97b5d1d42b76db4e69251422, type: 3}
-  MainMenuMusic: []
-  MenuSound: []
-  ExploMusic: []
-  TownMusic: []
-  FXSound: []
 --- !u!4 &1119867125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4363534829480982, guid: d8677fb50bf008945a9e0244a6965a12,
@@ -28049,6 +28026,11 @@ Prefab:
     - target: {fileID: 4584248850083690, guid: e9081809d78f519499c3c53c5c8585af, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.6744
+      objectReference: {fileID: 0}
+    - target: {fileID: 224030052382181256, guid: e9081809d78f519499c3c53c5c8585af,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9081809d78f519499c3c53c5c8585af, type: 2}
