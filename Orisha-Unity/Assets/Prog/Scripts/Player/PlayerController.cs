@@ -33,6 +33,7 @@ namespace vd_Player
         [SerializeField] Animator anim;
         [SerializeField] Rigidbody rb;
         [SerializeField] Transform tr;
+        [SerializeField] GroundChecker groundChecker;
 
         [SerializeField] private float rotationSpeed = 180.0f; //Rate of the rotate movement
         [SerializeField] private AnimationCurve movementCurve_Joystick;
@@ -62,7 +63,6 @@ namespace vd_Player
 
         // Grounded
         [SerializeField] private bool isGrounded;            //If the player is on the ground
-        float raycastLength = 0.5f;
 
 
         // Use this for initialization
@@ -111,7 +111,7 @@ namespace vd_Player
             else
                 currentSpeed = 0.0f;
 
-            isGrounded = CheckIfGrounded();
+            isGrounded = groundChecker.IsGroundDetected;
         }
 
 
@@ -151,27 +151,6 @@ namespace vd_Player
             }
 
 
-        }
-
-
-        /// <summary>
-        /// Met à jour le booléen IsGrounded (RayCast)
-        /// </summary>
-        private bool CheckIfGrounded()
-        {
-            Vector3 begin = new Vector3(tr.position.x, tr.position.y + 0.05f, tr.position.z);
-            if (Physics.Raycast(begin, -Vector3.up, raycastLength))
-                return true;
-
-            for (int i = 0; i < 4; i++)
-            {
-                Vector3 beginLoop = new Vector3(tr.position.x + ((((i % 2) * 2) - 1) * 0.075f), tr.position.y + 0.05f, tr.position.z + ((((i / 2) * 2) - 1) * 0.075f));
-                //Debug.DrawRay(begin, -Vector3.up, Color.magenta);
-                if (Physics.Raycast(begin, -Vector3.up, raycastLength))
-                    return true;
-            }
-
-            return false;      
         }
 
 
