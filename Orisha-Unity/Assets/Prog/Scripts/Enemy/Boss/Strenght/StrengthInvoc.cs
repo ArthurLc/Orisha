@@ -94,24 +94,27 @@ public class StrengthInvoc : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        waves[0].SetActive(true);
-        waves.Remove(waves[0]);
-
-        Collider[] cols = Physics.OverlapSphere(me.transform.position, roarRange, maskPlayer);
-
-        if (cols.Length > 0)
+        if(waves != null)
         {
-            for (int i = 0; i < cols.Length; ++i)
+            waves[0].SetActive(true);
+            waves.Remove(waves[0]);
+
+            Collider[] cols = Physics.OverlapSphere(me.transform.position, roarRange, maskPlayer);
+
+            if (cols.Length > 0)
             {
-                PlayerController pc = cols[i].GetComponentInParent<PlayerController>();
-                if (pc)
+                for (int i = 0; i < cols.Length; ++i)
                 {
-                    pc.Ci.RoarDamages(roarDamages, transform.position);
-                }
+                    PlayerController pc = cols[i].transform.parent.GetComponent<PlayerController>();
+                    if (pc)
+                    {
+                        pc.Ci.RoarDamages(roarDamages, transform.position);
+                    }
+                }                
             }
 
-            me.HardUnfreezeStates();
-        }
+        }     
+        me.HardUnfreezeStates();
     }
 
     private void Reset()
@@ -119,7 +122,7 @@ public class StrengthInvoc : MonoBehaviour
         if(me.Health > 0)
         {
             me.Reset();
-
+            me.MyAgent.SetDestination(startPos);
             DestroyImmediate(currentWavesGo);
             currentWavesGo = Instantiate(wavesPrefab, startPos, Quaternion.Euler(0, 0, 0));
             InitWaves();
