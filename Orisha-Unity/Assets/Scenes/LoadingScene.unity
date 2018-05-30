@@ -332,6 +332,10 @@ Prefab:
       propertyPath: BlackScreen_Image
       value: 
       objectReference: {fileID: 853546800}
+    - target: {fileID: 1067216060306626, guid: 351d844584546b34dbc2b88bed0b44c0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351d844584546b34dbc2b88bed0b44c0, type: 2}
   m_IsPrefabAsset: 0
@@ -339,13 +343,13 @@ Prefab:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114348839881110452, guid: b887ba1a0581f5a43bdc481f957c4f0c,
     type: 2}
-  m_PrefabInternal: {fileID: 1846393804}
+  m_PrefabInternal: {fileID: 1203921241}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &853546800 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114062600853811242, guid: b887ba1a0581f5a43bdc481f957c4f0c,
     type: 2}
-  m_PrefabInternal: {fileID: 1846393804}
+  m_PrefabInternal: {fileID: 1203921241}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &945013791
 GameObject:
@@ -413,24 +417,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!223 &1263170619 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 223947803228814756, guid: b887ba1a0581f5a43bdc481f957c4f0c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1846393804}
---- !u!114 &1279197844 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114673714710139486, guid: b887ba1a0581f5a43bdc481f957c4f0c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1846393804}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &1729972101 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114572299867325728, guid: b887ba1a0581f5a43bdc481f957c4f0c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1846393804}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1001 &1846393804
+--- !u!1001 &1203921241
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -530,3 +517,20 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b887ba1a0581f5a43bdc481f957c4f0c, type: 2}
   m_IsPrefabAsset: 0
+--- !u!223 &1263170619 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 223947803228814756, guid: b887ba1a0581f5a43bdc481f957c4f0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1203921241}
+--- !u!114 &1279197844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114673714710139486, guid: b887ba1a0581f5a43bdc481f957c4f0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1203921241}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1729972101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114572299867325728, guid: b887ba1a0581f5a43bdc481f957c4f0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1203921241}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
