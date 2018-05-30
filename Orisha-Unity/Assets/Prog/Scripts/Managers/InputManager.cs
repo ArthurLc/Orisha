@@ -261,6 +261,9 @@ namespace vd_Inputs
                     attackHeavy = "None";
                     attackSlight = "None";
 
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+
                     break;
 
                 case InputMode.keyboard:
@@ -287,6 +290,9 @@ namespace vd_Inputs
 
                     attackHeavy = "Keyboard_MouseRight";
                     attackSlight = "Keyboard_MouseLeft";
+
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
 
                     break;
 
@@ -316,12 +322,15 @@ namespace vd_Inputs
                     attackHeavy = "Joy1_Y";
                     attackSlight = "Joy1_X";
 
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
+
                     break;
             }
 
             Debug.Log("New input mode : " + currentInputMode_Name);
 
-            if(newInputMode != null)
+            if (newInputMode != null)
                 newInputMode(_newMode); // delegate : va appeler toutes les méthodes qui ont besoin d'update les inputs
 
             return true;

@@ -48,6 +48,12 @@ namespace vd_Menu
             backgroundTransition.color = Color.black;
             Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
 
+            if (InputManager.GetInputMode == InputMode.keyboard)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+
             StartCoroutine(BackgroundTransition());
         }
 
