@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using vd_Player;
 /*
 * @JulienLopez
 * @FightWall.cs
@@ -12,7 +13,7 @@ using UnityEngine;
 public class FightWall : MonoBehaviour {
 
 	private BoxCollider boxCol;
-	private Transform Player;
+	private CharacterInitialization Player;
 	private ParticleSystem particleSys;
 
 	[SerializeField, Range(2.0f,100.0f)] private float sizeWall = 20.0f;
@@ -24,7 +25,7 @@ public class FightWall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		boxCol = GetComponent<BoxCollider> ();
-		Player = FindObjectOfType<vd_Player.CharacterInitialization>().PlayerTr;
+		Player = FindObjectOfType<vd_Player.CharacterInitialization>();
 		particleSys = GetComponent<ParticleSystem>();
 
 		Quaternion rotation = Quaternion.identity;
@@ -39,8 +40,8 @@ public class FightWall : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Potential_Enemy.IsOnFight && !wallIsActivaded) {//Detection d'un enemy et activation de la zone
-			float distWallPlayer = (Player.position - transform.position).magnitude;
+		if (Potential_Enemy.IsOnFight && !wallIsActivaded && Player.Health > 0) {//Detection d'un enemy et activation de la zone
+			float distWallPlayer = (Player.PlayerTr.position - transform.position).magnitude;
 			wallIsActivaded = distWallPlayer < sizeWall ? true : false;
 		}
 
@@ -52,7 +53,7 @@ public class FightWall : MonoBehaviour {
 				boxCol.enabled = true;
 			}
 
-			Vector3 dirBox = Player.position - transform.position;
+			Vector3 dirBox = Player.PlayerTr.position - transform.position;
 			dirBox.y = 0.0f;
 			boxCol.center = dirBox.normalized * sizeWall;
 		} else {
@@ -73,6 +74,11 @@ public class FightWall : MonoBehaviour {
 					if (col != null && col.tag == "Enemy" && col.GetComponentInParent<AI_Enemy_Basic>().myState != AI_Enemy_Basic.State.Die) {
 						AnyoneAlive = true;
 					}
+                    else if(Player.Health <= 0)
+                    {
+                        wallIsActivaded = false;
+                        AnyoneAlive = false;
+                    }
 				}
 			} else {
 				wallIsActivaded = false;
