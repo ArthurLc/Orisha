@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using vd_Inputs;
 
 public class FirstScreen : MonoBehaviour
 {
     public KeyCode launchKey;
+    public string sceneToLoad = "Opening";
     bool isFading;
     float timer;
     Color color;
@@ -22,9 +24,10 @@ public class FirstScreen : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-		if ((Input.GetKeyDown(launchKey) || Input.GetAxis(InputManager.Focus) > 0.5f))
+		if (Input.GetKeyDown(launchKey)/* || Input.GetAxis(InputManager.Focus) > 0.5f)*/)
         {
-            isFading = true;
+            //isFading = true;
+            SceneManager.LoadScene(sceneToLoad);
         }
 
         if(isFading)
