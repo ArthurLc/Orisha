@@ -29,6 +29,11 @@ public class PauseMenu : MonoBehaviour
 	public Slider firstOptionActive;
 	AerialBugDetection abd;
 	CharacterInitialization ci;
+    public CharacterInitialization Ci
+    {
+        get { return ci; }
+    }
+
     private void OnEnable()
     {
         inputModule = FindObjectOfType<StandaloneInputModule>();

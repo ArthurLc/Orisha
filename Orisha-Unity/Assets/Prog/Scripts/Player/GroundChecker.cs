@@ -26,7 +26,8 @@ public class GroundChecker : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        isGroundDetected = true;
+        if(!other.isTrigger)
+            isGroundDetected = true;
     }
     private void OnTriggerExit(Collider other)
     {

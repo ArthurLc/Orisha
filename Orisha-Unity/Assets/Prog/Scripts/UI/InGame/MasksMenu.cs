@@ -28,6 +28,7 @@ public class MasksMenu : MonoBehaviour {
     [SerializeField] GameObject masksParent;
 	[SerializeField] ButtonMask[] masks;
 
+	[SerializeField] PauseMenu pauseMenu;
 	[SerializeField] GameObject menu;
 
     private LifeBar lifeBarHUD;
@@ -59,41 +60,41 @@ public class MasksMenu : MonoBehaviour {
 
     private void Update()
     {
-		if (menu.activeSelf == false) 
-		{
-			if (Input.GetAxis(InputManager.OpenMaskMenu) >= 0.75f) 
-			{			
-                if(masksParent.activeInHierarchy == false)
+        if (menu.activeSelf == false)
+        {
+            if (pauseMenu.Ci.AreInputsFrozen == false)
+            {
+                if (Input.GetAxis(InputManager.OpenMaskMenu) >= 0.75f)
                 {
-                    lifeBarHUD.SetActiveHUD(true);
-                    lifeBarHUD.SetActiveNewMaskFB(false);
+                    if (masksParent.activeInHierarchy == false)
+                    {
+                        lifeBarHUD.SetActiveHUD(true);
+                        lifeBarHUD.SetActiveNewMaskFB(false);
 
-                    TimeManager.Instance.Slow_AllScene(0.01f);
-                    transform.localScale = Vector3.zero;
+                        TimeManager.Instance.Slow_AllScene(0.01f);
+                        transform.localScale = Vector3.zero;
+                    }
+
+                    UpdateVisualMasks();
+                    masksParent.SetActive(true);
+                    GameLoopManager.EnableMouse();
                 }
+                else if (masksParent.activeInHierarchy && Input.GetAxis(InputManager.OpenMaskMenu) < 0.75f)
+                {
+                    if (Potential_Enemy.IsOnFight == false)
+                        lifeBarHUD.SetActiveHUD(false);
 
-				UpdateVisualMasks(); 
-				masksParent.SetActive (true);
-				GameLoopManager.EnableMouse ();
-			} else if (masksParent.activeInHierarchy && Input.GetAxis(InputManager.OpenMaskMenu) < 0.75f)
-            {
-                if (Potential_Enemy.IsOnFight == false)
-                    lifeBarHUD.SetActiveHUD(false);
-
-                TimeManager.Instance.Slow_UnactiveAll ();
-				if (InputManager.GetInputMode == InputMode.joy && masks [idSelected].button.interactable)
-					masks [idSelected].button.onClick.Invoke ();
-				masksParent.SetActive (false);
-				GameLoopManager.DisableMouse ();
-			}
-
-            if (transform.localScale.x < Vector3.one.x)
-            {
-                transform.localScale += Vector3.one * 10 * Time.unscaledDeltaTime;
+                    TimeManager.Instance.Slow_UnactiveAll();
+                    if (InputManager.GetInputMode == InputMode.joy && masks[idSelected].button.interactable)
+                        masks[idSelected].button.onClick.Invoke();
+                    masksParent.SetActive(false);
+                    GameLoopManager.DisableMouse();
+                }
             }
-            else
-                transform.localScale = Vector3.one;
-		} 
+
+            float scaleFactor = Mathf.Clamp(transform.localScale.x + 10 * Time.unscaledDeltaTime, 0.0f, 1.0f);
+            transform.localScale = Vector3.one * scaleFactor;
+        }
 		else if (masksParent.activeSelf == true) 
 		{
 			//TimeManager.Instance.Slow_UnactiveAll ();
