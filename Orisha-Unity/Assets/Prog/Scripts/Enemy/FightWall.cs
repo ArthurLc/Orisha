@@ -70,7 +70,7 @@ public class FightWall : MonoBehaviour {
 			if (cols != null) {
 				AnyoneAlive = false;
 				foreach (Collider col in cols) {
-					if (col.tag == "Enemy" && col.GetComponentInParent<AI_Enemy_Basic>().myState != AI_Enemy_Basic.State.Die) {
+					if (col != null && col.tag == "Enemy" && col.GetComponentInParent<AI_Enemy_Basic>().myState != AI_Enemy_Basic.State.Die) {
 						AnyoneAlive = true;
 					}
 				}
