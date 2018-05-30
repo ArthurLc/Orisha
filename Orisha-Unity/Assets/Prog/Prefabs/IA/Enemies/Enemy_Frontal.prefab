@@ -1102,7 +1102,7 @@ GameObject:
   m_Layer: 18
   m_Name: Enemy_Frontal
   m_TagString: Enemy
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4246,6 +4246,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114454595616049954}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114645559349912058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4351,7 +4352,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 0a745aaa9fa999f4fa9c6f9157dfe634, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 150
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -4379,11 +4380,14 @@ MonoBehaviour:
   abandonDistance: 10.5
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95694720023802208}
   weaponAnim: {fileID: 95199340993919678}
   armorAnim: {fileID: 95469932135090380}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!135 &135790687951738452
 SphereCollider:
   m_ObjectHideFlags: 1

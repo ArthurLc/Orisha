@@ -1179,7 +1179,7 @@ GameObject:
   m_Layer: 18
   m_Name: Enemy_SandTracker
   m_TagString: Enemy
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4259,6 +4259,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114100621511719420}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114645559349912058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4312,7 +4313,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 2494c7d99d10de74c90169b7127e11a6, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 100
+  baseHealth: 75
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -4336,11 +4337,14 @@ MonoBehaviour:
   abandonDistance: 10.5
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95694720023802208}
   weaponAnim: {fileID: 95331913013409864}
   armorAnim: {fileID: 95538276166862732}
+  isBoss: 0
+  mydb: {fileID: 0}
   weaponSandMaterial: {fileID: 2100000, guid: 06afac9da5e58d44ea2ae75f3f3d4a76, type: 2}
 --- !u!114 &114834956320928468
 MonoBehaviour:

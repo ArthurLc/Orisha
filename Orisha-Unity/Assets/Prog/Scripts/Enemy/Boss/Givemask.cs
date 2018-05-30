@@ -28,6 +28,7 @@ public class Givemask : MonoBehaviour
 
         zd.enabled = mask.enabled = c.enabled = false;
         MaskToGive.SetActive(false);
+        
     }
 	
 	// Update is called once per frame
@@ -38,6 +39,7 @@ public class Givemask : MonoBehaviour
             spawnMask = true;
             MaskToGive.SetActive(true);
             startPos = MaskToGive.transform.position;
+            MaskToGive.transform.parent = null;
         }
         else if(spawnMask && yCount < yOffest)
         {

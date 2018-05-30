@@ -4176,7 +4176,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 78215d9b99f4d94438275d1285c13ae2, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 500
+  baseHealth: 300
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -4201,14 +4201,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cabb29aa47112e54ba4cf75ced891963, type: 3}
   - {fileID: 8300000, guid: 6e24feeb246d725479f9f160353344b7, type: 3}
   health: 250
-  abandonDistance: 10.5
+  abandonDistance: 30
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95170065364318378}
   weaponAnim: {fileID: 95983379208048282}
   armorAnim: {fileID: 95414368852166332}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!114 &114309872083177550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4264,6 +4267,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114168338891436724}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114636120870428680
 MonoBehaviour:
   m_ObjectHideFlags: 1
