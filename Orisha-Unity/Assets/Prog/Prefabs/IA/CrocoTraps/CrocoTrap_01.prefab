@@ -5970,7 +5970,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957774066352762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 315.64902, y: -14.174961, z: 1490.1798}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4729233270093656}
@@ -6736,7 +6736,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444555505566074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4550483763305590}
@@ -8368,6 +8368,7 @@ MonoBehaviour:
   abandonDistance: 22
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95944456561524856}
@@ -8718,6 +8719,7 @@ MonoBehaviour:
   abandonDistance: 22
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95973732214917264}
@@ -10446,8 +10448,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 0.78431374}
-      maxColor: {r: 0.43382353, g: 0.43382353, b: 0.43382353, a: 0.78431374}
+      minColor: {r: 0.6509434, g: 0.5717065, b: 0.371529, a: 0.78431374}
+      maxColor: {r: 0.8867924, g: 0.8172028, b: 0.6316305, a: 0.78431374}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10509,8 +10511,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 20
-      minScalar: 15
+      scalar: 30
+      minScalar: 25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -11493,8 +11495,8 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   UVModule:
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     frameOverTime:
       serializedVersion: 2
       minMaxState: 1
@@ -11611,7 +11613,7 @@ ParticleSystem:
     flipV: 0
     randomRow: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: 21300000, guid: c5e032d755f77284d911e2ddeaab1925, type: 3}
   VelocityModule:
     enabled: 0
     x:

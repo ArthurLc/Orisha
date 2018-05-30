@@ -67,7 +67,7 @@ public class FightWall : MonoBehaviour {
 		timer += Time.deltaTime;
 		if (timer >= 1.0f) {
 			timer = 0.0f;
-			Collider[] cols = Physics.OverlapSphere (transform.position, sizeWall);
+			Collider[] cols = Physics.OverlapSphere (transform.position, sizeWall - 1.0f);
 			if (cols != null) {
 				AnyoneAlive = false;
 				foreach (Collider col in cols) {
