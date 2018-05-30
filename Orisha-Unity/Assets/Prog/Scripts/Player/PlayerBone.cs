@@ -92,6 +92,7 @@ public class PlayerBone : MonoBehaviour
             {
                 SpawnBone(false);
                 inactivityTimer = 0.0f;
+                psCurrent.Play();
             }
         }
     }
