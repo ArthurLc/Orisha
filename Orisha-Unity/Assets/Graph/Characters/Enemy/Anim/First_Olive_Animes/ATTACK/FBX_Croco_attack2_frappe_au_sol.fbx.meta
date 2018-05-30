@@ -196,6 +196,20 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.06407775
+        functionName: DisableCollision
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.22263874
+        functionName: AttackSound
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.22941174
         functionName: FailAttack
         data: 
@@ -217,15 +231,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.96764696
-        functionName: EnableRotations
+      - time: 0.9234636
+        functionName: EnableCollision
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.22263874
-        functionName: AttackSound
+      - time: 0.96764696
+        functionName: EnableRotations
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
