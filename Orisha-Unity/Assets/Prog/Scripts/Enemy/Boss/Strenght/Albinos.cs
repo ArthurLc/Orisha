@@ -23,8 +23,11 @@ public class Albinos : MonoBehaviour
     [SerializeField] Transform spawnPos;
 
     AI_Enemy_Basic ally;
-	// Use this for initialization
-	void Start ()
+
+    [SerializeField] Collider maskBarrier;
+    [SerializeField] GameObject mask;
+    // Use this for initialization
+    void Start ()
     {
         spawnPos.parent = null;
         me = GetComponent<AI_Enemy_Basic>();
@@ -35,7 +38,7 @@ public class Albinos : MonoBehaviour
         waves = new List<GameObject>();
 
         InitWaves();
-
+        mask.SetActive(false);
         CheckpointsManager.OnPlayerRespawn += Reset;
     }
 
@@ -86,6 +89,12 @@ public class Albinos : MonoBehaviour
                 waveId++;
             }
             Debug.Log("La vie a baissé");
+        }
+
+        if(me.Health <= 0 && !mask.activeSelf)
+        {
+            mask.SetActive(true);
+            maskBarrier.enabled = false;
         }
 
 

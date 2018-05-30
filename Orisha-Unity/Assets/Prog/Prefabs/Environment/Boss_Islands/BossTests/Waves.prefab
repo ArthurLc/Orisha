@@ -28920,7 +28920,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1663766210086408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -449.13428, y: 210.67586, z: 73.140915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4482614450026606}
@@ -33015,6 +33015,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114420357655204200}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114040472576123016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33235,6 +33236,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114524764228668918}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114116525793266570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33301,7 +33303,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 0a745aaa9fa999f4fa9c6f9157dfe634, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 150
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -33329,11 +33331,14 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95775614633143434}
   weaponAnim: {fileID: 95224865800576080}
   armorAnim: {fileID: 95292986744210210}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!114 &114128186190050712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33626,6 +33631,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114543898357102968}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114315053388423530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33655,6 +33661,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114635637377115678}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114328811891530312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33682,7 +33689,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 0a745aaa9fa999f4fa9c6f9157dfe634, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 150
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -33710,11 +33717,14 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95216676550691144}
   weaponAnim: {fileID: 95646901113921194}
   armorAnim: {fileID: 95256835535142368}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!114 &114353661525992492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33807,7 +33817,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 0a745aaa9fa999f4fa9c6f9157dfe634, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 150
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -33835,11 +33845,14 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95996060635042176}
   weaponAnim: {fileID: 95126142697637968}
   armorAnim: {fileID: 95343382039372242}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!114 &114387685026399448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33908,6 +33921,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114857401412900910}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114415234499908562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33922,7 +33936,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 0a745aaa9fa999f4fa9c6f9157dfe634, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 150
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -33950,11 +33964,14 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95395621411527406}
   weaponAnim: {fileID: 95043835997486210}
   armorAnim: {fileID: 95996611271770980}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!114 &114417682853780572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -34246,7 +34263,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 0a745aaa9fa999f4fa9c6f9157dfe634, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 150
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -34274,11 +34291,14 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95746923281412502}
   weaponAnim: {fileID: 95368841704322800}
   armorAnim: {fileID: 95732853584842176}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!114 &114554210125669748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -34383,7 +34403,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 0a745aaa9fa999f4fa9c6f9157dfe634, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 150
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -34411,11 +34431,14 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95260479019255312}
   weaponAnim: {fileID: 95790693594228246}
   armorAnim: {fileID: 95401371960422004}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!114 &114622585189759454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -34763,7 +34786,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 0a745aaa9fa999f4fa9c6f9157dfe634, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 150
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -34791,11 +34814,14 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95437866549871370}
   weaponAnim: {fileID: 95724458021455952}
   armorAnim: {fileID: 95975305831300214}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!114 &114761707932041276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -34837,6 +34863,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114057529283387054}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114765592640678804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -35038,7 +35065,7 @@ MonoBehaviour:
   SandMaterial: {fileID: 2100000, guid: 0a745aaa9fa999f4fa9c6f9157dfe634, type: 2}
   debugEnabled: 1
   agentIsControlledByOther: 0
-  Basehealth: 250
+  baseHealth: 150
   sprintSpeed: 4
   walkSpeed: 2
   attackDamages: 10
@@ -35066,11 +35093,14 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95546599480845844}
   weaponAnim: {fileID: 95269411222208314}
   armorAnim: {fileID: 95852588582645696}
+  isBoss: 0
+  mydb: {fileID: 0}
 --- !u!114 &114869719800019984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -35099,6 +35129,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114900822257879616}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114874004476790912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -35343,6 +35374,7 @@ MonoBehaviour:
   box_Weapon: {fileID: 114143845592355540}
   boss_Estoc_Particle: {fileID: 0}
   boss_Hammer_Particle: {fileID: 0}
+  toSync: []
 --- !u!114 &114992692224221256
 MonoBehaviour:
   m_ObjectHideFlags: 1
