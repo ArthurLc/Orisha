@@ -90,6 +90,37 @@ public class Audio_MainCamera : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="_audioClip">Renvois la musique actuellement joué.</param>
+    /// <returns></returns>
+    public AudioClip ChangeMusic(AudioClip _audioClip)
+    {
+        AudioClip previousMusic = source_Music.clip;
+        source_Music.clip = _audioClip;
+        StartFade(false);
+
+        //Debug.Log("New clip: " + _audioClip.name);
+
+        return previousMusic;
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="_audioClip">Renvois la musique actuellement joué.</param>
+    /// <returns></returns>
+    public AudioClip ChangeFighting(AudioClip _audioClip)
+    {
+        AudioClip previousMusic = source_Fighting.clip;
+        source_Fighting.clip = _audioClip;
+
+        //Debug.Log("New clip: " + _audioClip.name);
+
+        return previousMusic;
+    }
+
+
     private void OnDestroy()
     {
         Potential_Enemy.enteringFight -= StartFade;

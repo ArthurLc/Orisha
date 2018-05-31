@@ -25,9 +25,14 @@ namespace vd_Player
         [Header("Infos")]
         [SerializeField] private bool IsMenuPrefab = false;
         [SerializeField] private Transform playerTr;
+        [SerializeField] private Audio_MainCamera audio_MainCam;
         public Transform PlayerTr
         {
             get { return playerTr; }
+        }
+        public Audio_MainCamera Audio_MainCam
+        {
+            get { return audio_MainCam; }
         }
 
         private PlayerCamera playerCam;
@@ -113,6 +118,7 @@ namespace vd_Player
         {
             get { return lifeBarHUD; }
         }
+
         [Header("UI")]
         [SerializeField] float fadeInDuration = 3.0f;
         [SerializeField] float displayDuration = 3.0f;
