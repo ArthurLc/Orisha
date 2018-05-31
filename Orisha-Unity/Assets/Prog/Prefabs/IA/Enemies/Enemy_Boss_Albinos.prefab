@@ -4158,9 +4158,7 @@ MonoBehaviour:
   attackDamages: 10
   attackSpeed: 1
   screamsSfx:
-  - {fileID: 8300000, guid: 36d7fee7446d1c349ab8778652e800ff, type: 3}
-  - {fileID: 8300000, guid: d433eeaceac3ef44aa874880b4cc6ba0, type: 3}
-  - {fileID: 8300000, guid: 07c800c6f79ad6742805d5d703be8424, type: 3}
+  - {fileID: 8300000, guid: affcf889e78f8e34b8e69cb788cd54f5, type: 3}
   attacksSfx:
   - {fileID: 8300000, guid: f22506322540e254fa181c3a7902219b, type: 3}
   - {fileID: 8300000, guid: d343079362077f34796db2bce6fa0408, type: 3}
@@ -4180,6 +4178,7 @@ MonoBehaviour:
   abandonDistance: 100
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95798222094412318}
@@ -4327,6 +4326,8 @@ MonoBehaviour:
     type: 2}
   invoqueFrequency: 20
   spawnPos: {fileID: 4856892231915992}
+  maskBarrier: {fileID: 0}
+  mask: {fileID: 0}
 --- !u!114 &114768408401317994
 MonoBehaviour:
   m_ObjectHideFlags: 1
