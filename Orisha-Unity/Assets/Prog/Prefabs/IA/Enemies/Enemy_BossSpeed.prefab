@@ -4265,8 +4265,6 @@ MonoBehaviour:
   attackDamages: 10
   attackSpeed: 1
   screamsSfx:
-  - {fileID: 8300000, guid: 36d7fee7446d1c349ab8778652e800ff, type: 3}
-  - {fileID: 8300000, guid: d433eeaceac3ef44aa874880b4cc6ba0, type: 3}
   - {fileID: 8300000, guid: 07c800c6f79ad6742805d5d703be8424, type: 3}
   attacksSfx:
   - {fileID: 8300000, guid: f22506322540e254fa181c3a7902219b, type: 3}
@@ -4381,7 +4379,7 @@ MonoBehaviour:
   entityTransform: {fileID: 0}
   playerDatas: {fileID: 0}
   damageValue: 10
-  debug: 1
+  debug: 0
 --- !u!114 &114508242240407758
 MonoBehaviour:
   m_ObjectHideFlags: 1
