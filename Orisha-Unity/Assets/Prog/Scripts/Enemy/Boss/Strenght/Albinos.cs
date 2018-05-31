@@ -94,7 +94,7 @@ public class Albinos : MonoBehaviour
         if(me.Health <= 0 && !mask.activeSelf)
         {
             mask.SetActive(true);
-            maskBarrier.enabled = false;
+            maskBarrier.gameObject.SetActive(false);
         }
 
 
