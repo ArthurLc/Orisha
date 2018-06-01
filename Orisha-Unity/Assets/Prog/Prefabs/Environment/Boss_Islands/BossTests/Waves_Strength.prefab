@@ -33056,7 +33056,7 @@ MonoBehaviour:
   entityTransform: {fileID: 0}
   playerDatas: {fileID: 0}
   damageValue: 10
-  debug: 1
+  debug: 0
 --- !u!114 &114060024177854636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33331,6 +33331,7 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95775614633143434}
@@ -33400,7 +33401,7 @@ MonoBehaviour:
   entityTransform: {fileID: 0}
   playerDatas: {fileID: 0}
   damageValue: 10
-  debug: 1
+  debug: 0
 --- !u!114 &114146565205321634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33716,6 +33717,7 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95216676550691144}
@@ -33843,6 +33845,7 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95996060635042176}
@@ -33961,6 +33964,7 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95395621411527406}
@@ -33999,7 +34003,7 @@ MonoBehaviour:
   entityTransform: {fileID: 0}
   playerDatas: {fileID: 0}
   damageValue: 10
-  debug: 1
+  debug: 0
 --- !u!114 &114420890411372478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -34173,7 +34177,7 @@ MonoBehaviour:
   entityTransform: {fileID: 0}
   playerDatas: {fileID: 0}
   damageValue: 10
-  debug: 1
+  debug: 0
 --- !u!114 &114532132973983124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -34231,7 +34235,7 @@ MonoBehaviour:
   entityTransform: {fileID: 0}
   playerDatas: {fileID: 0}
   damageValue: 10
-  debug: 1
+  debug: 0
 --- !u!114 &114544357773694954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -34287,6 +34291,7 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95746923281412502}
@@ -34426,6 +34431,7 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95260479019255312}
@@ -34516,7 +34522,7 @@ MonoBehaviour:
   entityTransform: {fileID: 0}
   playerDatas: {fileID: 0}
   damageValue: 10
-  debug: 1
+  debug: 0
 --- !u!114 &114636229424602360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -34808,6 +34814,7 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95437866549871370}
@@ -35043,7 +35050,7 @@ MonoBehaviour:
   entityTransform: {fileID: 0}
   playerDatas: {fileID: 0}
   damageValue: 10
-  debug: 1
+  debug: 0
 --- !u!114 &114862999322029430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -35086,6 +35093,7 @@ MonoBehaviour:
   abandonDistance: 50
   range: 2
   dieWhenTouchingTarget: 0
+  shield: {fileID: 0}
   debugLog: 0
   state: 0
   crocoAnim: {fileID: 95546599480845844}
@@ -35214,7 +35222,7 @@ MonoBehaviour:
   entityTransform: {fileID: 0}
   playerDatas: {fileID: 0}
   damageValue: 10
-  debug: 1
+  debug: 0
 --- !u!114 &114917227861733758
 MonoBehaviour:
   m_ObjectHideFlags: 1
