@@ -64,10 +64,13 @@ public class ButtonManagerMenu : MonoBehaviour {
             ActiveSubMenu(lastButtonID, false);
 
         lastButtonID = newButtonID;
-        ActiveSubMenu(lastButtonID, !buttons[lastButtonID].relativeObjects[0].activeInHierarchy);
+		ActiveSubMenu(lastButtonID, !buttons[lastButtonID].relativeObjects[0].activeInHierarchy);
+
     }
     void ActiveSubMenu(int _lastButtonID, bool _active)
     {
+		SoundManager.instance.SFX_PlayOneShot (SoundManager.instance.audioList.MainMenuSound [1]);
+
         for (int i = 0; i < buttons[_lastButtonID].relativeObjects.Count; i++) {
             buttons[_lastButtonID].relativeObjects[i].SetActive(_active);
         }

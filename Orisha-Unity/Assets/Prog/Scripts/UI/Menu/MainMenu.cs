@@ -84,6 +84,12 @@ namespace vd_Menu
             }
         }
 
+		public void PlaySoundClick()
+		{
+			SoundManager.instance.SFX_PlayOneShot (SoundManager.instance.audioList.MainMenuSound [1]);
+		}
+
+
         /// <summary>
         /// Launch the level
         /// </summary>
@@ -98,6 +104,7 @@ namespace vd_Menu
         /// </summary>
         public void QuitGame()
         {
+			SoundManager.instance.SFX_PlayOneShot (SoundManager.instance.audioList.MainMenuSound [1]);
             Application.Quit();
         }
 

@@ -113,6 +113,8 @@ public class LoadingScreen_Manager : MonoBehaviour
         {
             if(Input.GetButtonDown("LoadingMenu_Left") || Input.GetButtonDown("LoadingMenu_Right"))
             {
+				SoundManager.instance.SFX_PlayOneShot (SoundManager.instance.audioList.MainMenuSound [1]);
+
                 if(Image01.activeInHierarchy)
                 {
                     Image02.SetActive(true);
@@ -180,6 +182,9 @@ public class LoadingScreen_Manager : MonoBehaviour
                 LoadingPress_Text.SetActive(true);
                 if (Input.GetButtonDown("Submit"))
                 {
+
+					SoundManager.instance.SFX_PlayOneShot (SoundManager.instance.audioList.MainMenuSound [0]);
+
                     LoadingPress_Text.SetActive(false);
                     LoadingEnd_Text.SetActive(true);
                     LoadingEnd_Image.SetActive(true);
