@@ -33,6 +33,9 @@ public class OpeningManager : MonoBehaviour {
 
         fadeBG.color = Color.clear;
 
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         StartCoroutine(LoadNewScene());
     }
     private void OnApplicationQuit()

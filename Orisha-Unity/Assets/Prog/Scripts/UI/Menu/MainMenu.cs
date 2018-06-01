@@ -34,9 +34,9 @@ namespace vd_Menu
         [SerializeField] private Sprite inputIconKeyboard;
         [SerializeField] private Image currentInputMode;
 
-        [Header("Cursor")]
-        [SerializeField] private Texture2D cursorTexture;
-        [SerializeField] private Vector2 hotSpot = Vector2.zero;
+        //[Header("Cursor")]
+        //[SerializeField] private Texture2D cursorTexture;
+        //[SerializeField] private Vector2 hotSpot = Vector2.zero;
 
         [Header("Cosmetic")]
         [SerializeField] private Image backgroundTransition;
@@ -46,7 +46,7 @@ namespace vd_Menu
         private void Start()
         {
             backgroundTransition.color = Color.black;
-            Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
+            //Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
 
             if (InputManager.GetInputMode == InputMode.keyboard)
             {
