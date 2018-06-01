@@ -24,13 +24,12 @@ public class DisplayCheckpointName : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool test = false;
 
-    private Collider col;
+    [SerializeField] private Collider[] col;
     private DisplayZoneName zoneScript;
 
     void Start()
     {
         checkpoint = GetComponent<Checkpoint>();
-        col = GetComponent<Collider>();
 
         zoneScript = FindObjectOfType<DisplayZoneName>();
     }
@@ -51,7 +50,8 @@ public class DisplayCheckpointName : MonoBehaviour
             zoneScript.BeginDisplay(checkpoint.GetCheckpointName, fadeInDuration, displayDuration);
             CheckpointsManager.checkpointList.Add(checkpoint);
             
-            col.enabled = false;
+            for(int i = 0; i < col.Length; i++)
+                col[i].enabled = false;
         }
     }
 
